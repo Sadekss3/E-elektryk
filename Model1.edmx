@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="zlecenieModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="kategoria_produktu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa_kategorii" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kontrahent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="text" Nullable="false" />
+          <Property Name="Nazwisko" Type="text" Nullable="false" />
+          <Property Name="Pesel" Type="bigint" />
+          <Property Name="NIP" Type="bigint" />
+          <Property Name="Nazwa_Firmy" Type="text" Nullable="false" />
+          <Property Name="Adres" Type="text" Nullable="false" />
+          <Property Name="E-mail" Type="text" />
+          <Property Name="Telefon_1" Type="text" />
+          <Property Name="Telefon_2" Type="text" />
+        </EntityType>
+        <EntityType Name="produkt">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="text" Nullable="false" />
+          <Property Name="Producent" Type="text" Nullable="false" />
+          <Property Name="Jm" Type="text" Nullable="false" />
+          <Property Name="Ilość" Type="double" Nullable="false" />
+          <Property Name="Cena_netto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Vat" Type="double" Nullable="false" />
+          <Property Name="Cena_brutto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Kategoria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="zlecenieModelStoreContainer">
+          <EntitySet Name="kategoria_produktu" EntityType="Self.kategoria_produktu" Schema="zlecenie" store:Type="Tables" />
+          <EntitySet Name="kontrahent" EntityType="Self.kontrahent" Schema="zlecenie" store:Type="Tables" />
+          <EntitySet Name="produkt" EntityType="Self.produkt" Schema="zlecenie" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="zlecenieModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="kategoria_produktu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_kategorii" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kontrahent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pesel" Type="Int64" />
+          <Property Name="NIP" Type="Int64" />
+          <Property Name="Nazwa_Firmy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="E_mail" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon_1" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon_2" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="produkt">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Producent" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Jm" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ilość" Type="Double" Nullable="false" />
+          <Property Name="Cena_netto" Type="Decimal" Nullable="false" />
+          <Property Name="Vat" Type="Double" Nullable="false" />
+          <Property Name="Cena_brutto" Type="Decimal" Nullable="false" />
+          <Property Name="Kategoria" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="zlecenieEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="kategoria_produktu" EntityType="Self.kategoria_produktu" />
+          <EntitySet Name="kontrahent" EntityType="Self.kontrahent" />
+          <EntitySet Name="produkt" EntityType="Self.produkt" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="zlecenieModelStoreContainer" CdmEntityContainer="zlecenieEntities">
+          <EntitySetMapping Name="kategoria_produktu">
+            <EntityTypeMapping TypeName="zlecenieModel.kategoria_produktu">
+              <MappingFragment StoreEntitySet="kategoria_produktu">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nazwa_kategorii" ColumnName="Nazwa_kategorii" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kontrahent">
+            <EntityTypeMapping TypeName="zlecenieModel.kontrahent">
+              <MappingFragment StoreEntitySet="kontrahent">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Nazwa_Firmy" ColumnName="Nazwa_Firmy" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon_1" ColumnName="Telefon_1" />
+                <ScalarProperty Name="Telefon_2" ColumnName="Telefon_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produkt">
+            <EntityTypeMapping TypeName="zlecenieModel.produkt">
+              <MappingFragment StoreEntitySet="produkt">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Producent" ColumnName="Producent" />
+                <ScalarProperty Name="Jm" ColumnName="Jm" />
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Cena_netto" ColumnName="Cena_netto" />
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
+                <ScalarProperty Name="Cena_brutto" ColumnName="Cena_brutto" />
+                <ScalarProperty Name="Kategoria" ColumnName="Kategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
