@@ -21,56 +21,7 @@ namespace E_elektryk
         private void Form1_Load(object sender, EventArgs e)
         {
             Product_List_Update();
-        }
-
-        private void Button_Add_Click(object sender, EventArgs e)
-        {
-            Window_Add_Product window_add = new Window_Add_Product();
-            window_add.ShowDialog();
-        }
-
-        private void Button_Modyfication_Click(object sender, EventArgs e)
-        {
-            if (Products_list.SelectedItems.Count <= 0)
-            {
-            }
-            else
-            {
-                using (zlecenieEntities db = new zlecenieEntities())
-                {
-                    string ID = Products_list.SelectedItems[0].Text;
-                    int numer_ID = System.Convert.ToInt32(ID);
-                    produkt m = db.produkt.Find(numer_ID);
-                    Window_Add_Product mod = new Window_Add_Product(m);
-                    mod.ShowDialog();
-                }
-            }
-        }
-
-        private void Button_Delete_Click(object sender, EventArgs e)
-        {
-            if (Products_list.SelectedItems.Count <= 0)
-            {
-            }
-            else
-            {
-                string ID = Products_list.SelectedItems[0].Text;
-                int ID_number = System.Convert.ToInt32(ID);
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result;
-                result = MessageBox.Show("Czy na pewno chcesz usunąć pozycje?", "Usuwanie", buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    using (zlecenieEntities db = new zlecenieEntities())
-                    {
-                        produkt p = db.produkt.Find(ID_number);
-                        string name_p = p.Nazwa;
-                        db.produkt.Remove(p);
-                        db.SaveChanges();
-                        MessageBox.Show("Produkt " + name_p + " usunięty", "OK", MessageBoxButtons.OK);
-                    }
-                }
-            }
+            Client_List_Update();
         }
 
         private void Product_List_Update()
@@ -102,6 +53,139 @@ namespace E_elektryk
                 {
                     MessageBox.Show("Brak połączenia do bazy danych", "Błąd Bazy Danych", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Environment.Exit(1);
+                }
+            }
+        } // Add Products information from DB to listView
+
+        private void Button_Add_Click(object sender, EventArgs e)
+        {
+            Window_Add_Product window_add = new Window_Add_Product();
+            window_add.ShowDialog();
+        } // Add new Product
+
+        private void Button_Modyfication_Click(object sender, EventArgs e)
+        {
+            if (Products_list.SelectedItems.Count <= 0)
+            {
+            }
+            else
+            {
+                using (zlecenieEntities db = new zlecenieEntities())
+                {
+                    string ID = Products_list.SelectedItems[0].Text;
+                    int numer_ID = System.Convert.ToInt32(ID);
+                    produkt m = db.produkt.Find(numer_ID);
+                    Window_Add_Product mod = new Window_Add_Product(m);
+                    mod.ShowDialog();
+                }
+            }
+        } // Modyficate Product
+
+        private void Button_Delete_Click(object sender, EventArgs e)
+        {
+            if (Products_list.SelectedItems.Count <= 0)
+            {
+            }
+            else
+            {
+                string ID = Products_list.SelectedItems[0].Text;
+                int ID_number = System.Convert.ToInt32(ID);
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+                result = MessageBox.Show("Czy na pewno chcesz usunąć pozycje?", "Usuwanie", buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    using (zlecenieEntities db = new zlecenieEntities())
+                    {
+                        produkt p = db.produkt.Find(ID_number);
+                        string name_p = p.Nazwa;
+                        db.produkt.Remove(p);
+                        db.SaveChanges();
+                        MessageBox.Show("Produkt " + name_p + " usunięty", "OK", MessageBoxButtons.OK);
+                    }
+                }
+            }
+        } // Delete product 
+
+        private void Client_List_Update()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    Client_list.Items.Clear();
+                    List<kontrahent> list = db.kontrahent.ToList();
+                    foreach (kontrahent C in list)
+                    {
+                        ListViewItem item = new ListViewItem(C.ID.ToString());
+                        item.SubItems.Add(C.Imie);
+                        item.SubItems.Add(C.Nazwisko);
+                        item.SubItems.Add(C.Pesel.ToString());
+                        item.SubItems.Add(C.NIP.ToString());
+                        item.SubItems.Add(C.Nazwa_Firmy);
+                        item.SubItems.Add(C.Adres);
+                        item.SubItems.Add(C.E_mail);
+                        item.SubItems.Add(C.Telefon_1.ToString());
+                        item.SubItems.Add(C.Telefon_2.ToString());
+                        Client_list.Items.Add(item);
+                    }
+                }
+                catch (Exception f)
+                {
+                    Environment.Exit(1);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        } // Add Clients information from DB to listView 
+
+        private void Button_Add_Client_Click(object sender, EventArgs e) // Add new Client
+        {
+            Window_Add_Client Add_Client= new Window_Add_Client();
+            Add_Client.ShowDialog();
+        }
+
+        private void Button_Datamod_Client_Click(object sender, EventArgs e) // Modyficate Client information
+        {
+            if (Client_list.SelectedItems.Count <= 0)
+            {
+            }
+            if (Client_list.SelectedItems.Count > 0)
+            {
+                using (zlecenieEntities db = new zlecenieEntities())
+                {
+                    string ID = Client_list.SelectedItems[0].Text;
+                    int numer_ID_kontrahenta = System.Convert.ToInt32(ID);
+                    kontrahent k = db.kontrahent.Find(numer_ID_kontrahenta);
+                    Window_Add_Client Modyficate_Client = new Window_Add_Client(k);
+                    Modyficate_Client.ShowDialog();
+                }
+            }
+        }
+
+        private void Button_Delete_Client_Click(object sender, EventArgs e) // Delete Client
+        {
+            if (Client_list.SelectedItems.Count <= 0)
+            {
+            }
+            else
+            {
+                string ID = Client_list.SelectedItems[0].Text;
+                int ID_number = System.Convert.ToInt32(ID);
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+                result = MessageBox.Show("Czy na pewno chcesz usunąć pozycje?", "Usuwanie", buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    using (zlecenieEntities db = new zlecenieEntities())
+                    {
+                        kontrahent Client = db.kontrahent.Find(ID_number);
+                        string Client_name = Client.Imie;
+                        string Client_lastname = Client.Nazwisko;
+                        db.kontrahent.Remove(Client);
+                        db.SaveChanges();
+                        MessageBox.Show("Kontrahent " + Client_name + " " + Client_lastname + " został usunięty z listy.", "Ok", MessageBoxButtons.OK);
+                    }
                 }
             }
         }
