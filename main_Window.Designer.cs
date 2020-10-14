@@ -34,10 +34,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Wyceny = new System.Windows.Forms.TabPage();
             this.Kontrahenci = new System.Windows.Forms.TabPage();
-            this.button_usuń_kontrahenta = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.lista_kontrahentów = new System.Windows.Forms.ListView();
+            this.Button_Delete_Client = new System.Windows.Forms.Button();
+            this.Button_Datamod_Client = new System.Windows.Forms.Button();
+            this.Button_Add_Client = new System.Windows.Forms.Button();
+            this.Client_list = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Imie = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nazwisko = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -136,71 +136,74 @@
             // 
             // Kontrahenci
             // 
-            this.Kontrahenci.Controls.Add(this.button_usuń_kontrahenta);
-            this.Kontrahenci.Controls.Add(this.button6);
-            this.Kontrahenci.Controls.Add(this.button7);
-            this.Kontrahenci.Controls.Add(this.lista_kontrahentów);
+            this.Kontrahenci.BackColor = System.Drawing.Color.DimGray;
+            this.Kontrahenci.Controls.Add(this.Button_Delete_Client);
+            this.Kontrahenci.Controls.Add(this.Button_Datamod_Client);
+            this.Kontrahenci.Controls.Add(this.Button_Add_Client);
+            this.Kontrahenci.Controls.Add(this.Client_list);
             this.Kontrahenci.Location = new System.Drawing.Point(4, 22);
             this.Kontrahenci.Name = "Kontrahenci";
             this.Kontrahenci.Padding = new System.Windows.Forms.Padding(3);
             this.Kontrahenci.Size = new System.Drawing.Size(792, 424);
             this.Kontrahenci.TabIndex = 2;
             this.Kontrahenci.Text = "Kontrahenci";
-            this.Kontrahenci.UseVisualStyleBackColor = true;
             // 
-            // button_usuń_kontrahenta
+            // Button_Delete_Client
             // 
-            this.button_usuń_kontrahenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_usuń_kontrahenta.BackColor = System.Drawing.Color.Gainsboro;
-            this.button_usuń_kontrahenta.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button_usuń_kontrahenta.FlatAppearance.BorderSize = 2;
-            this.button_usuń_kontrahenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_usuń_kontrahenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_usuń_kontrahenta.Location = new System.Drawing.Point(258, 386);
-            this.button_usuń_kontrahenta.Name = "button_usuń_kontrahenta";
-            this.button_usuń_kontrahenta.Size = new System.Drawing.Size(130, 38);
-            this.button_usuń_kontrahenta.TabIndex = 8;
-            this.button_usuń_kontrahenta.Text = "Usuń";
-            this.button_usuń_kontrahenta.UseVisualStyleBackColor = false;
+            this.Button_Delete_Client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_Delete_Client.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_Delete_Client.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Delete_Client.FlatAppearance.BorderSize = 2;
+            this.Button_Delete_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Delete_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Delete_Client.Location = new System.Drawing.Point(281, 383);
+            this.Button_Delete_Client.Name = "Button_Delete_Client";
+            this.Button_Delete_Client.Size = new System.Drawing.Size(130, 38);
+            this.Button_Delete_Client.TabIndex = 8;
+            this.Button_Delete_Client.Text = "Usuń";
+            this.Button_Delete_Client.UseVisualStyleBackColor = false;
+            this.Button_Delete_Client.Click += new System.EventHandler(this.Button_Delete_Client_Click);
             // 
-            // button6
+            // Button_Datamod_Client
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button6.BackColor = System.Drawing.Color.Gainsboro;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button6.FlatAppearance.BorderSize = 2;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button6.Location = new System.Drawing.Point(129, 386);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(130, 38);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Modyfikuj";
-            this.button6.UseVisualStyleBackColor = false;
+            this.Button_Datamod_Client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_Datamod_Client.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_Datamod_Client.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Datamod_Client.FlatAppearance.BorderSize = 2;
+            this.Button_Datamod_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Datamod_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Datamod_Client.Location = new System.Drawing.Point(145, 383);
+            this.Button_Datamod_Client.Name = "Button_Datamod_Client";
+            this.Button_Datamod_Client.Size = new System.Drawing.Size(130, 38);
+            this.Button_Datamod_Client.TabIndex = 7;
+            this.Button_Datamod_Client.Text = "Modyfikuj";
+            this.Button_Datamod_Client.UseVisualStyleBackColor = false;
+            this.Button_Datamod_Client.Click += new System.EventHandler(this.Button_Datamod_Client_Click);
             // 
-            // button7
+            // Button_Add_Client
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button7.BackColor = System.Drawing.Color.Gainsboro;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button7.FlatAppearance.BorderSize = 2;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button7.Location = new System.Drawing.Point(0, 386);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(130, 38);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Dodaj ";
-            this.button7.UseVisualStyleBackColor = false;
+            this.Button_Add_Client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_Add_Client.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_Add_Client.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Add_Client.FlatAppearance.BorderSize = 2;
+            this.Button_Add_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Add_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Add_Client.Location = new System.Drawing.Point(9, 383);
+            this.Button_Add_Client.Name = "Button_Add_Client";
+            this.Button_Add_Client.Size = new System.Drawing.Size(130, 38);
+            this.Button_Add_Client.TabIndex = 6;
+            this.Button_Add_Client.Text = "Dodaj ";
+            this.Button_Add_Client.UseVisualStyleBackColor = false;
+            this.Button_Add_Client.Click += new System.EventHandler(this.Button_Add_Client_Click);
             // 
-            // lista_kontrahentów
+            // Client_list
             // 
-            this.lista_kontrahentów.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.lista_kontrahentów.AllowColumnReorder = true;
-            this.lista_kontrahentów.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Client_list.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.Client_list.AllowColumnReorder = true;
+            this.Client_list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lista_kontrahentów.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Client_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Imie,
             this.Nazwisko,
@@ -211,18 +214,19 @@
             this.Email,
             this.Telefon_1,
             this.Telefon_2});
-            this.lista_kontrahentów.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lista_kontrahentów.FullRowSelect = true;
-            this.lista_kontrahentów.GridLines = true;
-            this.lista_kontrahentów.HideSelection = false;
-            this.lista_kontrahentów.Location = new System.Drawing.Point(0, 0);
-            this.lista_kontrahentów.MultiSelect = false;
-            this.lista_kontrahentów.Name = "lista_kontrahentów";
-            this.lista_kontrahentów.Size = new System.Drawing.Size(792, 380);
-            this.lista_kontrahentów.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.lista_kontrahentów.TabIndex = 0;
-            this.lista_kontrahentów.UseCompatibleStateImageBehavior = false;
-            this.lista_kontrahentów.View = System.Windows.Forms.View.Details;
+            this.Client_list.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Client_list.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Client_list.FullRowSelect = true;
+            this.Client_list.GridLines = true;
+            this.Client_list.HideSelection = false;
+            this.Client_list.Location = new System.Drawing.Point(0, 0);
+            this.Client_list.MultiSelect = false;
+            this.Client_list.Name = "Client_list";
+            this.Client_list.Size = new System.Drawing.Size(792, 380);
+            this.Client_list.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.Client_list.TabIndex = 0;
+            this.Client_list.UseCompatibleStateImageBehavior = false;
+            this.Client_list.View = System.Windows.Forms.View.Details;
             // 
             // ID
             // 
@@ -231,47 +235,47 @@
             // Imie
             // 
             this.Imie.Text = "Imie";
-            this.Imie.Width = 80;
+            this.Imie.Width = 120;
             // 
             // Nazwisko
             // 
             this.Nazwisko.Text = "Nazwisko";
-            this.Nazwisko.Width = 80;
+            this.Nazwisko.Width = 120;
             // 
             // Pesel
             // 
             this.Pesel.Text = "Pesel";
-            this.Pesel.Width = 90;
+            this.Pesel.Width = 130;
             // 
             // NIP
             // 
             this.NIP.Text = "NIP";
-            this.NIP.Width = 90;
+            this.NIP.Width = 130;
             // 
             // nazwa_Firmy
             // 
             this.nazwa_Firmy.Text = "Nazwa Firmy";
-            this.nazwa_Firmy.Width = 200;
+            this.nazwa_Firmy.Width = 250;
             // 
             // Adres
             // 
             this.Adres.Text = "Adres";
-            this.Adres.Width = 200;
+            this.Adres.Width = 400;
             // 
             // Email
             // 
             this.Email.Text = "Adres E-mail";
-            this.Email.Width = 120;
+            this.Email.Width = 160;
             // 
             // Telefon_1
             // 
             this.Telefon_1.Text = "Telefon 1";
-            this.Telefon_1.Width = 90;
+            this.Telefon_1.Width = 120;
             // 
             // Telefon_2
             // 
             this.Telefon_2.Text = "Telefon 2";
-            this.Telefon_2.Width = 90;
+            this.Telefon_2.Width = 120;
             // 
             // Magazyn
             // 
@@ -434,6 +438,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "main_Window";
             this.Text = "E-elektryk";
+            this.Activated += new System.EventHandler(this.Form1_Load);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.Zlecenia.ResumeLayout(false);
@@ -451,10 +456,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage Wyceny;
         private System.Windows.Forms.TabPage Kontrahenci;
-        private System.Windows.Forms.Button button_usuń_kontrahenta;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ListView lista_kontrahentów;
+        private System.Windows.Forms.Button Button_Delete_Client;
+        private System.Windows.Forms.Button Button_Datamod_Client;
+        private System.Windows.Forms.Button Button_Add_Client;
+        private System.Windows.Forms.ListView Client_list;
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Imie;
         private System.Windows.Forms.ColumnHeader Nazwisko;
