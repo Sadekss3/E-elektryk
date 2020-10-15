@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="zlecenieModel.kategoria_produktu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="zlecenieModel.kontrahent" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="zlecenieModel.produkt" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zlecenieModel.oferta" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
