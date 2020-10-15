@@ -22,6 +22,7 @@ namespace E_elektryk
         {
             Product_List_Update();
             Client_List_Update();
+            Offer_List_Update();
         }
 
         private void Product_List_Update()
@@ -39,12 +40,18 @@ namespace E_elektryk
                         ListViewItem item = new ListViewItem(p.ID.ToString());
                         item.SubItems.Add(p.Nazwa);
                         item.SubItems.Add(p.Producent);
+                        item.SubItems.Add(p.Numer_katalogowy);
                         item.SubItems.Add(p.Jm);
                         item.SubItems.Add(p.Ilość.ToString());
                         item.SubItems.Add(p.Cena_netto.ToString() + " zł");
                         item.SubItems.Add(p.Vat.ToString() + " %");
                         item.SubItems.Add(p.Cena_brutto.ToString() + " zł");
-                        item.SubItems.Add(p.Kategoria.ToString());
+                        if (p.Kategoria != 0)
+                        {
+                            kategoria_produktu product_cat = new kategoria_produktu();
+                            product_cat = db.kategoria_produktu.Find(p.Kategoria);
+                            item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
+                        }
                         item.SubItems.Add(value.ToString() + " zł");
                         Products_list.Items.Add(item);
                     }
@@ -188,6 +195,22 @@ namespace E_elektryk
                     }
                 }
             }
+        }
+
+        private void Offer_List_Update()
+        {
+
+        }
+
+        private void Button_Add_Offer_Click(object sender, EventArgs e)
+        {
+            Window_Add_Offer offer = new Window_Add_Offer();
+            offer.ShowDialog();
+        } // Add new offer
+
+        private void Products_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
