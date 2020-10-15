@@ -23,5 +23,6 @@ namespace E_elektryk
         public double Vat { get; set; }
         public decimal Cena_brutto { get; set; }
         public int Kategoria { get; set; }
+        public string Numer_katalogowy { get; set; }
     }
 }
