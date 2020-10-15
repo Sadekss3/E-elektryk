@@ -33,6 +33,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Wyceny = new System.Windows.Forms.TabPage();
+            this.Delete_Offer = new System.Windows.Forms.Button();
+            this.Button_Modyficate_Offer = new System.Windows.Forms.Button();
+            this.Button_Add_Offer = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.ID_offer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Offer_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Offer_Client = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Offer_Order_Adress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Offer_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Offer_Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Kontrahenci = new System.Windows.Forms.TabPage();
             this.Button_Delete_Client = new System.Windows.Forms.Button();
             this.Button_Datamod_Client = new System.Windows.Forms.Button();
@@ -64,8 +74,10 @@
             this.Button_Modyfication = new System.Windows.Forms.Button();
             this.Button_Add = new System.Windows.Forms.Button();
             this.Faktury = new System.Windows.Forms.TabPage();
+            this.columnHeade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.Zlecenia.SuspendLayout();
+            this.Wyceny.SuspendLayout();
             this.Kontrahenci.SuspendLayout();
             this.Magazyn.SuspendLayout();
             this.SuspendLayout();
@@ -126,13 +138,114 @@
             // 
             // Wyceny
             // 
+            this.Wyceny.BackColor = System.Drawing.Color.DimGray;
+            this.Wyceny.Controls.Add(this.Delete_Offer);
+            this.Wyceny.Controls.Add(this.Button_Modyficate_Offer);
+            this.Wyceny.Controls.Add(this.Button_Add_Offer);
+            this.Wyceny.Controls.Add(this.listView1);
             this.Wyceny.Location = new System.Drawing.Point(4, 22);
             this.Wyceny.Name = "Wyceny";
             this.Wyceny.Padding = new System.Windows.Forms.Padding(3);
             this.Wyceny.Size = new System.Drawing.Size(792, 424);
             this.Wyceny.TabIndex = 1;
             this.Wyceny.Text = "Wyceny";
-            this.Wyceny.UseVisualStyleBackColor = true;
+            // 
+            // Delete_Offer
+            // 
+            this.Delete_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Delete_Offer.BackColor = System.Drawing.Color.Gainsboro;
+            this.Delete_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Delete_Offer.FlatAppearance.BorderSize = 2;
+            this.Delete_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Delete_Offer.Location = new System.Drawing.Point(280, 383);
+            this.Delete_Offer.Name = "Delete_Offer";
+            this.Delete_Offer.Size = new System.Drawing.Size(130, 38);
+            this.Delete_Offer.TabIndex = 11;
+            this.Delete_Offer.Text = "Usuń";
+            this.Delete_Offer.UseVisualStyleBackColor = false;
+            // 
+            // Button_Modyficate_Offer
+            // 
+            this.Button_Modyficate_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_Modyficate_Offer.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_Modyficate_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Modyficate_Offer.FlatAppearance.BorderSize = 2;
+            this.Button_Modyficate_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Modyficate_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Modyficate_Offer.Location = new System.Drawing.Point(145, 383);
+            this.Button_Modyficate_Offer.Name = "Button_Modyficate_Offer";
+            this.Button_Modyficate_Offer.Size = new System.Drawing.Size(130, 38);
+            this.Button_Modyficate_Offer.TabIndex = 10;
+            this.Button_Modyficate_Offer.Text = "Modyfikuj";
+            this.Button_Modyficate_Offer.UseVisualStyleBackColor = false;
+            // 
+            // Button_Add_Offer
+            // 
+            this.Button_Add_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_Add_Offer.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_Add_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Add_Offer.FlatAppearance.BorderSize = 2;
+            this.Button_Add_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Add_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Add_Offer.Location = new System.Drawing.Point(10, 383);
+            this.Button_Add_Offer.Name = "Button_Add_Offer";
+            this.Button_Add_Offer.Size = new System.Drawing.Size(130, 38);
+            this.Button_Add_Offer.TabIndex = 9;
+            this.Button_Add_Offer.Text = "Dodaj ";
+            this.Button_Add_Offer.UseVisualStyleBackColor = false;
+            this.Button_Add_Offer.Click += new System.EventHandler(this.Button_Add_Offer_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID_offer,
+            this.Offer_name,
+            this.Offer_Client,
+            this.Offer_Order_Adress,
+            this.Offer_Date,
+            this.Offer_Status});
+            this.listView1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(792, 380);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // ID_offer
+            // 
+            this.ID_offer.Text = "ID";
+            this.ID_offer.Width = 45;
+            // 
+            // Offer_name
+            // 
+            this.Offer_name.Text = "Nazwa";
+            this.Offer_name.Width = 140;
+            // 
+            // Offer_Client
+            // 
+            this.Offer_Client.Text = "Zleceniodawca";
+            this.Offer_Client.Width = 145;
+            // 
+            // Offer_Order_Adress
+            // 
+            this.Offer_Order_Adress.Text = "Adres zlecenia";
+            this.Offer_Order_Adress.Width = 160;
+            // 
+            // Offer_Date
+            // 
+            this.Offer_Date.Text = "Data_wyceny";
+            this.Offer_Date.Width = 130;
+            // 
+            // Offer_Status
+            // 
+            this.Offer_Status.Text = "Status  wyceny";
             // 
             // Kontrahenci
             // 
@@ -156,7 +269,7 @@
             this.Button_Delete_Client.FlatAppearance.BorderSize = 2;
             this.Button_Delete_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Delete_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Delete_Client.Location = new System.Drawing.Point(281, 383);
+            this.Button_Delete_Client.Location = new System.Drawing.Point(280, 383);
             this.Button_Delete_Client.Name = "Button_Delete_Client";
             this.Button_Delete_Client.Size = new System.Drawing.Size(130, 38);
             this.Button_Delete_Client.TabIndex = 8;
@@ -188,7 +301,7 @@
             this.Button_Add_Client.FlatAppearance.BorderSize = 2;
             this.Button_Add_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Add_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Add_Client.Location = new System.Drawing.Point(9, 383);
+            this.Button_Add_Client.Location = new System.Drawing.Point(10, 383);
             this.Button_Add_Client.Name = "Button_Add_Client";
             this.Button_Add_Client.Size = new System.Drawing.Size(130, 38);
             this.Button_Add_Client.TabIndex = 6;
@@ -302,6 +415,7 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
+            this.columnHeade,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
@@ -319,6 +433,7 @@
             this.Products_list.TabIndex = 6;
             this.Products_list.UseCompatibleStateImageBehavior = false;
             this.Products_list.View = System.Windows.Forms.View.Details;
+            this.Products_list.SelectedIndexChanged += new System.EventHandler(this.Products_list_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -365,7 +480,7 @@
             // columnHeader
             // 
             this.columnHeader.Text = "kategoria";
-            this.columnHeader.Width = 160;
+            this.columnHeader.Width = 180;
             // 
             // columnHeader9
             // 
@@ -397,7 +512,7 @@
             this.Button_Modyfication.FlatAppearance.BorderSize = 2;
             this.Button_Modyfication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Modyfication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Modyfication.Location = new System.Drawing.Point(144, 383);
+            this.Button_Modyfication.Location = new System.Drawing.Point(145, 383);
             this.Button_Modyfication.Name = "Button_Modyfication";
             this.Button_Modyfication.Size = new System.Drawing.Size(130, 38);
             this.Button_Modyfication.TabIndex = 4;
@@ -413,7 +528,7 @@
             this.Button_Add.FlatAppearance.BorderSize = 2;
             this.Button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Add.Location = new System.Drawing.Point(8, 383);
+            this.Button_Add.Location = new System.Drawing.Point(10, 383);
             this.Button_Add.Name = "Button_Add";
             this.Button_Add.Size = new System.Drawing.Size(130, 38);
             this.Button_Add.TabIndex = 3;
@@ -430,6 +545,11 @@
             this.Faktury.Text = "Faktury";
             this.Faktury.UseVisualStyleBackColor = true;
             // 
+            // columnHeade
+            // 
+            this.columnHeade.Text = "Symbol Katalogowy";
+            this.columnHeade.Width = 180;
+            // 
             // main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,10 +558,12 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "main_Window";
             this.Text = "E-elektryk";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.Form1_Load);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.Zlecenia.ResumeLayout(false);
+            this.Wyceny.ResumeLayout(false);
             this.Kontrahenci.ResumeLayout(false);
             this.Magazyn.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -486,6 +608,17 @@
         private System.Windows.Forms.Button Button_Modyfication;
         private System.Windows.Forms.Button Button_Add;
         private System.Windows.Forms.TabPage Faktury;
+        private System.Windows.Forms.Button Delete_Offer;
+        private System.Windows.Forms.Button Button_Modyficate_Offer;
+        private System.Windows.Forms.Button Button_Add_Offer;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader ID_offer;
+        private System.Windows.Forms.ColumnHeader Offer_name;
+        private System.Windows.Forms.ColumnHeader Offer_Client;
+        private System.Windows.Forms.ColumnHeader Offer_Order_Adress;
+        private System.Windows.Forms.ColumnHeader Offer_Date;
+        private System.Windows.Forms.ColumnHeader Offer_Status;
+        private System.Windows.Forms.ColumnHeader columnHeade;
     }
 }
 
