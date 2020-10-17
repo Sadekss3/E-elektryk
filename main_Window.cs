@@ -53,6 +53,7 @@ namespace E_elektryk
                             item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                         }
                         item.SubItems.Add(value.ToString() + " zł");
+                        item.Font = new Font(item.Font, FontStyle.Regular);
                         Products_list.Items.Add(item);
                     }
                 }
@@ -135,6 +136,7 @@ namespace E_elektryk
                         item.SubItems.Add(C.E_mail);
                         item.SubItems.Add(C.Telefon_1.ToString());
                         item.SubItems.Add(C.Telefon_2.ToString());
+                        item.Font = new Font(item.Font, FontStyle.Regular);
                         Client_list.Items.Add(item);
                     }
                 }
@@ -207,10 +209,5 @@ namespace E_elektryk
             Window_Add_Offer offer = new Window_Add_Offer();
             offer.ShowDialog();
         } // Add new offer
-
-        private void Products_list_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
