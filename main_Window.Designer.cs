@@ -63,6 +63,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -74,7 +75,6 @@
             this.Button_Modyfication = new System.Windows.Forms.Button();
             this.Button_Add = new System.Windows.Forms.Button();
             this.Faktury = new System.Windows.Forms.TabPage();
-            this.columnHeade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.Zlecenia.SuspendLayout();
             this.Wyceny.SuspendLayout();
@@ -90,6 +90,7 @@
             this.tabControl1.Controls.Add(this.Magazyn);
             this.tabControl1.Controls.Add(this.Faktury);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -246,6 +247,7 @@
             // Offer_Status
             // 
             this.Offer_Status.Text = "Status  wyceny";
+            this.Offer_Status.Width = 120;
             // 
             // Kontrahenci
             // 
@@ -423,7 +425,7 @@
             this.columnHeader8,
             this.columnHeader,
             this.columnHeader9});
-            this.Products_list.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Products_list.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Products_list.FullRowSelect = true;
             this.Products_list.GridLines = true;
             this.Products_list.HideSelection = false;
@@ -433,7 +435,6 @@
             this.Products_list.TabIndex = 6;
             this.Products_list.UseCompatibleStateImageBehavior = false;
             this.Products_list.View = System.Windows.Forms.View.Details;
-            this.Products_list.SelectedIndexChanged += new System.EventHandler(this.Products_list_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -449,6 +450,11 @@
             // 
             this.columnHeader3.Text = "Producent";
             this.columnHeader3.Width = 120;
+            // 
+            // columnHeade
+            // 
+            this.columnHeade.Text = "Symbol Katalogowy";
+            this.columnHeade.Width = 180;
             // 
             // columnHeader4
             // 
@@ -544,11 +550,6 @@
             this.Faktury.TabIndex = 4;
             this.Faktury.Text = "Faktury";
             this.Faktury.UseVisualStyleBackColor = true;
-            // 
-            // columnHeade
-            // 
-            this.columnHeade.Text = "Symbol Katalogowy";
-            this.columnHeade.Width = 180;
             // 
             // main_Window
             // 
