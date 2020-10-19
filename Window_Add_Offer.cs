@@ -26,8 +26,6 @@ namespace E_elektryk
 
         private void Window_Add_Offer_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.produkt' . Możesz go przenieść lub usunąć.
-            //this.produktTableAdapter.Fill(this.zlecenieDataSet.produkt);
             using (zlecenieEntities db = new zlecenieEntities())
             {
                 listView1.Items.Clear();
