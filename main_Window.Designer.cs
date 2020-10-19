@@ -75,6 +75,14 @@
             this.Button_Modyfication = new System.Windows.Forms.Button();
             this.Button_Add = new System.Windows.Forms.Button();
             this.Faktury = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.Zlecenia.SuspendLayout();
             this.Wyceny.SuspendLayout();
@@ -92,9 +100,10 @@
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 450);
+            this.tabControl1.Size = new System.Drawing.Size(2904, 1235);
             this.tabControl1.TabIndex = 1;
             // 
             // Zlecenia
@@ -102,10 +111,11 @@
             this.Zlecenia.BackColor = System.Drawing.Color.Transparent;
             this.Zlecenia.Controls.Add(this.button2);
             this.Zlecenia.Controls.Add(this.button1);
-            this.Zlecenia.Location = new System.Drawing.Point(4, 22);
+            this.Zlecenia.Location = new System.Drawing.Point(8, 40);
+            this.Zlecenia.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Zlecenia.Name = "Zlecenia";
-            this.Zlecenia.Padding = new System.Windows.Forms.Padding(3);
-            this.Zlecenia.Size = new System.Drawing.Size(792, 424);
+            this.Zlecenia.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Zlecenia.Size = new System.Drawing.Size(1584, 817);
             this.Zlecenia.TabIndex = 0;
             this.Zlecenia.Text = "Zlecenia";
             // 
@@ -116,9 +126,10 @@
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(129, 386);
+            this.button2.Location = new System.Drawing.Point(258, 742);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 38);
+            this.button2.Size = new System.Drawing.Size(260, 73);
             this.button2.TabIndex = 2;
             this.button2.Text = "Usuń Zlecenie";
             this.button2.UseVisualStyleBackColor = true;
@@ -130,9 +141,10 @@
             this.button1.FlatAppearance.BorderSize = 2;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(0, 386);
+            this.button1.Location = new System.Drawing.Point(0, 742);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 38);
+            this.button1.Size = new System.Drawing.Size(260, 73);
             this.button1.TabIndex = 1;
             this.button1.Text = "Dodaj Zlecenie";
             this.button1.UseVisualStyleBackColor = true;
@@ -140,14 +152,23 @@
             // Wyceny
             // 
             this.Wyceny.BackColor = System.Drawing.Color.DimGray;
+            this.Wyceny.Controls.Add(this.label4);
+            this.Wyceny.Controls.Add(this.label3);
+            this.Wyceny.Controls.Add(this.label2);
+            this.Wyceny.Controls.Add(this.textBox3);
+            this.Wyceny.Controls.Add(this.textBox2);
+            this.Wyceny.Controls.Add(this.textBox1);
+            this.Wyceny.Controls.Add(this.label1);
             this.Wyceny.Controls.Add(this.Delete_Offer);
             this.Wyceny.Controls.Add(this.Button_Modyficate_Offer);
             this.Wyceny.Controls.Add(this.Button_Add_Offer);
             this.Wyceny.Controls.Add(this.listView1);
-            this.Wyceny.Location = new System.Drawing.Point(4, 22);
+            this.Wyceny.Controls.Add(this.panel1);
+            this.Wyceny.Location = new System.Drawing.Point(8, 40);
+            this.Wyceny.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Wyceny.Name = "Wyceny";
-            this.Wyceny.Padding = new System.Windows.Forms.Padding(3);
-            this.Wyceny.Size = new System.Drawing.Size(792, 424);
+            this.Wyceny.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Wyceny.Size = new System.Drawing.Size(2888, 1187);
             this.Wyceny.TabIndex = 1;
             this.Wyceny.Text = "Wyceny";
             // 
@@ -159,9 +180,10 @@
             this.Delete_Offer.FlatAppearance.BorderSize = 2;
             this.Delete_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Delete_Offer.Location = new System.Drawing.Point(280, 383);
+            this.Delete_Offer.Location = new System.Drawing.Point(560, 1107);
+            this.Delete_Offer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Delete_Offer.Name = "Delete_Offer";
-            this.Delete_Offer.Size = new System.Drawing.Size(130, 38);
+            this.Delete_Offer.Size = new System.Drawing.Size(260, 73);
             this.Delete_Offer.TabIndex = 11;
             this.Delete_Offer.Text = "Usuń";
             this.Delete_Offer.UseVisualStyleBackColor = false;
@@ -174,9 +196,10 @@
             this.Button_Modyficate_Offer.FlatAppearance.BorderSize = 2;
             this.Button_Modyficate_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Modyficate_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Modyficate_Offer.Location = new System.Drawing.Point(145, 383);
+            this.Button_Modyficate_Offer.Location = new System.Drawing.Point(290, 1107);
+            this.Button_Modyficate_Offer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Button_Modyficate_Offer.Name = "Button_Modyficate_Offer";
-            this.Button_Modyficate_Offer.Size = new System.Drawing.Size(130, 38);
+            this.Button_Modyficate_Offer.Size = new System.Drawing.Size(260, 73);
             this.Button_Modyficate_Offer.TabIndex = 10;
             this.Button_Modyficate_Offer.Text = "Modyfikuj";
             this.Button_Modyficate_Offer.UseVisualStyleBackColor = false;
@@ -189,9 +212,10 @@
             this.Button_Add_Offer.FlatAppearance.BorderSize = 2;
             this.Button_Add_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Add_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Add_Offer.Location = new System.Drawing.Point(10, 383);
+            this.Button_Add_Offer.Location = new System.Drawing.Point(20, 1107);
+            this.Button_Add_Offer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Button_Add_Offer.Name = "Button_Add_Offer";
-            this.Button_Add_Offer.Size = new System.Drawing.Size(130, 38);
+            this.Button_Add_Offer.Size = new System.Drawing.Size(260, 73);
             this.Button_Add_Offer.TabIndex = 9;
             this.Button_Add_Offer.Text = "Dodaj ";
             this.Button_Add_Offer.UseVisualStyleBackColor = false;
@@ -212,9 +236,10 @@
             this.listView1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Location = new System.Drawing.Point(0, 79);
+            this.listView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(792, 380);
+            this.listView1.Size = new System.Drawing.Size(2888, 1021);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -257,10 +282,11 @@
             this.Kontrahenci.Controls.Add(this.Button_Datamod_Client);
             this.Kontrahenci.Controls.Add(this.Button_Add_Client);
             this.Kontrahenci.Controls.Add(this.Client_list);
-            this.Kontrahenci.Location = new System.Drawing.Point(4, 22);
+            this.Kontrahenci.Location = new System.Drawing.Point(8, 40);
+            this.Kontrahenci.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Kontrahenci.Name = "Kontrahenci";
-            this.Kontrahenci.Padding = new System.Windows.Forms.Padding(3);
-            this.Kontrahenci.Size = new System.Drawing.Size(792, 424);
+            this.Kontrahenci.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Kontrahenci.Size = new System.Drawing.Size(1584, 817);
             this.Kontrahenci.TabIndex = 2;
             this.Kontrahenci.Text = "Kontrahenci";
             // 
@@ -272,9 +298,10 @@
             this.Button_Delete_Client.FlatAppearance.BorderSize = 2;
             this.Button_Delete_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Delete_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Delete_Client.Location = new System.Drawing.Point(280, 383);
+            this.Button_Delete_Client.Location = new System.Drawing.Point(560, 737);
+            this.Button_Delete_Client.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Button_Delete_Client.Name = "Button_Delete_Client";
-            this.Button_Delete_Client.Size = new System.Drawing.Size(130, 38);
+            this.Button_Delete_Client.Size = new System.Drawing.Size(260, 73);
             this.Button_Delete_Client.TabIndex = 8;
             this.Button_Delete_Client.Text = "Usuń";
             this.Button_Delete_Client.UseVisualStyleBackColor = false;
@@ -288,9 +315,10 @@
             this.Button_Datamod_Client.FlatAppearance.BorderSize = 2;
             this.Button_Datamod_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Datamod_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Datamod_Client.Location = new System.Drawing.Point(145, 383);
+            this.Button_Datamod_Client.Location = new System.Drawing.Point(290, 737);
+            this.Button_Datamod_Client.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Button_Datamod_Client.Name = "Button_Datamod_Client";
-            this.Button_Datamod_Client.Size = new System.Drawing.Size(130, 38);
+            this.Button_Datamod_Client.Size = new System.Drawing.Size(260, 73);
             this.Button_Datamod_Client.TabIndex = 7;
             this.Button_Datamod_Client.Text = "Modyfikuj";
             this.Button_Datamod_Client.UseVisualStyleBackColor = false;
@@ -304,9 +332,10 @@
             this.Button_Add_Client.FlatAppearance.BorderSize = 2;
             this.Button_Add_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Add_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Add_Client.Location = new System.Drawing.Point(10, 383);
+            this.Button_Add_Client.Location = new System.Drawing.Point(20, 737);
+            this.Button_Add_Client.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Button_Add_Client.Name = "Button_Add_Client";
-            this.Button_Add_Client.Size = new System.Drawing.Size(130, 38);
+            this.Button_Add_Client.Size = new System.Drawing.Size(260, 73);
             this.Button_Add_Client.TabIndex = 6;
             this.Button_Add_Client.Text = "Dodaj ";
             this.Button_Add_Client.UseVisualStyleBackColor = false;
@@ -336,9 +365,10 @@
             this.Client_list.GridLines = true;
             this.Client_list.HideSelection = false;
             this.Client_list.Location = new System.Drawing.Point(0, 0);
+            this.Client_list.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Client_list.MultiSelect = false;
             this.Client_list.Name = "Client_list";
-            this.Client_list.Size = new System.Drawing.Size(792, 380);
+            this.Client_list.Size = new System.Drawing.Size(1580, 727);
             this.Client_list.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.Client_list.TabIndex = 0;
             this.Client_list.UseCompatibleStateImageBehavior = false;
@@ -400,10 +430,11 @@
             this.Magazyn.Controls.Add(this.Button_Delete);
             this.Magazyn.Controls.Add(this.Button_Modyfication);
             this.Magazyn.Controls.Add(this.Button_Add);
-            this.Magazyn.Location = new System.Drawing.Point(4, 22);
+            this.Magazyn.Location = new System.Drawing.Point(8, 40);
+            this.Magazyn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Magazyn.Name = "Magazyn";
-            this.Magazyn.Padding = new System.Windows.Forms.Padding(3);
-            this.Magazyn.Size = new System.Drawing.Size(792, 424);
+            this.Magazyn.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Magazyn.Size = new System.Drawing.Size(1584, 817);
             this.Magazyn.TabIndex = 3;
             this.Magazyn.Text = "Kartoteka Materiałowa";
             // 
@@ -431,8 +462,9 @@
             this.Products_list.GridLines = true;
             this.Products_list.HideSelection = false;
             this.Products_list.Location = new System.Drawing.Point(0, 0);
+            this.Products_list.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Products_list.Name = "Products_list";
-            this.Products_list.Size = new System.Drawing.Size(792, 380);
+            this.Products_list.Size = new System.Drawing.Size(1580, 727);
             this.Products_list.TabIndex = 6;
             this.Products_list.UseCompatibleStateImageBehavior = false;
             this.Products_list.View = System.Windows.Forms.View.Details;
@@ -503,9 +535,10 @@
             this.Button_Delete.FlatAppearance.BorderSize = 2;
             this.Button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Delete.Location = new System.Drawing.Point(280, 383);
+            this.Button_Delete.Location = new System.Drawing.Point(560, 737);
+            this.Button_Delete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Button_Delete.Name = "Button_Delete";
-            this.Button_Delete.Size = new System.Drawing.Size(130, 38);
+            this.Button_Delete.Size = new System.Drawing.Size(260, 73);
             this.Button_Delete.TabIndex = 5;
             this.Button_Delete.Text = "Usuń";
             this.Button_Delete.UseVisualStyleBackColor = false;
@@ -519,9 +552,10 @@
             this.Button_Modyfication.FlatAppearance.BorderSize = 2;
             this.Button_Modyfication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Modyfication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Modyfication.Location = new System.Drawing.Point(145, 383);
+            this.Button_Modyfication.Location = new System.Drawing.Point(290, 737);
+            this.Button_Modyfication.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Button_Modyfication.Name = "Button_Modyfication";
-            this.Button_Modyfication.Size = new System.Drawing.Size(130, 38);
+            this.Button_Modyfication.Size = new System.Drawing.Size(260, 73);
             this.Button_Modyfication.TabIndex = 4;
             this.Button_Modyfication.Text = "Modyfikuj";
             this.Button_Modyfication.UseVisualStyleBackColor = false;
@@ -535,9 +569,10 @@
             this.Button_Add.FlatAppearance.BorderSize = 2;
             this.Button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Add.Location = new System.Drawing.Point(10, 383);
+            this.Button_Add.Location = new System.Drawing.Point(20, 737);
+            this.Button_Add.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Button_Add.Name = "Button_Add";
-            this.Button_Add.Size = new System.Drawing.Size(130, 38);
+            this.Button_Add.Size = new System.Drawing.Size(260, 73);
             this.Button_Add.TabIndex = 3;
             this.Button_Add.Text = "Dodaj ";
             this.Button_Add.UseVisualStyleBackColor = false;
@@ -545,19 +580,98 @@
             // 
             // Faktury
             // 
-            this.Faktury.Location = new System.Drawing.Point(4, 22);
+            this.Faktury.Location = new System.Drawing.Point(8, 40);
+            this.Faktury.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Faktury.Name = "Faktury";
-            this.Faktury.Size = new System.Drawing.Size(792, 424);
+            this.Faktury.Size = new System.Drawing.Size(1584, 817);
             this.Faktury.TabIndex = 4;
             this.Faktury.Text = "Faktury";
             this.Faktury.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(24, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Szukaj po:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(491, 17);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(262, 32);
+            this.textBox1.TabIndex = 13;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(1087, 17);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(262, 32);
+            this.textBox2.TabIndex = 14;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(1624, 17);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(262, 32);
+            this.textBox3.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LightGray;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(827, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 25);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Nazwa Konbtrahenta:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LightGray;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(285, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(184, 25);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Nazwa zlecenia:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.LightGray;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(1424, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(176, 25);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "ID Kontrahenta:";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2888, 70);
+            this.panel1.TabIndex = 19;
+            // 
             // main_Window
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(2904, 1235);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "main_Window";
             this.Text = "E-Elektryk";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -566,6 +680,7 @@
             this.tabControl1.ResumeLayout(false);
             this.Zlecenia.ResumeLayout(false);
             this.Wyceny.ResumeLayout(false);
+            this.Wyceny.PerformLayout();
             this.Kontrahenci.ResumeLayout(false);
             this.Magazyn.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -621,6 +736,14 @@
         private System.Windows.Forms.ColumnHeader Offer_Date;
         private System.Windows.Forms.ColumnHeader Offer_Status;
         private System.Windows.Forms.ColumnHeader columnHeade;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
