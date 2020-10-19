@@ -209,5 +209,10 @@ namespace E_elektryk
             Window_Add_Offer offer = new Window_Add_Offer();
             offer.ShowDialog();
         } // Add new offer
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
