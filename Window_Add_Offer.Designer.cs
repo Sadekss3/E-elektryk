@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Button_Cancel_Offer = new System.Windows.Forms.Button();
             this.Button_Save_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
@@ -53,17 +54,33 @@
             this.Button_chose_Client = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zlecenieDataSet = new E_elektryk.zlecenieDataSet();
+            this.produktTableAdapter = new E_elektryk.zlecenieDataSetTableAdapters.produktTableAdapter();
+            this.sum_e_taxes_label = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sum_w_taxes_label = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Button_Cancel_Offer
@@ -101,7 +118,7 @@
             // 
             this.label_Offer_Name.AutoSize = true;
             this.label_Offer_Name.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Offer_Name.Location = new System.Drawing.Point(15, 15);
+            this.label_Offer_Name.Location = new System.Drawing.Point(3, 3);
             this.label_Offer_Name.Name = "label_Offer_Name";
             this.label_Offer_Name.Size = new System.Drawing.Size(107, 15);
             this.label_Offer_Name.TabIndex = 14;
@@ -111,7 +128,7 @@
             // 
             this.label_Offer_Adress.AutoSize = true;
             this.label_Offer_Adress.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Offer_Adress.Location = new System.Drawing.Point(465, 15);
+            this.label_Offer_Adress.Location = new System.Drawing.Point(453, 3);
             this.label_Offer_Adress.Name = "label_Offer_Adress";
             this.label_Offer_Adress.Size = new System.Drawing.Size(102, 15);
             this.label_Offer_Adress.TabIndex = 15;
@@ -121,7 +138,7 @@
             // 
             this.label_Offer_Client.AutoSize = true;
             this.label_Offer_Client.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Offer_Client.Location = new System.Drawing.Point(249, 15);
+            this.label_Offer_Client.Location = new System.Drawing.Point(237, 3);
             this.label_Offer_Client.Name = "label_Offer_Client";
             this.label_Offer_Client.Size = new System.Drawing.Size(102, 15);
             this.label_Offer_Client.TabIndex = 16;
@@ -131,7 +148,7 @@
             // 
             this.label_Offer_Date.AutoSize = true;
             this.label_Offer_Date.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Offer_Date.Location = new System.Drawing.Point(1033, 15);
+            this.label_Offer_Date.Location = new System.Drawing.Point(1054, 3);
             this.label_Offer_Date.Name = "label_Offer_Date";
             this.label_Offer_Date.Size = new System.Drawing.Size(96, 15);
             this.label_Offer_Date.TabIndex = 17;
@@ -139,7 +156,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(1036, 45);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1057, 36);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 18;
@@ -162,7 +179,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(465, 50);
+            this.label1.Location = new System.Drawing.Point(453, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 14);
             this.label1.TabIndex = 21;
@@ -172,7 +189,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(465, 80);
+            this.label2.Location = new System.Drawing.Point(453, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 14);
             this.label2.TabIndex = 22;
@@ -196,7 +213,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(465, 110);
+            this.label4.Location = new System.Drawing.Point(453, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 14);
             this.label4.TabIndex = 26;
@@ -204,7 +221,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(598, 108);
+            this.textBox5.Location = new System.Drawing.Point(586, 96);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(158, 20);
             this.textBox5.TabIndex = 27;
@@ -213,7 +230,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(794, 48);
+            this.label5.Location = new System.Drawing.Point(782, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 14);
             this.label5.TabIndex = 28;
@@ -221,14 +238,14 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(944, 48);
+            this.textBox6.Location = new System.Drawing.Point(932, 36);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(68, 20);
             this.textBox6.TabIndex = 29;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(944, 78);
+            this.textBox7.Location = new System.Drawing.Point(932, 66);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(68, 20);
             this.textBox7.TabIndex = 30;
@@ -237,7 +254,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(794, 78);
+            this.label6.Location = new System.Drawing.Point(782, 72);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 14);
             this.label6.TabIndex = 31;
@@ -247,7 +264,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(647, 81);
+            this.label7.Location = new System.Drawing.Point(634, 69);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(11, 14);
             this.label7.TabIndex = 32;
@@ -269,12 +286,13 @@
             // 
             // Button_chose_Client
             // 
-            this.Button_chose_Client.Location = new System.Drawing.Point(252, 122);
+            this.Button_chose_Client.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Button_chose_Client.Location = new System.Drawing.Point(240, 107);
             this.Button_chose_Client.Name = "Button_chose_Client";
             this.Button_chose_Client.Size = new System.Drawing.Size(104, 34);
             this.Button_chose_Client.TabIndex = 35;
             this.Button_chose_Client.Text = "Wybierz z listy";
-            this.Button_chose_Client.UseVisualStyleBackColor = true;
+            this.Button_chose_Client.UseVisualStyleBackColor = false;
             // 
             // textBox8
             // 
@@ -285,95 +303,213 @@
             // 
             // listView1
             // 
-            this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.listView1.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this.listView1.AllowColumnReorder = true;
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.CheckBoxes = true;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader10,
             this.columnHeader11,
             this.columnHeader12,
-            this.columnHeader13,
             this.columnHeader14,
             this.columnHeader15,
             this.columnHeader16,
             this.columnHeader17,
             this.columnHeader18,
-            this.columnHeader19,
-            this.columnHeader20});
+            this.columnHeader19});
             this.listView1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.listView1.LabelEdit = true;
             this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(12, 162);
+            this.listView1.Location = new System.Drawing.Point(12, 251);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
-            this.listView1.Size = new System.Drawing.Size(1580, 481);
+            this.listView1.Size = new System.Drawing.Size(788, 325);
             this.listView1.TabIndex = 40;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "ID";
-            this.columnHeader10.Width = 55;
+            this.listView1.DoubleClick += new System.EventHandler(this.Add_to_offer);
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Nazwa";
-            this.columnHeader11.Width = 260;
+            this.columnHeader11.Width = 250;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Producent";
-            this.columnHeader12.Width = 120;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Symbol Katalogowy";
-            this.columnHeader13.Width = 55;
+            this.columnHeader12.Width = 90;
             // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "Jm";
-            this.columnHeader14.Width = 55;
+            this.columnHeader14.Width = 35;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "Ilość";
-            this.columnHeader15.Width = 140;
+            this.columnHeader15.Width = 50;
             // 
             // columnHeader16
             // 
             this.columnHeader16.Text = "Cena netto";
             this.columnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader16.Width = 140;
+            this.columnHeader16.Width = 90;
             // 
             // columnHeader17
             // 
             this.columnHeader17.Text = "VAT";
-            this.columnHeader17.Width = 180;
+            this.columnHeader17.Width = 45;
             // 
             // columnHeader18
             // 
             this.columnHeader18.Text = "Cena Brutto";
             this.columnHeader18.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader18.Width = 180;
+            this.columnHeader18.Width = 100;
             // 
             // columnHeader19
             // 
             this.columnHeader19.Text = "kategoria";
-            this.columnHeader19.Width = 180;
+            this.columnHeader19.Width = 120;
             // 
-            // columnHeader20
+            // panel1
             // 
-            this.columnHeader20.Text = "Wartość magazynu";
-            this.columnHeader20.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader20.Width = 160;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.label_Offer_Name);
+            this.panel1.Controls.Add(this.label_Offer_Client);
+            this.panel1.Controls.Add(this.Button_chose_Client);
+            this.panel1.Controls.Add(this.label_Offer_Adress);
+            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label_Offer_Date);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1580, 144);
+            this.panel1.TabIndex = 41;
+            // 
+            // produktBindingSource
+            // 
+            this.produktBindingSource.DataMember = "produkt";
+            this.produktBindingSource.DataSource = this.zlecenieDataSet;
+            // 
+            // zlecenieDataSet
+            // 
+            this.zlecenieDataSet.DataSetName = "zlecenieDataSet";
+            this.zlecenieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // produktTableAdapter
+            // 
+            this.produktTableAdapter.ClearBeforeFill = true;
+            // 
+            // sum_e_taxes_label
+            // 
+            this.sum_e_taxes_label.AutoSize = true;
+            this.sum_e_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sum_e_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_e_taxes_label.Location = new System.Drawing.Point(1269, 598);
+            this.sum_e_taxes_label.Name = "sum_e_taxes_label";
+            this.sum_e_taxes_label.Size = new System.Drawing.Size(0, 16);
+            this.sum_e_taxes_label.TabIndex = 43;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.dataGridView1.Location = new System.Drawing.Point(804, 251);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(788, 325);
+            this.dataGridView1.TabIndex = 44;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 250F;
+            this.Column1.HeaderText = "Nazwa";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 250;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 90F;
+            this.Column2.HeaderText = "Producent";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 90;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 35F;
+            this.Column3.HeaderText = "Jm";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 35;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 50F;
+            this.Column4.HeaderText = "Ilość";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 50;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Cena netto";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 90;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Vat";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 45;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Cena Brutto";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "kategoria";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 120;
+            // 
+            // sum_w_taxes_label
+            // 
+            this.sum_w_taxes_label.AutoSize = true;
+            this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_w_taxes_label.Location = new System.Drawing.Point(1411, 598);
+            this.sum_w_taxes_label.Name = "sum_w_taxes_label";
+            this.sum_w_taxes_label.Size = new System.Drawing.Size(0, 16);
+            this.sum_w_taxes_label.TabIndex = 45;
             // 
             // Window_Add_Offer
             // 
@@ -382,35 +518,29 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.Button_Cancel_Offer;
             this.ClientSize = new System.Drawing.Size(1604, 733);
+            this.Controls.Add(this.sum_w_taxes_label);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.sum_e_taxes_label);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.Button_chose_Client);
             this.Controls.Add(this.textBox_Offer_Adress);
             this.Controls.Add(this.textBox_Offer_Name);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label_Offer_Date);
-            this.Controls.Add(this.label_Offer_Client);
-            this.Controls.Add(this.label_Offer_Adress);
-            this.Controls.Add(this.label_Offer_Name);
             this.Controls.Add(this.Button_Save_Offer);
             this.Controls.Add(this.Button_Cancel_Offer);
+            this.Controls.Add(this.panel1);
             this.Name = "Window_Add_Offer";
             this.Text = "Widnow_Add_Offer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Window_Add_Offer_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,12 +577,24 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.ColumnHeader columnHeader19;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.ColumnHeader columnHeader18;
-        private System.Windows.Forms.ColumnHeader columnHeader20;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
         public System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Panel panel1;
+        private zlecenieDataSet zlecenieDataSet;
+        private System.Windows.Forms.BindingSource produktBindingSource;
+        private zlecenieDataSetTableAdapters.produktTableAdapter produktTableAdapter;
+        private System.Windows.Forms.Label sum_e_taxes_label;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label sum_w_taxes_label;
     }
 }
