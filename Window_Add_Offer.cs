@@ -65,7 +65,6 @@ namespace E_elektryk
             item_grid.Cells[7].Value = item.SubItems[7].Text;
             dataGridView1.Rows.Add(item_grid);
 
-            
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 string sum_e_taxes = dataGridView1.Rows[i].Cells[4].Value.ToString();
