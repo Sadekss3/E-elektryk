@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.comboBox_Product_Category = new System.Windows.Forms.ComboBox();
-            this.kategoriaproduktuBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.zlecenieDataSet = new E_elektryk.zlecenieDataSet();
-            this.kategoriaproduktuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.ComboBox_Taxes = new System.Windows.Forms.ComboBox();
@@ -51,20 +48,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.kategoriaproduktuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kategoria_produktuTableAdapter = new E_elektryk.zlecenieDataSetTableAdapters.kategoria_produktuTableAdapter();
             this.textBox_Catalog = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.kategoriaproduktuBindingSource2)).BeginInit();
+            this.zlecenieDataSet = new E_elektryk.zlecenieDataSet();
+            this.kategoriaproduktuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kategoria_produktuTableAdapter = new E_elektryk.zlecenieDataSetTableAdapters.kategoria_produktuTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kategoriaproduktuBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kategoriaproduktuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox_Product_Category
             // 
-            this.comboBox_Product_Category.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.kategoriaproduktuBindingSource2, "ID", true));
-            this.comboBox_Product_Category.DataSource = this.kategoriaproduktuBindingSource1;
+            this.comboBox_Product_Category.DataSource = this.kategoriaproduktuBindingSource;
             this.comboBox_Product_Category.DisplayMember = "Nazwa_kategorii";
             this.comboBox_Product_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Product_Category.FormattingEnabled = true;
@@ -75,21 +70,7 @@
             this.comboBox_Product_Category.Size = new System.Drawing.Size(148, 21);
             this.comboBox_Product_Category.TabIndex = 37;
             this.comboBox_Product_Category.ValueMember = "ID";
-            // 
-            // kategoriaproduktuBindingSource2
-            // 
-            this.kategoriaproduktuBindingSource2.DataMember = "kategoria_produktu";
-            this.kategoriaproduktuBindingSource2.DataSource = this.zlecenieDataSet;
-            // 
-            // zlecenieDataSet
-            // 
-            this.zlecenieDataSet.DataSetName = "zlecenieDataSet";
-            this.zlecenieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kategoriaproduktuBindingSource1
-            // 
-            this.kategoriaproduktuBindingSource1.DataMember = "kategoria_produktu";
-            this.kategoriaproduktuBindingSource1.DataSource = this.zlecenieDataSet;
+            this.comboBox_Product_Category.SelectedIndexChanged += new System.EventHandler(this.comboBox_Product_Category_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -284,15 +265,6 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Nazwa";
             // 
-            // kategoriaproduktuBindingSource
-            // 
-            this.kategoriaproduktuBindingSource.DataMember = "kategoria_produktu";
-            this.kategoriaproduktuBindingSource.DataSource = this.zlecenieDataSet;
-            // 
-            // kategoria_produktuTableAdapter
-            // 
-            this.kategoria_produktuTableAdapter.ClearBeforeFill = true;
-            // 
             // textBox_Catalog
             // 
             this.textBox_Catalog.Location = new System.Drawing.Point(234, 149);
@@ -311,6 +283,20 @@
             this.label10.Size = new System.Drawing.Size(143, 16);
             this.label10.TabIndex = 38;
             this.label10.Text = "Symbol katalogowy";
+            // 
+            // zlecenieDataSet
+            // 
+            this.zlecenieDataSet.DataSetName = "zlecenieDataSet";
+            this.zlecenieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kategoriaproduktuBindingSource
+            // 
+            this.kategoriaproduktuBindingSource.DataMember = "kategoria_produktu";
+            this.kategoriaproduktuBindingSource.DataSource = this.zlecenieDataSet;
+            // 
+            // kategoria_produktuTableAdapter
+            // 
+            this.kategoria_produktuTableAdapter.ClearBeforeFill = true;
             // 
             // Window_Add_Product
             // 
@@ -340,10 +326,9 @@
             this.Controls.Add(this.label1);
             this.Name = "Window_Add_Product";
             this.Text = "Window_Add_Product";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Window_Add_Product_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.kategoriaproduktuBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kategoriaproduktuBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kategoriaproduktuBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -371,12 +356,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_Catalog;
+        private System.Windows.Forms.Label label10;
         private zlecenieDataSet zlecenieDataSet;
         private System.Windows.Forms.BindingSource kategoriaproduktuBindingSource;
         private zlecenieDataSetTableAdapters.kategoria_produktuTableAdapter kategoria_produktuTableAdapter;
-        private System.Windows.Forms.BindingSource kategoriaproduktuBindingSource2;
-        private System.Windows.Forms.BindingSource kategoriaproduktuBindingSource1;
-        private System.Windows.Forms.TextBox textBox_Catalog;
-        private System.Windows.Forms.Label label10;
     }
 }
