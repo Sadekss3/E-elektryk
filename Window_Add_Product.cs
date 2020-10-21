@@ -162,6 +162,12 @@ namespace E_elektryk
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.kategoria_produktu' . Możesz go przenieść lub usunąć.
             this.kategoria_produktuTableAdapter.Fill(this.zlecenieDataSet.kategoria_produktu);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.produkt' . Możesz go przenieść lub usunąć.
+        }
+
+        private void comboBox_Product_Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
