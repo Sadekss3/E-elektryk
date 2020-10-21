@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="zlecenieConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="zlecenieConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.E_elektryk.Properties.Settings.GlobalReference.Default.zlecenieConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="zlecenieConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="zlecenieConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.E_elektryk.Properties.Settings.GlobalReference.Default.zlecenieConnectionString1" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="kategoria_produktuTableAdapter" GeneratorDataComponentClassName="kategoria_produktuTableAdapter" Name="kategoria_produktu" UserDataComponentName="kategoria_produktuTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="zlecenieConnectionString (Settings)" DbObjectName="zlecenie.kategoria_produktu" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="zlecenieConnectionString1 (Settings)" DbObjectName="zlecenie.kategoria_produktu" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `kategoria_produktu` WHERE ((`ID` = @p1))</CommandText>
@@ -51,7 +51,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="kontrahentTableAdapter" GeneratorDataComponentClassName="kontrahentTableAdapter" Name="kontrahent" UserDataComponentName="kontrahentTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="zlecenieConnectionString (Settings)" DbObjectName="zlecenie.kontrahent" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="zlecenieConnectionString1 (Settings)" DbObjectName="zlecenie.kontrahent" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `kontrahent` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Pesel` IS NULL) OR (`Pesel` = @p3)) AND ((@p4 = 1 AND `NIP` IS NULL) OR (`NIP` = @p5)))</CommandText>
@@ -125,7 +125,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ofertaTableAdapter" GeneratorDataComponentClassName="ofertaTableAdapter" Name="oferta" UserDataComponentName="ofertaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="zlecenieConnectionString (Settings)" DbObjectName="zlecenie.oferta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="zlecenieConnectionString1 (Settings)" DbObjectName="zlecenie.oferta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `oferta` WHERE ((`ID` = @p1) AND (`Id_zleceniodawca` = @p2) AND (`Data` = @p3))</CommandText>
@@ -183,7 +183,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="produktTableAdapter" GeneratorDataComponentClassName="produktTableAdapter" Name="produkt" UserDataComponentName="produktTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="zlecenieConnectionString (Settings)" DbObjectName="zlecenie.produkt" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="zlecenieConnectionString1 (Settings)" DbObjectName="zlecenie.produkt" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `produkt` WHERE ((`ID` = @p1) AND (`Ilość` = @p2) AND (`Cena_netto` = @p3) AND (`Vat` = @p4) AND (`Cena_brutto` = @p5) AND (`Kategoria` = @p6))</CommandText>
@@ -199,43 +199,45 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `produkt` (`Nazwa`, `Producent`, `Jm`, `Ilość`, `Cena_netto`, `Vat`, `Cena_brutto`, `Kategoria`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)</CommandText>
+                    <CommandText>INSERT INTO `produkt` (`Nazwa`, `Producent`, `Numer_katalogowy`, `Jm`, `Ilość`, `Cena_netto`, `Vat`, `Cena_brutto`, `Kategoria`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Nazwa" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Producent" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Jm" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Ilość" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_netto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Vat" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_brutto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Kategoria" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Numer_katalogowy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Jm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Ilość" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_netto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Vat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_brutto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Kategoria" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Nazwa`, `Producent`, `Jm`, `Ilość`, `Cena_netto`, `Vat`, `Cena_brutto`, `Kategoria` FROM `produkt`</CommandText>
+                    <CommandText>SELECT `ID`, `Nazwa`, `Producent`, `Numer_katalogowy`, `Jm`, `Ilość`, `Cena_netto`, `Vat`, `Cena_brutto`, `Kategoria` FROM `produkt`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `produkt` SET `Nazwa` = @p1, `Producent` = @p2, `Jm` = @p3, `Ilość` = @p4, `Cena_netto` = @p5, `Vat` = @p6, `Cena_brutto` = @p7, `Kategoria` = @p8 WHERE ((`ID` = @p9) AND (`Ilość` = @p10) AND (`Cena_netto` = @p11) AND (`Vat` = @p12) AND (`Cena_brutto` = @p13) AND (`Kategoria` = @p14))</CommandText>
+                    <CommandText>UPDATE `produkt` SET `Nazwa` = @p1, `Producent` = @p2, `Numer_katalogowy` = @p3, `Jm` = @p4, `Ilość` = @p5, `Cena_netto` = @p6, `Vat` = @p7, `Cena_brutto` = @p8, `Kategoria` = @p9 WHERE ((`ID` = @p10) AND (`Ilość` = @p11) AND (`Cena_netto` = @p12) AND (`Vat` = @p13) AND (`Cena_brutto` = @p14) AND (`Kategoria` = @p15))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Nazwa" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Producent" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Jm" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Ilość" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_netto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Vat" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_brutto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Kategoria" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Ilość" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_netto" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Vat" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_brutto" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Kategoria" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Numer_katalogowy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Jm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Ilość" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_netto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Vat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_brutto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Kategoria" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Ilość" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_netto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="Vat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="Cena_brutto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Kategoria" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -245,6 +247,7 @@
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="Nazwa" DataSetColumn="Nazwa" />
               <Mapping SourceColumn="Producent" DataSetColumn="Producent" />
+              <Mapping SourceColumn="Numer_katalogowy" DataSetColumn="Numer_katalogowy" />
               <Mapping SourceColumn="Jm" DataSetColumn="Jm" />
               <Mapping SourceColumn="Ilość" DataSetColumn="Ilość" />
               <Mapping SourceColumn="Cena_netto" DataSetColumn="Cena_netto" />
@@ -376,6 +379,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Producent" msprop:Generator_ColumnVarNameInTable="columnProducent" msprop:Generator_ColumnPropNameInRow="Producent" msprop:Generator_ColumnPropNameInTable="ProducentColumn" msprop:Generator_UserColumnName="Producent">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65535" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numer_katalogowy" msprop:Generator_ColumnVarNameInTable="columnNumer_katalogowy" msprop:Generator_ColumnPropNameInRow="Numer_katalogowy" msprop:Generator_ColumnPropNameInTable="Numer_katalogowyColumn" msprop:Generator_UserColumnName="Numer_katalogowy">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="65535" />
