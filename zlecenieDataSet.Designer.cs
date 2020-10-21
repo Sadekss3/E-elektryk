@@ -1406,6 +1406,8 @@ namespace E_elektryk {
             
             private global::System.Data.DataColumn columnProducent;
             
+            private global::System.Data.DataColumn columnNumer_katalogowy;
+            
             private global::System.Data.DataColumn columnJm;
             
             private global::System.Data.DataColumn columnIlość;
@@ -1472,6 +1474,14 @@ namespace E_elektryk {
             public global::System.Data.DataColumn ProducentColumn {
                 get {
                     return this.columnProducent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Numer_katalogowyColumn {
+                get {
+                    return this.columnNumer_katalogowy;
                 }
             }
             
@@ -1560,12 +1570,13 @@ namespace E_elektryk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public produktRow AddproduktRow(string Nazwa, string Producent, string Jm, double Ilość, decimal Cena_netto, double Vat, decimal Cena_brutto, int Kategoria) {
+            public produktRow AddproduktRow(string Nazwa, string Producent, string Numer_katalogowy, string Jm, double Ilość, decimal Cena_netto, double Vat, decimal Cena_brutto, int Kategoria) {
                 produktRow rowproduktRow = ((produktRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nazwa,
                         Producent,
+                        Numer_katalogowy,
                         Jm,
                         Ilość,
                         Cena_netto,
@@ -1604,6 +1615,7 @@ namespace E_elektryk {
                 this.columnID = base.Columns["ID"];
                 this.columnNazwa = base.Columns["Nazwa"];
                 this.columnProducent = base.Columns["Producent"];
+                this.columnNumer_katalogowy = base.Columns["Numer_katalogowy"];
                 this.columnJm = base.Columns["Jm"];
                 this.columnIlość = base.Columns["Ilość"];
                 this.columnCena_netto = base.Columns["Cena_netto"];
@@ -1621,6 +1633,8 @@ namespace E_elektryk {
                 base.Columns.Add(this.columnNazwa);
                 this.columnProducent = new global::System.Data.DataColumn("Producent", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProducent);
+                this.columnNumer_katalogowy = new global::System.Data.DataColumn("Numer_katalogowy", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumer_katalogowy);
                 this.columnJm = new global::System.Data.DataColumn("Jm", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJm);
                 this.columnIlość = new global::System.Data.DataColumn("Ilość", typeof(double), null, global::System.Data.MappingType.Element);
@@ -1644,6 +1658,8 @@ namespace E_elektryk {
                 this.columnNazwa.MaxLength = 65535;
                 this.columnProducent.AllowDBNull = false;
                 this.columnProducent.MaxLength = 65535;
+                this.columnNumer_katalogowy.AllowDBNull = false;
+                this.columnNumer_katalogowy.MaxLength = 65535;
                 this.columnJm.AllowDBNull = false;
                 this.columnJm.MaxLength = 65535;
                 this.columnIlość.AllowDBNull = false;
@@ -2154,6 +2170,17 @@ namespace E_elektryk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Numer_katalogowy {
+                get {
+                    return ((string)(this[this.tableprodukt.Numer_katalogowyColumn]));
+                }
+                set {
+                    this[this.tableprodukt.Numer_katalogowyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Jm {
                 get {
                     return ((string)(this[this.tableprodukt.JmColumn]));
@@ -2531,7 +2558,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString;
+            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3042,7 +3069,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString;
+            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3587,7 +3614,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString;
+            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3888,6 +3915,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Nazwa", "Nazwa");
             tableMapping.ColumnMappings.Add("Producent", "Producent");
+            tableMapping.ColumnMappings.Add("Numer_katalogowy", "Numer_katalogowy");
             tableMapping.ColumnMappings.Add("Jm", "Jm");
             tableMapping.ColumnMappings.Add("Ilość", "Ilość");
             tableMapping.ColumnMappings.Add("Cena_netto", "Cena_netto");
@@ -3950,8 +3978,9 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `produkt` (`Nazwa`, `Producent`, `Jm`, `Ilość`, `Cena_netto`, `Vat`, " +
-                "`Cena_brutto`, `Kategoria`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `produkt` (`Nazwa`, `Producent`, `Numer_katalogowy`, `Jm`, `Ilość`, `" +
+                "Cena_netto`, `Vat`, `Cena_brutto`, `Kategoria`) VALUES (@p1, @p2, @p3, @p4, @p5," +
+                " @p6, @p7, @p8, @p9)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3971,11 +4000,18 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.ParameterName = "@p3";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Jm";
+            param.SourceColumn = "Numer_katalogowy";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Jm";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
@@ -3983,7 +4019,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Decimal;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
@@ -3991,7 +4027,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
@@ -3999,7 +4035,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Decimal;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
@@ -4007,7 +4043,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -4016,7 +4052,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `produkt` SET `Nazwa` = @p1, `Producent` = @p2, `Jm` = @p3, `Ilość` = @p4, `Cena_netto` = @p5, `Vat` = @p6, `Cena_brutto` = @p7, `Kategoria` = @p8 WHERE ((`ID` = @p9) AND (`Ilość` = @p10) AND (`Cena_netto` = @p11) AND (`Vat` = @p12) AND (`Cena_brutto` = @p13) AND (`Kategoria` = @p14))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `produkt` SET `Nazwa` = @p1, `Producent` = @p2, `Numer_katalogowy` = @p3, `Jm` = @p4, `Ilość` = @p5, `Cena_netto` = @p6, `Vat` = @p7, `Cena_brutto` = @p8, `Kategoria` = @p9 WHERE ((`ID` = @p10) AND (`Ilość` = @p11) AND (`Cena_netto` = @p12) AND (`Vat` = @p13) AND (`Cena_brutto` = @p14) AND (`Kategoria` = @p15))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4036,11 +4072,18 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.ParameterName = "@p3";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Jm";
+            param.SourceColumn = "Numer_katalogowy";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Jm";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
@@ -4048,7 +4091,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Decimal;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
@@ -4056,7 +4099,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
@@ -4064,19 +4107,11 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Decimal;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "Cena_brutto";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Kategoria";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -4084,11 +4119,19 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
+            param.SourceColumn = "Kategoria";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
             param.SourceColumn = "ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p10";
+            param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
@@ -4096,7 +4139,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p11";
+            param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.Decimal;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
@@ -4104,7 +4147,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p12";
+            param.ParameterName = "@p13";
             param.DbType = global::System.Data.DbType.Double;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
             param.IsNullable = true;
@@ -4112,7 +4155,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p13";
+            param.ParameterName = "@p14";
             param.DbType = global::System.Data.DbType.Decimal;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
@@ -4120,7 +4163,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p14";
+            param.ParameterName = "@p15";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -4133,7 +4176,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString;
+            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4142,8 +4185,8 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Nazwa`, `Producent`, `Jm`, `Ilość`, `Cena_netto`, `Vat`, `Cena_brut" +
-                "to`, `Kategoria` FROM `produkt`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `Nazwa`, `Producent`, `Numer_katalogowy`, `Jm`, `Ilość`, `Cena_netto" +
+                "`, `Vat`, `Cena_brutto`, `Kategoria` FROM `produkt`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4231,7 +4274,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, string p2, string p3, double p4, decimal p5, double p6, decimal p7, int p8) {
+        public virtual int Insert(string p1, string p2, string p3, string p4, double p5, decimal p6, double p7, decimal p8, int p9) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -4250,11 +4293,17 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((double)(p4));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(p5));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(p6));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(p7));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(p8));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((double)(p5));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(p6));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((double)(p7));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(p8));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(p9));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4275,7 +4324,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string p1, string p2, string p3, double p4, decimal p5, double p6, decimal p7, int p8, int p9, double p10, decimal p11, double p12, decimal p13, int p14) {
+        public virtual int Update(string p1, string p2, string p3, string p4, double p5, decimal p6, double p7, decimal p8, int p9, int p10, double p11, decimal p12, double p13, decimal p14, int p15) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -4294,17 +4343,23 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(p4));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(p5));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(p6));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(p7));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p4));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(p5));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(p6));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(p7));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(p8));
             this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(p9));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(p10));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(p11));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(p12));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(p13));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(p14));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(p10));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(p11));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(p12));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(p13));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(p14));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(p15));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
