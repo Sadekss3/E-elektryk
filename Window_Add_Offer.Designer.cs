@@ -67,8 +67,6 @@
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.zlecenieDataSet = new E_elektryk.zlecenieDataSet();
-            this.produktTableAdapter = new E_elektryk.zlecenieDataSetTableAdapters.produktTableAdapter();
             this.sum_e_taxes_label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sum_w_taxes_label = new System.Windows.Forms.Label();
@@ -82,7 +80,6 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -401,20 +398,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2274, 144);
             this.panel1.TabIndex = 41;
-            // 
-            // produktBindingSource
-            // 
-            this.produktBindingSource.DataMember = "produkt";
-            this.produktBindingSource.DataSource = this.zlecenieDataSet;
-            // 
-            // zlecenieDataSet
-            // 
-            this.zlecenieDataSet.DataSetName = "zlecenieDataSet";
-            this.zlecenieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // produktTableAdapter
-            // 
-            this.produktTableAdapter.ClearBeforeFill = true;
+
             // 
             // sum_e_taxes_label
             // 
@@ -565,7 +549,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -608,9 +591,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader18;
         public System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel panel1;
-        private zlecenieDataSet zlecenieDataSet;
         private System.Windows.Forms.BindingSource produktBindingSource;
-        private zlecenieDataSetTableAdapters.produktTableAdapter produktTableAdapter;
         private System.Windows.Forms.Label sum_e_taxes_label;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label sum_w_taxes_label;
