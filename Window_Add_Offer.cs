@@ -10,14 +10,12 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace E_elektryk
 {
+    
     public partial class Window_Add_Offer : Form
     {
-        decimal sum_NET = 0;
-        decimal sum_GROS = 0;
-        decimal lot = 0;
+        
 
         public Window_Add_Offer()
         {
@@ -58,46 +56,35 @@ namespace E_elektryk
             item_grid.Cells[0].Value = item.SubItems[0].Text;
             item_grid.Cells[1].Value = item.SubItems[1].Text;
             item_grid.Cells[2].Value = item.SubItems[2].Text;
-
-            string lot = Microsoft.VisualBasic.Interaction.InputBox("Podaj ilość: ", " ", "0");
-            MessageBox.Show(lot);
-            item_grid.Cells[3].Value = lot;
-
-            string net_offer = item.SubItems[4].Text;
-            net_offer = net_offer.Trim(' ', 'z', 'ł');
-            decimal net = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot);
-            item_grid.Cells[4].Value = net;
-
-            string vat_offer = item.SubItems[5].Text;
-            string gross_offer = item.SubItems[6].Text;
-            vat_offer = vat_offer.Trim(' ','%');
-            gross_offer = gross_offer.Trim(' ', 'z','ł');
-            decimal VAT = System.Convert.ToDecimal(vat_offer);
-            decimal GROSS = System.Convert.ToDecimal(gross_offer);
-            item_grid.Cells[5].Value = vat_offer.ToString() + "%";
-            item_grid.Cells[6].Value = GROSS * System.Convert.ToDecimal(lot);
-
-            item_grid.Cells[7].Value = item.SubItems[7].Text;
+            //string lot = Microsoft.VisualBasic.Interaction.InputBox("Podaj ilość: ", " ", "0");
+            decimal lot = 1;
+            item_grid.Cells[3].Value = lot.ToString();
+            string net_offer = TRIM_price(item.SubItems[4].Text);
+            item_grid.Cells[4].Value = item.SubItems[4].Text;
+            item_grid.Cells[5].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot);
+            item_grid.Cells[6].Value = item.SubItems[5].Text;
+            string gross_offer = TRIM_price(item.SubItems[6].Text);
+            item_grid.Cells[7].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot);
+            item_grid.Cells[8].Value = item.SubItems[7].Text;
             dataGridView1.Rows.Add(item_grid);
-
-           /* for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-            {
-                string sum_e_taxes = dataGridView1.Rows[i].Cells[4].Value.ToString();
-                string sum_w_taxes = dataGridView1.Rows[i].Cells[6].Value.ToString();
-                string numbers_of_product = dataGridView1.Rows[i].Cells[3].Value.ToString();
-                sum_e_taxes = sum_e_taxes.Trim(' ', 'z', 'ł');
-                sum_w_taxes = sum_w_taxes.Trim(' ', 'z', 'ł');
-                lot = System.Convert.ToDecimal(numbers_of_product).ToString();
-                sum_NET += System.Convert.ToDecimal(sum_e_taxes);
-                sum_GROS += System.Convert.ToDecimal(sum_w_taxes);
-            }*/
+        }
+        string TRIM_price(string net)
+        {
+            net = net.Trim(' ', 'z', 'ł');
+            return net;
         }
 
- /*       private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            sum_e_taxes_label.Text = (sum_NET * lot).ToString();
-            sum_w_taxes_label.Text = (sum_GROS * lot).ToString();   
-        }*/
+            DataGridViewRow row = dataGridView1.CurrentRow;
+            decimal lot = System.Convert.ToDecimal(row.Cells[3].Value);
+            string piece_price = TRIM_price(row.Cells[4].Value.ToString());
+            row.Cells[5].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
+            string gross_offer = TRIM_price(row.Cells[7].Value.ToString());
+            string vat = (row.Cells[6].Value.ToString()).Trim(' ', '%');
+            decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+            row.Cells[7].Value = Gross * lot;
+        }
     }
 }
 
