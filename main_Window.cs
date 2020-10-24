@@ -202,47 +202,12 @@ namespace E_elektryk
         private void Offer_List_Update()
         {
 
-        }
+        } // Update Offer information from DB to listView
 
         private void Button_Add_Offer_Click(object sender, EventArgs e)
         {
             Window_Add_Offer offer = new Window_Add_Offer();
             offer.ShowDialog();
         } // Add new offer
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Zlecenia_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
