@@ -69,15 +69,16 @@
             this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sum_e_taxes_label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sum_w_taxes_label = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cena_Jednostkowa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sum_w_taxes_label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -398,7 +399,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2274, 144);
             this.panel1.TabIndex = 41;
-
             // 
             // sum_e_taxes_label
             // 
@@ -421,6 +421,7 @@
             this.Column2,
             this.Column3,
             this.Column4,
+            this.Cena_Jednostkowa,
             this.Column5,
             this.Column6,
             this.Column7,
@@ -429,19 +430,11 @@
             this.dataGridView1.Location = new System.Drawing.Point(809, 199);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.Size = new System.Drawing.Size(855, 325);
             this.dataGridView1.TabIndex = 44;
-            // 
-            // sum_w_taxes_label
-            // 
-            this.sum_w_taxes_label.AutoSize = true;
-            this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label.Location = new System.Drawing.Point(1411, 598);
-            this.sum_w_taxes_label.Name = "sum_w_taxes_label";
-            this.sum_w_taxes_label.Size = new System.Drawing.Size(0, 16);
-            this.sum_w_taxes_label.TabIndex = 45;
+            this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
             // 
             // Column1
             // 
@@ -482,6 +475,12 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 50;
             // 
+            // Cena_Jednostkowa
+            // 
+            this.Cena_Jednostkowa.HeaderText = "C.J";
+            this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
+            this.Cena_Jednostkowa.ReadOnly = true;
+            // 
             // Column5
             // 
             dataGridViewCellStyle2.Format = "C2";
@@ -519,6 +518,16 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Width = 120;
+            // 
+            // sum_w_taxes_label
+            // 
+            this.sum_w_taxes_label.AutoSize = true;
+            this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_w_taxes_label.Location = new System.Drawing.Point(1411, 598);
+            this.sum_w_taxes_label.Name = "sum_w_taxes_label";
+            this.sum_w_taxes_label.Size = new System.Drawing.Size(0, 16);
+            this.sum_w_taxes_label.TabIndex = 45;
             // 
             // Window_Add_Offer
             // 
@@ -598,6 +607,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cena_Jednostkowa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
