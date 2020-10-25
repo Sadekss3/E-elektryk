@@ -42,7 +42,7 @@
             this.label_Offer_Date = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_Adress = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -55,9 +55,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox_Offer_Name = new System.Windows.Forms.TextBox();
-            this.textBox_Offer_Adress = new System.Windows.Forms.TextBox();
+            this.textBox_Offer_LastName = new System.Windows.Forms.TextBox();
             this.Button_chose_Client = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox_Offer_CompanyName = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -71,6 +71,7 @@
             this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sum_e_taxes_label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sum_w_taxes_label = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +81,6 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sum_w_taxes_label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -171,12 +171,12 @@
             this.textBox1.Size = new System.Drawing.Size(183, 20);
             this.textBox1.TabIndex = 19;
             // 
-            // textBox2
+            // textBox_Adress
             // 
-            this.textBox2.Location = new System.Drawing.Point(598, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 20;
+            this.textBox_Adress.Location = new System.Drawing.Point(598, 48);
+            this.textBox_Adress.Name = "textBox_Adress";
+            this.textBox_Adress.Size = new System.Drawing.Size(158, 20);
+            this.textBox_Adress.TabIndex = 20;
             // 
             // label1
             // 
@@ -280,12 +280,12 @@
             this.textBox_Offer_Name.Size = new System.Drawing.Size(149, 20);
             this.textBox_Offer_Name.TabIndex = 33;
             // 
-            // textBox_Offer_Adress
+            // textBox_Offer_LastName
             // 
-            this.textBox_Offer_Adress.Location = new System.Drawing.Point(252, 70);
-            this.textBox_Offer_Adress.Name = "textBox_Offer_Adress";
-            this.textBox_Offer_Adress.Size = new System.Drawing.Size(149, 20);
-            this.textBox_Offer_Adress.TabIndex = 34;
+            this.textBox_Offer_LastName.Location = new System.Drawing.Point(252, 70);
+            this.textBox_Offer_LastName.Name = "textBox_Offer_LastName";
+            this.textBox_Offer_LastName.Size = new System.Drawing.Size(149, 20);
+            this.textBox_Offer_LastName.TabIndex = 34;
             // 
             // Button_chose_Client
             // 
@@ -296,13 +296,14 @@
             this.Button_chose_Client.TabIndex = 35;
             this.Button_chose_Client.Text = "Wybierz z listy";
             this.Button_chose_Client.UseVisualStyleBackColor = false;
+            this.Button_chose_Client.Click += new System.EventHandler(this.Button_chose_Client_Click);
             // 
-            // textBox8
+            // textBox_Offer_CompanyName
             // 
-            this.textBox8.Location = new System.Drawing.Point(252, 96);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(149, 20);
-            this.textBox8.TabIndex = 36;
+            this.textBox_Offer_CompanyName.Location = new System.Drawing.Point(252, 96);
+            this.textBox_Offer_CompanyName.Name = "textBox_Offer_CompanyName";
+            this.textBox_Offer_CompanyName.Size = new System.Drawing.Size(149, 20);
+            this.textBox_Offer_CompanyName.TabIndex = 36;
             // 
             // listView1
             // 
@@ -438,6 +439,17 @@
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
             // 
+            // sum_w_taxes_label
+            // 
+            this.sum_w_taxes_label.AutoSize = true;
+            this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_w_taxes_label.Location = new System.Drawing.Point(465, 676);
+            this.sum_w_taxes_label.Name = "sum_w_taxes_label";
+            this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
+            this.sum_w_taxes_label.TabIndex = 45;
+            this.sum_w_taxes_label.Text = "Suma Brutto:";
+            // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -447,6 +459,7 @@
             this.Column1.HeaderText = "Nazwa";
             this.Column1.MinimumWidth = 10;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column1.Width = 230;
             // 
@@ -527,17 +540,6 @@
             this.Column8.ReadOnly = true;
             this.Column8.Width = 76;
             // 
-            // sum_w_taxes_label
-            // 
-            this.sum_w_taxes_label.AutoSize = true;
-            this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label.Location = new System.Drawing.Point(465, 676);
-            this.sum_w_taxes_label.Name = "sum_w_taxes_label";
-            this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
-            this.sum_w_taxes_label.TabIndex = 45;
-            this.sum_w_taxes_label.Text = "Suma Brutto:";
-            // 
             // Window_Add_Offer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,12 +551,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.sum_e_taxes_label);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox_Offer_Adress);
+            this.Controls.Add(this.textBox_Offer_CompanyName);
+            this.Controls.Add(this.textBox_Offer_LastName);
             this.Controls.Add(this.textBox_Offer_Name);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox_Adress);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Button_Save_Offer);
             this.Controls.Add(this.Button_Cancel_Offer);
@@ -582,7 +584,7 @@
         private System.Windows.Forms.Label label_Offer_Date;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_Adress;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
@@ -595,9 +597,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox_Offer_Name;
-        private System.Windows.Forms.TextBox textBox_Offer_Adress;
+        private System.Windows.Forms.TextBox textBox_Offer_LastName;
         private System.Windows.Forms.Button Button_chose_Client;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox_Offer_CompanyName;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader14;
