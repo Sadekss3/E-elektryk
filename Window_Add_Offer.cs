@@ -104,6 +104,26 @@ namespace E_elektryk
                 }
             }
         }   // Update dataGrid net and gross price value after enter new quantity value
+
+        private void Button_chose_Client_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db =  new zlecenieEntities())
+            {
+                kontrahent k = new kontrahent();
+                Window_Choice_Client_For_Offer window_Choice_Client = new Window_Choice_Client_For_Offer(k);
+                window_Choice_Client.ShowDialog();
+                using (zlecenieEntities dd = new zlecenieEntities())
+                {
+                    k = db.kontrahent.Find(k.ID);
+
+                }
+                textBox_Offer_Name.Text = k.Imie.ToString();
+                textBox_Offer_LastName.Text = k.Nazwisko.ToString();
+                textBox_Offer_CompanyName.Text = k.Nazwa_Firmy.ToString();
+                textBox_Adress.Text = k.Adres.ToString();
+                MessageBox.Show(k.ID.ToString());
+            }
+        }
     }
 }
 
