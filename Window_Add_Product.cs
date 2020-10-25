@@ -29,10 +29,10 @@ namespace E_elektryk
             _type = "Modyfication";
             _p = p;
             Button_Add_Product.Text = "Zmień";
-            AddToLabel();
+            add_Product_Information();
         }
 
-        void AddToLabel()
+        void add_Product_Information()
         {
             textBox_Product_Name.Text = _p.Nazwa.ToString();
             textBox_Manufacturer.Text = _p.Producent.ToString();
@@ -105,9 +105,7 @@ namespace E_elektryk
                 produkt.Cena_netto = System.Convert.ToDecimal(textBox_Price_Net.Text);
                 produkt.Vat = System.Convert.ToDouble(ComboBox_Taxes.Text);
                 produkt.Cena_brutto = System.Convert.ToDecimal(textBox_Price_Gross.Text);
-                produkt.Kategoria = (int)comboBox_Product_Category.SelectedValue;
-                //MessageBox.Show(kat.ToString());
-                
+                produkt.Kategoria = (int)comboBox_Product_Category.SelectedValue;              
                 flag = true;
             }
             catch (Exception f)
@@ -163,11 +161,6 @@ namespace E_elektryk
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.kategoria_produktu' . Możesz go przenieść lub usunąć.
             this.kategoria_produktuTableAdapter.Fill(this.zlecenieDataSet.kategoria_produktu);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.produkt' . Możesz go przenieść lub usunąć.
-        }
-
-        private void comboBox_Product_Category_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
