@@ -70,7 +70,6 @@
             this.comboBox_Product_Category.Size = new System.Drawing.Size(148, 21);
             this.comboBox_Product_Category.TabIndex = 37;
             this.comboBox_Product_Category.ValueMember = "ID";
-            this.comboBox_Product_Category.SelectedIndexChanged += new System.EventHandler(this.comboBox_Product_Category_SelectedIndexChanged);
             // 
             // label9
             // 
