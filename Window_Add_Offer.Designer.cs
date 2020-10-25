@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Button_Cancel_Offer = new System.Windows.Forms.Button();
             this.Button_Save_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
@@ -93,7 +95,7 @@
             this.Button_Cancel_Offer.FlatAppearance.BorderSize = 2;
             this.Button_Cancel_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Cancel_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Cancel_Offer.Location = new System.Drawing.Point(2156, 683);
+            this.Button_Cancel_Offer.Location = new System.Drawing.Point(2264, 1106);
             this.Button_Cancel_Offer.Name = "Button_Cancel_Offer";
             this.Button_Cancel_Offer.Size = new System.Drawing.Size(130, 38);
             this.Button_Cancel_Offer.TabIndex = 12;
@@ -108,7 +110,7 @@
             this.Button_Save_Offer.FlatAppearance.BorderSize = 2;
             this.Button_Save_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Save_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Save_Offer.Location = new System.Drawing.Point(2020, 683);
+            this.Button_Save_Offer.Location = new System.Drawing.Point(2128, 1106);
             this.Button_Save_Offer.Name = "Button_Save_Offer";
             this.Button_Save_Offer.Size = new System.Drawing.Size(130, 38);
             this.Button_Save_Offer.TabIndex = 13;
@@ -317,17 +319,17 @@
             this.columnHeader17,
             this.columnHeader18,
             this.columnHeader19});
-            this.listView1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.listView1.LabelEdit = true;
             this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(12, 199);
+            this.listView1.Location = new System.Drawing.Point(12, 196);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
-            this.listView1.Size = new System.Drawing.Size(791, 325);
+            this.listView1.Size = new System.Drawing.Size(1580, 218);
             this.listView1.TabIndex = 40;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -336,7 +338,7 @@
             // columnHeader11
             // 
             this.columnHeader11.Text = "Nazwa";
-            this.columnHeader11.Width = 250;
+            this.columnHeader11.Width = 230;
             // 
             // columnHeader12
             // 
@@ -377,8 +379,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.label_Offer_Name);
             this.panel1.Controls.Add(this.label_Offer_Client);
@@ -397,7 +397,7 @@
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2274, 144);
+            this.panel1.Size = new System.Drawing.Size(1584, 144);
             this.panel1.TabIndex = 41;
             // 
             // sum_e_taxes_label
@@ -405,16 +405,18 @@
             this.sum_e_taxes_label.AutoSize = true;
             this.sum_e_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.sum_e_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_e_taxes_label.Location = new System.Drawing.Point(1269, 598);
+            this.sum_e_taxes_label.Location = new System.Drawing.Point(465, 651);
             this.sum_e_taxes_label.Name = "sum_e_taxes_label";
-            this.sum_e_taxes_label.Size = new System.Drawing.Size(0, 16);
+            this.sum_e_taxes_label.Size = new System.Drawing.Size(82, 16);
             this.sum_e_taxes_label.TabIndex = 43;
+            this.sum_e_taxes_label.Text = "Suma netto:";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -427,24 +429,26 @@
             this.Column7,
             this.Column8});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(809, 199);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 420);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(855, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(1580, 218);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column1.FillWeight = 250F;
             this.Column1.HeaderText = "Nazwa";
             this.Column1.MinimumWidth = 10;
             this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 250;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Width = 230;
             // 
             // Column2
             // 
@@ -453,7 +457,7 @@
             this.Column2.MinimumWidth = 10;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 90;
+            this.Column2.Width = 81;
             // 
             // Column3
             // 
@@ -462,35 +466,39 @@
             this.Column3.MinimumWidth = 10;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 35;
+            this.Column3.Width = 45;
             // 
             // Column4
             // 
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.FillWeight = 50F;
             this.Column4.HeaderText = "Ilość";
             this.Column4.MinimumWidth = 10;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 50;
+            this.Column4.Width = 54;
             // 
             // Cena_Jednostkowa
             // 
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle3;
             this.Cena_Jednostkowa.HeaderText = "C.J";
             this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
             this.Cena_Jednostkowa.ReadOnly = true;
+            this.Cena_Jednostkowa.Width = 47;
             // 
             // Column5
             // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column5.HeaderText = "Cena netto";
             this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 90;
+            this.Column5.Width = 84;
             // 
             // Column6
             // 
@@ -498,18 +506,18 @@
             this.Column6.MinimumWidth = 10;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 45;
+            this.Column6.Width = 48;
             // 
             // Column7
             // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column7.HeaderText = "Cena Brutto";
             this.Column7.MinimumWidth = 10;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 90;
+            this.Column7.Width = 88;
             // 
             // Column8
             // 
@@ -517,17 +525,18 @@
             this.Column8.MinimumWidth = 10;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Width = 120;
+            this.Column8.Width = 76;
             // 
             // sum_w_taxes_label
             // 
             this.sum_w_taxes_label.AutoSize = true;
             this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label.Location = new System.Drawing.Point(1411, 598);
+            this.sum_w_taxes_label.Location = new System.Drawing.Point(465, 676);
             this.sum_w_taxes_label.Name = "sum_w_taxes_label";
-            this.sum_w_taxes_label.Size = new System.Drawing.Size(0, 16);
+            this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
             this.sum_w_taxes_label.TabIndex = 45;
+            this.sum_w_taxes_label.Text = "Suma Brutto:";
             // 
             // Window_Add_Offer
             // 
@@ -535,7 +544,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.Button_Cancel_Offer;
-            this.ClientSize = new System.Drawing.Size(1496, 458);
+            this.ClientSize = new System.Drawing.Size(1604, 881);
             this.Controls.Add(this.sum_w_taxes_label);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.sum_e_taxes_label);
