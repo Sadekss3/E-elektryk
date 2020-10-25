@@ -115,13 +115,11 @@ namespace E_elektryk
                 using (zlecenieEntities dd = new zlecenieEntities())
                 {
                     k = db.kontrahent.Find(k.ID);
-
                 }
                 textBox_Offer_Name.Text = k.Imie.ToString();
                 textBox_Offer_LastName.Text = k.Nazwisko.ToString();
                 textBox_Offer_CompanyName.Text = k.Nazwa_Firmy.ToString();
                 textBox_Adress.Text = k.Adres.ToString();
-                MessageBox.Show(k.ID.ToString());
             }
         }
     }
