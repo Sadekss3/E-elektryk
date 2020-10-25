@@ -185,7 +185,7 @@
             this.columnHeader28,
             this.columnHeader29});
             this.listView3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.listView3.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView3.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listView3.FullRowSelect = true;
             this.listView3.GridLines = true;
             this.listView3.HideSelection = false;
@@ -301,7 +301,7 @@
             this.Wyceny.Location = new System.Drawing.Point(4, 22);
             this.Wyceny.Name = "Wyceny";
             this.Wyceny.Padding = new System.Windows.Forms.Padding(3);
-            this.Wyceny.Size = new System.Drawing.Size(1666, 592);
+            this.Wyceny.Size = new System.Drawing.Size(1596, 592);
             this.Wyceny.TabIndex = 1;
             this.Wyceny.Text = "Wyceny";
             // 
@@ -363,7 +363,7 @@
             this.Offer_Order_Adress,
             this.Offer_Date,
             this.Offer_Status});
-            this.listView1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 37);
@@ -506,7 +506,7 @@
             this.Kontrahenci.Location = new System.Drawing.Point(4, 22);
             this.Kontrahenci.Name = "Kontrahenci";
             this.Kontrahenci.Padding = new System.Windows.Forms.Padding(3);
-            this.Kontrahenci.Size = new System.Drawing.Size(1666, 592);
+            this.Kontrahenci.Size = new System.Drawing.Size(1596, 592);
             this.Kontrahenci.TabIndex = 2;
             this.Kontrahenci.Text = "Kontrahenci";
             // 
@@ -529,7 +529,7 @@
             this.Telefon_1,
             this.Telefon_2});
             this.Client_list.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Client_list.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Client_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Client_list.FullRowSelect = true;
             this.Client_list.GridLines = true;
             this.Client_list.HideSelection = false;
@@ -741,7 +741,7 @@
             this.Magazyn.Location = new System.Drawing.Point(4, 22);
             this.Magazyn.Name = "Magazyn";
             this.Magazyn.Padding = new System.Windows.Forms.Padding(3);
-            this.Magazyn.Size = new System.Drawing.Size(1666, 592);
+            this.Magazyn.Size = new System.Drawing.Size(1596, 592);
             this.Magazyn.TabIndex = 3;
             this.Magazyn.Text = "Kartoteka Materiałowa";
             // 
@@ -764,7 +764,7 @@
             this.columnHeader8,
             this.columnHeader,
             this.columnHeader9});
-            this.Products_list.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Products_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Products_list.FullRowSelect = true;
             this.Products_list.GridLines = true;
             this.Products_list.HideSelection = false;
@@ -897,7 +897,7 @@
             this.panel2.Controls.Add(this.textBox9);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(-4, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1674, 46);
@@ -1011,7 +1011,7 @@
             this.Faktury.Controls.Add(this.panel4);
             this.Faktury.Location = new System.Drawing.Point(4, 22);
             this.Faktury.Name = "Faktury";
-            this.Faktury.Size = new System.Drawing.Size(1666, 592);
+            this.Faktury.Size = new System.Drawing.Size(1596, 592);
             this.Faktury.TabIndex = 4;
             this.Faktury.Text = "Faktury";
             this.Faktury.UseVisualStyleBackColor = true;
@@ -1035,7 +1035,7 @@
             this.columnHeader18,
             this.columnHeader19});
             this.listView2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.listView2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
             this.listView2.HideSelection = false;
