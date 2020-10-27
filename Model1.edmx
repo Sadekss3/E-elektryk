@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="zlecenieModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adres">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Miasto" Type="text" Nullable="false" />
+          <Property Name="Kod_pocztowy" Type="text" Nullable="false" />
+          <Property Name="Nazwa_ulicy" Type="text" Nullable="false" />
+          <Property Name="Numer_budynku" Type="text" Nullable="false" />
+          <Property Name="Numer_mieszkania" Type="text" />
+          <Property Name="Państwo" Type="text" Nullable="false" />
+        </EntityType>
         <EntityType Name="kategoria_produktu">
           <Key>
             <PropertyRef Name="ID" />
@@ -22,7 +34,7 @@
           <Property Name="Pesel" Type="bigint" />
           <Property Name="NIP" Type="bigint" />
           <Property Name="Nazwa_Firmy" Type="text" Nullable="false" />
-          <Property Name="Adres" Type="text" Nullable="false" />
+          <Property Name="Adres" Type="int" Nullable="false" />
           <Property Name="E-mail" Type="text" />
           <Property Name="Telefon_1" Type="text" />
           <Property Name="Telefon_2" Type="text" />
@@ -54,6 +66,7 @@
           <Property Name="Kategoria" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="zlecenieModelStoreContainer">
+          <EntitySet Name="adres" EntityType="Self.adres" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="kategoria_produktu" EntityType="Self.kategoria_produktu" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="kontrahent" EntityType="Self.kontrahent" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="oferta" EntityType="Self.oferta" Schema="zlecenie" store:Type="Tables" />
@@ -80,7 +93,7 @@
           <Property Name="Pesel" Type="Int64" />
           <Property Name="NIP" Type="Int64" />
           <Property Name="Nazwa_Firmy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Adres" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adres" Type="Int32" Nullable="false" />
           <Property Name="E_mail" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Telefon_1" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Telefon_2" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
@@ -105,6 +118,7 @@
           <EntitySet Name="kontrahent" EntityType="Self.kontrahent" />
           <EntitySet Name="produkt" EntityType="Self.produkt" />
           <EntitySet Name="oferta" EntityType="zlecenieModel.oferta" />
+          <EntitySet Name="adres" EntityType="zlecenieModel.adres" />
         </EntityContainer>
         <EntityType Name="oferta">
           <Key>
@@ -116,6 +130,18 @@
           <Property Name="Adres_zlecenia" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Data" Type="DateTime" Nullable="false" />
           <Property Name="Status" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="adres">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Nazwa_ulicy" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Numer_budynku" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Numer_mieszkania" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Państwo" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -171,6 +197,19 @@
                 <ScalarProperty Name="Adres_zlecenia" ColumnName="Adres_zlecenia" />
                 <ScalarProperty Name="Id_zleceniodawca" ColumnName="Id_zleceniodawca" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adres">
+            <EntityTypeMapping TypeName="zlecenieModel.adres">
+              <MappingFragment StoreEntitySet="adres">
+                <ScalarProperty Name="Państwo" ColumnName="Państwo" />
+                <ScalarProperty Name="Numer_mieszkania" ColumnName="Numer_mieszkania" />
+                <ScalarProperty Name="Numer_budynku" ColumnName="Numer_budynku" />
+                <ScalarProperty Name="Nazwa_ulicy" ColumnName="Nazwa_ulicy" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
