@@ -20,7 +20,7 @@ namespace E_elektryk
         public Nullable<long> Pesel { get; set; }
         public Nullable<long> NIP { get; set; }
         public string Nazwa_Firmy { get; set; }
-        public string Adres { get; set; }
+        public int Adres { get; set; }
         public string E_mail { get; set; }
         public string Telefon_1 { get; set; }
         public string Telefon_2 { get; set; }
