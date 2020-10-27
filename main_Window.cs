@@ -132,7 +132,21 @@ namespace E_elektryk
                         item.SubItems.Add(C.Pesel.ToString());
                         item.SubItems.Add(C.NIP.ToString());
                         item.SubItems.Add(C.Nazwa_Firmy);
-                        item.SubItems.Add(C.Adres);
+                        if (C.Adres != 0)
+                        {
+                            adres Client_Adress = new adres();
+                            Client_Adress = db.adres.Find(C.Adres);
+                            if (Client_Adress.Numer_mieszkania == null)
+                            {
+                                item.SubItems.Add(Client_Adress.Miasto.ToString() + " " + Client_Adress.Kod_pocztowy.ToString() + ", " + Client_Adress.Nazwa_ulicy.ToString() + " " + Client_Adress.Numer_budynku.ToString()
+                                + " " + Client_Adress.Państwo.ToString());
+                            }
+                            else
+                            {
+                                item.SubItems.Add(Client_Adress.Miasto.ToString() + " " + Client_Adress.Kod_pocztowy.ToString() + ", " + Client_Adress.Nazwa_ulicy.ToString() + " " + Client_Adress.Numer_budynku.ToString()
+                                +"/"+ Client_Adress.Numer_mieszkania.ToString() + " " + Client_Adress.Państwo.ToString());
+                            }
+                        }
                         item.SubItems.Add(C.E_mail);
                         item.SubItems.Add(C.Telefon_1.ToString());
                         item.SubItems.Add(C.Telefon_2.ToString());
