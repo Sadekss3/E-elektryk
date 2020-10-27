@@ -29,5 +29,6 @@ namespace E_elektryk
         public virtual DbSet<kontrahent> kontrahent { get; set; }
         public virtual DbSet<produkt> produkt { get; set; }
         public virtual DbSet<oferta> oferta { get; set; }
+        public virtual DbSet<adres> adres { get; set; }
     }
 }
