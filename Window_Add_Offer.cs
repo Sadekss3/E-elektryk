@@ -79,29 +79,38 @@ namespace E_elektryk
 
         private void dataGridView1_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.CurrentRow;
-            if (row.Cells[3].Value.ToString().Contains('.'))
+            try
             {
-                MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                decimal lot = System.Convert.ToDecimal(row.Cells[3].Value);
-                string piece_price = TRIM_price(row.Cells[4].Value.ToString());
-                row.Cells[5].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
-                string gross_offer = TRIM_price(row.Cells[7].Value.ToString());
-                string vat = (row.Cells[6].Value.ToString()).Trim(' ', '%');
-                decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
-                row.Cells[7].Value = Gross * lot;
-                decimal sum_e_taxes = 0;
-                decimal sum_w_taxes = 0;
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                DataGridViewRow row = dataGridView1.CurrentRow;
+                if (row.Cells[3].Value.ToString().Contains('.'))
                 {
-                    sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value);
-                    sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value);
-                    sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString();
-                    sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString();
+                    MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else
+                {
+                    decimal lot = System.Convert.ToDecimal(row.Cells[3].Value);
+                    string piece_price = TRIM_price(row.Cells[4].Value.ToString());
+                    row.Cells[5].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
+                    string gross_offer = TRIM_price(row.Cells[7].Value.ToString());
+                    string vat = (row.Cells[6].Value.ToString()).Trim(' ', '%');
+                    decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                    row.Cells[7].Value = Gross * lot;
+                    decimal sum_e_taxes = 0;
+                    decimal sum_w_taxes = 0;
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value);
+                        sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value);
+                        sum_e_taxes = Math.Round(sum_e_taxes, 2);
+                        sum_w_taxes = Math.Round(sum_w_taxes, 2);
+                        sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString();
+                        sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString();
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("W pole ilość można wprowadzać tylko wartości numeryczne!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }   // Update dataGrid net and gross price value after enter new quantity value
 
