@@ -39,7 +39,7 @@ namespace E_elektryk
             textBox_Lastname.Text = _k.Nazwisko.ToString();
             textBox_PESEL.Text = _k.Pesel.ToString();
             textBox_NIP.Text = _k.NIP.ToString();
-            textBox_Adress.Text = _k.Adres.ToString();
+            textBox_Adress_Town_Name.Text = _k.Adres.ToString();
             textBox_Company_Name.Text = _k.Nazwa_Firmy.ToString();
             textBox_Email_Adress.Text = _k.E_mail.ToString();
             textBox_Phone_Number_1.Text = _k.Telefon_1.ToString();
@@ -59,31 +59,41 @@ namespace E_elektryk
         }
 
         private void Add_New_Client()
-        {
-            kontrahent kontrahent = new kontrahent();
+        { 
+            var Adress = new adres();
+            var kontrahent = new kontrahent();
             Boolean flag = true;
-            try
+            using (zlecenieEntities db = new zlecenieEntities())
             {
-                kontrahent.Imie = textBox_Name.Text.ToString();
-                kontrahent.Nazwisko = textBox_Lastname.Text.ToString();
-                kontrahent.Pesel = System.Convert.ToInt64(textBox_PESEL.Text);
-                kontrahent.NIP = System.Convert.ToInt64(textBox_NIP.Text);
-                kontrahent.Nazwa_Firmy = textBox_Company_Name.Text.ToString();
-                kontrahent.Adres = textBox_Adress.Text.ToString();
-                kontrahent.E_mail = textBox_Email_Adress.Text.ToString();
-                kontrahent.Telefon_1 = textBox_Phone_Number_1.Text.ToString();
-                kontrahent.Telefon_2 = textBox_Phone_Number_2.Text.ToString();
-                flag = true;
-            }
-            catch (Exception f)
-            {
-                MessageBox.Show("Podano nieprawidłowy numer NIP lub PESEL", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                flag = false;
-            }
-            if (flag == true)
-            {
-                using (zlecenieEntities db = new zlecenieEntities())
+                try
                 {
+                    kontrahent.Imie = textBox_Name.Text.ToString();
+                    kontrahent.Nazwisko = textBox_Lastname.Text.ToString();
+                    kontrahent.Pesel = System.Convert.ToInt64(textBox_PESEL.Text);
+                    kontrahent.NIP = System.Convert.ToInt64(textBox_NIP.Text);
+                    kontrahent.Nazwa_Firmy = textBox_Company_Name.Text.ToString();
+                    Adress.Miasto = textBox_Adress_Town_Name.Text;
+                    Adress.Nazwa_ulicy = textBox_Street_Name.Text;
+                    Adress.Kod_pocztowy = textBox_Code_1.Text + textBox_Code_2.Text;
+                    Adress.Numer_budynku = textBox_Building_Number.Text;
+                    Adress.Numer_mieszkania = textBox_Home_Number.Text;
+                    Adress.Państwo = comboBox_Country_ID.Text;
+                    db.adres.Add(Adress);
+                    db.SaveChanges();
+                    kontrahent.E_mail = textBox_Email_Adress.Text.ToString();
+                    kontrahent.Telefon_1 = textBox_Phone_Number_1.Text.ToString();
+                    kontrahent.Telefon_2 = textBox_Phone_Number_2.Text.ToString();
+                    kontrahent.Adres = Adress.ID;
+                    flag = true;
+                }
+                catch (Exception f)
+                {
+                    MessageBox.Show("Podano nieprawidłowy numer NIP lub PESEL", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    flag = false;
+                }
+                if (flag == true)
+                {
+                    db.adres.Add(Adress);
                     db.kontrahent.Add(kontrahent);
                     db.SaveChanges();
                     MessageBox.Show("Kontrahent dodany", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -94,31 +104,41 @@ namespace E_elektryk
         private void Modyficate_Client_Info()
         {
             kontrahent kontrahent = new kontrahent();
+            adres Adress = new adres();
             Boolean flag = true;
-            try
+            using (zlecenieEntities db = new zlecenieEntities())
             {
-                kontrahent.ID = _k.ID;
-                kontrahent.Imie = textBox_Name.Text;
-                kontrahent.Nazwisko = textBox_Lastname.Text;
-                kontrahent.NIP = System.Convert.ToInt64(textBox_NIP.Text);
-                kontrahent.Pesel = System.Convert.ToInt64(textBox_PESEL.Text);
-                kontrahent.Nazwa_Firmy = textBox_Company_Name.Text;
-                kontrahent.Adres = textBox_Adress.Text;
-                kontrahent.E_mail = textBox_Email_Adress.Text;
-                kontrahent.Telefon_1 = textBox_Phone_Number_1.Text;
-                kontrahent.Telefon_2 = textBox_Phone_Number_2.Text;
-                flag = true;
-            }
-            catch (Exception f)
-            {
-                MessageBox.Show("Podano nieprawidłowy numer NIP lub PESEL", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                flag = false;
-            }
-            if (flag == true)
-            {
-                using (zlecenieEntities db = new zlecenieEntities())
+                try
+                {
+                    kontrahent.ID = _k.ID;
+                    kontrahent.Imie = textBox_Name.Text;
+                    kontrahent.Nazwisko = textBox_Lastname.Text;
+                    kontrahent.NIP = System.Convert.ToInt64(textBox_NIP.Text);
+                    kontrahent.Pesel = System.Convert.ToInt64(textBox_PESEL.Text);
+                    kontrahent.Nazwa_Firmy = textBox_Company_Name.Text;
+                    Adress.Miasto = textBox_Adress_Town_Name.Text;
+                    Adress.Nazwa_ulicy = textBox_Street_Name.Text;
+                    Adress.Kod_pocztowy = textBox_Code_1.Text + textBox_Code_2.Text;
+                    Adress.Numer_budynku = textBox_Building_Number.Text;
+                    Adress.Numer_mieszkania = textBox_Home_Number.Text;
+                    Adress.Państwo = comboBox_Country_ID.Text;
+                    db.adres.Add(Adress);
+                    db.SaveChanges();
+                    kontrahent.E_mail = textBox_Email_Adress.Text;
+                    kontrahent.Telefon_1 = textBox_Phone_Number_1.Text;
+                    kontrahent.Telefon_2 = textBox_Phone_Number_2.Text;
+                    kontrahent.Adres = Adress.ID;
+                    flag = true;
+                }
+                catch (Exception f)
+                {
+                    MessageBox.Show("Podano nieprawidłowy numer NIP lub PESEL", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    flag = false;
+                }
+                if (flag == true)
                 {
                     db.kontrahent.AddOrUpdate(kontrahent);
+                    db.adres.Add(Adress);
                     db.SaveChanges();
                     MessageBox.Show("Dane kontrahenta zmienione", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
