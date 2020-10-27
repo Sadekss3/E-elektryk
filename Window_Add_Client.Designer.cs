@@ -35,7 +35,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_Company_Name = new System.Windows.Forms.TextBox();
             this.textBox_Email_Adress = new System.Windows.Forms.TextBox();
-            this.textBox_Adress = new System.Windows.Forms.TextBox();
+            this.textBox_Adress_Town_Name = new System.Windows.Forms.TextBox();
             this.textBox_PESEL = new System.Windows.Forms.TextBox();
             this.textBox_Name = new System.Windows.Forms.TextBox();
             this.textBox_Lastname = new System.Windows.Forms.TextBox();
@@ -48,6 +48,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox_Street_Name = new System.Windows.Forms.TextBox();
+            this.textBox_Code_2 = new System.Windows.Forms.TextBox();
+            this.textBox_Building_Number = new System.Windows.Forms.TextBox();
+            this.textBox_Code_1 = new System.Windows.Forms.TextBox();
+            this.textBox_Home_Number = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboBox_Country_ID = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_Phone_Number_2
@@ -99,7 +112,7 @@
             // textBox_Company_Name
             // 
             this.textBox_Company_Name.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox_Company_Name.Location = new System.Drawing.Point(574, 36);
+            this.textBox_Company_Name.Location = new System.Drawing.Point(234, 276);
             this.textBox_Company_Name.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Company_Name.Name = "textBox_Company_Name";
             this.textBox_Company_Name.Size = new System.Drawing.Size(148, 20);
@@ -113,13 +126,13 @@
             this.textBox_Email_Adress.Size = new System.Drawing.Size(148, 20);
             this.textBox_Email_Adress.TabIndex = 51;
             // 
-            // textBox_Adress
+            // textBox_Adress_Town_Name
             // 
-            this.textBox_Adress.Location = new System.Drawing.Point(574, 96);
-            this.textBox_Adress.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_Adress.Name = "textBox_Adress";
-            this.textBox_Adress.Size = new System.Drawing.Size(148, 20);
-            this.textBox_Adress.TabIndex = 50;
+            this.textBox_Adress_Town_Name.Location = new System.Drawing.Point(543, 39);
+            this.textBox_Adress_Town_Name.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Adress_Town_Name.Name = "textBox_Adress_Town_Name";
+            this.textBox_Adress_Town_Name.Size = new System.Drawing.Size(73, 20);
+            this.textBox_Adress_Town_Name.TabIndex = 50;
             // 
             // textBox_PESEL
             // 
@@ -182,7 +195,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(424, 96);
+            this.label6.Location = new System.Drawing.Point(424, 36);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 16);
@@ -193,7 +206,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(424, 36);
+            this.label5.Location = new System.Drawing.Point(79, 277);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 16);
@@ -244,11 +257,152 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Imie";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(477, 39);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 15);
+            this.label10.TabIndex = 56;
+            this.label10.Text = "Miasto";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(477, 67);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 15);
+            this.label11.TabIndex = 57;
+            this.label11.Text = "Ulica";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(477, 85);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 30);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "Kod\r\nPocztowy";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(624, 37);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 15);
+            this.label13.TabIndex = 59;
+            this.label13.Text = "Numer domu";
+            // 
+            // textBox_Street_Name
+            // 
+            this.textBox_Street_Name.Location = new System.Drawing.Point(543, 67);
+            this.textBox_Street_Name.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Street_Name.Name = "textBox_Street_Name";
+            this.textBox_Street_Name.Size = new System.Drawing.Size(73, 20);
+            this.textBox_Street_Name.TabIndex = 62;
+            // 
+            // textBox_Code_2
+            // 
+            this.textBox_Code_2.Location = new System.Drawing.Point(586, 95);
+            this.textBox_Code_2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Code_2.Name = "textBox_Code_2";
+            this.textBox_Code_2.Size = new System.Drawing.Size(30, 20);
+            this.textBox_Code_2.TabIndex = 63;
+            // 
+            // textBox_Building_Number
+            // 
+            this.textBox_Building_Number.Location = new System.Drawing.Point(712, 39);
+            this.textBox_Building_Number.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Building_Number.Name = "textBox_Building_Number";
+            this.textBox_Building_Number.Size = new System.Drawing.Size(48, 20);
+            this.textBox_Building_Number.TabIndex = 64;
+            // 
+            // textBox_Code_1
+            // 
+            this.textBox_Code_1.Location = new System.Drawing.Point(543, 95);
+            this.textBox_Code_1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Code_1.Name = "textBox_Code_1";
+            this.textBox_Code_1.Size = new System.Drawing.Size(21, 20);
+            this.textBox_Code_1.TabIndex = 65;
+            // 
+            // textBox_Home_Number
+            // 
+            this.textBox_Home_Number.Location = new System.Drawing.Point(712, 67);
+            this.textBox_Home_Number.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Home_Number.Name = "textBox_Home_Number";
+            this.textBox_Home_Number.Size = new System.Drawing.Size(48, 20);
+            this.textBox_Home_Number.TabIndex = 67;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(624, 57);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 30);
+            this.label15.TabIndex = 66;
+            this.label15.Text = "Numer \r\nmieszkania";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(624, 95);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(54, 15);
+            this.label16.TabIndex = 68;
+            this.label16.Text = "Państwo\r\n";
+            // 
+            // comboBox_Country_ID
+            // 
+            this.comboBox_Country_ID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Country_ID.Items.AddRange(new object[] {
+            "PL",
+            "UE",
+            "UA",
+            "DE"});
+            this.comboBox_Country_ID.Location = new System.Drawing.Point(712, 96);
+            this.comboBox_Country_ID.Name = "comboBox_Country_ID";
+            this.comboBox_Country_ID.Size = new System.Drawing.Size(48, 21);
+            this.comboBox_Country_ID.TabIndex = 69;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(571, 98);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(10, 13);
+            this.label17.TabIndex = 70;
+            this.label17.Text = "-";
+            // 
             // Window_Add_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.comboBox_Country_ID);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.textBox_Home_Number);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.textBox_Code_1);
+            this.Controls.Add(this.textBox_Building_Number);
+            this.Controls.Add(this.textBox_Code_2);
+            this.Controls.Add(this.textBox_Street_Name);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox_Phone_Number_2);
             this.Controls.Add(this.textBox_Phone_Number_1);
             this.Controls.Add(this.textBox_NIP);
@@ -256,7 +410,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox_Company_Name);
             this.Controls.Add(this.textBox_Email_Adress);
-            this.Controls.Add(this.textBox_Adress);
+            this.Controls.Add(this.textBox_Adress_Town_Name);
             this.Controls.Add(this.textBox_PESEL);
             this.Controls.Add(this.textBox_Name);
             this.Controls.Add(this.textBox_Lastname);
@@ -285,7 +439,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_Company_Name;
         private System.Windows.Forms.TextBox textBox_Email_Adress;
-        private System.Windows.Forms.TextBox textBox_Adress;
+        private System.Windows.Forms.TextBox textBox_Adress_Town_Name;
         private System.Windows.Forms.TextBox textBox_PESEL;
         private System.Windows.Forms.TextBox textBox_Name;
         private System.Windows.Forms.TextBox textBox_Lastname;
@@ -298,5 +452,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox_Street_Name;
+        private System.Windows.Forms.TextBox textBox_Code_2;
+        private System.Windows.Forms.TextBox textBox_Building_Number;
+        private System.Windows.Forms.TextBox textBox_Code_1;
+        private System.Windows.Forms.TextBox textBox_Home_Number;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBox_Country_ID;
+        private System.Windows.Forms.Label label17;
     }
 }
