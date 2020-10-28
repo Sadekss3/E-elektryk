@@ -69,7 +69,7 @@
             this.textBox_Phone_Number_2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Phone_Number_2.Name = "textBox_Phone_Number_2";
             this.textBox_Phone_Number_2.Size = new System.Drawing.Size(148, 20);
-            this.textBox_Phone_Number_2.TabIndex = 54;
+            this.textBox_Phone_Number_2.TabIndex = 59;
             // 
             // textBox_Phone_Number_1
             // 
@@ -77,7 +77,7 @@
             this.textBox_Phone_Number_1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Phone_Number_1.Name = "textBox_Phone_Number_1";
             this.textBox_Phone_Number_1.Size = new System.Drawing.Size(148, 20);
-            this.textBox_Phone_Number_1.TabIndex = 52;
+            this.textBox_Phone_Number_1.TabIndex = 58;
             // 
             // textBox_NIP
             // 
@@ -124,7 +124,7 @@
             this.textBox_Email_Adress.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Email_Adress.Name = "textBox_Email_Adress";
             this.textBox_Email_Adress.Size = new System.Drawing.Size(148, 20);
-            this.textBox_Email_Adress.TabIndex = 51;
+            this.textBox_Email_Adress.TabIndex = 57;
             // 
             // textBox_Adress_Town_Name
             // 
@@ -165,7 +165,7 @@
             this.Button_Cancel_Add_Client.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Cancel_Add_Client.Name = "Button_Cancel_Add_Client";
             this.Button_Cancel_Add_Client.Size = new System.Drawing.Size(202, 64);
-            this.Button_Cancel_Add_Client.TabIndex = 44;
+            this.Button_Cancel_Add_Client.TabIndex = 61;
             this.Button_Cancel_Add_Client.Text = "Anuluj";
             this.Button_Cancel_Add_Client.UseVisualStyleBackColor = true;
             // 
@@ -175,7 +175,7 @@
             this.Button_Add_New_Client.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Add_New_Client.Name = "Button_Add_New_Client";
             this.Button_Add_New_Client.Size = new System.Drawing.Size(202, 64);
-            this.Button_Add_New_Client.TabIndex = 43;
+            this.Button_Add_New_Client.TabIndex = 60;
             this.Button_Add_New_Client.Text = "Dodaj";
             this.Button_Add_New_Client.UseVisualStyleBackColor = true;
             this.Button_Add_New_Client.Click += new System.EventHandler(this.Button_Add_New_Client_Click);
@@ -307,7 +307,7 @@
             this.textBox_Street_Name.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Street_Name.Name = "textBox_Street_Name";
             this.textBox_Street_Name.Size = new System.Drawing.Size(73, 20);
-            this.textBox_Street_Name.TabIndex = 62;
+            this.textBox_Street_Name.TabIndex = 51;
             // 
             // textBox_Code_2
             // 
@@ -315,7 +315,7 @@
             this.textBox_Code_2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Code_2.Name = "textBox_Code_2";
             this.textBox_Code_2.Size = new System.Drawing.Size(30, 20);
-            this.textBox_Code_2.TabIndex = 63;
+            this.textBox_Code_2.TabIndex = 53;
             // 
             // textBox_Building_Number
             // 
@@ -323,7 +323,7 @@
             this.textBox_Building_Number.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Building_Number.Name = "textBox_Building_Number";
             this.textBox_Building_Number.Size = new System.Drawing.Size(48, 20);
-            this.textBox_Building_Number.TabIndex = 64;
+            this.textBox_Building_Number.TabIndex = 54;
             // 
             // textBox_Code_1
             // 
@@ -331,7 +331,7 @@
             this.textBox_Code_1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Code_1.Name = "textBox_Code_1";
             this.textBox_Code_1.Size = new System.Drawing.Size(21, 20);
-            this.textBox_Code_1.TabIndex = 65;
+            this.textBox_Code_1.TabIndex = 52;
             // 
             // textBox_Home_Number
             // 
@@ -339,7 +339,7 @@
             this.textBox_Home_Number.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Home_Number.Name = "textBox_Home_Number";
             this.textBox_Home_Number.Size = new System.Drawing.Size(48, 20);
-            this.textBox_Home_Number.TabIndex = 67;
+            this.textBox_Home_Number.TabIndex = 55;
             // 
             // label15
             // 
@@ -374,7 +374,7 @@
             this.comboBox_Country_ID.Location = new System.Drawing.Point(712, 96);
             this.comboBox_Country_ID.Name = "comboBox_Country_ID";
             this.comboBox_Country_ID.Size = new System.Drawing.Size(48, 21);
-            this.comboBox_Country_ID.TabIndex = 69;
+            this.comboBox_Country_ID.TabIndex = 56;
             // 
             // label17
             // 
