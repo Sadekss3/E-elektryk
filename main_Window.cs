@@ -138,13 +138,13 @@ namespace E_elektryk
                             Client_Adress = db.adres.Find(C.Adres);
                             if (Client_Adress.Numer_mieszkania == null)
                             {
-                                item.SubItems.Add(Client_Adress.Miasto.ToString() + " " + Client_Adress.Kod_pocztowy.ToString() + ", " + Client_Adress.Nazwa_ulicy.ToString() + " " + Client_Adress.Numer_budynku.ToString()
-                                + " " + Client_Adress.Państwo.ToString());
+                                item.SubItems.Add(Client_Adress.Miasto.ToString() + " " + Client_Adress.Kod_pocztowy.ToString().Remove(2, 3)+ "-" + Client_Adress.Kod_pocztowy.ToString().Remove(0, 2) + ", " 
+                                    + Client_Adress.Nazwa_ulicy.ToString() + " " + Client_Adress.Numer_budynku.ToString() + " " + Client_Adress.Państwo.ToString());
                             }
                             else
                             {
-                                item.SubItems.Add(Client_Adress.Miasto.ToString() + " " + Client_Adress.Kod_pocztowy.ToString() + ", " + Client_Adress.Nazwa_ulicy.ToString() + " " + Client_Adress.Numer_budynku.ToString()
-                                +"/"+ Client_Adress.Numer_mieszkania.ToString() + " " + Client_Adress.Państwo.ToString());
+                                item.SubItems.Add(Client_Adress.Miasto.ToString() + " " + Client_Adress.Kod_pocztowy.ToString().Remove(2, 3) + "-" + Client_Adress.Kod_pocztowy.ToString().Remove(0, 2) + ", " 
+                                    + Client_Adress.Nazwa_ulicy.ToString() + " " + Client_Adress.Numer_budynku.ToString() +"/"+ Client_Adress.Numer_mieszkania.ToString() + " " + Client_Adress.Państwo.ToString());
                             }
                         }
                         item.SubItems.Add(C.E_mail);
