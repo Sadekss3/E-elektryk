@@ -35,15 +35,26 @@ namespace E_elektryk
 
         void Add_Client_Information()
         {
-            textBox_Name.Text = _k.Imie.ToString();
-            textBox_Lastname.Text = _k.Nazwisko.ToString();
-            textBox_PESEL.Text = _k.Pesel.ToString();
-            textBox_NIP.Text = _k.NIP.ToString();
-            textBox_Adress_Town_Name.Text = _k.Adres.ToString();
-            textBox_Company_Name.Text = _k.Nazwa_Firmy.ToString();
-            textBox_Email_Adress.Text = _k.E_mail.ToString();
-            textBox_Phone_Number_1.Text = _k.Telefon_1.ToString();
-            textBox_Phone_Number_2.Text = _k.Telefon_2.ToString();
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                adres adres = new adres();
+                textBox_Name.Text = _k.Imie.ToString();
+                textBox_Lastname.Text = _k.Nazwisko.ToString();
+                textBox_PESEL.Text = _k.Pesel.ToString();
+                textBox_NIP.Text = _k.NIP.ToString();
+                adres = db.adres.Find(_k.Adres);
+                textBox_Adress_Town_Name.Text = adres.Miasto.ToString();
+                textBox_Street_Name.Text = adres.Nazwa_ulicy.ToString();
+                textBox_Code_1.Text = adres.Kod_pocztowy.ToString().Remove(2, 3);
+                textBox_Code_2.Text = adres.Kod_pocztowy.ToString().Remove(0, 2);
+                textBox_Building_Number.Text = adres.Numer_budynku.ToString();
+                textBox_Home_Number.Text = adres.Numer_mieszkania.ToString();
+                comboBox_Country_ID.Text = adres.Państwo.ToString();
+                textBox_Company_Name.Text = _k.Nazwa_Firmy.ToString();
+                textBox_Email_Adress.Text = _k.E_mail.ToString();
+                textBox_Phone_Number_1.Text = _k.Telefon_1.ToString();
+                textBox_Phone_Number_2.Text = _k.Telefon_2.ToString();
+            }           
         }
 
         private void Button_Add_New_Client_Click(object sender, EventArgs e)
@@ -122,7 +133,7 @@ namespace E_elektryk
                     Adress.Numer_budynku = textBox_Building_Number.Text;
                     Adress.Numer_mieszkania = textBox_Home_Number.Text;
                     Adress.Państwo = comboBox_Country_ID.Text;
-                    db.adres.Add(Adress);
+                    db.adres.AddOrUpdate(Adress);
                     db.SaveChanges();
                     kontrahent.E_mail = textBox_Email_Adress.Text;
                     kontrahent.Telefon_1 = textBox_Phone_Number_1.Text;
@@ -138,7 +149,6 @@ namespace E_elektryk
                 if (flag == true)
                 {
                     db.kontrahent.AddOrUpdate(kontrahent);
-                    db.adres.Add(Adress);
                     db.SaveChanges();
                     MessageBox.Show("Dane kontrahenta zmienione", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
