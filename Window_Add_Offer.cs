@@ -15,10 +15,9 @@ using System.Windows.Forms;
 
 namespace E_elektryk
 {
-    
+
     public partial class Window_Add_Offer : Form
     {
-        
         public Window_Add_Offer()
         {
             InitializeComponent();
@@ -59,13 +58,13 @@ namespace E_elektryk
             item_grid.Cells[0].Value = item.SubItems[0].Text;   // Add to cells Nazwa
             item_grid.Cells[1].Value = item.SubItems[1].Text;   // Add to cells Producent
             item_grid.Cells[2].Value = item.SubItems[2].Text;   // Add to cells JM
-            decimal lot = 1;    
+            decimal lot = 1;
             item_grid.Cells[3].Value = lot.ToString();  // One piece for every new Product in DataGrid
             string net_offer = TRIM_price(item.SubItems[4].Text);
             item_grid.Cells[4].Value = System.Convert.ToDecimal(net_offer); // Add decimal one piece net price to cells C.J
             item_grid.Cells[5].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot); // Add calculated net price for all pieces
             item_grid.Cells[6].Value = item.SubItems[5].Text;   // Add taxe to cells VAT
-            string gross_offer = TRIM_price(item.SubItems[6].Text); 
+            string gross_offer = TRIM_price(item.SubItems[6].Text);
             item_grid.Cells[7].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot);   // Add calculated gross price for all pieces
             item_grid.Cells[8].Value = item.SubItems[7].Text;   // Add category name to cells Kategoria
             dataGridView1.Rows.Add(item_grid);
@@ -116,21 +115,26 @@ namespace E_elektryk
 
         private void Button_chose_Client_Click(object sender, EventArgs e)
         {
-            using (zlecenieEntities db =  new zlecenieEntities())
+            using (zlecenieEntities db = new zlecenieEntities())
             {
                 kontrahent k = new kontrahent();
                 Window_Choice_Client_For_Offer window_Choice_Client = new Window_Choice_Client_For_Offer(k);
                 window_Choice_Client.ShowDialog();
-                using (zlecenieEntities dd = new zlecenieEntities())
-                {
-                    k = db.kontrahent.Find(k.ID);
-                }
+                k = db.kontrahent.Find(k.ID);
+                adres a = new adres();
+                a = db.adres.Find(k.Adres);
                 textBox_Offer_Name.Text = k.Imie.ToString();
                 textBox_Offer_LastName.Text = k.Nazwisko.ToString();
                 textBox_Offer_CompanyName.Text = k.Nazwa_Firmy.ToString();
-                textBox_Adress.Text = k.Adres.ToString();
+                textBox_Town_Name.Text = a.Miasto.ToString();
+                textBox_Post_Code_1.Text = a.Kod_pocztowy.ToString().Remove(2, 3);
+                textBox_Post_Code_2.Text = a.Kod_pocztowy.ToString().Remove(0, 2);
+                textBox_Street_Name.Text = a.Nazwa_ulicy.ToString();
+                textBox_Building_Number.Text = a.Numer_budynku.ToString();
+                textBox_Home_Number.Text = a.Numer_mieszkania.ToString();
+                textBox_Country_ID.Text = a.Państwo.ToString();
             }
-        }
+        } // Add information about Client to Offer Form
     }
 }
 
