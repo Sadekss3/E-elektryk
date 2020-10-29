@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Button_Cancel_Offer = new System.Windows.Forms.Button();
             this.Button_Save_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
@@ -41,17 +41,17 @@
             this.label_Offer_Client = new System.Windows.Forms.Label();
             this.label_Offer_Date = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox_Adress = new System.Windows.Forms.TextBox();
+            this.textBox_O_Name = new System.Windows.Forms.TextBox();
+            this.textBox_Town_Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_Post_Code_1 = new System.Windows.Forms.TextBox();
+            this.textBox_Post_Code_2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox_Street_Name = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox_Building_Number = new System.Windows.Forms.TextBox();
+            this.textBox_Home_Number = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox_Offer_Name = new System.Windows.Forms.TextBox();
@@ -71,7 +71,6 @@
             this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sum_e_taxes_label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sum_w_taxes_label = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,9 +80,24 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sum_w_taxes_label = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox_Country_ID = new System.Windows.Forms.TextBox();
+            this.Label_Country_Name = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Button_Cancel_Offer
@@ -95,7 +109,7 @@
             this.Button_Cancel_Offer.FlatAppearance.BorderSize = 2;
             this.Button_Cancel_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Cancel_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Cancel_Offer.Location = new System.Drawing.Point(2264, 1106);
+            this.Button_Cancel_Offer.Location = new System.Drawing.Point(2584, 1106);
             this.Button_Cancel_Offer.Name = "Button_Cancel_Offer";
             this.Button_Cancel_Offer.Size = new System.Drawing.Size(130, 38);
             this.Button_Cancel_Offer.TabIndex = 12;
@@ -110,7 +124,7 @@
             this.Button_Save_Offer.FlatAppearance.BorderSize = 2;
             this.Button_Save_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Save_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Save_Offer.Location = new System.Drawing.Point(2128, 1106);
+            this.Button_Save_Offer.Location = new System.Drawing.Point(2448, 1106);
             this.Button_Save_Offer.Name = "Button_Save_Offer";
             this.Button_Save_Offer.Size = new System.Drawing.Size(130, 38);
             this.Button_Save_Offer.TabIndex = 13;
@@ -164,19 +178,20 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 18;
             // 
-            // textBox1
+            // textBox_O_Name
             // 
-            this.textBox1.Location = new System.Drawing.Point(18, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 19;
+            this.textBox_O_Name.Location = new System.Drawing.Point(18, 45);
+            this.textBox_O_Name.Name = "textBox_O_Name";
+            this.textBox_O_Name.Size = new System.Drawing.Size(183, 20);
+            this.textBox_O_Name.TabIndex = 19;
             // 
-            // textBox_Adress
+            // textBox_Town_Name
             // 
-            this.textBox_Adress.Location = new System.Drawing.Point(598, 48);
-            this.textBox_Adress.Name = "textBox_Adress";
-            this.textBox_Adress.Size = new System.Drawing.Size(158, 20);
-            this.textBox_Adress.TabIndex = 20;
+            this.textBox_Town_Name.Enabled = false;
+            this.textBox_Town_Name.Location = new System.Drawing.Point(598, 48);
+            this.textBox_Town_Name.Name = "textBox_Town_Name";
+            this.textBox_Town_Name.Size = new System.Drawing.Size(158, 20);
+            this.textBox_Town_Name.TabIndex = 20;
             // 
             // label1
             // 
@@ -198,19 +213,21 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Kod Pocztowy";
             // 
-            // textBox3
+            // textBox_Post_Code_1
             // 
-            this.textBox3.Location = new System.Drawing.Point(598, 78);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(42, 20);
-            this.textBox3.TabIndex = 24;
+            this.textBox_Post_Code_1.Enabled = false;
+            this.textBox_Post_Code_1.Location = new System.Drawing.Point(598, 78);
+            this.textBox_Post_Code_1.Name = "textBox_Post_Code_1";
+            this.textBox_Post_Code_1.Size = new System.Drawing.Size(42, 20);
+            this.textBox_Post_Code_1.TabIndex = 24;
             // 
-            // textBox4
+            // textBox_Post_Code_2
             // 
-            this.textBox4.Location = new System.Drawing.Point(663, 78);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(93, 20);
-            this.textBox4.TabIndex = 25;
+            this.textBox_Post_Code_2.Enabled = false;
+            this.textBox_Post_Code_2.Location = new System.Drawing.Point(663, 78);
+            this.textBox_Post_Code_2.Name = "textBox_Post_Code_2";
+            this.textBox_Post_Code_2.Size = new System.Drawing.Size(93, 20);
+            this.textBox_Post_Code_2.TabIndex = 25;
             // 
             // label4
             // 
@@ -222,12 +239,13 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Ulica";
             // 
-            // textBox5
+            // textBox_Street_Name
             // 
-            this.textBox5.Location = new System.Drawing.Point(586, 96);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(158, 20);
-            this.textBox5.TabIndex = 27;
+            this.textBox_Street_Name.Enabled = false;
+            this.textBox_Street_Name.Location = new System.Drawing.Point(586, 96);
+            this.textBox_Street_Name.Name = "textBox_Street_Name";
+            this.textBox_Street_Name.Size = new System.Drawing.Size(158, 20);
+            this.textBox_Street_Name.TabIndex = 27;
             // 
             // label5
             // 
@@ -239,19 +257,21 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Numer Budynku";
             // 
-            // textBox6
+            // textBox_Building_Number
             // 
-            this.textBox6.Location = new System.Drawing.Point(932, 36);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(68, 20);
-            this.textBox6.TabIndex = 29;
+            this.textBox_Building_Number.Enabled = false;
+            this.textBox_Building_Number.Location = new System.Drawing.Point(932, 36);
+            this.textBox_Building_Number.Name = "textBox_Building_Number";
+            this.textBox_Building_Number.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Building_Number.TabIndex = 29;
             // 
-            // textBox7
+            // textBox_Home_Number
             // 
-            this.textBox7.Location = new System.Drawing.Point(932, 66);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(68, 20);
-            this.textBox7.TabIndex = 30;
+            this.textBox_Home_Number.Enabled = false;
+            this.textBox_Home_Number.Location = new System.Drawing.Point(932, 66);
+            this.textBox_Home_Number.Name = "textBox_Home_Number";
+            this.textBox_Home_Number.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Home_Number.TabIndex = 30;
             // 
             // label6
             // 
@@ -275,6 +295,7 @@
             // 
             // textBox_Offer_Name
             // 
+            this.textBox_Offer_Name.Enabled = false;
             this.textBox_Offer_Name.Location = new System.Drawing.Point(252, 44);
             this.textBox_Offer_Name.Name = "textBox_Offer_Name";
             this.textBox_Offer_Name.Size = new System.Drawing.Size(149, 20);
@@ -282,6 +303,7 @@
             // 
             // textBox_Offer_LastName
             // 
+            this.textBox_Offer_LastName.Enabled = false;
             this.textBox_Offer_LastName.Location = new System.Drawing.Point(252, 70);
             this.textBox_Offer_LastName.Name = "textBox_Offer_LastName";
             this.textBox_Offer_LastName.Size = new System.Drawing.Size(149, 20);
@@ -300,6 +322,7 @@
             // 
             // textBox_Offer_CompanyName
             // 
+            this.textBox_Offer_CompanyName.Enabled = false;
             this.textBox_Offer_CompanyName.Location = new System.Drawing.Point(252, 96);
             this.textBox_Offer_CompanyName.Name = "textBox_Offer_CompanyName";
             this.textBox_Offer_CompanyName.Size = new System.Drawing.Size(149, 20);
@@ -326,11 +349,11 @@
             this.listView1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.listView1.LabelEdit = true;
             this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(12, 196);
+            this.listView1.Location = new System.Drawing.Point(12, 209);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
-            this.listView1.Size = new System.Drawing.Size(1580, 218);
+            this.listView1.Size = new System.Drawing.Size(1900, 218);
             this.listView1.TabIndex = 40;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -380,14 +403,18 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.textBox_Country_ID);
+            this.panel1.Controls.Add(this.Label_Country_Name);
             this.panel1.Controls.Add(this.label_Offer_Name);
             this.panel1.Controls.Add(this.label_Offer_Client);
             this.panel1.Controls.Add(this.Button_chose_Client);
             this.panel1.Controls.Add(this.label_Offer_Adress);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.textBox_Home_Number);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.textBox_Building_Number);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label_Offer_Date);
             this.panel1.Controls.Add(this.dateTimePicker1);
@@ -395,10 +422,10 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.textBox_Street_Name);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1584, 144);
+            this.panel1.Size = new System.Drawing.Size(1900, 144);
             this.panel1.TabIndex = 41;
             // 
             // sum_e_taxes_label
@@ -430,31 +457,20 @@
             this.Column7,
             this.Column8});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 420);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 430);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1580, 218);
+            this.dataGridView1.Size = new System.Drawing.Size(1900, 218);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
-            // 
-            // sum_w_taxes_label
-            // 
-            this.sum_w_taxes_label.AutoSize = true;
-            this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label.Location = new System.Drawing.Point(465, 676);
-            this.sum_w_taxes_label.Name = "sum_w_taxes_label";
-            this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
-            this.sum_w_taxes_label.TabIndex = 45;
-            this.sum_w_taxes_label.Text = "Suma Brutto:";
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column1.FillWeight = 250F;
             this.Column1.HeaderText = "Nazwa";
             this.Column1.MinimumWidth = 10;
@@ -483,9 +499,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column4.FillWeight = 50F;
             this.Column4.HeaderText = "Ilość";
             this.Column4.MinimumWidth = 10;
@@ -494,9 +510,9 @@
             // 
             // Cena_Jednostkowa
             // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle8;
             this.Cena_Jednostkowa.HeaderText = "C.J";
             this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
             this.Cena_Jednostkowa.ReadOnly = true;
@@ -504,9 +520,9 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column5.HeaderText = "Cena netto";
             this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
@@ -523,9 +539,9 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column7.HeaderText = "Cena Brutto";
             this.Column7.MinimumWidth = 10;
             this.Column7.Name = "Column7";
@@ -540,13 +556,167 @@
             this.Column8.ReadOnly = true;
             this.Column8.Width = 76;
             // 
+            // sum_w_taxes_label
+            // 
+            this.sum_w_taxes_label.AutoSize = true;
+            this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_w_taxes_label.Location = new System.Drawing.Point(465, 676);
+            this.sum_w_taxes_label.Name = "sum_w_taxes_label";
+            this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
+            this.sum_w_taxes_label.TabIndex = 45;
+            this.sum_w_taxes_label.Text = "Suma Brutto:";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.textBox10);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.textBox9);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Location = new System.Drawing.Point(11, 158);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1901, 46);
+            this.panel2.TabIndex = 46;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(1004, 11);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(113, 17);
+            this.checkBox1.TabIndex = 33;
+            this.checkBox1.Text = "Pokaż nieaktywne";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(802, 8);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(133, 20);
+            this.textBox10.TabIndex = 32;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.LightGray;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(733, 10);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 13);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Kategoria:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(595, 8);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(133, 20);
+            this.textBox2.TabIndex = 30;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.LightGray;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(540, 10);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 13);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Symbol:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.LightGray;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(330, 11);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 13);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Producent:";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(403, 8);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(133, 20);
+            this.textBox8.TabIndex = 27;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(193, 7);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(133, 20);
+            this.textBox9.TabIndex = 26;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.LightGray;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(140, 10);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Nazwa:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.LightGray;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(5, 11);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Szukaj po:";
+            // 
+            // textBox_Country_ID
+            // 
+            this.textBox_Country_ID.Enabled = false;
+            this.textBox_Country_ID.Location = new System.Drawing.Point(932, 96);
+            this.textBox_Country_ID.Name = "textBox_Country_ID";
+            this.textBox_Country_ID.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Country_ID.TabIndex = 36;
+            // 
+            // Label_Country_Name
+            // 
+            this.Label_Country_Name.AutoSize = true;
+            this.Label_Country_Name.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Label_Country_Name.Location = new System.Drawing.Point(782, 102);
+            this.Label_Country_Name.Name = "Label_Country_Name";
+            this.Label_Country_Name.Size = new System.Drawing.Size(61, 14);
+            this.Label_Country_Name.TabIndex = 37;
+            this.Label_Country_Name.Text = "Państwo";
+            // 
             // Window_Add_Offer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.Button_Cancel_Offer;
-            this.ClientSize = new System.Drawing.Size(1604, 881);
+            this.ClientSize = new System.Drawing.Size(1924, 881);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.sum_w_taxes_label);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.sum_e_taxes_label);
@@ -554,10 +724,10 @@
             this.Controls.Add(this.textBox_Offer_CompanyName);
             this.Controls.Add(this.textBox_Offer_LastName);
             this.Controls.Add(this.textBox_Offer_Name);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox_Adress);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_Post_Code_2);
+            this.Controls.Add(this.textBox_Post_Code_1);
+            this.Controls.Add(this.textBox_Town_Name);
+            this.Controls.Add(this.textBox_O_Name);
             this.Controls.Add(this.Button_Save_Offer);
             this.Controls.Add(this.Button_Cancel_Offer);
             this.Controls.Add(this.panel1);
@@ -569,6 +739,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,17 +755,17 @@
         private System.Windows.Forms.Label label_Offer_Client;
         private System.Windows.Forms.Label label_Offer_Date;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox_Adress;
+        private System.Windows.Forms.TextBox textBox_O_Name;
+        private System.Windows.Forms.TextBox textBox_Town_Name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_Post_Code_1;
+        private System.Windows.Forms.TextBox textBox_Post_Code_2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox_Street_Name;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox_Building_Number;
+        private System.Windows.Forms.TextBox textBox_Home_Number;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox_Offer_Name;
@@ -623,5 +795,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox_Country_ID;
+        private System.Windows.Forms.Label Label_Country_Name;
     }
 }
