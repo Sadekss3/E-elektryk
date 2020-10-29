@@ -188,10 +188,7 @@ namespace E_elektryk
 
         private void Button_Delete_Client_Click(object sender, EventArgs e) // Delete Client
         {
-            if (Client_list.SelectedItems.Count <= 0)
-            {
-            }
-            else
+            if (Client_list.SelectedItems.Count > 0)
             {
                 string ID = Client_list.SelectedItems[0].Text;
                 int ID_number = System.Convert.ToInt32(ID);
