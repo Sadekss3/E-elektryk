@@ -13,8 +13,7 @@ using System.Windows.Forms;
 namespace E_elektryk
 {
     public partial class Window_Add_Client : Form
-    {
-
+    { 
         string _type;
         kontrahent _k;
 
@@ -65,7 +64,7 @@ namespace E_elektryk
             }
             else
             {
-                Modyficate_Client_Info();
+                Modify_Client_Info();
             }
         }
 
@@ -112,7 +111,7 @@ namespace E_elektryk
             }
         }
 
-        private void Modyficate_Client_Info()
+        private void Modify_Client_Info()
         {
             kontrahent kontrahent = new kontrahent();
             adres Adress = new adres();
