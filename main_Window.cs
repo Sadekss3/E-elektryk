@@ -71,12 +71,9 @@ namespace E_elektryk
             window_add.ShowDialog();
         } // Add new Product
 
-        private void Button_Modyfication_Click(object sender, EventArgs e)
+        private void Button_Modify_Click(object sender, EventArgs e)
         {
-            if (Products_list.SelectedItems.Count <= 0)
-            {
-            }
-            else
+            if (Products_list.SelectedItems.Count > 0)
             {
                 using (zlecenieEntities db = new zlecenieEntities())
                 {
@@ -87,14 +84,11 @@ namespace E_elektryk
                     mod.ShowDialog();
                 }
             }
-        } // Modyficate Product
+        } // Modify Product
 
         private void Button_Delete_Click(object sender, EventArgs e)
         {
-            if (Products_list.SelectedItems.Count <= 0)
-            {
-            }
-            else
+            if (Products_list.SelectedItems.Count > 0)
             {
                 string ID = Products_list.SelectedItems[0].Text;
                 int ID_number = System.Convert.ToInt32(ID);
@@ -168,11 +162,8 @@ namespace E_elektryk
             Add_Client.ShowDialog();
         }
 
-        private void Button_Datamod_Client_Click(object sender, EventArgs e) // Modyficate Client information
+        private void Button_DataMod_Client_Click(object sender, EventArgs e) // Modify Client information
         {
-            if (Client_list.SelectedItems.Count <= 0)
-            {
-            }
             if (Client_list.SelectedItems.Count > 0)
             {
                 using (zlecenieEntities db = new zlecenieEntities())
@@ -220,5 +211,10 @@ namespace E_elektryk
             Window_Add_Offer offer = new Window_Add_Offer();
             offer.ShowDialog();
         } // Add new offer
+
+        private void Button_Modify_Offer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
