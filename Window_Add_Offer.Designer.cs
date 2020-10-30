@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Button_Cancel_Offer = new System.Windows.Forms.Button();
             this.Button_Save_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
@@ -68,18 +68,11 @@
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_Country_ID = new System.Windows.Forms.TextBox();
+            this.Label_Country_Name = new System.Windows.Forms.Label();
             this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sum_e_taxes_label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cena_Jednostkowa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sum_w_taxes_label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -92,8 +85,15 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox_Country_ID = new System.Windows.Forms.TextBox();
-            this.Label_Country_Name = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cena_Jednostkowa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -109,7 +109,7 @@
             this.Button_Cancel_Offer.FlatAppearance.BorderSize = 2;
             this.Button_Cancel_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Cancel_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Cancel_Offer.Location = new System.Drawing.Point(2584, 1106);
+            this.Button_Cancel_Offer.Location = new System.Drawing.Point(2584, 1286);
             this.Button_Cancel_Offer.Name = "Button_Cancel_Offer";
             this.Button_Cancel_Offer.Size = new System.Drawing.Size(130, 38);
             this.Button_Cancel_Offer.TabIndex = 12;
@@ -124,7 +124,7 @@
             this.Button_Save_Offer.FlatAppearance.BorderSize = 2;
             this.Button_Save_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Save_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Save_Offer.Location = new System.Drawing.Point(2448, 1106);
+            this.Button_Save_Offer.Location = new System.Drawing.Point(2448, 1286);
             this.Button_Save_Offer.Name = "Button_Save_Offer";
             this.Button_Save_Offer.Size = new System.Drawing.Size(130, 38);
             this.Button_Save_Offer.TabIndex = 13;
@@ -353,7 +353,7 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
-            this.listView1.Size = new System.Drawing.Size(1900, 218);
+            this.listView1.Size = new System.Drawing.Size(1900, 345);
             this.listView1.TabIndex = 40;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -428,12 +428,30 @@
             this.panel1.Size = new System.Drawing.Size(1900, 144);
             this.panel1.TabIndex = 41;
             // 
+            // textBox_Country_ID
+            // 
+            this.textBox_Country_ID.Enabled = false;
+            this.textBox_Country_ID.Location = new System.Drawing.Point(932, 96);
+            this.textBox_Country_ID.Name = "textBox_Country_ID";
+            this.textBox_Country_ID.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Country_ID.TabIndex = 36;
+            // 
+            // Label_Country_Name
+            // 
+            this.Label_Country_Name.AutoSize = true;
+            this.Label_Country_Name.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Label_Country_Name.Location = new System.Drawing.Point(782, 102);
+            this.Label_Country_Name.Name = "Label_Country_Name";
+            this.Label_Country_Name.Size = new System.Drawing.Size(61, 14);
+            this.Label_Country_Name.TabIndex = 37;
+            this.Label_Country_Name.Text = "Państwo";
+            // 
             // sum_e_taxes_label
             // 
             this.sum_e_taxes_label.AutoSize = true;
             this.sum_e_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.sum_e_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_e_taxes_label.Location = new System.Drawing.Point(465, 651);
+            this.sum_e_taxes_label.Location = new System.Drawing.Point(465, 910);
             this.sum_e_taxes_label.Name = "sum_e_taxes_label";
             this.sum_e_taxes_label.Size = new System.Drawing.Size(82, 16);
             this.sum_e_taxes_label.TabIndex = 43;
@@ -457,111 +475,21 @@
             this.Column7,
             this.Column8});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 430);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 560);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1900, 218);
+            this.dataGridView1.Size = new System.Drawing.Size(1900, 345);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column1.FillWeight = 250F;
-            this.Column1.HeaderText = "Nazwa";
-            this.Column1.MinimumWidth = 10;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.Width = 230;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 90F;
-            this.Column2.HeaderText = "Producent";
-            this.Column2.MinimumWidth = 10;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 81;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 35F;
-            this.Column3.HeaderText = "Jm";
-            this.Column3.MinimumWidth = 10;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 45;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column4.FillWeight = 50F;
-            this.Column4.HeaderText = "Ilość";
-            this.Column4.MinimumWidth = 10;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 54;
-            // 
-            // Cena_Jednostkowa
-            // 
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Cena_Jednostkowa.HeaderText = "C.J";
-            this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
-            this.Cena_Jednostkowa.ReadOnly = true;
-            this.Cena_Jednostkowa.Width = 47;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Column5.HeaderText = "Cena netto";
-            this.Column5.MinimumWidth = 10;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 84;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Vat";
-            this.Column6.MinimumWidth = 10;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 48;
-            // 
-            // Column7
-            // 
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column7.HeaderText = "Cena Brutto";
-            this.Column7.MinimumWidth = 10;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 88;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "kategoria";
-            this.Column8.MinimumWidth = 10;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 76;
             // 
             // sum_w_taxes_label
             // 
             this.sum_w_taxes_label.AutoSize = true;
             this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label.Location = new System.Drawing.Point(465, 676);
+            this.sum_w_taxes_label.Location = new System.Drawing.Point(698, 910);
             this.sum_w_taxes_label.Name = "sum_w_taxes_label";
             this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
             this.sum_w_taxes_label.TabIndex = 45;
@@ -691,23 +619,95 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Szukaj po:";
             // 
-            // textBox_Country_ID
+            // Column1
             // 
-            this.textBox_Country_ID.Enabled = false;
-            this.textBox_Country_ID.Location = new System.Drawing.Point(932, 96);
-            this.textBox_Country_ID.Name = "textBox_Country_ID";
-            this.textBox_Country_ID.Size = new System.Drawing.Size(68, 20);
-            this.textBox_Country_ID.TabIndex = 36;
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.FillWeight = 250F;
+            this.Column1.HeaderText = "Nazwa";
+            this.Column1.MinimumWidth = 10;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Width = 230;
             // 
-            // Label_Country_Name
+            // Column2
             // 
-            this.Label_Country_Name.AutoSize = true;
-            this.Label_Country_Name.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label_Country_Name.Location = new System.Drawing.Point(782, 102);
-            this.Label_Country_Name.Name = "Label_Country_Name";
-            this.Label_Country_Name.Size = new System.Drawing.Size(61, 14);
-            this.Label_Country_Name.TabIndex = 37;
-            this.Label_Country_Name.Text = "Państwo";
+            this.Column2.FillWeight = 90F;
+            this.Column2.HeaderText = "Producent";
+            this.Column2.MinimumWidth = 10;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 81;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 35F;
+            this.Column3.HeaderText = "Jm";
+            this.Column3.MinimumWidth = 10;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 45;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.FillWeight = 50F;
+            this.Column4.HeaderText = "Ilość";
+            this.Column4.MinimumWidth = 10;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 54;
+            // 
+            // Cena_Jednostkowa
+            // 
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Cena_Jednostkowa.HeaderText = "C.J";
+            this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
+            this.Cena_Jednostkowa.ReadOnly = true;
+            this.Cena_Jednostkowa.Width = 47;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column5.HeaderText = "Cena netto";
+            this.Column5.MinimumWidth = 10;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 84;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Vat";
+            this.Column6.MinimumWidth = 10;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 48;
+            // 
+            // Column7
+            // 
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column7.HeaderText = "Cena Brutto";
+            this.Column7.MinimumWidth = 10;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 88;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "kategoria";
+            this.Column8.MinimumWidth = 10;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 76;
             // 
             // Window_Add_Offer
             // 
@@ -715,7 +715,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.Button_Cancel_Offer;
-            this.ClientSize = new System.Drawing.Size(1924, 881);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.sum_w_taxes_label);
             this.Controls.Add(this.dataGridView1);
@@ -786,15 +786,6 @@
         private System.Windows.Forms.Label sum_e_taxes_label;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label sum_w_taxes_label;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cena_Jednostkowa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textBox10;
@@ -808,5 +799,14 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox_Country_ID;
         private System.Windows.Forms.Label Label_Country_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cena_Jednostkowa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
