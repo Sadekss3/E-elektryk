@@ -46,7 +46,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Wyceny = new System.Windows.Forms.TabPage();
             this.Delete_Offer = new System.Windows.Forms.Button();
-            this.Button_Modyficate_Offer = new System.Windows.Forms.Button();
+            this.Button_Modify_Offer = new System.Windows.Forms.Button();
             this.Button_Add_Offer = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.ID_offer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -76,7 +76,7 @@
             this.Telefon_1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Telefon_2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Button_Delete_Client = new System.Windows.Forms.Button();
-            this.Button_Datamod_Client = new System.Windows.Forms.Button();
+            this.Button_DataMod_Client = new System.Windows.Forms.Button();
             this.Button_Add_Client = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -100,7 +100,7 @@
             this.columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Button_Delete = new System.Windows.Forms.Button();
-            this.Button_Modyfication = new System.Windows.Forms.Button();
+            this.Button_Modify = new System.Windows.Forms.Button();
             this.Button_Add = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -294,7 +294,7 @@
             // 
             this.Wyceny.BackColor = System.Drawing.Color.DimGray;
             this.Wyceny.Controls.Add(this.Delete_Offer);
-            this.Wyceny.Controls.Add(this.Button_Modyficate_Offer);
+            this.Wyceny.Controls.Add(this.Button_Modify_Offer);
             this.Wyceny.Controls.Add(this.Button_Add_Offer);
             this.Wyceny.Controls.Add(this.listView1);
             this.Wyceny.Controls.Add(this.panel1);
@@ -322,18 +322,19 @@
             // 
             // Button_Modyficate_Offer
             // 
-            this.Button_Modyficate_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Button_Modyficate_Offer.BackColor = System.Drawing.Color.Gainsboro;
-            this.Button_Modyficate_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button_Modyficate_Offer.FlatAppearance.BorderSize = 2;
-            this.Button_Modyficate_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Modyficate_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Modyficate_Offer.Location = new System.Drawing.Point(145, 545);
-            this.Button_Modyficate_Offer.Name = "Button_Modyficate_Offer";
-            this.Button_Modyficate_Offer.Size = new System.Drawing.Size(130, 38);
-            this.Button_Modyficate_Offer.TabIndex = 10;
-            this.Button_Modyficate_Offer.Text = "Modyfikuj";
-            this.Button_Modyficate_Offer.UseVisualStyleBackColor = false;
+            this.Button_Modify_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_Modify_Offer.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_Modify_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Modify_Offer.FlatAppearance.BorderSize = 2;
+            this.Button_Modify_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Modify_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Modify_Offer.Location = new System.Drawing.Point(145, 545);
+            this.Button_Modify_Offer.Name = "Button_Modyficate_Offer";
+            this.Button_Modify_Offer.Size = new System.Drawing.Size(130, 38);
+            this.Button_Modify_Offer.TabIndex = 10;
+            this.Button_Modify_Offer.Text = "Modyfikuj";
+            this.Button_Modify_Offer.UseVisualStyleBackColor = false;
+            this.Button_Modify_Offer.Click += new System.EventHandler(this.Button_Modify_Offer_Click);
             // 
             // Button_Add_Offer
             // 
@@ -500,7 +501,7 @@
             this.Kontrahenci.BackColor = System.Drawing.Color.DimGray;
             this.Kontrahenci.Controls.Add(this.Client_list);
             this.Kontrahenci.Controls.Add(this.Button_Delete_Client);
-            this.Kontrahenci.Controls.Add(this.Button_Datamod_Client);
+            this.Kontrahenci.Controls.Add(this.Button_DataMod_Client);
             this.Kontrahenci.Controls.Add(this.Button_Add_Client);
             this.Kontrahenci.Controls.Add(this.panel3);
             this.Kontrahenci.Location = new System.Drawing.Point(4, 22);
@@ -607,21 +608,21 @@
             this.Button_Delete_Client.UseVisualStyleBackColor = false;
             this.Button_Delete_Client.Click += new System.EventHandler(this.Button_Delete_Client_Click);
             // 
-            // Button_Datamod_Client
+            // Button_DataMod_Client
             // 
-            this.Button_Datamod_Client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Button_Datamod_Client.BackColor = System.Drawing.Color.Gainsboro;
-            this.Button_Datamod_Client.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button_Datamod_Client.FlatAppearance.BorderSize = 2;
-            this.Button_Datamod_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Datamod_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Datamod_Client.Location = new System.Drawing.Point(145, 545);
-            this.Button_Datamod_Client.Name = "Button_Datamod_Client";
-            this.Button_Datamod_Client.Size = new System.Drawing.Size(130, 38);
-            this.Button_Datamod_Client.TabIndex = 7;
-            this.Button_Datamod_Client.Text = "Modyfikuj";
-            this.Button_Datamod_Client.UseVisualStyleBackColor = false;
-            this.Button_Datamod_Client.Click += new System.EventHandler(this.Button_Datamod_Client_Click);
+            this.Button_DataMod_Client.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_DataMod_Client.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_DataMod_Client.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_DataMod_Client.FlatAppearance.BorderSize = 2;
+            this.Button_DataMod_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_DataMod_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_DataMod_Client.Location = new System.Drawing.Point(145, 545);
+            this.Button_DataMod_Client.Name = "Button_DataMod_Client";
+            this.Button_DataMod_Client.Size = new System.Drawing.Size(130, 38);
+            this.Button_DataMod_Client.TabIndex = 7;
+            this.Button_DataMod_Client.Text = "Modyfikuj";
+            this.Button_DataMod_Client.UseVisualStyleBackColor = false;
+            this.Button_DataMod_Client.Click += new System.EventHandler(this.Button_DataMod_Client_Click);
             // 
             // Button_Add_Client
             // 
@@ -735,7 +736,7 @@
             this.Magazyn.BackColor = System.Drawing.Color.DimGray;
             this.Magazyn.Controls.Add(this.Products_list);
             this.Magazyn.Controls.Add(this.Button_Delete);
-            this.Magazyn.Controls.Add(this.Button_Modyfication);
+            this.Magazyn.Controls.Add(this.Button_Modify);
             this.Magazyn.Controls.Add(this.Button_Add);
             this.Magazyn.Controls.Add(this.panel2);
             this.Magazyn.Location = new System.Drawing.Point(4, 22);
@@ -848,21 +849,21 @@
             this.Button_Delete.UseVisualStyleBackColor = false;
             this.Button_Delete.Click += new System.EventHandler(this.Button_Delete_Click);
             // 
-            // Button_Modyfication
+            // Button_Modify
             // 
-            this.Button_Modyfication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Button_Modyfication.BackColor = System.Drawing.Color.Gainsboro;
-            this.Button_Modyfication.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button_Modyfication.FlatAppearance.BorderSize = 2;
-            this.Button_Modyfication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Modyfication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Modyfication.Location = new System.Drawing.Point(145, 545);
-            this.Button_Modyfication.Name = "Button_Modyfication";
-            this.Button_Modyfication.Size = new System.Drawing.Size(130, 38);
-            this.Button_Modyfication.TabIndex = 4;
-            this.Button_Modyfication.Text = "Modyfikuj";
-            this.Button_Modyfication.UseVisualStyleBackColor = false;
-            this.Button_Modyfication.Click += new System.EventHandler(this.Button_Modyfication_Click);
+            this.Button_Modify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_Modify.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_Modify.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Modify.FlatAppearance.BorderSize = 2;
+            this.Button_Modify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Modify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Modify.Location = new System.Drawing.Point(145, 545);
+            this.Button_Modify.Name = "Button_Modify";
+            this.Button_Modify.Size = new System.Drawing.Size(130, 38);
+            this.Button_Modify.TabIndex = 4;
+            this.Button_Modify.Text = "Modyfikuj";
+            this.Button_Modify.UseVisualStyleBackColor = false;
+            this.Button_Modify.Click += new System.EventHandler(this.Button_Modify_Click);
             // 
             // Button_Add
             // 
@@ -1145,7 +1146,7 @@
         private System.Windows.Forms.TabPage Wyceny;
         private System.Windows.Forms.TabPage Kontrahenci;
         private System.Windows.Forms.Button Button_Delete_Client;
-        private System.Windows.Forms.Button Button_Datamod_Client;
+        private System.Windows.Forms.Button Button_DataMod_Client;
         private System.Windows.Forms.Button Button_Add_Client;
         private System.Windows.Forms.ListView Client_list;
         private System.Windows.Forms.ColumnHeader ID;
@@ -1171,11 +1172,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.Button Button_Delete;
-        private System.Windows.Forms.Button Button_Modyfication;
+        private System.Windows.Forms.Button Button_Modify;
         private System.Windows.Forms.Button Button_Add;
         private System.Windows.Forms.TabPage Faktury;
         private System.Windows.Forms.Button Delete_Offer;
-        private System.Windows.Forms.Button Button_Modyficate_Offer;
+        private System.Windows.Forms.Button Button_Modify_Offer;
         private System.Windows.Forms.Button Button_Add_Offer;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader ID_offer;
