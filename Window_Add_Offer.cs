@@ -139,14 +139,14 @@ namespace E_elektryk
         private void Button_Font_Color_Click(object sender, EventArgs e)
         {
             colorDialog1.ShowDialog();
-            Button_Font_Color.BackColor = colorDialog1.Color;
-            Offer_Information_Box.ForeColor = colorDialog1.Color;    
+            Button_Font_Color.ForeColor = colorDialog1.Color;
+            Offer_Information_Box.SelectionColor = colorDialog1.Color;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
-            Offer_Information_Box.Font = fontDialog1.Font;
+            Offer_Information_Box.SelectionFont = fontDialog1.Font;
         }
     }
 }
