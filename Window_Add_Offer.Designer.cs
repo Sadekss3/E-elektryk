@@ -104,7 +104,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Button_Font_Color = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button_Font_Style = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -837,13 +837,13 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1382, 210);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(42, 23);
-            this.button6.TabIndex = 55;
-            this.button6.Text = "Styl ";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button_Font_Style.Location = new System.Drawing.Point(1382, 210);
+            this.button_Font_Style.Name = "button6";
+            this.button_Font_Style.Size = new System.Drawing.Size(42, 23);
+            this.button_Font_Style.TabIndex = 55;
+            this.button_Font_Style.Text = "Styl ";
+            this.button_Font_Style.UseVisualStyleBackColor = true;
+            this.button_Font_Style.Click += new System.EventHandler(this.button_Font_Style_Click);
             // 
             // Window_Add_Offer
             // 
@@ -852,7 +852,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.Button_Cancel_Offer;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button_Font_Style);
             this.Controls.Add(this.Button_Font_Color);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Offer_Information_Box);
@@ -963,6 +963,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Button_Font_Color;
         private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button_Font_Style;
     }
 }
