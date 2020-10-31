@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Button_Cancel_Offer = new System.Windows.Forms.Button();
             this.Button_Save_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
@@ -530,8 +530,8 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle71.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle71;
+            dataGridViewCellStyle76.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle76;
             this.Column1.FillWeight = 250F;
             this.Column1.HeaderText = "Nazwa";
             this.Column1.MinimumWidth = 10;
@@ -560,9 +560,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle72.Format = "N0";
-            dataGridViewCellStyle72.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle72;
+            dataGridViewCellStyle77.Format = "N0";
+            dataGridViewCellStyle77.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle77;
             this.Column4.FillWeight = 50F;
             this.Column4.HeaderText = "Ilość";
             this.Column4.MinimumWidth = 10;
@@ -571,9 +571,9 @@
             // 
             // Cena_Jednostkowa
             // 
-            dataGridViewCellStyle73.Format = "C2";
-            dataGridViewCellStyle73.NullValue = null;
-            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle78.Format = "C2";
+            dataGridViewCellStyle78.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle78;
             this.Cena_Jednostkowa.HeaderText = "C.J";
             this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
             this.Cena_Jednostkowa.ReadOnly = true;
@@ -581,9 +581,9 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle74.Format = "C2";
-            dataGridViewCellStyle74.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle79.Format = "C2";
+            dataGridViewCellStyle79.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle79;
             this.Column5.HeaderText = "Cena netto";
             this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
@@ -600,9 +600,9 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle75.Format = "C2";
-            dataGridViewCellStyle75.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle80.Format = "C2";
+            dataGridViewCellStyle80.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle80;
             this.Column7.HeaderText = "Cena Brutto";
             this.Column7.MinimumWidth = 10;
             this.Column7.Name = "Column7";
@@ -767,6 +767,7 @@
             this.button2.TabIndex = 48;
             this.button2.Text = "Podgląd PDF";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
