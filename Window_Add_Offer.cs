@@ -143,7 +143,7 @@ namespace E_elektryk
             Offer_Information_Box.SelectionColor = colorDialog1.Color;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button_Font_Style_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
             Offer_Information_Box.SelectionFont = fontDialog1.Font;
