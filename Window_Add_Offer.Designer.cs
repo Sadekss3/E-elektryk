@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -68,11 +67,21 @@
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox_Country_ID = new System.Windows.Forms.TextBox();
             this.Label_Country_Name = new System.Windows.Forms.Label();
-            this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sum_e_taxes_label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cena_Jednostkowa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sum_w_taxes_label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -85,19 +94,21 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cena_Jednostkowa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.zlecenieDataSet = new E_elektryk.zlecenieDataSet();
+            this.Offer_Information_Box = new System.Windows.Forms.RichTextBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Button_Font_Color = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // Button_Cancel_Offer
@@ -167,9 +178,9 @@
             this.label_Offer_Date.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Offer_Date.Location = new System.Drawing.Point(1054, 3);
             this.label_Offer_Date.Name = "label_Offer_Date";
-            this.label_Offer_Date.Size = new System.Drawing.Size(96, 15);
+            this.label_Offer_Date.Size = new System.Drawing.Size(90, 15);
             this.label_Offer_Date.TabIndex = 17;
-            this.label_Offer_Date.Text = "Data zlecenia";
+            this.label_Offer_Date.Text = "Data wyceny";
             // 
             // dateTimePicker1
             // 
@@ -181,6 +192,7 @@
             // textBox_O_Name
             // 
             this.textBox_O_Name.Location = new System.Drawing.Point(18, 45);
+            this.textBox_O_Name.Multiline = true;
             this.textBox_O_Name.Name = "textBox_O_Name";
             this.textBox_O_Name.Size = new System.Drawing.Size(183, 20);
             this.textBox_O_Name.TabIndex = 19;
@@ -353,7 +365,7 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
-            this.listView1.Size = new System.Drawing.Size(1900, 345);
+            this.listView1.Size = new System.Drawing.Size(1257, 345);
             this.listView1.TabIndex = 40;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -406,6 +418,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.textBox_Country_ID);
             this.panel1.Controls.Add(this.Label_Country_Name);
             this.panel1.Controls.Add(this.label_Offer_Name);
@@ -427,6 +441,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1900, 144);
             this.panel1.TabIndex = 41;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(1054, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 15);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Ważna do";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(1057, 101);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 48;
             // 
             // textBox_Country_ID
             // 
@@ -451,7 +482,7 @@
             this.sum_e_taxes_label.AutoSize = true;
             this.sum_e_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.sum_e_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_e_taxes_label.Location = new System.Drawing.Point(465, 910);
+            this.sum_e_taxes_label.Location = new System.Drawing.Point(239, 908);
             this.sum_e_taxes_label.Name = "sum_e_taxes_label";
             this.sum_e_taxes_label.Size = new System.Drawing.Size(82, 16);
             this.sum_e_taxes_label.TabIndex = 43;
@@ -480,16 +511,106 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1900, 345);
+            this.dataGridView1.Size = new System.Drawing.Size(1258, 345);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.FillWeight = 250F;
+            this.Column1.HeaderText = "Nazwa";
+            this.Column1.MinimumWidth = 10;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Width = 230;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 90F;
+            this.Column2.HeaderText = "Producent";
+            this.Column2.MinimumWidth = 10;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 81;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 35F;
+            this.Column3.HeaderText = "Jm";
+            this.Column3.MinimumWidth = 10;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 45;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.FillWeight = 50F;
+            this.Column4.HeaderText = "Ilość";
+            this.Column4.MinimumWidth = 10;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 54;
+            // 
+            // Cena_Jednostkowa
+            // 
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Cena_Jednostkowa.HeaderText = "C.J";
+            this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
+            this.Cena_Jednostkowa.ReadOnly = true;
+            this.Cena_Jednostkowa.Width = 47;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column5.HeaderText = "Cena netto";
+            this.Column5.MinimumWidth = 10;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 84;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Vat";
+            this.Column6.MinimumWidth = 10;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 48;
+            // 
+            // Column7
+            // 
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column7.HeaderText = "Cena Brutto";
+            this.Column7.MinimumWidth = 10;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 88;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "kategoria";
+            this.Column8.MinimumWidth = 10;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 76;
             // 
             // sum_w_taxes_label
             // 
             this.sum_w_taxes_label.AutoSize = true;
             this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label.Location = new System.Drawing.Point(698, 910);
+            this.sum_w_taxes_label.Location = new System.Drawing.Point(465, 908);
             this.sum_w_taxes_label.Name = "sum_w_taxes_label";
             this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
             this.sum_w_taxes_label.TabIndex = 45;
@@ -619,95 +740,110 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Szukaj po:";
             // 
-            // Column1
+            // button2
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.FillWeight = 250F;
-            this.Column1.HeaderText = "Nazwa";
-            this.Column1.MinimumWidth = 10;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.Width = 230;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button2.BackColor = System.Drawing.Color.Gainsboro;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(147, 1011);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(130, 38);
+            this.button2.TabIndex = 48;
+            this.button2.Text = "Podgląd PDF";
+            this.button2.UseVisualStyleBackColor = false;
             // 
-            // Column2
+            // button1
             // 
-            this.Column2.FillWeight = 90F;
-            this.Column2.HeaderText = "Producent";
-            this.Column2.MinimumWidth = 10;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 81;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(12, 1011);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 38);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Zapisz Oferte";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // Column3
+            // button3
             // 
-            this.Column3.FillWeight = 35F;
-            this.Column3.HeaderText = "Jm";
-            this.Column3.MinimumWidth = 10;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 45;
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.BackColor = System.Drawing.Color.Gainsboro;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button3.FlatAppearance.BorderSize = 2;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Location = new System.Drawing.Point(282, 1011);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(130, 38);
+            this.button3.TabIndex = 49;
+            this.button3.Text = "Drukuj";
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // Column4
+            // button4
             // 
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.FillWeight = 50F;
-            this.Column4.HeaderText = "Ilość";
-            this.Column4.MinimumWidth = 10;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 54;
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.BackColor = System.Drawing.Color.Gainsboro;
+            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button4.FlatAppearance.BorderSize = 2;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.Location = new System.Drawing.Point(1781, 1011);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(130, 38);
+            this.button4.TabIndex = 50;
+            this.button4.Text = "Anuluj";
+            this.button4.UseVisualStyleBackColor = false;
             // 
-            // Cena_Jednostkowa
+            // zlecenieDataSet
             // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Cena_Jednostkowa.HeaderText = "C.J";
-            this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
-            this.Cena_Jednostkowa.ReadOnly = true;
-            this.Cena_Jednostkowa.Width = 47;
+            this.zlecenieDataSet.DataSetName = "zlecenieDataSet";
+            this.zlecenieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Column5
+            // Offer_Information_Box
             // 
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column5.HeaderText = "Cena netto";
-            this.Column5.MinimumWidth = 10;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 84;
+            this.Offer_Information_Box.EnableAutoDragDrop = true;
+            this.Offer_Information_Box.Location = new System.Drawing.Point(1275, 234);
+            this.Offer_Information_Box.Name = "Offer_Information_Box";
+            this.Offer_Information_Box.Size = new System.Drawing.Size(636, 671);
+            this.Offer_Information_Box.TabIndex = 51;
+            this.Offer_Information_Box.Text = "";
             // 
-            // Column6
+            // label8
             // 
-            this.Column6.HeaderText = "Vat";
-            this.Column6.MinimumWidth = 10;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 48;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(1275, 210);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 13);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "Opis:";
             // 
-            // Column7
+            // Button_Font_Color
             // 
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column7.HeaderText = "Cena Brutto";
-            this.Column7.MinimumWidth = 10;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 88;
+            this.Button_Font_Color.Location = new System.Drawing.Point(1334, 209);
+            this.Button_Font_Color.Name = "Button_Font_Color";
+            this.Button_Font_Color.Size = new System.Drawing.Size(42, 24);
+            this.Button_Font_Color.TabIndex = 54;
+            this.Button_Font_Color.Text = "Kolor";
+            this.Button_Font_Color.UseVisualStyleBackColor = true;
+            this.Button_Font_Color.Click += new System.EventHandler(this.Button_Font_Color_Click);
             // 
-            // Column8
+            // button6
             // 
-            this.Column8.HeaderText = "kategoria";
-            this.Column8.MinimumWidth = 10;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 76;
+            this.button6.Location = new System.Drawing.Point(1382, 210);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(42, 23);
+            this.button6.TabIndex = 55;
+            this.button6.Text = "Styl ";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Window_Add_Offer
             // 
@@ -716,6 +852,14 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.Button_Cancel_Offer;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.Button_Font_Color);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.Offer_Information_Box);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.sum_w_taxes_label);
             this.Controls.Add(this.dataGridView1);
@@ -737,10 +881,10 @@
             this.Load += new System.EventHandler(this.Window_Add_Offer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -782,7 +926,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader18;
         public System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.BindingSource produktBindingSource;
         private System.Windows.Forms.Label sum_e_taxes_label;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label sum_w_taxes_label;
@@ -808,5 +951,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private zlecenieDataSet zlecenieDataSet;
+        private System.Windows.Forms.RichTextBox Offer_Information_Box;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button Button_Font_Color;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button button6;
     }
 }
