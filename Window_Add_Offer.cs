@@ -17,7 +17,7 @@ namespace E_elektryk
 {
 
     public partial class Window_Add_Offer : Form
-    {
+    {   
         public Window_Add_Offer()
         {
             InitializeComponent();
@@ -135,6 +135,19 @@ namespace E_elektryk
                 textBox_Country_ID.Text = a.Państwo.ToString();
             }
         } // Add information about Client to Offer Form
+
+        private void Button_Font_Color_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            Button_Font_Color.BackColor = colorDialog1.Color;
+            Offer_Information_Box.ForeColor = colorDialog1.Color;    
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog();
+            Offer_Information_Box.Font = fontDialog1.Font;
+        }
     }
 }
 
