@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Button_Cancel_Offer = new System.Windows.Forms.Button();
             this.Button_Save_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
@@ -107,11 +107,16 @@
             this.button_Font_Style = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).BeginInit();
             this.panel3.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // Button_Cancel_Offer
@@ -349,6 +354,7 @@
             this.listView1.AllowColumnReorder = true;
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader11,
             this.columnHeader12,
@@ -364,11 +370,11 @@
             this.listView1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.listView1.LabelEdit = true;
             this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(11, 241);
+            this.listView1.Location = new System.Drawing.Point(0, 57);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
-            this.listView1.Size = new System.Drawing.Size(1258, 345);
+            this.listView1.Size = new System.Drawing.Size(1259, 326);
             this.listView1.TabIndex = 40;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -420,7 +426,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.textBox_Country_ID);
@@ -441,9 +447,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBox_Street_Name);
             this.panel1.Controls.Add(this.textBox_O_Name);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(11, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1900, 144);
+            this.panel1.Size = new System.Drawing.Size(1901, 144);
             this.panel1.TabIndex = 41;
             // 
             // label3
@@ -484,9 +490,9 @@
             // sum_e_taxes_label
             // 
             this.sum_e_taxes_label.AutoSize = true;
-            this.sum_e_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sum_e_taxes_label.BackColor = System.Drawing.Color.Gainsboro;
             this.sum_e_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_e_taxes_label.Location = new System.Drawing.Point(249, 940);
+            this.sum_e_taxes_label.Location = new System.Drawing.Point(237, 361);
             this.sum_e_taxes_label.Name = "sum_e_taxes_label";
             this.sum_e_taxes_label.Size = new System.Drawing.Size(82, 16);
             this.sum_e_taxes_label.TabIndex = 43;
@@ -498,6 +504,8 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -510,20 +518,20 @@
             this.Column7,
             this.Column8});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 592);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1258, 345);
+            this.dataGridView1.Size = new System.Drawing.Size(1257, 333);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle16.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle71.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle71;
             this.Column1.FillWeight = 250F;
             this.Column1.HeaderText = "Nazwa";
             this.Column1.MinimumWidth = 10;
@@ -552,9 +560,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle17.Format = "N0";
-            dataGridViewCellStyle17.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle72.Format = "N0";
+            dataGridViewCellStyle72.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle72;
             this.Column4.FillWeight = 50F;
             this.Column4.HeaderText = "Ilość";
             this.Column4.MinimumWidth = 10;
@@ -563,9 +571,9 @@
             // 
             // Cena_Jednostkowa
             // 
-            dataGridViewCellStyle18.Format = "C2";
-            dataGridViewCellStyle18.NullValue = null;
-            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle73.Format = "C2";
+            dataGridViewCellStyle73.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle73;
             this.Cena_Jednostkowa.HeaderText = "C.J";
             this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
             this.Cena_Jednostkowa.ReadOnly = true;
@@ -573,9 +581,9 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle19.Format = "C2";
-            dataGridViewCellStyle19.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle74.Format = "C2";
+            dataGridViewCellStyle74.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle74;
             this.Column5.HeaderText = "Cena netto";
             this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
@@ -592,9 +600,9 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle20.Format = "C2";
-            dataGridViewCellStyle20.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle75.Format = "C2";
+            dataGridViewCellStyle75.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle75;
             this.Column7.HeaderText = "Cena Brutto";
             this.Column7.MinimumWidth = 10;
             this.Column7.Name = "Column7";
@@ -612,9 +620,9 @@
             // sum_w_taxes_label
             // 
             this.sum_w_taxes_label.AutoSize = true;
-            this.sum_w_taxes_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sum_w_taxes_label.BackColor = System.Drawing.Color.Gainsboro;
             this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label.Location = new System.Drawing.Point(465, 940);
+            this.sum_w_taxes_label.Location = new System.Drawing.Point(484, 361);
             this.sum_w_taxes_label.Name = "sum_w_taxes_label";
             this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
             this.sum_w_taxes_label.TabIndex = 45;
@@ -625,7 +633,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.textBox10);
             this.panel2.Controls.Add(this.label13);
@@ -636,11 +644,12 @@
             this.panel2.Controls.Add(this.textBox9);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(0, 27);
+            this.panel2.Location = new System.Drawing.Point(0, 23);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1258, 46);
+            this.panel2.Size = new System.Drawing.Size(1258, 40);
             this.panel2.TabIndex = 46;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // checkBox1
             // 
@@ -663,7 +672,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.LightGray;
+            this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label13.Location = new System.Drawing.Point(733, 10);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -683,7 +692,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.LightGray;
+            this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(540, 10);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -695,7 +704,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.LightGray;
+            this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label10.Location = new System.Drawing.Point(330, 11);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -723,7 +732,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.LightGray;
+            this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label11.Location = new System.Drawing.Point(140, 10);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -735,7 +744,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.LightGray;
+            this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.Location = new System.Drawing.Point(5, 11);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -812,10 +821,11 @@
             // 
             // Offer_Information_Box
             // 
+            this.Offer_Information_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Offer_Information_Box.EnableAutoDragDrop = true;
-            this.Offer_Information_Box.Location = new System.Drawing.Point(1275, 196);
+            this.Offer_Information_Box.Location = new System.Drawing.Point(3, 33);
             this.Offer_Information_Box.Name = "Offer_Information_Box";
-            this.Offer_Information_Box.Size = new System.Drawing.Size(636, 741);
+            this.Offer_Information_Box.Size = new System.Drawing.Size(632, 742);
             this.Offer_Information_Box.TabIndex = 51;
             this.Offer_Information_Box.Text = "";
             // 
@@ -823,7 +833,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(1284, 167);
+            this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
             this.label8.TabIndex = 52;
@@ -831,7 +841,7 @@
             // 
             // Button_Font_Color
             // 
-            this.Button_Font_Color.Location = new System.Drawing.Point(1343, 166);
+            this.Button_Font_Color.Location = new System.Drawing.Point(45, 3);
             this.Button_Font_Color.Name = "Button_Font_Color";
             this.Button_Font_Color.Size = new System.Drawing.Size(42, 24);
             this.Button_Font_Color.TabIndex = 54;
@@ -841,9 +851,9 @@
             // 
             // button_Font_Style
             // 
-            this.button_Font_Style.Location = new System.Drawing.Point(1391, 167);
+            this.button_Font_Style.Location = new System.Drawing.Point(93, 3);
             this.button_Font_Style.Name = "button_Font_Style";
-            this.button_Font_Style.Size = new System.Drawing.Size(42, 23);
+            this.button_Font_Style.Size = new System.Drawing.Size(42, 24);
             this.button_Font_Style.TabIndex = 55;
             this.button_Font_Style.Text = "Styl ";
             this.button_Font_Style.UseVisualStyleBackColor = true;
@@ -851,23 +861,59 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Controls.Add(this.label14);
+            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Controls.Add(this.listView1);
             this.panel3.Controls.Add(this.panel2);
-            this.panel3.Location = new System.Drawing.Point(11, 163);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Location = new System.Drawing.Point(11, 162);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1258, 423);
+            this.panel3.Size = new System.Drawing.Size(1258, 380);
             this.panel3.TabIndex = 56;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(4, 9);
+            this.label14.Location = new System.Drawing.Point(4, 7);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(137, 13);
             this.label14.TabIndex = 47;
             this.label14.Text = "Kartotek Materiałowa: ";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowLayoutPanel1.Controls.Add(this.label8);
+            this.flowLayoutPanel1.Controls.Add(this.Button_Font_Color);
+            this.flowLayoutPanel1.Controls.Add(this.button_Font_Style);
+            this.flowLayoutPanel1.Controls.Add(this.Offer_Information_Box);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1276, 162);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(635, 775);
+            this.flowLayoutPanel1.TabIndex = 57;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.sum_e_taxes_label);
+            this.panel4.Controls.Add(this.sum_w_taxes_label);
+            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Location = new System.Drawing.Point(11, 549);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1259, 388);
+            this.panel4.TabIndex = 58;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(6, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(132, 13);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "Materiały do wyceny: ";
             // 
             // Window_Add_Offer
             // 
@@ -876,18 +922,10 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.Button_Cancel_Offer;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.button_Font_Style);
-            this.Controls.Add(this.Button_Font_Color);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.Offer_Information_Box);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.sum_w_taxes_label);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.sum_e_taxes_label);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox_Offer_CompanyName);
             this.Controls.Add(this.textBox_Offer_LastName);
             this.Controls.Add(this.textBox_Offer_Name);
@@ -898,6 +936,8 @@
             this.Controls.Add(this.Button_Cancel_Offer);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel4);
             this.Name = "Window_Add_Offer";
             this.Text = "Widnow_Add_Offer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -910,6 +950,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -991,5 +1035,8 @@
         private System.Windows.Forms.Button button_Font_Style;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label15;
     }
 }
