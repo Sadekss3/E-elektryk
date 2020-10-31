@@ -148,6 +148,16 @@ namespace E_elektryk
             fontDialog1.ShowDialog();
             Offer_Information_Box.SelectionFont = fontDialog1.Font;
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
