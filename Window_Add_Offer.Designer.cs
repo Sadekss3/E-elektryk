@@ -191,10 +191,10 @@
             // 
             // textBox_O_Name
             // 
-            this.textBox_O_Name.Location = new System.Drawing.Point(18, 45);
+            this.textBox_O_Name.Location = new System.Drawing.Point(9, 21);
             this.textBox_O_Name.Multiline = true;
             this.textBox_O_Name.Name = "textBox_O_Name";
-            this.textBox_O_Name.Size = new System.Drawing.Size(183, 20);
+            this.textBox_O_Name.Size = new System.Drawing.Size(203, 83);
             this.textBox_O_Name.TabIndex = 19;
             // 
             // textBox_Town_Name
@@ -437,6 +437,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBox_Street_Name);
+            this.panel1.Controls.Add(this.textBox_O_Name);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1900, 144);
@@ -835,10 +836,10 @@
             this.Button_Font_Color.UseVisualStyleBackColor = true;
             this.Button_Font_Color.Click += new System.EventHandler(this.Button_Font_Color_Click);
             // 
-            // button6
+            // button_Font_Style
             // 
             this.button_Font_Style.Location = new System.Drawing.Point(1382, 210);
-            this.button_Font_Style.Name = "button6";
+            this.button_Font_Style.Name = "button_Font_Style";
             this.button_Font_Style.Size = new System.Drawing.Size(42, 23);
             this.button_Font_Style.TabIndex = 55;
             this.button_Font_Style.Text = "Styl ";
@@ -871,7 +872,6 @@
             this.Controls.Add(this.textBox_Post_Code_2);
             this.Controls.Add(this.textBox_Post_Code_1);
             this.Controls.Add(this.textBox_Town_Name);
-            this.Controls.Add(this.textBox_O_Name);
             this.Controls.Add(this.Button_Save_Offer);
             this.Controls.Add(this.Button_Cancel_Offer);
             this.Controls.Add(this.panel1);
