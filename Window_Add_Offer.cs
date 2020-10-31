@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -157,6 +159,17 @@ namespace E_elektryk
         private void label14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PdfSharp.Pdf.PdfDocument pdfDocument= new PdfSharp.Pdf.PdfDocument();
+            PdfPage pdfpage = pdfDocument.AddPage();
+            XGraphics graph = XGraphics.FromPdfPage(pdfpage);
+            XFont font = new XFont("Verdana", 8, XFontStyle.Regular);
+            string infor = Offer_Information_Box.Text;
+            graph.DrawString(infor, font, XBrushes.Black, new XRect(0, 0, pdfpage.Width.Point, pdfpage.Height.Point), XStringFormats.CenterLeft);
+            pdfDocument.Save("C:\\Users\\kubas\\Documents\\firstpage.pdf");
         }
     }
 }
