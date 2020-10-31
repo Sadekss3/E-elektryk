@@ -320,7 +320,7 @@
             this.Delete_Offer.Text = "Usuń";
             this.Delete_Offer.UseVisualStyleBackColor = false;
             // 
-            // Button_Modyficate_Offer
+            // Button_Modify_Offer
             // 
             this.Button_Modify_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Button_Modify_Offer.BackColor = System.Drawing.Color.Gainsboro;
@@ -329,7 +329,7 @@
             this.Button_Modify_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Modify_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button_Modify_Offer.Location = new System.Drawing.Point(145, 545);
-            this.Button_Modify_Offer.Name = "Button_Modyficate_Offer";
+            this.Button_Modify_Offer.Name = "Button_Modify_Offer";
             this.Button_Modify_Offer.Size = new System.Drawing.Size(130, 38);
             this.Button_Modify_Offer.TabIndex = 10;
             this.Button_Modify_Offer.Text = "Modyfikuj";
@@ -396,7 +396,7 @@
             // 
             // Offer_Date
             // 
-            this.Offer_Date.Text = "Data_wyceny";
+            this.Offer_Date.Text = "Data wyceny";
             this.Offer_Date.Width = 130;
             // 
             // Offer_Status
