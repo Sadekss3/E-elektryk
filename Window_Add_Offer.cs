@@ -149,27 +149,22 @@ namespace E_elektryk
         {
             fontDialog1.ShowDialog();
             Offer_Information_Box.SelectionFont = fontDialog1.Font;
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PdfSharp.Pdf.PdfDocument pdfDocument= new PdfSharp.Pdf.PdfDocument();
-            PdfPage pdfpage = pdfDocument.AddPage();
-            XGraphics graph = XGraphics.FromPdfPage(pdfpage);
-            XFont font = new XFont("Verdana", 8, XFontStyle.Regular);
-            string infor = Offer_Information_Box.Text;
-            graph.DrawString(infor, font, XBrushes.Black, new XRect(0, 0, pdfpage.Width.Point, pdfpage.Height.Point), XStringFormats.CenterLeft);
-            pdfDocument.Save("C:\\Users\\kubas\\Documents\\firstpage.pdf");
+            report1.SetParameterValue("Picture 1", panel4);
+            report1.SetParameterValue("nazwa_firmy_bior", textBox_Offer_CompanyName.Text);
+            report1.SetParameterValue("imie_zleceniobiorca", textBox_Offer_Name.Text +" "+textBox_Offer_LastName.Text);
+            report1.SetParameterValue("miasto", textBox_Town_Name.Text + " " + textBox_Post_Code_1.Text + "-" + textBox_Post_Code_2.Text);
+            report1.SetParameterValue("ulica_zleceniobiorca", textBox_Street_Name.Text + " " + textBox_Building_Number.Text + " " + textBox_Home_Number.Text);
+            report1.SetParameterValue("id_oferty", 1);
+            report1.SetParameterValue("data od", dateTimePicker1.Text);
+            report1.SetParameterValue("data do", dateTimePicker2.Text);
+            report1.SetParameterValue("nazwa_zlecenia", textBox_O_Name.Text);
+            report1.SetParameterValue("opis", Offer_Information_Box.Text);
+            report1.Show();
         }
     }
 }
