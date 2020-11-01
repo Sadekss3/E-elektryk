@@ -34,7 +34,7 @@ namespace E_elektryk
                 {
                     Products_list.Items.Clear();
                     List<produkt> list = db.produkt.ToList();
-                    foreach (produkt p in list)
+                    foreach (produkt p in list.Where(lvi => lvi.Nazwa.ToLower().Contains(textBox_product_name_search.Text.ToLower()) && lvi.Producent.ToLower().Contains(textBox_product_producent_search.Text.ToLower()) && lvi.Numer_katalogowy.ToLower().Contains(textBox_product_symbol_search.Text.ToLower())))
                     {
                         decimal value = Math.Round(p.Cena_netto * System.Convert.ToDecimal(p.Ilość), 2);
                         ListViewItem item = new ListViewItem(p.ID.ToString());
@@ -118,7 +118,7 @@ namespace E_elektryk
                 {
                     Client_list.Items.Clear();
                     List<kontrahent> list = db.kontrahent.ToList();
-                    foreach (kontrahent C in list)
+                    foreach (kontrahent C in list.Where(lvi => lvi.Nazwa_Firmy.ToLower().Contains(textBox_client_company_search.Text.ToLower()) && lvi.Nazwisko.ToLower().Contains(textBox_client_name_search.Text.ToLower()) && lvi.ID.ToString().ToLower().Contains(textBox_client_id_search.Text.ToLower())))
                     {
                         ListViewItem item = new ListViewItem(C.ID.ToString());
                         item.SubItems.Add(C.Imie);
