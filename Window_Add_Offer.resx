@@ -158,7 +158,7 @@
   </metadata>
   <data name="report1.ReportResourceString" xml:space="preserve">
     <value>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="11/01/2020 13:38:55" ReportInfo.Modified="11/01/2020 17:59:45" ReportInfo.CreatorVersion="2020.4.7.0"&gt;
+&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="11/01/2020 13:38:55" ReportInfo.Modified="11/01/2020 21:41:37" ReportInfo.CreatorVersion="2020.4.7.0"&gt;
   &lt;Dictionary&gt;
     &lt;Parameter Name="Opis" DataType="System.String"/&gt;
     &lt;Parameter Name="imie_zleceniobiorca" DataType="System.String"/&gt;
@@ -188,11 +188,13 @@
       &lt;TextObject Name="Text3" Left="292.95" Top="18.9" Width="160.65" Height="18.9" Text="Oferta nr: [id_oferty]" Font="Arial, 9.75pt, style=Bold"/&gt;
       &lt;TextObject Name="Text18" Left="18.9" Top="56.7" Width="661.5" Height="28.35" Text="Nazwa zlecenia: &amp;#13;&amp;#10;[nazwa_zlecenia]" Font="Arial, 9pt, style=Bold"/&gt;
     &lt;/PageHeaderBand&gt;
-    &lt;DataBand Name="Data1" Top="197" Width="718.2" Height="453.6" CanGrow="true"/&gt;
-    &lt;PageFooterBand Name="PageFooter1" Top="654.6" Width="718.2" Height="160.65"&gt;
+    &lt;DataBand Name="Data1" Top="197" Width="718.2" Height="368.55" CanGrow="true"/&gt;
+    &lt;PageFooterBand Name="PageFooter1" Top="569.55" Width="718.2" Height="245.7"&gt;
       &lt;TextObject Name="Text2" Left="18.9" Top="75.6" Width="585.9" Height="37.8" CanGrow="true" Text="[Opis]" Font="Arial, 8.25pt"/&gt;
       &lt;TextObject Name="Text7" Left="18.9" Top="47.25" Width="519.75" Height="18.9" CanGrow="true" Text="Ważna do: [data do]" AutoWidth="true" Font="Arial, 8.25pt"/&gt;
       &lt;TextObject Name="Text6" Left="18.9" Top="28.35" Width="519.75" Height="18.9" CanGrow="true" Text="Ważna od: [data od]" AutoWidth="true" Font="Arial, 8.25pt"/&gt;
+      &lt;TextObject Name="a" Left="28.35" Top="160.65" Width="189" Height="37.8" Text="............................................&amp;#13;&amp;#10;    Data, Zleceniobiorca" Font="Arial, 8.25pt"/&gt;
+      &lt;TextObject Name="Text19" Left="491.4" Top="160.65" Width="189" Height="37.8" Text="............................................&amp;#13;&amp;#10;    Data, Zleceniodawca&amp;#13;&amp;#10;" Font="Arial, 8.25pt"/&gt;
     &lt;/PageFooterBand&gt;
   &lt;/ReportPage&gt;
 &lt;/Report&gt;
