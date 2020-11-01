@@ -29,9 +29,9 @@ namespace E_elektryk
         {
             using (zlecenieEntities db = new zlecenieEntities())
             {
-                listView1.Items.Clear();
                 List<produkt> list = db.produkt.ToList();
-                foreach (produkt p in list)
+                listView1.Items.Clear();
+                foreach (produkt p in list.Where(lvi => lvi.Nazwa.ToLower().Contains(textBox_name_search.Text.ToLower().Trim()) && lvi.Producent.ToLower().Contains(textBox_Producent_search.Text.ToLower().Trim())))
                 {
                     ListViewItem item = new ListViewItem(p.Nazwa.ToString());
                     item.SubItems.Add(p.Producent);
@@ -165,6 +165,11 @@ namespace E_elektryk
             report1.SetParameterValue("nazwa_zlecenia", textBox_O_Name.Text);
             report1.SetParameterValue("opis", Offer_Information_Box.Text);
             report1.Show();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
