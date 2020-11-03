@@ -24,6 +24,8 @@ namespace E_elektryk {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class zlecenieDataSet : global::System.Data.DataSet {
         
+        private adresDataTable tableadres;
+        
         private kategoria_produktuDataTable tablekategoria_produktu;
         
         private kontrahentDataTable tablekontrahent;
@@ -31,6 +33,8 @@ namespace E_elektryk {
         private ofertaDataTable tableoferta;
         
         private produktDataTable tableprodukt;
+        
+        private produkty_w_wycenieDataTable tableprodukty_w_wycenie;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -60,6 +64,9 @@ namespace E_elektryk {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["adres"] != null)) {
+                    base.Tables.Add(new adresDataTable(ds.Tables["adres"]));
+                }
                 if ((ds.Tables["kategoria_produktu"] != null)) {
                     base.Tables.Add(new kategoria_produktuDataTable(ds.Tables["kategoria_produktu"]));
                 }
@@ -71,6 +78,9 @@ namespace E_elektryk {
                 }
                 if ((ds.Tables["produkt"] != null)) {
                     base.Tables.Add(new produktDataTable(ds.Tables["produkt"]));
+                }
+                if ((ds.Tables["produkty_w_wycenie"] != null)) {
+                    base.Tables.Add(new produkty_w_wycenieDataTable(ds.Tables["produkty_w_wycenie"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -88,6 +98,16 @@ namespace E_elektryk {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public adresDataTable adres {
+            get {
+                return this.tableadres;
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -127,6 +147,16 @@ namespace E_elektryk {
         public produktDataTable produkt {
             get {
                 return this.tableprodukt;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public produkty_w_wycenieDataTable produkty_w_wycenie {
+            get {
+                return this.tableprodukty_w_wycenie;
             }
         }
         
@@ -197,6 +227,9 @@ namespace E_elektryk {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["adres"] != null)) {
+                    base.Tables.Add(new adresDataTable(ds.Tables["adres"]));
+                }
                 if ((ds.Tables["kategoria_produktu"] != null)) {
                     base.Tables.Add(new kategoria_produktuDataTable(ds.Tables["kategoria_produktu"]));
                 }
@@ -208,6 +241,9 @@ namespace E_elektryk {
                 }
                 if ((ds.Tables["produkt"] != null)) {
                     base.Tables.Add(new produktDataTable(ds.Tables["produkt"]));
+                }
+                if ((ds.Tables["produkty_w_wycenie"] != null)) {
+                    base.Tables.Add(new produkty_w_wycenieDataTable(ds.Tables["produkty_w_wycenie"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -242,6 +278,12 @@ namespace E_elektryk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.tableadres = ((adresDataTable)(base.Tables["adres"]));
+            if ((initTable == true)) {
+                if ((this.tableadres != null)) {
+                    this.tableadres.InitVars();
+                }
+            }
             this.tablekategoria_produktu = ((kategoria_produktuDataTable)(base.Tables["kategoria_produktu"]));
             if ((initTable == true)) {
                 if ((this.tablekategoria_produktu != null)) {
@@ -266,6 +308,12 @@ namespace E_elektryk {
                     this.tableprodukt.InitVars();
                 }
             }
+            this.tableprodukty_w_wycenie = ((produkty_w_wycenieDataTable)(base.Tables["produkty_w_wycenie"]));
+            if ((initTable == true)) {
+                if ((this.tableprodukty_w_wycenie != null)) {
+                    this.tableprodukty_w_wycenie.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -276,6 +324,8 @@ namespace E_elektryk {
             this.Namespace = "http://tempuri.org/zlecenieDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableadres = new adresDataTable();
+            base.Tables.Add(this.tableadres);
             this.tablekategoria_produktu = new kategoria_produktuDataTable();
             base.Tables.Add(this.tablekategoria_produktu);
             this.tablekontrahent = new kontrahentDataTable();
@@ -284,6 +334,14 @@ namespace E_elektryk {
             base.Tables.Add(this.tableoferta);
             this.tableprodukt = new produktDataTable();
             base.Tables.Add(this.tableprodukt);
+            this.tableprodukty_w_wycenie = new produkty_w_wycenieDataTable();
+            base.Tables.Add(this.tableprodukty_w_wycenie);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeadres() {
+            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -307,6 +365,12 @@ namespace E_elektryk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeprodukt() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeprodukty_w_wycenie() {
             return false;
         }
         
@@ -366,6 +430,9 @@ namespace E_elektryk {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void adresRowChangeEventHandler(object sender, adresRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void kategoria_produktuRowChangeEventHandler(object sender, kategoria_produktuRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -376,6 +443,365 @@ namespace E_elektryk {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void produktRowChangeEventHandler(object sender, produktRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void produkty_w_wycenieRowChangeEventHandler(object sender, produkty_w_wycenieRowChangeEvent e);
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class adresDataTable : global::System.Data.TypedTableBase<adresRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnMiasto;
+            
+            private global::System.Data.DataColumn columnKod_pocztowy;
+            
+            private global::System.Data.DataColumn columnNazwa_ulicy;
+            
+            private global::System.Data.DataColumn columnNumer_budynku;
+            
+            private global::System.Data.DataColumn columnNumer_mieszkania;
+            
+            private global::System.Data.DataColumn columnPaństwo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public adresDataTable() {
+                this.TableName = "adres";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal adresDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected adresDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MiastoColumn {
+                get {
+                    return this.columnMiasto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Kod_pocztowyColumn {
+                get {
+                    return this.columnKod_pocztowy;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Nazwa_ulicyColumn {
+                get {
+                    return this.columnNazwa_ulicy;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Numer_budynkuColumn {
+                get {
+                    return this.columnNumer_budynku;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Numer_mieszkaniaColumn {
+                get {
+                    return this.columnNumer_mieszkania;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PaństwoColumn {
+                get {
+                    return this.columnPaństwo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public adresRow this[int index] {
+                get {
+                    return ((adresRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event adresRowChangeEventHandler adresRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event adresRowChangeEventHandler adresRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event adresRowChangeEventHandler adresRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event adresRowChangeEventHandler adresRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddadresRow(adresRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public adresRow AddadresRow(string Miasto, string Kod_pocztowy, string Nazwa_ulicy, string Numer_budynku, string Numer_mieszkania, string Państwo) {
+                adresRow rowadresRow = ((adresRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Miasto,
+                        Kod_pocztowy,
+                        Nazwa_ulicy,
+                        Numer_budynku,
+                        Numer_mieszkania,
+                        Państwo};
+                rowadresRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowadresRow);
+                return rowadresRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public adresRow FindByID(int ID) {
+                return ((adresRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                adresDataTable cln = ((adresDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new adresDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnMiasto = base.Columns["Miasto"];
+                this.columnKod_pocztowy = base.Columns["Kod_pocztowy"];
+                this.columnNazwa_ulicy = base.Columns["Nazwa_ulicy"];
+                this.columnNumer_budynku = base.Columns["Numer_budynku"];
+                this.columnNumer_mieszkania = base.Columns["Numer_mieszkania"];
+                this.columnPaństwo = base.Columns["Państwo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnMiasto = new global::System.Data.DataColumn("Miasto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMiasto);
+                this.columnKod_pocztowy = new global::System.Data.DataColumn("Kod_pocztowy", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKod_pocztowy);
+                this.columnNazwa_ulicy = new global::System.Data.DataColumn("Nazwa_ulicy", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNazwa_ulicy);
+                this.columnNumer_budynku = new global::System.Data.DataColumn("Numer_budynku", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumer_budynku);
+                this.columnNumer_mieszkania = new global::System.Data.DataColumn("Numer_mieszkania", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumer_mieszkania);
+                this.columnPaństwo = new global::System.Data.DataColumn("Państwo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaństwo);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
+                this.columnMiasto.AllowDBNull = false;
+                this.columnMiasto.MaxLength = 65535;
+                this.columnKod_pocztowy.AllowDBNull = false;
+                this.columnKod_pocztowy.MaxLength = 65535;
+                this.columnNazwa_ulicy.AllowDBNull = false;
+                this.columnNazwa_ulicy.MaxLength = 65535;
+                this.columnNumer_budynku.AllowDBNull = false;
+                this.columnNumer_budynku.MaxLength = 65535;
+                this.columnNumer_mieszkania.MaxLength = 65535;
+                this.columnPaństwo.AllowDBNull = false;
+                this.columnPaństwo.MaxLength = 65535;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public adresRow NewadresRow() {
+                return ((adresRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new adresRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(adresRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.adresRowChanged != null)) {
+                    this.adresRowChanged(this, new adresRowChangeEvent(((adresRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.adresRowChanging != null)) {
+                    this.adresRowChanging(this, new adresRowChangeEvent(((adresRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.adresRowDeleted != null)) {
+                    this.adresRowDeleted(this, new adresRowChangeEvent(((adresRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.adresRowDeleting != null)) {
+                    this.adresRowDeleting(this, new adresRowChangeEvent(((adresRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveadresRow(adresRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                zlecenieDataSet ds = new zlecenieDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "adresDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -831,7 +1257,7 @@ namespace E_elektryk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public kontrahentRow AddkontrahentRow(string Imie, string Nazwisko, long Pesel, long NIP, string Nazwa_Firmy, string Adres, string _E_mail, string Telefon_1, string Telefon_2) {
+            public kontrahentRow AddkontrahentRow(string Imie, string Nazwisko, long Pesel, long NIP, string Nazwa_Firmy, int Adres, string _E_mail, string Telefon_1, string Telefon_2) {
                 kontrahentRow rowkontrahentRow = ((kontrahentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -900,7 +1326,7 @@ namespace E_elektryk {
                 base.Columns.Add(this.columnNIP);
                 this.columnNazwa_Firmy = new global::System.Data.DataColumn("Nazwa_Firmy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNazwa_Firmy);
-                this.columnAdres = new global::System.Data.DataColumn("Adres", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnAdres = new global::System.Data.DataColumn("Adres", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdres);
                 this._columnE_mail = new global::System.Data.DataColumn("E-mail", typeof(string), null, global::System.Data.MappingType.Element);
                 this._columnE_mail.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnE_mail");
@@ -924,7 +1350,6 @@ namespace E_elektryk {
                 this.columnNazwa_Firmy.AllowDBNull = false;
                 this.columnNazwa_Firmy.MaxLength = 65535;
                 this.columnAdres.AllowDBNull = false;
-                this.columnAdres.MaxLength = 65535;
                 this._columnE_mail.MaxLength = 65535;
                 this.columnTelefon_1.MaxLength = 65535;
                 this.columnTelefon_2.MaxLength = 65535;
@@ -1067,9 +1492,11 @@ namespace E_elektryk {
             
             private global::System.Data.DataColumn columnId_zleceniodawca;
             
-            private global::System.Data.DataColumn columnAdres_zlecenia;
+            private global::System.Data.DataColumn columnData_Od;
             
-            private global::System.Data.DataColumn columnData;
+            private global::System.Data.DataColumn columnData_Do;
+            
+            private global::System.Data.DataColumn columnOpis;
             
             private global::System.Data.DataColumn columnStatus;
             
@@ -1132,17 +1559,25 @@ namespace E_elektryk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Adres_zleceniaColumn {
+            public global::System.Data.DataColumn Data_OdColumn {
                 get {
-                    return this.columnAdres_zlecenia;
+                    return this.columnData_Od;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DataColumn {
+            public global::System.Data.DataColumn Data_DoColumn {
                 get {
-                    return this.columnData;
+                    return this.columnData_Do;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpisColumn {
+                get {
+                    return this.columnOpis;
                 }
             }
             
@@ -1191,14 +1626,15 @@ namespace E_elektryk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ofertaRow AddofertaRow(string Nazwa, int Id_zleceniodawca, string Adres_zlecenia, System.DateTime Data, string Status) {
+            public ofertaRow AddofertaRow(string Nazwa, int Id_zleceniodawca, System.DateTime Data_Od, System.DateTime Data_Do, string Opis, string Status) {
                 ofertaRow rowofertaRow = ((ofertaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nazwa,
                         Id_zleceniodawca,
-                        Adres_zlecenia,
-                        Data,
+                        Data_Od,
+                        Data_Do,
+                        Opis,
                         Status};
                 rowofertaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowofertaRow);
@@ -1232,8 +1668,9 @@ namespace E_elektryk {
                 this.columnID = base.Columns["ID"];
                 this.columnNazwa = base.Columns["Nazwa"];
                 this.columnId_zleceniodawca = base.Columns["Id_zleceniodawca"];
-                this.columnAdres_zlecenia = base.Columns["Adres_zlecenia"];
-                this.columnData = base.Columns["Data"];
+                this.columnData_Od = base.Columns["Data_Od"];
+                this.columnData_Do = base.Columns["Data_Do"];
+                this.columnOpis = base.Columns["Opis"];
                 this.columnStatus = base.Columns["Status"];
             }
             
@@ -1246,10 +1683,12 @@ namespace E_elektryk {
                 base.Columns.Add(this.columnNazwa);
                 this.columnId_zleceniodawca = new global::System.Data.DataColumn("Id_zleceniodawca", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_zleceniodawca);
-                this.columnAdres_zlecenia = new global::System.Data.DataColumn("Adres_zlecenia", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAdres_zlecenia);
-                this.columnData = new global::System.Data.DataColumn("Data", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnData);
+                this.columnData_Od = new global::System.Data.DataColumn("Data_Od", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnData_Od);
+                this.columnData_Do = new global::System.Data.DataColumn("Data_Do", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnData_Do);
+                this.columnOpis = new global::System.Data.DataColumn("Opis", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpis);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1262,10 +1701,9 @@ namespace E_elektryk {
                 this.columnNazwa.AllowDBNull = false;
                 this.columnNazwa.MaxLength = 65535;
                 this.columnId_zleceniodawca.AllowDBNull = false;
-                this.columnAdres_zlecenia.AllowDBNull = false;
-                this.columnAdres_zlecenia.MaxLength = 65535;
-                this.columnData.AllowDBNull = false;
-                this.columnStatus.AllowDBNull = false;
+                this.columnData_Od.AllowDBNull = false;
+                this.columnData_Do.AllowDBNull = false;
+                this.columnOpis.MaxLength = 65535;
                 this.columnStatus.MaxLength = 65535;
             }
             
@@ -1794,6 +2232,404 @@ namespace E_elektryk {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class produkty_w_wycenieDataTable : global::System.Data.TypedTableBase<produkty_w_wycenieRow> {
+            
+            private global::System.Data.DataColumn columnID_zlecenie;
+            
+            private global::System.Data.DataColumn columnID_produktu;
+            
+            private global::System.Data.DataColumn columnilość;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public produkty_w_wycenieDataTable() {
+                this.TableName = "produkty_w_wycenie";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal produkty_w_wycenieDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected produkty_w_wycenieDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ID_zlecenieColumn {
+                get {
+                    return this.columnID_zlecenie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ID_produktuColumn {
+                get {
+                    return this.columnID_produktu;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ilośćColumn {
+                get {
+                    return this.columnilość;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public produkty_w_wycenieRow this[int index] {
+                get {
+                    return ((produkty_w_wycenieRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event produkty_w_wycenieRowChangeEventHandler produkty_w_wycenieRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event produkty_w_wycenieRowChangeEventHandler produkty_w_wycenieRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event produkty_w_wycenieRowChangeEventHandler produkty_w_wycenieRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event produkty_w_wycenieRowChangeEventHandler produkty_w_wycenieRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addprodukty_w_wycenieRow(produkty_w_wycenieRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public produkty_w_wycenieRow Addprodukty_w_wycenieRow(int ID_zlecenie, int ID_produktu, decimal ilość) {
+                produkty_w_wycenieRow rowprodukty_w_wycenieRow = ((produkty_w_wycenieRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID_zlecenie,
+                        ID_produktu,
+                        ilość};
+                rowprodukty_w_wycenieRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowprodukty_w_wycenieRow);
+                return rowprodukty_w_wycenieRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public produkty_w_wycenieRow FindByID_zlecenieID_produktu(int ID_zlecenie, int ID_produktu) {
+                return ((produkty_w_wycenieRow)(this.Rows.Find(new object[] {
+                            ID_zlecenie,
+                            ID_produktu})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                produkty_w_wycenieDataTable cln = ((produkty_w_wycenieDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new produkty_w_wycenieDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID_zlecenie = base.Columns["ID_zlecenie"];
+                this.columnID_produktu = base.Columns["ID_produktu"];
+                this.columnilość = base.Columns["ilość"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID_zlecenie = new global::System.Data.DataColumn("ID_zlecenie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_zlecenie);
+                this.columnID_produktu = new global::System.Data.DataColumn("ID_produktu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_produktu);
+                this.columnilość = new global::System.Data.DataColumn("ilość", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnilość);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_zlecenie,
+                                this.columnID_produktu}, true));
+                this.columnID_zlecenie.AllowDBNull = false;
+                this.columnID_produktu.AllowDBNull = false;
+                this.columnilość.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public produkty_w_wycenieRow Newprodukty_w_wycenieRow() {
+                return ((produkty_w_wycenieRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new produkty_w_wycenieRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(produkty_w_wycenieRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.produkty_w_wycenieRowChanged != null)) {
+                    this.produkty_w_wycenieRowChanged(this, new produkty_w_wycenieRowChangeEvent(((produkty_w_wycenieRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.produkty_w_wycenieRowChanging != null)) {
+                    this.produkty_w_wycenieRowChanging(this, new produkty_w_wycenieRowChangeEvent(((produkty_w_wycenieRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.produkty_w_wycenieRowDeleted != null)) {
+                    this.produkty_w_wycenieRowDeleted(this, new produkty_w_wycenieRowChangeEvent(((produkty_w_wycenieRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.produkty_w_wycenieRowDeleting != null)) {
+                    this.produkty_w_wycenieRowDeleting(this, new produkty_w_wycenieRowChangeEvent(((produkty_w_wycenieRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removeprodukty_w_wycenieRow(produkty_w_wycenieRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                zlecenieDataSet ds = new zlecenieDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "produkty_w_wycenieDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class adresRow : global::System.Data.DataRow {
+            
+            private adresDataTable tableadres;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal adresRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableadres = ((adresDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableadres.IDColumn]));
+                }
+                set {
+                    this[this.tableadres.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Miasto {
+                get {
+                    return ((string)(this[this.tableadres.MiastoColumn]));
+                }
+                set {
+                    this[this.tableadres.MiastoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Kod_pocztowy {
+                get {
+                    return ((string)(this[this.tableadres.Kod_pocztowyColumn]));
+                }
+                set {
+                    this[this.tableadres.Kod_pocztowyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Nazwa_ulicy {
+                get {
+                    return ((string)(this[this.tableadres.Nazwa_ulicyColumn]));
+                }
+                set {
+                    this[this.tableadres.Nazwa_ulicyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Numer_budynku {
+                get {
+                    return ((string)(this[this.tableadres.Numer_budynkuColumn]));
+                }
+                set {
+                    this[this.tableadres.Numer_budynkuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Numer_mieszkania {
+                get {
+                    try {
+                        return ((string)(this[this.tableadres.Numer_mieszkaniaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Numer_mieszkania\' w tabeli \'adres\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableadres.Numer_mieszkaniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Państwo {
+                get {
+                    return ((string)(this[this.tableadres.PaństwoColumn]));
+                }
+                set {
+                    this[this.tableadres.PaństwoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNumer_mieszkaniaNull() {
+                return this.IsNull(this.tableadres.Numer_mieszkaniaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNumer_mieszkaniaNull() {
+                this[this.tableadres.Numer_mieszkaniaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class kategoria_produktuRow : global::System.Data.DataRow {
@@ -1922,9 +2758,9 @@ namespace E_elektryk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Adres {
+            public int Adres {
                 get {
-                    return ((string)(this[this.tablekontrahent.AdresColumn]));
+                    return ((int)(this[this.tablekontrahent.AdresColumn]));
                 }
                 set {
                     this[this.tablekontrahent.AdresColumn] = value;
@@ -2089,23 +2925,39 @@ namespace E_elektryk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Adres_zlecenia {
+            public System.DateTime Data_Od {
                 get {
-                    return ((string)(this[this.tableoferta.Adres_zleceniaColumn]));
+                    return ((global::System.DateTime)(this[this.tableoferta.Data_OdColumn]));
                 }
                 set {
-                    this[this.tableoferta.Adres_zleceniaColumn] = value;
+                    this[this.tableoferta.Data_OdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Data {
+            public System.DateTime Data_Do {
                 get {
-                    return ((global::System.DateTime)(this[this.tableoferta.DataColumn]));
+                    return ((global::System.DateTime)(this[this.tableoferta.Data_DoColumn]));
                 }
                 set {
-                    this[this.tableoferta.DataColumn] = value;
+                    this[this.tableoferta.Data_DoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Opis {
+                get {
+                    try {
+                        return ((string)(this[this.tableoferta.OpisColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Opis\' w tabeli \'oferta\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableoferta.OpisColumn] = value;
                 }
             }
             
@@ -2113,11 +2965,40 @@ namespace E_elektryk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Status {
                 get {
-                    return ((string)(this[this.tableoferta.StatusColumn]));
+                    try {
+                        return ((string)(this[this.tableoferta.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Status\' w tabeli \'oferta\' to DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableoferta.StatusColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpisNull() {
+                return this.IsNull(this.tableoferta.OpisColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpisNull() {
+                this[this.tableoferta.OpisColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tableoferta.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tableoferta.StatusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2242,6 +3123,88 @@ namespace E_elektryk {
                 }
                 set {
                     this[this.tableprodukt.KategoriaColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class produkty_w_wycenieRow : global::System.Data.DataRow {
+            
+            private produkty_w_wycenieDataTable tableprodukty_w_wycenie;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal produkty_w_wycenieRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableprodukty_w_wycenie = ((produkty_w_wycenieDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ID_zlecenie {
+                get {
+                    return ((int)(this[this.tableprodukty_w_wycenie.ID_zlecenieColumn]));
+                }
+                set {
+                    this[this.tableprodukty_w_wycenie.ID_zlecenieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ID_produktu {
+                get {
+                    return ((int)(this[this.tableprodukty_w_wycenie.ID_produktuColumn]));
+                }
+                set {
+                    this[this.tableprodukty_w_wycenie.ID_produktuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ilość {
+                get {
+                    return ((decimal)(this[this.tableprodukty_w_wycenie.ilośćColumn]));
+                }
+                set {
+                    this[this.tableprodukty_w_wycenie.ilośćColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class adresRowChangeEvent : global::System.EventArgs {
+            
+            private adresRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public adresRowChangeEvent(adresRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public adresRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
                 }
             }
         }
@@ -2381,10 +3344,499 @@ namespace E_elektryk {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class produkty_w_wycenieRowChangeEvent : global::System.EventArgs {
+            
+            private produkty_w_wycenieRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public produkty_w_wycenieRowChangeEvent(produkty_w_wycenieRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public produkty_w_wycenieRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
 namespace E_elektryk.zlecenieDataSetTableAdapters {
     
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class adresTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public adresTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "adres";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("Miasto", "Miasto");
+            tableMapping.ColumnMappings.Add("Kod_pocztowy", "Kod_pocztowy");
+            tableMapping.ColumnMappings.Add("Nazwa_ulicy", "Nazwa_ulicy");
+            tableMapping.ColumnMappings.Add("Numer_budynku", "Numer_budynku");
+            tableMapping.ColumnMappings.Add("Numer_mieszkania", "Numer_mieszkania");
+            tableMapping.ColumnMappings.Add("Państwo", "Państwo");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `adres` WHERE ((`ID` = @p1))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `adres` (`Miasto`, `Kod_pocztowy`, `Nazwa_ulicy`, `Numer_budynku`, `N" +
+                "umer_mieszkania`, `Państwo`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Miasto";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Kod_pocztowy";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Nazwa_ulicy";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Numer_budynku";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Numer_mieszkania";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Państwo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE `adres` SET `Miasto` = @p1, `Kod_pocztowy` = @p2, `Nazwa_ulicy` = @p3, `Nu" +
+                "mer_budynku` = @p4, `Numer_mieszkania` = @p5, `Państwo` = @p6 WHERE ((`ID` = @p7" +
+                "))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Miasto";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Kod_pocztowy";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Nazwa_ulicy";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Numer_budynku";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Numer_mieszkania";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Państwo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT `ID`, `Miasto`, `Kod_pocztowy`, `Nazwa_ulicy`, `Numer_budynku`, `Numer_mie" +
+                "szkania`, `Państwo` FROM `adres`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(zlecenieDataSet.adresDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual zlecenieDataSet.adresDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            zlecenieDataSet.adresDataTable dataTable = new zlecenieDataSet.adresDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(zlecenieDataSet.adresDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(zlecenieDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "adres");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int p1) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string p1, string p2, string p3, string p4, string p5, string p6) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
+            }
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+            }
+            if ((p5 == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
+            }
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p6));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string p1, string p2, string p3, string p4, string p5, string p6, int p7) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
+            }
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p4));
+            }
+            if ((p5 == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
+            }
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -2837,7 +4289,8 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `kontrahent` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `Pesel` IS NULL) O" +
-                "R (`Pesel` = @p3)) AND ((@p4 = 1 AND `NIP` IS NULL) OR (`NIP` = @p5)))";
+                "R (`Pesel` = @p3)) AND ((@p4 = 1 AND `NIP` IS NULL) OR (`NIP` = @p5)) AND (`Adre" +
+                "s` = @p6))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -2879,6 +4332,14 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int64;
             param.IsNullable = true;
             param.SourceColumn = "NIP";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Adres";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
@@ -2926,7 +4387,8 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Adres";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
@@ -2954,7 +4416,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `kontrahent` SET `Imie` = @p1, `Nazwisko` = @p2, `Pesel` = @p3, `NIP` = @p4, `Nazwa_Firmy` = @p5, `Adres` = @p6, `E-mail` = @p7, `Telefon_1` = @p8, `Telefon_2` = @p9 WHERE ((`ID` = @p10) AND ((@p11 = 1 AND `Pesel` IS NULL) OR (`Pesel` = @p12)) AND ((@p13 = 1 AND `NIP` IS NULL) OR (`NIP` = @p14)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `kontrahent` SET `Imie` = @p1, `Nazwisko` = @p2, `Pesel` = @p3, `NIP` = @p4, `Nazwa_Firmy` = @p5, `Adres` = @p6, `E-mail` = @p7, `Telefon_1` = @p8, `Telefon_2` = @p9 WHERE ((`ID` = @p10) AND ((@p11 = 1 AND `Pesel` IS NULL) OR (`Pesel` = @p12)) AND ((@p13 = 1 AND `NIP` IS NULL) OR (`NIP` = @p14)) AND (`Adres` = @p15))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -2995,7 +4457,8 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Adres";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
@@ -3061,6 +4524,14 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int64;
             param.IsNullable = true;
             param.SourceColumn = "NIP";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p15";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Adres";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -3140,7 +4611,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, global::System.Nullable<long> p3, global::System.Nullable<long> p5) {
+        public virtual int Delete(int p1, global::System.Nullable<long> p3, global::System.Nullable<long> p5, int p6) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             if ((p3.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -3158,6 +4629,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(p6));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3178,7 +4650,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, string p2, global::System.Nullable<long> p3, global::System.Nullable<long> p4, string p5, string p6, string p7, string p8, string p9) {
+        public virtual int Insert(string p1, string p2, global::System.Nullable<long> p3, global::System.Nullable<long> p4, string p5, int p6, string p7, string p8, string p9) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -3209,12 +4681,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
             }
-            if ((p6 == null)) {
-                throw new global::System.ArgumentNullException("p6");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p6));
-            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(p6));
             if ((p7 == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
@@ -3253,7 +4720,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string p1, string p2, global::System.Nullable<long> p3, global::System.Nullable<long> p4, string p5, string p6, string p7, string p8, string p9, int p10, global::System.Nullable<long> p12, global::System.Nullable<long> p14) {
+        public virtual int Update(string p1, string p2, global::System.Nullable<long> p3, global::System.Nullable<long> p4, string p5, int p6, string p7, string p8, string p9, int p10, global::System.Nullable<long> p12, global::System.Nullable<long> p14, int p15) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -3284,12 +4751,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
             }
-            if ((p6 == null)) {
-                throw new global::System.ArgumentNullException("p6");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
-            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
             if ((p7 == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
@@ -3325,6 +4787,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(p15));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3466,14 +4929,15 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Nazwa", "Nazwa");
             tableMapping.ColumnMappings.Add("Id_zleceniodawca", "Id_zleceniodawca");
-            tableMapping.ColumnMappings.Add("Adres_zlecenia", "Adres_zlecenia");
-            tableMapping.ColumnMappings.Add("Data", "Data");
+            tableMapping.ColumnMappings.Add("Data_Od", "Data_Od");
+            tableMapping.ColumnMappings.Add("Data_Do", "Data_Do");
+            tableMapping.ColumnMappings.Add("Opis", "Opis");
             tableMapping.ColumnMappings.Add("Status", "Status");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `oferta` WHERE ((`ID` = @p1) AND (`Id_zleceniodawca` = @p2) AND (`Dat" +
-                "a` = @p3))";
+                "a_Od` = @p3) AND (`Data_Do` = @p4))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3496,13 +4960,21 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "Data";
+            param.SourceColumn = "Data_Od";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "Data_Do";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `oferta` (`Nazwa`, `Id_zleceniodawca`, `Adres_zlecenia`, `Data`, `Sta" +
-                "tus`) VALUES (@p1, @p2, @p3, @p4, @p5)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `oferta` (`Nazwa`, `Id_zleceniodawca`, `Data_Od`, `Data_Do`, `Opis`, " +
+                "`Status`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3521,9 +4993,10 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "Adres_zlecenia";
+            param.SourceColumn = "Data_Od";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -3531,11 +5004,18 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "Data";
+            param.SourceColumn = "Data_Do";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Opis";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Status";
@@ -3543,9 +5023,9 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `oferta` SET `Nazwa` = @p1, `Id_zleceniodawca` = @p2, `Adres_zlecenia` = @" +
-                "p3, `Data` = @p4, `Status` = @p5 WHERE ((`ID` = @p6) AND (`Id_zleceniodawca` = @" +
-                "p7) AND (`Data` = @p8))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `oferta` SET `Nazwa` = @p1, `Id_zleceniodawca` = @p2, `Data_Od` = @p3, `Da" +
+                "ta_Do` = @p4, `Opis` = @p5, `Status` = @p6 WHERE ((`ID` = @p7) AND (`Id_zlecenio" +
+                "dawca` = @p8) AND (`Data_Od` = @p9) AND (`Data_Do` = @p10))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -3564,9 +5044,10 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "Adres_zlecenia";
+            param.SourceColumn = "Data_Od";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -3574,18 +5055,25 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "Data";
+            param.SourceColumn = "Data_Do";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Status";
+            param.SourceColumn = "Opis";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "Status";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -3593,7 +5081,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -3601,11 +5089,19 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "Data";
+            param.SourceColumn = "Data_Od";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "Data_Do";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -3623,8 +5119,8 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `Nazwa`, `Id_zleceniodawca`, `Adres_zlecenia`, `Data`, `Status` FROM" +
-                " `oferta`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `Nazwa`, `Id_zleceniodawca`, `Data_Od`, `Data_Do`, `Opis`, `Status` " +
+                "FROM `oferta`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3685,10 +5181,11 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, int p2, System.DateTime p3) {
+        public virtual int Delete(int p1, int p2, System.DateTime p3, System.DateTime p4) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(p3));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(p4));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3709,7 +5206,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, int p2, string p3, System.DateTime p4, string p5) {
+        public virtual int Insert(string p1, int p2, System.DateTime p3, System.DateTime p4, string p5, string p6) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -3717,18 +5214,19 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
-            if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
-            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(p3));
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(p4));
             if ((p5 == null)) {
-                throw new global::System.ArgumentNullException("p5");
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
+            }
+            if ((p6 == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p6));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3750,7 +5248,7 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string p1, int p2, string p3, System.DateTime p4, string p5, int p6, int p7, System.DateTime p8) {
+        public virtual int Update(string p1, int p2, System.DateTime p3, System.DateTime p4, string p5, string p6, int p7, int p8, System.DateTime p9, System.DateTime p10) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -3758,22 +5256,24 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
-            if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
-            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(p3));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(p4));
             if ((p5 == null)) {
-                throw new global::System.ArgumentNullException("p5");
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
+            if ((p6 == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
+            }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(p8));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(p9));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(p10));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4378,6 +5878,399 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class produkty_w_wycenieTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public produkty_w_wycenieTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "produkty_w_wycenie";
+            tableMapping.ColumnMappings.Add("ID_zlecenie", "ID_zlecenie");
+            tableMapping.ColumnMappings.Add("ID_produktu", "ID_produktu");
+            tableMapping.ColumnMappings.Add("ilość", "ilość");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `produkty_w_wycenie` WHERE ((`ID_zlecenie` = @p1) AND (`ID_produktu` " +
+                "= @p2) AND (`ilość` = @p3))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_zlecenie";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_produktu";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
+            param.IsNullable = true;
+            param.SourceColumn = "ilość";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `produkty_w_wycenie` (`ID_zlecenie`, `ID_produktu`, `ilość`) VALUES (" +
+                "@p1, @p2, @p3)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_zlecenie";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_produktu";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
+            param.IsNullable = true;
+            param.SourceColumn = "ilość";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE `produkty_w_wycenie` SET `ID_zlecenie` = @p1, `ID_produktu` = @p2, `ilość`" +
+                " = @p3 WHERE ((`ID_zlecenie` = @p4) AND (`ID_produktu` = @p5) AND (`ilość` = @p6" +
+                "))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_zlecenie";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_produktu";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
+            param.IsNullable = true;
+            param.SourceColumn = "ilość";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_zlecenie";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_produktu";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
+            param.IsNullable = true;
+            param.SourceColumn = "ilość";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::E_elektryk.Properties.Settings.Default.zlecenieConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT `ID_zlecenie`, `ID_produktu`, `ilość` FROM `produkty_w_wycenie`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(zlecenieDataSet.produkty_w_wycenieDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual zlecenieDataSet.produkty_w_wycenieDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            zlecenieDataSet.produkty_w_wycenieDataTable dataTable = new zlecenieDataSet.produkty_w_wycenieDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(zlecenieDataSet.produkty_w_wycenieDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(zlecenieDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "produkty_w_wycenie");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int p1, int p2, decimal p3) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(p3));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int p1, int p2, decimal p3) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(p3));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int p1, int p2, decimal p3, int p4, int p5, decimal p6) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(p3));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(p6));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(decimal p3, int p4, int p5, decimal p6) {
+            return this.Update(p4, p5, p3, p4, p5, p6);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4389,6 +6282,8 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private adresTableAdapter _adresTableAdapter;
+        
         private kategoria_produktuTableAdapter _kategoria_produktuTableAdapter;
         
         private kontrahentTableAdapter _kontrahentTableAdapter;
@@ -4396,6 +6291,8 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         private ofertaTableAdapter _ofertaTableAdapter;
         
         private produktTableAdapter _produktTableAdapter;
+        
+        private produkty_w_wycenieTableAdapter _produkty_w_wycenieTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -4409,6 +6306,20 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public adresTableAdapter adresTableAdapter {
+            get {
+                return this._adresTableAdapter;
+            }
+            set {
+                this._adresTableAdapter = value;
             }
         }
         
@@ -4470,6 +6381,20 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public produkty_w_wycenieTableAdapter produkty_w_wycenieTableAdapter {
+            get {
+                return this._produkty_w_wycenieTableAdapter;
+            }
+            set {
+                this._produkty_w_wycenieTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -4487,6 +6412,10 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._adresTableAdapter != null) 
+                            && (this._adresTableAdapter.Connection != null))) {
+                    return this._adresTableAdapter.Connection;
+                }
                 if (((this._kategoria_produktuTableAdapter != null) 
                             && (this._kategoria_produktuTableAdapter.Connection != null))) {
                     return this._kategoria_produktuTableAdapter.Connection;
@@ -4503,6 +6432,10 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                             && (this._produktTableAdapter.Connection != null))) {
                     return this._produktTableAdapter.Connection;
                 }
+                if (((this._produkty_w_wycenieTableAdapter != null) 
+                            && (this._produkty_w_wycenieTableAdapter.Connection != null))) {
+                    return this._produkty_w_wycenieTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -4516,6 +6449,9 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._adresTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._kategoria_produktuTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -4526,6 +6462,9 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._produktTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._produkty_w_wycenieTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -4539,6 +6478,15 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(zlecenieDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._adresTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.adres.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._adresTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._kategoria_produktuTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.kategoria_produktu.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -4575,6 +6523,15 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._produkty_w_wycenieTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.produkty_w_wycenie.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._produkty_w_wycenieTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -4585,6 +6542,14 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(zlecenieDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._adresTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.adres.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._adresTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._kategoria_produktuTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.kategoria_produktu.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -4617,6 +6582,14 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._produkty_w_wycenieTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.produkty_w_wycenie.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._produkty_w_wycenieTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -4627,6 +6600,14 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(zlecenieDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._produkty_w_wycenieTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.produkty_w_wycenie.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._produkty_w_wycenieTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._produktTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.produkt.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -4656,6 +6637,14 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._kategoria_produktuTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._adresTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.adres.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._adresTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4698,6 +6687,11 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
+            if (((this._adresTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._adresTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Dla wszystkich obiektów TableAdapter, którymi zarządza obiekt TableAdapterManager" +
+                        ", muszą być używane te same parametry połączenia.");
+            }
             if (((this._kategoria_produktuTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._kategoria_produktuTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Dla wszystkich obiektów TableAdapter, którymi zarządza obiekt TableAdapterManager" +
@@ -4715,6 +6709,11 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             }
             if (((this._produktTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._produktTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Dla wszystkich obiektów TableAdapter, którymi zarządza obiekt TableAdapterManager" +
+                        ", muszą być używane te same parametry połączenia.");
+            }
+            if (((this._produkty_w_wycenieTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._produkty_w_wycenieTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Dla wszystkich obiektów TableAdapter, którymi zarządza obiekt TableAdapterManager" +
                         ", muszą być używane te same parametry połączenia.");
             }
@@ -4751,6 +6750,15 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._adresTableAdapter != null)) {
+                    revertConnections.Add(this._adresTableAdapter, this._adresTableAdapter.Connection);
+                    this._adresTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
+                    this._adresTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
+                    if (this._adresTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._adresTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._adresTableAdapter.Adapter);
+                    }
+                }
                 if ((this._kategoria_produktuTableAdapter != null)) {
                     revertConnections.Add(this._kategoria_produktuTableAdapter, this._kategoria_produktuTableAdapter.Connection);
                     this._kategoria_produktuTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
@@ -4785,6 +6793,15 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                     if (this._produktTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._produktTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._produktTableAdapter.Adapter);
+                    }
+                }
+                if ((this._produkty_w_wycenieTableAdapter != null)) {
+                    revertConnections.Add(this._produkty_w_wycenieTableAdapter, this._produkty_w_wycenieTableAdapter.Connection);
+                    this._produkty_w_wycenieTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
+                    this._produkty_w_wycenieTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
+                    if (this._produkty_w_wycenieTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._produkty_w_wycenieTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._produkty_w_wycenieTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -4845,6 +6862,10 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
+                if ((this._adresTableAdapter != null)) {
+                    this._adresTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._adresTableAdapter]));
+                    this._adresTableAdapter.Transaction = null;
+                }
                 if ((this._kategoria_produktuTableAdapter != null)) {
                     this._kategoria_produktuTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._kategoria_produktuTableAdapter]));
                     this._kategoria_produktuTableAdapter.Transaction = null;
@@ -4860,6 +6881,10 @@ namespace E_elektryk.zlecenieDataSetTableAdapters {
                 if ((this._produktTableAdapter != null)) {
                     this._produktTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._produktTableAdapter]));
                     this._produktTableAdapter.Transaction = null;
+                }
+                if ((this._produkty_w_wycenieTableAdapter != null)) {
+                    this._produkty_w_wycenieTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._produkty_w_wycenieTableAdapter]));
+                    this._produkty_w_wycenieTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
