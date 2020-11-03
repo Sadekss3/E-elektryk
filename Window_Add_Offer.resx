@@ -144,9 +144,6 @@
   <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="zlecenieDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>21, 16</value>
-  </metadata>
   <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>159, 16</value>
   </metadata>
@@ -158,8 +155,13 @@
   </metadata>
   <data name="report1.ReportResourceString" xml:space="preserve">
     <value>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="11/01/2020 13:38:55" ReportInfo.Modified="11/02/2020 21:25:33" ReportInfo.CreatorVersion="2020.4.7.0"&gt;
+&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="11/01/2020 13:38:55" ReportInfo.Modified="11/03/2020 19:38:18" ReportInfo.CreatorVersion="2020.4.7.0"&gt;
   &lt;Dictionary&gt;
+    &lt;TableDataSource Name="produkty_w_wycenie" ReferenceName="zlecenieDataSet1.produkty_w_wycenie" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="ID_zlecenie" DataType="System.Int32"/&gt;
+      &lt;Column Name="ID_produktu" DataType="System.Int32"/&gt;
+      &lt;Column Name="ilość" DataType="System.Decimal"/&gt;
+    &lt;/TableDataSource&gt;
     &lt;Parameter Name="Opis" DataType="System.String"/&gt;
     &lt;Parameter Name="imie_zleceniobiorca" DataType="System.String"/&gt;
     &lt;Parameter Name="zleceniodawca" DataType="System.String"/&gt;
@@ -188,7 +190,50 @@
       &lt;TextObject Name="Text3" Left="292.95" Top="18.9" Width="160.65" Height="18.9" Text="Oferta nr: [id_oferty]" Font="Arial, 9.75pt, style=Bold"/&gt;
       &lt;TextObject Name="Text18" Left="18.9" Top="56.7" Width="661.5" Height="28.35" Text="Nazwa zlecenia: &amp;#13;&amp;#10;[nazwa_zlecenia]" Font="Arial, 9pt, style=Bold"/&gt;
     &lt;/PageHeaderBand&gt;
-    &lt;DataBand Name="Data1" Top="197" Width="718.2" Height="368.55" CanGrow="true"/&gt;
+    &lt;DataBand Name="Data1" Top="197" Width="718.2" Height="368.55" CanGrow="true" DataSource="produkty_w_wycenie"&gt;
+      &lt;TableObject Name="Table1" Left="18.9" Top="18.9" Width="340.2" Height="94.5"&gt;
+        &lt;TableColumn Name="Column1"/&gt;
+        &lt;TableColumn Name="Column2"/&gt;
+        &lt;TableColumn Name="Column3"/&gt;
+        &lt;TableColumn Name="Column4"/&gt;
+        &lt;TableColumn Name="Column5" Width="75.6"/&gt;
+        &lt;TableRow Name="Row1"&gt;
+          &lt;TableCell Name="Cell1" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell2" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell3" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell4" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell5" Font="Arial, 10pt"/&gt;
+        &lt;/TableRow&gt;
+        &lt;TableRow Name="Row2"&gt;
+          &lt;TableCell Name="Cell6" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell7" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell8" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell9" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell10" Font="Arial, 10pt"/&gt;
+        &lt;/TableRow&gt;
+        &lt;TableRow Name="Row3"&gt;
+          &lt;TableCell Name="Cell11" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell12" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell13" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell14" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell15" Font="Arial, 10pt"/&gt;
+        &lt;/TableRow&gt;
+        &lt;TableRow Name="Row4"&gt;
+          &lt;TableCell Name="Cell16" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell17" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell18" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell19" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell20" Font="Arial, 10pt"/&gt;
+        &lt;/TableRow&gt;
+        &lt;TableRow Name="Row5"&gt;
+          &lt;TableCell Name="Cell21" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell22" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell23" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell24" Font="Arial, 10pt"/&gt;
+          &lt;TableCell Name="Cell25" Font="Arial, 10pt"/&gt;
+        &lt;/TableRow&gt;
+      &lt;/TableObject&gt;
+    &lt;/DataBand&gt;
     &lt;PageFooterBand Name="PageFooter1" Top="569.55" Width="718.2" Height="245.7"&gt;
       &lt;TextObject Name="Text2" Left="18.9" Top="75.6" Width="585.9" Height="37.8" CanGrow="true" Text="[Opis]" Font="Arial, 8.25pt"/&gt;
       &lt;TextObject Name="Text7" Left="18.9" Top="47.25" Width="519.75" Height="18.9" CanGrow="true" Text="Ważna do: [data do]" AutoWidth="true" Font="Arial, 8.25pt"/&gt;
@@ -200,6 +245,9 @@
 &lt;/Report&gt;
 </value>
   </data>
+  <metadata name="zlecenieDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>488, 16</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>50</value>
   </metadata>
