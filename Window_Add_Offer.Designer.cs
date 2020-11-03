@@ -95,7 +95,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.zlecenieDataSet = new E_elektryk.zlecenieDataSet();
             this.Offer_Information_Box = new System.Windows.Forms.RichTextBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.label8 = new System.Windows.Forms.Label();
@@ -108,14 +107,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.report1 = new FastReport.Report();
+            this.zlecenieDataSet1 = new E_elektryk.zlecenieDataSet();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).BeginInit();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.report1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // Button_Cancel_Offer
@@ -771,11 +771,6 @@
             this.button4.Text = "Anuluj";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // zlecenieDataSet
-            // 
-            this.zlecenieDataSet.DataSetName = "zlecenieDataSet";
-            this.zlecenieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Offer_Information_Box
             // 
             this.Offer_Information_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -876,6 +871,12 @@
             this.report1.NeedRefresh = false;
             this.report1.ReportResourceString = resources.GetString("report1.ReportResourceString");
             this.report1.Tag = null;
+            this.report1.RegisterData(this.zlecenieDataSet1, "zlecenieDataSet1");
+            // 
+            // zlecenieDataSet1
+            // 
+            this.zlecenieDataSet1.DataSetName = "zlecenieDataSet";
+            this.zlecenieDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Window_Add_Offer
             // 
@@ -909,7 +910,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -917,6 +917,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.report1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -985,7 +986,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private zlecenieDataSet zlecenieDataSet;
         private System.Windows.Forms.RichTextBox Offer_Information_Box;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label label8;
@@ -998,5 +998,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label15;
         private FastReport.Report report1;
+        private zlecenieDataSet zlecenieDataSet1;
     }
 }
