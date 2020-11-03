@@ -208,8 +208,8 @@ namespace E_elektryk
 
         private void Button_Add_Offer_Click(object sender, EventArgs e)
         {
-            Window_Add_Offer offer = new Window_Add_Offer();
-            offer.ShowDialog();
+                Window_Add_Offer offer = new Window_Add_Offer();
+                offer.ShowDialog();
         } // Add new offer
 
         private void Button_Modify_Offer_Click(object sender, EventArgs e)
