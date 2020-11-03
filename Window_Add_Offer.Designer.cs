@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Window_Add_Offer));
             this.Button_Cancel_Offer = new System.Windows.Forms.Button();
-            this.Button_Save_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
             this.label_Offer_Adress = new System.Windows.Forms.Label();
             this.label_Offer_Client = new System.Windows.Forms.Label();
@@ -92,9 +91,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Button_Save_Offer = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Button_Offer_Cancel = new System.Windows.Forms.Button();
             this.Offer_Information_Box = new System.Windows.Forms.RichTextBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.label8 = new System.Windows.Forms.Label();
@@ -133,21 +132,6 @@
             this.Button_Cancel_Offer.TabIndex = 12;
             this.Button_Cancel_Offer.Text = "Anuluj";
             this.Button_Cancel_Offer.UseVisualStyleBackColor = false;
-            // 
-            // Button_Save_Offer
-            // 
-            this.Button_Save_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button_Save_Offer.BackColor = System.Drawing.Color.Gainsboro;
-            this.Button_Save_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button_Save_Offer.FlatAppearance.BorderSize = 2;
-            this.Button_Save_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Save_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Save_Offer.Location = new System.Drawing.Point(2448, 1286);
-            this.Button_Save_Offer.Name = "Button_Save_Offer";
-            this.Button_Save_Offer.Size = new System.Drawing.Size(130, 38);
-            this.Button_Save_Offer.TabIndex = 13;
-            this.Button_Save_Offer.Text = "Zapisz";
-            this.Button_Save_Offer.UseVisualStyleBackColor = false;
             // 
             // label_Offer_Name
             // 
@@ -725,20 +709,21 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // Button_Save_Offer
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.Gainsboro;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(12, 1011);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 38);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Zapisz Oferte";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Button_Save_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_Save_Offer.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_Save_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Save_Offer.FlatAppearance.BorderSize = 2;
+            this.Button_Save_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Save_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Save_Offer.Location = new System.Drawing.Point(11, 1011);
+            this.Button_Save_Offer.Name = "Button_Save_Offer";
+            this.Button_Save_Offer.Size = new System.Drawing.Size(130, 38);
+            this.Button_Save_Offer.TabIndex = 47;
+            this.Button_Save_Offer.Text = "Zapisz Oferte";
+            this.Button_Save_Offer.UseVisualStyleBackColor = false;
+            this.Button_Save_Offer.Click += new System.EventHandler(this.Button_Save_Offer_Click);
             // 
             // button3
             // 
@@ -755,21 +740,21 @@
             this.button3.Text = "Drukuj";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // Button_Offer_Cancel
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.BackColor = System.Drawing.Color.Gainsboro;
-            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(1781, 1011);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 38);
-            this.button4.TabIndex = 50;
-            this.button4.Text = "Anuluj";
-            this.button4.UseVisualStyleBackColor = false;
+            this.Button_Offer_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button_Offer_Cancel.BackColor = System.Drawing.Color.Gainsboro;
+            this.Button_Offer_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Button_Offer_Cancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Offer_Cancel.FlatAppearance.BorderSize = 2;
+            this.Button_Offer_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Offer_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Offer_Cancel.Location = new System.Drawing.Point(1781, 1011);
+            this.Button_Offer_Cancel.Name = "Button_Offer_Cancel";
+            this.Button_Offer_Cancel.Size = new System.Drawing.Size(130, 38);
+            this.Button_Offer_Cancel.TabIndex = 50;
+            this.Button_Offer_Cancel.Text = "Anuluj";
+            this.Button_Offer_Cancel.UseVisualStyleBackColor = false;
             // 
             // Offer_Information_Box
             // 
@@ -885,17 +870,16 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.Button_Cancel_Offer;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Button_Offer_Cancel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Button_Save_Offer);
             this.Controls.Add(this.textBox_Offer_CompanyName);
             this.Controls.Add(this.textBox_Offer_LastName);
             this.Controls.Add(this.textBox_Offer_Name);
             this.Controls.Add(this.textBox_Post_Code_2);
             this.Controls.Add(this.textBox_Post_Code_1);
             this.Controls.Add(this.textBox_Town_Name);
-            this.Controls.Add(this.Button_Save_Offer);
             this.Controls.Add(this.Button_Cancel_Offer);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -926,7 +910,6 @@
         #endregion
 
         private System.Windows.Forms.Button Button_Cancel_Offer;
-        private System.Windows.Forms.Button Button_Save_Offer;
         private System.Windows.Forms.Label label_Offer_Name;
         private System.Windows.Forms.Label label_Offer_Adress;
         private System.Windows.Forms.Label label_Offer_Client;
@@ -983,9 +966,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Button_Save_Offer;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Button_Offer_Cancel;
         private System.Windows.Forms.RichTextBox Offer_Information_Box;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label label8;
