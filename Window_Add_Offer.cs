@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Globalization;
@@ -17,9 +18,9 @@ using System.Windows.Forms;
 
 namespace E_elektryk
 {
-
     public partial class Window_Add_Offer : Form
-    {   
+    {
+        int client_id;
         public Window_Add_Offer()
         {
             InitializeComponent();
@@ -54,22 +55,25 @@ namespace E_elektryk
 
         void Add_to_offer(object sender, EventArgs e)
         {
-            ListViewItem item = (ListViewItem)listView1.SelectedItems[0].Clone();   // Clone current litView object
-            DataGridViewRow item_grid = new DataGridViewRow();
-            item_grid.CreateCells(dataGridView1);
-            item_grid.Cells[0].Value = item.SubItems[0].Text;   // Add to cells Nazwa
-            item_grid.Cells[1].Value = item.SubItems[1].Text;   // Add to cells Producent
-            item_grid.Cells[2].Value = item.SubItems[2].Text;   // Add to cells JM
-            decimal lot = 1;
-            item_grid.Cells[3].Value = lot.ToString();  // One piece for every new Product in DataGrid
-            string net_offer = TRIM_price(item.SubItems[4].Text);
-            item_grid.Cells[4].Value = System.Convert.ToDecimal(net_offer); // Add decimal one piece net price to cells C.J
-            item_grid.Cells[5].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot); // Add calculated net price for all pieces
-            item_grid.Cells[6].Value = item.SubItems[5].Text;   // Add taxe to cells VAT
-            string gross_offer = TRIM_price(item.SubItems[6].Text);
-            item_grid.Cells[7].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot);   // Add calculated gross price for all pieces
-            item_grid.Cells[8].Value = item.SubItems[7].Text;   // Add category name to cells Kategoria
-            dataGridView1.Rows.Add(item_grid);
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                ListViewItem item = (ListViewItem)listView1.SelectedItems[0].Clone();   // Clone current litView object
+                DataGridViewRow item_grid = new DataGridViewRow();
+                item_grid.CreateCells(dataGridView1);
+                item_grid.Cells[0].Value = item.SubItems[0].Text;   // Add to cells Nazwa
+                item_grid.Cells[1].Value = item.SubItems[1].Text;   // Add to cells Producent
+                item_grid.Cells[2].Value = item.SubItems[2].Text;   // Add to cells JM
+                decimal lot = 1;
+                item_grid.Cells[3].Value = lot.ToString();  // One piece for every new Product in DataGrid
+                string net_offer = TRIM_price(item.SubItems[4].Text);
+                item_grid.Cells[4].Value = System.Convert.ToDecimal(net_offer); // Add decimal one piece net price to cells C.J
+                item_grid.Cells[5].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot); // Add calculated net price for all pieces
+                item_grid.Cells[6].Value = item.SubItems[5].Text;   // Add taxe to cells VAT
+                string gross_offer = TRIM_price(item.SubItems[6].Text);
+                item_grid.Cells[7].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot);   // Add calculated gross price for all pieces
+                item_grid.Cells[8].Value = item.SubItems[7].Text;   // Add category name to cells Kategoria
+                dataGridView1.Rows.Add(item_grid);
+            }           
         }   // Clone listView object and add it to dataGrid row
 
         string TRIM_price(string net)
@@ -122,6 +126,7 @@ namespace E_elektryk
                 kontrahent k = new kontrahent();
                 Window_Choice_Client_For_Offer window_Choice_Client = new Window_Choice_Client_For_Offer(k);
                 window_Choice_Client.ShowDialog();
+                client_id = k.ID;
                 k = db.kontrahent.Find(k.ID);
                 adres a = new adres();
                 a = db.adres.Find(k.Adres);
@@ -173,9 +178,28 @@ namespace E_elektryk
             report1.Show();
         } // Generate offer pdf using FastReport
 
-        private void label13_Click(object sender, EventArgs e)
+        private void Button_Save_Offer_Click(object sender, EventArgs e)
         {
+            oferta new_offer = new oferta();
+            try
+            {
+                new_offer.Nazwa = textBox_O_Name.Text;
+                new_offer.Id_zleceniodawca = client_id;
+                new_offer.Data_Od = dateTimePicker1.Value;
+                new_offer.Data_Do = dateTimePicker2.Value;
+                new_offer.Opis = Offer_Information_Box.Text;
+                new_offer.Status = "Oferta";
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd zapisu", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                db.oferta.AddOrUpdate(new_offer);
+                db.SaveChanges();
+            }
         }
     }
 }
