@@ -53,7 +53,7 @@ namespace E_elektryk
             }
             else
             {
-                modyfication();
+                modify();
             }
         }
 
@@ -90,7 +90,7 @@ namespace E_elektryk
             }
         }
 
-        void modyfication()
+        void modify()
         {
             produkt produkt = new produkt();
             Boolean flag = true;
