@@ -782,7 +782,7 @@
             this.Offer_Information_Box.EnableAutoDragDrop = true;
             this.Offer_Information_Box.Location = new System.Drawing.Point(3, 33);
             this.Offer_Information_Box.Name = "Offer_Information_Box";
-            this.Offer_Information_Box.Size = new System.Drawing.Size(632, 742);
+            this.Offer_Information_Box.Size = new System.Drawing.Size(632, 763);
             this.Offer_Information_Box.TabIndex = 51;
             this.Offer_Information_Box.Text = "";
             // 
