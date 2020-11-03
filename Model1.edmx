@@ -46,9 +46,10 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa" Type="text" Nullable="false" />
           <Property Name="Id_zleceniodawca" Type="int" Nullable="false" />
-          <Property Name="Adres_zlecenia" Type="text" Nullable="false" />
-          <Property Name="Data" Type="date" Nullable="false" />
-          <Property Name="Status" Type="text" Nullable="false" />
+          <Property Name="Data_Od" Type="date" Nullable="false" />
+          <Property Name="Data_Do" Type="date" Nullable="false" />
+          <Property Name="Opis" Type="text" />
+          <Property Name="Status" Type="text" />
         </EntityType>
         <EntityType Name="produkt">
           <Key>
@@ -65,12 +66,22 @@
           <Property Name="Cena_brutto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Kategoria" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="produkty_w_wycenie">
+          <Key>
+            <PropertyRef Name="ID_zlecenie" />
+            <PropertyRef Name="ID_produktu" />
+          </Key>
+          <Property Name="ID_zlecenie" Type="int" Nullable="false" />
+          <Property Name="ID_produktu" Type="int" Nullable="false" />
+          <Property Name="ilość" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="zlecenieModelStoreContainer">
           <EntitySet Name="adres" EntityType="Self.adres" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="kategoria_produktu" EntityType="Self.kategoria_produktu" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="kontrahent" EntityType="Self.kontrahent" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="oferta" EntityType="Self.oferta" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="produkt" EntityType="Self.produkt" Schema="zlecenie" store:Type="Tables" />
+          <EntitySet Name="produkty_w_wycenie" EntityType="Self.produkty_w_wycenie" Schema="zlecenie" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -117,20 +128,10 @@
           <EntitySet Name="kategoria_produktu" EntityType="Self.kategoria_produktu" />
           <EntitySet Name="kontrahent" EntityType="Self.kontrahent" />
           <EntitySet Name="produkt" EntityType="Self.produkt" />
-          <EntitySet Name="oferta" EntityType="zlecenieModel.oferta" />
           <EntitySet Name="adres" EntityType="zlecenieModel.adres" />
+          <EntitySet Name="produkty_w_wycenie" EntityType="zlecenieModel.produkty_w_wycenie" />
+          <EntitySet Name="oferta" EntityType="zlecenieModel.oferta" />
         </EntityContainer>
-        <EntityType Name="oferta">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
-          <Property Name="Id_zleceniodawca" Type="Int32" Nullable="false" />
-          <Property Name="Adres_zlecenia" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
-          <Property Name="Data" Type="DateTime" Nullable="false" />
-          <Property Name="Status" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="adres">
           <Key>
             <PropertyRef Name="ID" />
@@ -142,6 +143,27 @@
           <Property Name="Numer_budynku" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Numer_mieszkania" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Państwo" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="produkty_w_wycenie">
+          <Key>
+            <PropertyRef Name="ID_zlecenie" />
+            <PropertyRef Name="ID_produktu" />
+          </Key>
+          <Property Name="ID_zlecenie" Type="Int32" Nullable="false" />
+          <Property Name="ID_produktu" Type="Int32" Nullable="false" />
+          <Property Name="ilość" Type="Decimal" Nullable="false" />
+        </EntityType>
+        <EntityType Name="oferta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Id_zleceniodawca" Type="Int32" Nullable="false" />
+          <Property Name="Data_Od" Type="DateTime" Nullable="false" />
+          <Property Name="Data_Do" Type="DateTime" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -189,18 +211,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="oferta">
-            <EntityTypeMapping TypeName="zlecenieModel.oferta">
-              <MappingFragment StoreEntitySet="oferta">
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Data" ColumnName="Data" />
-                <ScalarProperty Name="Adres_zlecenia" ColumnName="Adres_zlecenia" />
-                <ScalarProperty Name="Id_zleceniodawca" ColumnName="Id_zleceniodawca" />
-                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="adres">
             <EntityTypeMapping TypeName="zlecenieModel.adres">
               <MappingFragment StoreEntitySet="adres">
@@ -210,6 +220,28 @@
                 <ScalarProperty Name="Nazwa_ulicy" ColumnName="Nazwa_ulicy" />
                 <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
                 <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produkty_w_wycenie">
+            <EntityTypeMapping TypeName="zlecenieModel.produkty_w_wycenie">
+              <MappingFragment StoreEntitySet="produkty_w_wycenie">
+                <ScalarProperty Name="ilość" ColumnName="ilość" />
+                <ScalarProperty Name="ID_produktu" ColumnName="ID_produktu" />
+                <ScalarProperty Name="ID_zlecenie" ColumnName="ID_zlecenie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="oferta">
+            <EntityTypeMapping TypeName="zlecenieModel.oferta">
+              <MappingFragment StoreEntitySet="oferta">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Data_Do" ColumnName="Data_Do" />
+                <ScalarProperty Name="Data_Od" ColumnName="Data_Od" />
+                <ScalarProperty Name="Id_zleceniodawca" ColumnName="Id_zleceniodawca" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
