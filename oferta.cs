@@ -17,8 +17,9 @@ namespace E_elektryk
         public int ID { get; set; }
         public string Nazwa { get; set; }
         public int Id_zleceniodawca { get; set; }
-        public string Adres_zlecenia { get; set; }
-        public System.DateTime Data { get; set; }
+        public System.DateTime Data_Od { get; set; }
+        public System.DateTime Data_Do { get; set; }
+        public string Opis { get; set; }
         public string Status { get; set; }
     }
 }
