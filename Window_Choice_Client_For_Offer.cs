@@ -71,7 +71,7 @@ namespace E_elektryk
         private void Client_list_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ListViewItem item = Client_list.SelectedItems[0];
-            int ID = System.Convert.ToInt32(item.Text);
+            int ID = System.Convert.ToInt32(item.Text);   
             _k.ID = ID;
             this.Close();
         }
