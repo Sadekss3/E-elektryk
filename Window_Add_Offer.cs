@@ -20,7 +20,9 @@ namespace E_elektryk
 {
     public partial class Window_Add_Offer : Form
     {
+        int[] products_List;
         int client_id;
+        
         public Window_Add_Offer()
         {
             InitializeComponent();
@@ -34,9 +36,10 @@ namespace E_elektryk
                 listView1.Items.Clear();
                 foreach (produkt p in list.Where(lvi => lvi.Nazwa.ToLower().Contains(textBox_name_search.Text.ToLower().Trim()) && lvi.Producent.ToLower().Contains(textBox_Producent_search.Text.ToLower().Trim())))
                 {
-                    ListViewItem item = new ListViewItem(p.Nazwa.ToString());
-                    item.SubItems.Add(p.Producent);
-                    item.SubItems.Add(p.Jm);
+                    ListViewItem item = new ListViewItem(p.ID.ToString());
+                    item.SubItems.Add(p.Nazwa.ToLower());
+                    item.SubItems.Add(p.Producent.ToString());
+                    item.SubItems.Add(p.Jm.ToString());
                     item.SubItems.Add(p.Ilość.ToString());
                     item.SubItems.Add(p.Cena_netto.ToString() + " zł");
                     item.SubItems.Add(p.Vat.ToString() + " %");
@@ -57,23 +60,24 @@ namespace E_elektryk
         {
             using (zlecenieEntities db = new zlecenieEntities())
             {
-                ListViewItem item = (ListViewItem)listView1.SelectedItems[0].Clone();   // Clone current litView object
                 DataGridViewRow item_grid = new DataGridViewRow();
+                ListViewItem item = (ListViewItem)listView1.SelectedItems[0].Clone();   // Clone current litView object
                 item_grid.CreateCells(dataGridView1);
-                item_grid.Cells[0].Value = item.SubItems[0].Text;   // Add to cells Nazwa
-                item_grid.Cells[1].Value = item.SubItems[1].Text;   // Add to cells Producent
-                item_grid.Cells[2].Value = item.SubItems[2].Text;   // Add to cells JM
+                item_grid.Cells[0].Value = item.SubItems[0].Text;   // Add to cells ID
+                item_grid.Cells[1].Value = item.SubItems[1].Text;   // Add to cells Nazwa
+                item_grid.Cells[2].Value = item.SubItems[2].Text;   // Add to cells Producent
+                item_grid.Cells[3].Value = item.SubItems[3].Text;   // Add to cells J.m
                 decimal lot = 1;
-                item_grid.Cells[3].Value = lot.ToString();  // One piece for every new Product in DataGrid
-                string net_offer = TRIM_price(item.SubItems[4].Text);
-                item_grid.Cells[4].Value = System.Convert.ToDecimal(net_offer); // Add decimal one piece net price to cells C.J
-                item_grid.Cells[5].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot); // Add calculated net price for all pieces
-                item_grid.Cells[6].Value = item.SubItems[5].Text;   // Add taxe to cells VAT
-                string gross_offer = TRIM_price(item.SubItems[6].Text);
-                item_grid.Cells[7].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot);   // Add calculated gross price for all pieces
-                item_grid.Cells[8].Value = item.SubItems[7].Text;   // Add category name to cells Kategoria
+                item_grid.Cells[4].Value = lot.ToString();  // One piece for every new Product in DataGrid
+                string net_offer = TRIM_price(item.SubItems[5].Text);
+                item_grid.Cells[5].Value = System.Convert.ToDecimal(net_offer); // Add decimal one piece net price to cells C.J
+                item_grid.Cells[6].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot); // Add calculated net price for all pieces
+                item_grid.Cells[7].Value = item.SubItems[6].Text;   // Add taxe to cells VAT
+                string gross_offer = TRIM_price(item.SubItems[7].Text);
+                item_grid.Cells[8].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot);   // Add calculated gross price for all pieces
+                item_grid.Cells[9].Value = item.SubItems[8].Text;   // Add category name to cells Kategoria
                 dataGridView1.Rows.Add(item_grid);
-            }           
+            }
         }   // Clone listView object and add it to dataGrid row
 
         string TRIM_price(string net)
@@ -87,25 +91,25 @@ namespace E_elektryk
             try
             {
                 DataGridViewRow row = dataGridView1.CurrentRow;
-                if (row.Cells[3].Value.ToString().Contains('.'))
+                if (row.Cells[4].Value.ToString().Contains('.'))
                 {
                     MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    decimal lot = System.Convert.ToDecimal(row.Cells[3].Value);
-                    string piece_price = TRIM_price(row.Cells[4].Value.ToString());
-                    row.Cells[5].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
+                    decimal lot = System.Convert.ToDecimal(row.Cells[4].Value);
+                    string piece_price = TRIM_price(row.Cells[5].Value.ToString());
+                    row.Cells[6].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
                     string gross_offer = TRIM_price(row.Cells[7].Value.ToString());
-                    string vat = (row.Cells[6].Value.ToString()).Trim(' ', '%');
+                    string vat = (row.Cells[7].Value.ToString()).Trim(' ', '%');
                     decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
-                    row.Cells[7].Value = Gross * lot;
+                    row.Cells[8].Value = Gross * lot;
                     decimal sum_e_taxes = 0;
                     decimal sum_w_taxes = 0;
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
-                        sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value);
-                        sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[7].Value);
+                        sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
+                        sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value);
                         sum_e_taxes = Math.Round(sum_e_taxes, 2);
                         sum_w_taxes = Math.Round(sum_w_taxes, 2);
                         sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString();
@@ -180,25 +184,34 @@ namespace E_elektryk
 
         private void Button_Save_Offer_Click(object sender, EventArgs e)
         {
-            oferta new_offer = new oferta();
-            try
-            {
-                new_offer.Nazwa = textBox_O_Name.Text;
-                new_offer.Id_zleceniodawca = client_id;
-                new_offer.Data_Od = dateTimePicker1.Value;
-                new_offer.Data_Do = dateTimePicker2.Value;
-                new_offer.Opis = Offer_Information_Box.Text;
-                new_offer.Status = "Oferta";
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Błąd zapisu", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             using (zlecenieEntities db = new zlecenieEntities())
             {
-                db.oferta.AddOrUpdate(new_offer);
-                db.SaveChanges();
+                oferta new_offer = new oferta();
+                try
+                {
+                    new_offer.Nazwa = textBox_O_Name.Text;
+                    new_offer.Id_zleceniodawca = client_id;
+                    new_offer.Data_Od = dateTimePicker1.Value;
+                    new_offer.Data_Do = dateTimePicker2.Value;
+                    new_offer.Opis = Offer_Information_Box.Text;
+                    new_offer.Status = "Oferta";
+                    db.oferta.AddOrUpdate(new_offer);
+                    db.SaveChanges();
+                    foreach(DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        produkty_w_wycenie produkty_W_Wycenie = new produkty_w_wycenie();
+                        produkty_W_Wycenie.ID_zlecenie = new_offer.ID;
+                        produkty_W_Wycenie.ID_produktu = System.Convert.ToInt32(row.Cells[0].Value);
+                        produkty_W_Wycenie.ilość = System.Convert.ToDecimal(row.Cells[4].Value);
+                        db.produkty_w_wycenie.AddOrUpdate(produkty_W_Wycenie);
+                        db.SaveChanges();
+                    }
+                    MessageBox.Show("Oferta utworzona", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd zapisu", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }  
             }
         }
     }
