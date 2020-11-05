@@ -57,12 +57,12 @@ namespace E_elektryk
                         Products_list.Items.Add(item);
                     }
                 }
-                catch (Exception f)
+                catch (Exception)
                 {
                     MessageBox.Show("Brak połączenia do bazy danych", "Błąd Bazy Danych", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Environment.Exit(1);
                 }
             }
+            Cursor.Current = Cursors.Default;
         } // Add Products information from DB to listView
 
         private void Button_Add_Click(object sender, EventArgs e)
@@ -150,7 +150,6 @@ namespace E_elektryk
                 }
                 catch (Exception f)
                 {
-                    Environment.Exit(1);
                 }
             }
             Cursor.Current = Cursors.Default;
@@ -203,7 +202,32 @@ namespace E_elektryk
 
         private void Offer_List_Update()
         {
-
+            Cursor.Current = Cursors.WaitCursor;
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    Offer_list.Items.Clear();
+                    List<oferta> list = db.oferta.ToList();
+                    foreach (oferta o in list.Where(lvi => lvi.Nazwa.ToLower().Contains(Offer_Search_Offer_Name.Text.ToLower()) && db.kontrahent.Find(lvi.Id_zleceniodawca).Nazwa_Firmy.ToLower().Contains(Offer_Search_Client_Name.Text.ToLower()) && db.kontrahent.Find(lvi.Id_zleceniodawca).ID.ToString().Contains(Offer_Search_Client_ID.Text)))
+                    {
+                        ListViewItem item = new ListViewItem(o.ID.ToString());
+                        item.SubItems.Add(o.Nazwa);
+                        item.SubItems.Add(db.kontrahent.Find(o.Id_zleceniodawca).Nazwa_Firmy);
+                        item.SubItems.Add(db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Miasto);
+                        item.SubItems.Add(o.Data_Od.ToString());
+                        item.SubItems.Add(o.Data_Do.ToString());
+                        item.SubItems.Add(o.Status);
+                        item.SubItems.Add(o.Opis.ToString());
+                        item.Font = new Font(item.Font, FontStyle.Regular);
+                        Offer_list.Items.Add(item);
+                    }
+                }
+                catch (Exception f)
+                {
+                }
+            }
+            Cursor.Current = Cursors.Default;
         } // Update Offer information from DB to listView
 
         private void Button_Add_Offer_Click(object sender, EventArgs e)
@@ -216,5 +240,40 @@ namespace E_elektryk
         {
 
         }
+
+        private void Offer_list_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    Position_In_Offer_ListView.Items.Clear();
+                    string id_offer = Offer_list.SelectedItems[0].Text;
+                    Position_In_Offer_ListView.Items.Clear();
+                    List<produkty_w_wycenie> list = db.produkty_w_wycenie.ToList();
+                    foreach (produkty_w_wycenie p in list.Where(id => id.ID_zlecenie.ToString() == id_offer))
+                    {
+                        ListViewItem item = new ListViewItem(p.ID_produktu.ToString());
+                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Nazwa);
+                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Producent);
+                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Numer_katalogowy);
+                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Jm);
+                        double ilość = db.produkt.Find(p.ID_produktu).Ilość;
+                        item.SubItems.Add(ilość.ToString());
+                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Cena_netto.ToString());
+                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Vat.ToString());
+                        decimal brutto = db.produkt.Find(p.ID_produktu).Cena_brutto;
+                        item.SubItems.Add(brutto.ToString());
+                        item.SubItems.Add(db.kategoria_produktu.Find(db.produkt.Find(p.ID_produktu).Kategoria).Nazwa_kategorii);
+                        item.SubItems.Add((System.Convert.ToDecimal(ilość) * brutto).ToString());
+                        item.Font = new Font(item.Font, FontStyle.Regular);
+                        Position_In_Offer_ListView.Items.Add(item);
+                    }
+                }
+                catch (Exception f)
+                {
+                }
+            }
+        } // Fill actual Offer products list
     }
 }
