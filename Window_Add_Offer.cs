@@ -20,7 +20,6 @@ namespace E_elektryk
 {
     public partial class Window_Add_Offer : Form
     {
-        int[] products_List;
         int client_id;
         
         public Window_Add_Offer()
@@ -186,6 +185,7 @@ namespace E_elektryk
         {
             using (zlecenieEntities db = new zlecenieEntities())
             {
+                Cursor.Current = Cursors.WaitCursor;
                 oferta new_offer = new oferta();
                 try
                 {
@@ -206,6 +206,7 @@ namespace E_elektryk
                         db.produkty_w_wycenie.AddOrUpdate(produkty_W_Wycenie);
                         db.SaveChanges();
                     }
+                    Cursor.Current = Cursors.Default;
                     MessageBox.Show("Oferta utworzona", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception)
