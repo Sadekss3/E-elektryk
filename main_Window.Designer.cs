@@ -141,6 +141,7 @@
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sum_w_taxes_label_2 = new System.Windows.Forms.Label();
             this.Faktury.SuspendLayout();
             this.Magazyn.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -833,6 +834,7 @@
             // 
             // Opis
             // 
+            this.Opis.Text = "Opis";
             this.Opis.Width = 300;
             // 
             // Delete_Offer
@@ -1004,6 +1006,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.sum_w_taxes_label_2);
             this.tabPage1.Controls.Add(this.Position_In_Offer_ListView);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -1037,7 +1040,7 @@
             this.Position_In_Offer_ListView.HideSelection = false;
             this.Position_In_Offer_ListView.Location = new System.Drawing.Point(0, 0);
             this.Position_In_Offer_ListView.Name = "Position_In_Offer_ListView";
-            this.Position_In_Offer_ListView.Size = new System.Drawing.Size(1581, 275);
+            this.Position_In_Offer_ListView.Size = new System.Drawing.Size(1581, 249);
             this.Position_In_Offer_ListView.TabIndex = 7;
             this.Position_In_Offer_ListView.UseCompatibleStateImageBehavior = false;
             this.Position_In_Offer_ListView.View = System.Windows.Forms.View.Details;
@@ -1253,6 +1256,18 @@
             this.columnHeader29.Text = "Telefon 2";
             this.columnHeader29.Width = 120;
             // 
+            // sum_w_taxes_label_2
+            // 
+            this.sum_w_taxes_label_2.AutoSize = true;
+            this.sum_w_taxes_label_2.BackColor = System.Drawing.Color.White;
+            this.sum_w_taxes_label_2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_w_taxes_label_2.ForeColor = System.Drawing.Color.Black;
+            this.sum_w_taxes_label_2.Location = new System.Drawing.Point(1265, 256);
+            this.sum_w_taxes_label_2.Name = "sum_w_taxes_label_2";
+            this.sum_w_taxes_label_2.Size = new System.Drawing.Size(89, 16);
+            this.sum_w_taxes_label_2.TabIndex = 47;
+            this.sum_w_taxes_label_2.Text = "Suma Brutto:";
+            // 
             // main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1279,6 +1294,7 @@
             this.panel6.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.Zlecenia.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1400,6 +1416,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader38;
         private System.Windows.Forms.ColumnHeader columnHeader39;
         private System.Windows.Forms.ColumnHeader Suma;
+        private System.Windows.Forms.Label sum_w_taxes_label_2;
     }
 }
 
