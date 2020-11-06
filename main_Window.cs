@@ -215,8 +215,8 @@ namespace E_elektryk
                         item.SubItems.Add(o.Nazwa);
                         item.SubItems.Add(db.kontrahent.Find(o.Id_zleceniodawca).Nazwa_Firmy);
                         item.SubItems.Add(db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Miasto);
-                        item.SubItems.Add(o.Data_Od.ToString());
-                        item.SubItems.Add(o.Data_Do.ToString());
+                        item.SubItems.Add(o.Data_Od.ToString().Remove(10, 9));
+                        item.SubItems.Add(o.Data_Do.ToString().Remove(10, 9));
                         item.SubItems.Add(o.Status);
                         item.SubItems.Add(o.Opis.ToString());
                         item.Font = new Font(item.Font, FontStyle.Regular);
@@ -258,22 +258,33 @@ namespace E_elektryk
                         item.SubItems.Add(db.produkt.Find(p.ID_produktu).Producent);
                         item.SubItems.Add(db.produkt.Find(p.ID_produktu).Numer_katalogowy);
                         item.SubItems.Add(db.produkt.Find(p.ID_produktu).Jm);
-                        double ilość = db.produkt.Find(p.ID_produktu).Ilość;
+                        decimal ilość = p.ilość;
                         item.SubItems.Add(ilość.ToString());
-                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Cena_netto.ToString());
-                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Vat.ToString());
+                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Cena_netto.ToString() + " zł");
+                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Vat.ToString() + "%");
                         decimal brutto = db.produkt.Find(p.ID_produktu).Cena_brutto;
-                        item.SubItems.Add(brutto.ToString());
+                        item.SubItems.Add(brutto.ToString() + " zł");
                         item.SubItems.Add(db.kategoria_produktu.Find(db.produkt.Find(p.ID_produktu).Kategoria).Nazwa_kategorii);
-                        item.SubItems.Add((System.Convert.ToDecimal(ilość) * brutto).ToString());
+                        item.SubItems.Add((ilość * brutto).ToString() + " zł");
                         item.Font = new Font(item.Font, FontStyle.Regular);
                         Position_In_Offer_ListView.Items.Add(item);
                     }
+                Calculate_tax_price();
                 }
                 catch (Exception f)
                 {
                 }
             }
         } // Fill actual Offer products list
+        void Calculate_tax_price()
+        {
+            decimal sum_w_taxes = 0;
+            for (int i = 0; i <= Position_In_Offer_ListView.Items.Count; i++)
+            {
+                sum_w_taxes += System.Convert.ToDecimal((Position_In_Offer_ListView.Items[i].SubItems[10].Text).Trim(' ', 'z', 'ł'));
+                sum_w_taxes = Math.Round(sum_w_taxes, 2);
+                sum_w_taxes_label_2.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
+            }
+        }
     }
 }
