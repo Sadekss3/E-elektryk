@@ -113,6 +113,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.sum_w_taxes_label_2 = new System.Windows.Forms.Label();
             this.Position_In_Offer_ListView = new System.Windows.Forms.ListView();
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -141,7 +142,6 @@
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sum_w_taxes_label_2 = new System.Windows.Forms.Label();
             this.Faktury.SuspendLayout();
             this.Magazyn.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -193,7 +193,7 @@
             this.listView2.Location = new System.Drawing.Point(0, 37);
             this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1647, 498);
+            this.listView2.Size = new System.Drawing.Size(1647, 906);
             this.listView2.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView2.TabIndex = 21;
             this.listView2.UseCompatibleStateImageBehavior = false;
@@ -557,7 +557,7 @@
             this.Client_list.Location = new System.Drawing.Point(-4, 37);
             this.Client_list.MultiSelect = false;
             this.Client_list.Name = "Client_list";
-            this.Client_list.Size = new System.Drawing.Size(1593, 504);
+            this.Client_list.Size = new System.Drawing.Size(1593, 903);
             this.Client_list.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.Client_list.TabIndex = 0;
             this.Client_list.UseCompatibleStateImageBehavior = false;
@@ -620,7 +620,7 @@
             this.Button_Delete_Client.FlatAppearance.BorderSize = 2;
             this.Button_Delete_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Delete_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Delete_Client.Location = new System.Drawing.Point(280, 546);
+            this.Button_Delete_Client.Location = new System.Drawing.Point(281, 946);
             this.Button_Delete_Client.Name = "Button_Delete_Client";
             this.Button_Delete_Client.Size = new System.Drawing.Size(130, 38);
             this.Button_Delete_Client.TabIndex = 8;
@@ -636,7 +636,7 @@
             this.Button_DataMod_Client.FlatAppearance.BorderSize = 2;
             this.Button_DataMod_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_DataMod_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_DataMod_Client.Location = new System.Drawing.Point(145, 546);
+            this.Button_DataMod_Client.Location = new System.Drawing.Point(146, 946);
             this.Button_DataMod_Client.Name = "Button_DataMod_Client";
             this.Button_DataMod_Client.Size = new System.Drawing.Size(130, 38);
             this.Button_DataMod_Client.TabIndex = 7;
@@ -652,7 +652,7 @@
             this.Button_Add_Client.FlatAppearance.BorderSize = 2;
             this.Button_Add_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Add_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Add_Client.Location = new System.Drawing.Point(10, 546);
+            this.Button_Add_Client.Location = new System.Drawing.Point(10, 946);
             this.Button_Add_Client.Name = "Button_Add_Client";
             this.Button_Add_Client.Size = new System.Drawing.Size(130, 38);
             this.Button_Add_Client.TabIndex = 6;
@@ -1016,6 +1016,18 @@
             this.tabPage1.Text = "Pozycje";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // sum_w_taxes_label_2
+            // 
+            this.sum_w_taxes_label_2.AutoSize = true;
+            this.sum_w_taxes_label_2.BackColor = System.Drawing.Color.White;
+            this.sum_w_taxes_label_2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_w_taxes_label_2.ForeColor = System.Drawing.Color.Black;
+            this.sum_w_taxes_label_2.Location = new System.Drawing.Point(1265, 256);
+            this.sum_w_taxes_label_2.Name = "sum_w_taxes_label_2";
+            this.sum_w_taxes_label_2.Size = new System.Drawing.Size(89, 16);
+            this.sum_w_taxes_label_2.TabIndex = 47;
+            this.sum_w_taxes_label_2.Text = "Suma Brutto:";
+            // 
             // Position_In_Offer_ListView
             // 
             this.Position_In_Offer_ListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
@@ -1148,7 +1160,7 @@
             this.listView3.Location = new System.Drawing.Point(-4, 37);
             this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(1589, 503);
+            this.listView3.Size = new System.Drawing.Size(1589, 906);
             this.listView3.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView3.TabIndex = 21;
             this.listView3.UseCompatibleStateImageBehavior = false;
@@ -1175,7 +1187,7 @@
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(145, 546);
+            this.button2.Location = new System.Drawing.Point(146, 946);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 38);
             this.button2.TabIndex = 2;
@@ -1190,7 +1202,7 @@
             this.button1.FlatAppearance.BorderSize = 2;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(10, 546);
+            this.button1.Location = new System.Drawing.Point(10, 946);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 38);
             this.button1.TabIndex = 1;
@@ -1255,18 +1267,6 @@
             this.columnHeader29.DisplayIndex = 9;
             this.columnHeader29.Text = "Telefon 2";
             this.columnHeader29.Width = 120;
-            // 
-            // sum_w_taxes_label_2
-            // 
-            this.sum_w_taxes_label_2.AutoSize = true;
-            this.sum_w_taxes_label_2.BackColor = System.Drawing.Color.White;
-            this.sum_w_taxes_label_2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label_2.ForeColor = System.Drawing.Color.Black;
-            this.sum_w_taxes_label_2.Location = new System.Drawing.Point(1265, 256);
-            this.sum_w_taxes_label_2.Name = "sum_w_taxes_label_2";
-            this.sum_w_taxes_label_2.Size = new System.Drawing.Size(89, 16);
-            this.sum_w_taxes_label_2.TabIndex = 47;
-            this.sum_w_taxes_label_2.Text = "Suma Brutto:";
             // 
             // main_Window
             // 
