@@ -21,11 +21,61 @@ namespace E_elektryk
     public partial class Window_Add_Offer : Form
     {
         int client_id;
-        
+        oferta _o;
+        string _type;
+
         public Window_Add_Offer()
         {
             InitializeComponent();
+            _type = "Add";
         }
+
+        public Window_Add_Offer(oferta o)
+        {
+            InitializeComponent();
+            _type = "Modify";
+            _o = o;
+            Button_Save_Offer.Text = "Aktualizuj";
+            Add_Offer_Information();
+        }
+
+        private void Add_Offer_Information()
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                textBox_O_Name.Text = _o.Nazwa;
+                textBox_Offer_Name.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Imie;
+                textBox_Offer_LastName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwisko;
+                textBox_Offer_CompanyName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwa_Firmy;
+                textBox_Town_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Miasto;
+                textBox_Post_Code_1.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(2, 3);
+                textBox_Post_Code_2.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(0, 2);
+                textBox_Street_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Nazwa_ulicy;
+                textBox_Building_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_budynku;
+                textBox_Home_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_mieszkania;
+                textBox_Country_ID.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Państwo;
+                Offer_Information_Box.Text = _o.Opis;
+                dateTimePicker1.Value = _o.Data_Od.Date;
+                dateTimePicker2.Value = _o.Data_Do.Date;
+                List<produkty_w_wycenie> list = db.produkty_w_wycenie.ToList();
+                foreach (produkty_w_wycenie produkty_W_Wycenie in list.Where(id => id.ID_zlecenie == _o.ID))
+                {
+                    DataGridViewRow item_grid = new DataGridViewRow();
+                    item_grid.CreateCells(dataGridView1);
+                    item_grid.Cells[0].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).ID;
+                    item_grid.Cells[1].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Nazwa;
+                    item_grid.Cells[2].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Producent;
+                    item_grid.Cells[3].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Jm;
+                    item_grid.Cells[4].Value = produkty_W_Wycenie.ilość;
+                    item_grid.Cells[5].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
+                    item_grid.Cells[6].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
+                    item_grid.Cells[7].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat;
+                    item_grid.Cells[8].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto;
+                    item_grid.Cells[9].Value = db.kategoria_produktu.Find(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Kategoria).Nazwa_kategorii;
+                    dataGridView1.Rows.Add(item_grid);
+                }
+            }
+        } // Fill offer window with information about actual offer
 
         private void Window_Add_Offer_Load(object sender, EventArgs e)
         {
@@ -163,7 +213,7 @@ namespace E_elektryk
         private void button2_Click(object sender, EventArgs e)
         {
             report1.SetParameterValue("nazwa_firmy_bior", textBox_Offer_CompanyName.Text);
-            report1.SetParameterValue("imie_zleceniobiorca", textBox_Offer_Name.Text +" "+textBox_Offer_LastName.Text);
+            report1.SetParameterValue("imie_zleceniobiorca", textBox_Offer_Name.Text + " " + textBox_Offer_LastName.Text);
             report1.SetParameterValue("miasto", textBox_Town_Name.Text + " " + textBox_Post_Code_1.Text + "-" + textBox_Post_Code_2.Text);
             if (textBox_Home_Number.Text != "")
             {
@@ -183,6 +233,29 @@ namespace E_elektryk
 
         private void Button_Save_Offer_Click(object sender, EventArgs e)
         {
+            if (_type == "Add")
+            {
+                Save_Offer();
+            }
+            else
+            {
+                Modify_Offer();
+            }
+        } // Save or update information about Offer
+
+        private void Button_Delete_From_Grid_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewCell selectedcell in dataGridView1.SelectedCells)
+            {
+                if (selectedcell.Selected)
+                {
+                    dataGridView1.Rows.RemoveAt(selectedcell.RowIndex);
+                }
+            }
+        } // Delete product from Datagrid
+
+        void Save_Offer()
+        {
             using (zlecenieEntities db = new zlecenieEntities())
             {
                 Cursor.Current = Cursors.WaitCursor;
@@ -195,15 +268,15 @@ namespace E_elektryk
                     new_offer.Data_Do = dateTimePicker2.Value;
                     new_offer.Opis = Offer_Information_Box.Text;
                     new_offer.Status = "Oferta";
-                    db.oferta.AddOrUpdate(new_offer);
+                    db.oferta.Add(new_offer);
                     db.SaveChanges();
-                    foreach(DataGridViewRow row in dataGridView1.Rows)
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         produkty_w_wycenie produkty_W_Wycenie = new produkty_w_wycenie();
                         produkty_W_Wycenie.ID_zlecenie = new_offer.ID;
                         produkty_W_Wycenie.ID_produktu = System.Convert.ToInt32(row.Cells[0].Value);
                         produkty_W_Wycenie.ilość = System.Convert.ToDecimal(row.Cells[4].Value);
-                        db.produkty_w_wycenie.AddOrUpdate(produkty_W_Wycenie);
+                        db.produkty_w_wycenie.Add(produkty_W_Wycenie);
                         db.SaveChanges();
                     }
                     Cursor.Current = Cursors.Default;
@@ -212,9 +285,47 @@ namespace E_elektryk
                 catch (Exception)
                 {
                     MessageBox.Show("Błąd zapisu", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }  
+                }
             }
-        }
+        } // Save new offer
+
+        void Modify_Offer()
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                oferta new_offer = new oferta();
+                try
+                {
+                    new_offer.ID = _o.ID;
+                    new_offer.Nazwa = textBox_O_Name.Text;
+                    new_offer.Id_zleceniodawca = _o.Id_zleceniodawca;
+                    MessageBox.Show(new_offer.Id_zleceniodawca.ToString());
+                    new_offer.Data_Od = dateTimePicker1.Value;
+                    new_offer.Data_Do = dateTimePicker2.Value;
+                    new_offer.Opis = Offer_Information_Box.Text;
+                    new_offer.Status = "Oferta";
+                    db.oferta.AddOrUpdate(new_offer);
+                    db.SaveChanges();
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        produkty_w_wycenie produkty_W_Wycenie = new produkty_w_wycenie();
+                        produkty_W_Wycenie.ID_zlecenie = new_offer.ID;
+                        produkty_W_Wycenie.ID_produktu = System.Convert.ToInt32(row.Cells[0].Value);
+                        produkty_W_Wycenie.ilość = System.Convert.ToDecimal(row.Cells[4].Value);
+                        db.produkty_w_wycenie.AddOrUpdate(produkty_W_Wycenie);
+                        db.SaveChanges();
+                    }
+                    
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("Oferta zaktualizowana", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd zapisu", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        } // Modify actual offer
     }
 }
 
