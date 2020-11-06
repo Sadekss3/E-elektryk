@@ -223,7 +223,7 @@ namespace E_elektryk
                         Offer_list.Items.Add(item);
                     }
                 }
-                catch (Exception f)
+                catch (Exception)
                 {
                 }
             }
@@ -238,8 +238,18 @@ namespace E_elektryk
 
         private void Button_Modify_Offer_Click(object sender, EventArgs e)
         {
-
-        }
+            if (Offer_list.SelectedItems.Count > 0)
+            {
+                using (zlecenieEntities db = new zlecenieEntities())
+                {
+                    string ID = Offer_list.SelectedItems[0].Text;
+                    int Offer_ID = System.Convert.ToInt32(ID);
+                    oferta o = db.oferta.Find(Offer_ID);
+                    Window_Add_Offer Modify_Offer = new Window_Add_Offer(o);
+                    Modify_Offer.ShowDialog();
+                }
+            }
+        } // Modify offer information
 
         private void Offer_list_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -269,13 +279,14 @@ namespace E_elektryk
                         item.Font = new Font(item.Font, FontStyle.Regular);
                         Position_In_Offer_ListView.Items.Add(item);
                     }
-                Calculate_tax_price();
+                    Calculate_tax_price();
                 }
                 catch (Exception f)
                 {
                 }
             }
         } // Fill actual Offer products list
+        
         void Calculate_tax_price()
         {
             decimal sum_w_taxes = 0;
@@ -285,6 +296,6 @@ namespace E_elektryk
                 sum_w_taxes = Math.Round(sum_w_taxes, 2);
                 sum_w_taxes_label_2.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
             }
-        }
+        } // Calculate gross price for offer
     }
 }
