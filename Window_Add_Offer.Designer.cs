@@ -106,10 +106,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Button_Delete_From_Grid = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.report1 = new FastReport.Report();
             this.zlecenieDataSet1 = new E_elektryk.zlecenieDataSet();
-            this.Button_Delete_From_Grid = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -858,6 +858,18 @@
             this.panel4.Size = new System.Drawing.Size(1259, 388);
             this.panel4.TabIndex = 58;
             // 
+            // Button_Delete_From_Grid
+            // 
+            this.Button_Delete_From_Grid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Delete_From_Grid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Delete_From_Grid.Location = new System.Drawing.Point(9, 361);
+            this.Button_Delete_From_Grid.Name = "Button_Delete_From_Grid";
+            this.Button_Delete_From_Grid.Size = new System.Drawing.Size(63, 23);
+            this.Button_Delete_From_Grid.TabIndex = 49;
+            this.Button_Delete_From_Grid.Text = "Usuń";
+            this.Button_Delete_From_Grid.UseVisualStyleBackColor = true;
+            this.Button_Delete_From_Grid.Click += new System.EventHandler(this.Button_Delete_From_Grid_Click);
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -879,18 +891,6 @@
             // 
             this.zlecenieDataSet1.DataSetName = "zlecenieDataSet";
             this.zlecenieDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // Button_Delete_From_Grid
-            // 
-            this.Button_Delete_From_Grid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Delete_From_Grid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Delete_From_Grid.Location = new System.Drawing.Point(9, 361);
-            this.Button_Delete_From_Grid.Name = "Button_Delete_From_Grid";
-            this.Button_Delete_From_Grid.Size = new System.Drawing.Size(63, 23);
-            this.Button_Delete_From_Grid.TabIndex = 49;
-            this.Button_Delete_From_Grid.Text = "Usuń";
-            this.Button_Delete_From_Grid.UseVisualStyleBackColor = true;
-            this.Button_Delete_From_Grid.Click += new System.EventHandler(this.Button_Delete_From_Grid_Click);
             // 
             // Window_Add_Offer
             // 
@@ -1003,6 +1003,7 @@
         private FastReport.Report report1;
         private zlecenieDataSet zlecenieDataSet1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button Button_Delete_From_Grid;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -1013,6 +1014,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Button Button_Delete_From_Grid;
     }
 }
