@@ -23,6 +23,7 @@ namespace E_elektryk
         int client_id;
         oferta _o;
         string _type;
+        //int ID_produktu;
 
         public Window_Add_Offer()
         {
@@ -69,7 +70,7 @@ namespace E_elektryk
                     item_grid.Cells[4].Value = produkty_W_Wycenie.ilość;
                     item_grid.Cells[5].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
                     item_grid.Cells[6].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
-                    item_grid.Cells[7].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat;
+                    item_grid.Cells[7].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat + "%";
                     item_grid.Cells[8].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto;
                     item_grid.Cells[9].Value = db.kategoria_produktu.Find(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Kategoria).Nazwa_kategorii;
                     dataGridView1.Rows.Add(item_grid);
@@ -121,13 +122,13 @@ namespace E_elektryk
                 string net_offer = TRIM_price(item.SubItems[5].Text);
                 item_grid.Cells[5].Value = System.Convert.ToDecimal(net_offer); // Add decimal one piece net price to cells C.J
                 item_grid.Cells[6].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot); // Add calculated net price for all pieces
-                item_grid.Cells[7].Value = item.SubItems[6].Text;   // Add taxe to cells VAT
+                item_grid.Cells[7].Value = (item.SubItems[6].Text + "%");   // Add taxe to cells VAT
                 string gross_offer = TRIM_price(item.SubItems[7].Text);
                 item_grid.Cells[8].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot);   // Add calculated gross price for all pieces
                 item_grid.Cells[9].Value = item.SubItems[8].Text;   // Add category name to cells Kategoria
                 dataGridView1.Rows.Add(item_grid);
             }
-        }   // Clone listView object and add it to dataGrid row
+        }   // Clone listView object and add to dataGrid row
 
         string TRIM_price(string net)
         {
@@ -247,9 +248,27 @@ namespace E_elektryk
         {
             foreach (DataGridViewCell selectedcell in dataGridView1.SelectedCells)
             {
-                if (selectedcell.Selected)
+                if (_o == null)
                 {
-                    dataGridView1.Rows.RemoveAt(selectedcell.RowIndex);
+                    if (selectedcell.Selected)
+                    {
+                        dataGridView1.Rows.RemoveAt(selectedcell.RowIndex);
+                    }
+                }
+                else
+                {
+                    using (zlecenieEntities db = new zlecenieEntities())
+                    {
+                        produkty_w_wycenie produkt_ = new produkty_w_wycenie();
+                        int ID_produktu = (int)dataGridView1.CurrentRow.Cells[0].Value;
+                        produkt_ = db.produkty_w_wycenie.Find(_o.ID, ID_produktu);
+                        db.produkty_w_wycenie.Remove(produkt_);
+                        db.SaveChanges();
+                    }
+                    if (selectedcell.Selected)
+                    {
+                        dataGridView1.Rows.RemoveAt(selectedcell.RowIndex);
+                    }
                 }
             }
         } // Delete product from Datagrid
@@ -300,7 +319,6 @@ namespace E_elektryk
                     new_offer.ID = _o.ID;
                     new_offer.Nazwa = textBox_O_Name.Text;
                     new_offer.Id_zleceniodawca = _o.Id_zleceniodawca;
-                    MessageBox.Show(new_offer.Id_zleceniodawca.ToString());
                     new_offer.Data_Od = dateTimePicker1.Value;
                     new_offer.Data_Do = dateTimePicker2.Value;
                     new_offer.Opis = Offer_Information_Box.Text;
@@ -316,7 +334,7 @@ namespace E_elektryk
                         db.produkty_w_wycenie.AddOrUpdate(produkty_W_Wycenie);
                         db.SaveChanges();
                     }
-                    
+                    //delete_from_DG();
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("Oferta zaktualizowana", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -326,6 +344,17 @@ namespace E_elektryk
                 }
             }
         } // Modify actual offer
+
+        /*void delete_from_DG()
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                produkty_w_wycenie produkt_ = new produkty_w_wycenie();
+                produkt_ = db.produkty_w_wycenie.Find(_o.ID, ID_produktu);
+                db.produkty_w_wycenie.Remove(produkt_);
+                db.SaveChanges();
+            }
+        }*/
     }
 }
 
