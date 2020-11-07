@@ -318,7 +318,14 @@ namespace E_elektryk
                 {
                     new_offer.ID = _o.ID;
                     new_offer.Nazwa = textBox_O_Name.Text;
-                    new_offer.Id_zleceniodawca = _o.Id_zleceniodawca;
+                    if(client_id == 0)
+                    {
+                        new_offer.Id_zleceniodawca = _o.Id_zleceniodawca;
+                    }
+                    else
+                    {
+                        new_offer.Id_zleceniodawca = client_id;
+                    }
                     new_offer.Data_Od = dateTimePicker1.Value;
                     new_offer.Data_Do = dateTimePicker2.Value;
                     new_offer.Opis = Offer_Information_Box.Text;
