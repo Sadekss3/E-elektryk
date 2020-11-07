@@ -275,7 +275,7 @@ namespace E_elektryk
                         decimal brutto = db.produkt.Find(p.ID_produktu).Cena_brutto;
                         item.SubItems.Add(brutto.ToString() + " zł");
                         item.SubItems.Add(db.kategoria_produktu.Find(db.produkt.Find(p.ID_produktu).Kategoria).Nazwa_kategorii);
-                        item.SubItems.Add((ilość * brutto).ToString() + " zł");
+                        item.SubItems.Add(Math.Round(ilość * brutto, 2).ToString() + " zł");
                         item.Font = new Font(item.Font, FontStyle.Regular);
                         Position_In_Offer_ListView.Items.Add(item);
                     }
