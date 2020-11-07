@@ -15,8 +15,16 @@ namespace E_elektryk
     {
         public main_Window()
         {
+            login();
             InitializeComponent();
         }
+
+        void login()
+        {
+            Login login_window = new Login();
+            login_window.ShowDialog();
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
