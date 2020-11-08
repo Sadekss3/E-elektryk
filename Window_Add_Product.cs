@@ -29,10 +29,10 @@ namespace E_elektryk
             _type = "Modyfication";
             _p = p;
             Button_Add_Product.Text = "Zmień";
-            add_Product_Information();
+            Add_Product_Information();
         }
 
-        void add_Product_Information()
+        void Add_Product_Information()
         {
             textBox_Product_Name.Text = _p.Nazwa.ToString();
             textBox_Manufacturer.Text = _p.Producent.ToString();
@@ -49,18 +49,18 @@ namespace E_elektryk
         {
             if (_type == "Add")
             {
-                adding();
+                Adding();
             }
             else
             {
-                modify();
+                Modify();
             }
         }
 
-        private void adding()
+        private void Adding()
         {
             produkt produkt = new produkt();
-            Boolean flag = true;
+            Boolean flag;
             try
             {
                 produkt.Nazwa = textBox_Product_Name.Text.ToString();
@@ -74,7 +74,7 @@ namespace E_elektryk
                 produkt.Kategoria = (int)comboBox_Product_Category.SelectedValue;
                 flag = true;
             }
-            catch (Exception f)
+            catch (Exception)
             {
                 MessageBox.Show("Ilość musi być liczbą","Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 flag = false;
@@ -86,14 +86,22 @@ namespace E_elektryk
                     db.produkt.Add(produkt);
                     db.SaveChanges();
                     MessageBox.Show("Produkt dodany", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBox_Product_Name.Clear();
+                    textBox_Manufacturer.Clear();
+                    textBox_Catalog.Clear();
+                    textBox_Quantity.Clear();
+                    textBox_Price_Net.Clear();
+                    textBox_Price_Gross.Clear();
+                    comboBox_Unit.Items.Clear();
+                    ComboBox_Taxes.Items.Clear();
                 }
             }
         }
 
-        void modify()
+        void Modify()
         {
             produkt produkt = new produkt();
-            Boolean flag = true;
+            Boolean flag;
             try
             {
                 produkt.ID = _p.ID;
@@ -108,7 +116,7 @@ namespace E_elektryk
                 produkt.Kategoria = (int)comboBox_Product_Category.SelectedValue;              
                 flag = true;
             }
-            catch (Exception f)
+            catch (Exception)
             {
                 MessageBox.Show("Ilość musi być liczbą", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 flag = false;
@@ -124,14 +132,14 @@ namespace E_elektryk
             }
         }
 
-        decimal calc_gross(decimal net, decimal tax)
+        decimal Calc_gross(decimal net, decimal tax)
         {
-            decimal gross = 0;
+            decimal gross;
             gross = net + (net * (tax / 100));
             return gross;
         }
 
-        void add_gross_price()
+        void Add_gross_price()
         {
             if (textBox_Price_Net.Text != "" && ComboBox_Taxes.Text != "")
             {
@@ -142,18 +150,18 @@ namespace E_elektryk
                     net = System.Convert.ToDecimal(textBox_Price_Net.Text);
                     taxes = System.Convert.ToDecimal(ComboBox_Taxes.Text);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     MessageBox.Show("Cena musi być liczbą!");
                 }
-                decimal brutto = calc_gross(net, taxes);
+                decimal brutto = Calc_gross(net, taxes);
                 textBox_Price_Gross.Text = brutto.ToString();
             }
         }
 
         private void ComboBox_Taxes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            add_gross_price();
+            Add_gross_price();
         }
 
         private void Window_Add_Product_Load(object sender, EventArgs e)
