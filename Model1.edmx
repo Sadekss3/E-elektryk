@@ -17,6 +17,13 @@
           <Property Name="Numer_mieszkania" Type="text" />
           <Property Name="Państwo" Type="text" Nullable="false" />
         </EntityType>
+        <EntityType Name="Dane_Logowania">
+          <Key>
+            <PropertyRef Name="Login" />
+          </Key>
+          <Property Name="Login" Type="text" Nullable="false" />
+          <Property Name="Hasło" Type="text" Nullable="false" />
+        </EntityType>
         <EntityType Name="kategoria_produktu">
           <Key>
             <PropertyRef Name="ID" />
@@ -73,10 +80,12 @@
           </Key>
           <Property Name="ID_zlecenie" Type="int" Nullable="false" />
           <Property Name="ID_produktu" Type="int" Nullable="false" />
-          <Property Name="ilość" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ilość" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Marża" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="zlecenieModelStoreContainer">
           <EntitySet Name="adres" EntityType="Self.adres" Schema="zlecenie" store:Type="Tables" />
+          <EntitySet Name="Dane_Logowania" EntityType="Self.Dane_Logowania" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="kategoria_produktu" EntityType="Self.kategoria_produktu" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="kontrahent" EntityType="Self.kontrahent" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="oferta" EntityType="Self.oferta" Schema="zlecenie" store:Type="Tables" />
@@ -131,6 +140,7 @@
           <EntitySet Name="adres" EntityType="zlecenieModel.adres" />
           <EntitySet Name="produkty_w_wycenie" EntityType="zlecenieModel.produkty_w_wycenie" />
           <EntitySet Name="oferta" EntityType="zlecenieModel.oferta" />
+          <EntitySet Name="Dane_Logowania" EntityType="zlecenieModel.Dane_Logowania" />
         </EntityContainer>
         <EntityType Name="adres">
           <Key>
@@ -152,6 +162,7 @@
           <Property Name="ID_zlecenie" Type="Int32" Nullable="false" />
           <Property Name="ID_produktu" Type="Int32" Nullable="false" />
           <Property Name="ilość" Type="Decimal" Nullable="false" />
+          <Property Name="Marża" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="oferta">
           <Key>
@@ -164,6 +175,13 @@
           <Property Name="Data_Do" Type="DateTime" Nullable="false" />
           <Property Name="Opis" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Dane_Logowania">
+          <Key>
+            <PropertyRef Name="Login" />
+          </Key>
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Hasło" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -227,6 +245,7 @@
           <EntitySetMapping Name="produkty_w_wycenie">
             <EntityTypeMapping TypeName="zlecenieModel.produkty_w_wycenie">
               <MappingFragment StoreEntitySet="produkty_w_wycenie">
+                <ScalarProperty Name="Marża" ColumnName="Marża" />
                 <ScalarProperty Name="ilość" ColumnName="ilość" />
                 <ScalarProperty Name="ID_produktu" ColumnName="ID_produktu" />
                 <ScalarProperty Name="ID_zlecenie" ColumnName="ID_zlecenie" />
@@ -243,6 +262,14 @@
                 <ScalarProperty Name="Id_zleceniodawca" ColumnName="Id_zleceniodawca" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dane_Logowania">
+            <EntityTypeMapping TypeName="zlecenieModel.Dane_Logowania">
+              <MappingFragment StoreEntitySet="Dane_Logowania">
+                <ScalarProperty Name="Hasło" ColumnName="Hasło" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
