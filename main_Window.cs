@@ -25,7 +25,6 @@ namespace E_elektryk
             login_window.ShowDialog();
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
             Product_List_Update();
