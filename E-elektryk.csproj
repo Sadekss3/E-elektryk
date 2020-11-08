@@ -126,6 +126,9 @@
     <Compile Include="adres.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dane_Logowania.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="kategoria_produktu.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
