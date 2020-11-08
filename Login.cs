@@ -19,31 +19,40 @@ namespace E_elektryk
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (zlecenieEntities db = new zlecenieEntities())
+            try
             {
-                string login = textBox1.Text.ToLower();
-                string password = textBox2.Text;
-                Dane_Logowania dane_Logowania = new Dane_Logowania();
-                dane_Logowania = db.Dane_Logowania.Find(login.ToLower());
-                try
+                Cursor.Current = Cursors.WaitCursor;
+                using (zlecenieEntities db = new zlecenieEntities())
                 {
-                    if (dane_Logowania.Login.ToLower() == login && dane_Logowania.Hasło == password)
+                    string login = textBox1.Text.ToLower();
+                    string password = textBox2.Text;
+                    Dane_Logowania dane_Logowania = new Dane_Logowania();
+                    dane_Logowania = db.Dane_Logowania.Find(login.ToLower());
+                    try
                     {
-                        Close();
+                        if (dane_Logowania.Login.ToLower() == login && dane_Logowania.Hasło == password)
+                        {
+                            Close();
+                        }
+                        else if (login == "" || password == "")
+                        {
+                            MessageBox.Show("Wypełnij pola Hasło i Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Błędne dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else if (login == "" || password == "")
+                    catch
                     {
                         MessageBox.Show("Wypełnij pola Hasło i Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else
-                    {
-                        MessageBox.Show("Błędne dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    Cursor.Current = Cursors.Default;
                 }
-                catch
-                {
-                    MessageBox.Show("Wypełnij pola Hasło i Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch
+            {
+                MessageBox.Show("Brak połączenia do bazy danych", "Błąd Bazy Danych", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
