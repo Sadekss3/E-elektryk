@@ -17,5 +17,6 @@ namespace E_elektryk
         public int ID_zlecenie { get; set; }
         public int ID_produktu { get; set; }
         public decimal ilość { get; set; }
+        public int Marża { get; set; }
     }
 }
