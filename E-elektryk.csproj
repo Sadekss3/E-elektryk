@@ -126,8 +126,20 @@
     <Compile Include="adres.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Client_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_Window.Designer.cs">
+      <DependentUpon>Client_Window.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dane_Logowania.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice_Window.Designer.cs">
+      <DependentUpon>Invoice_Window.cs</DependentUpon>
     </Compile>
     <Compile Include="kategoria_produktu.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -164,6 +176,24 @@
     </Compile>
     <Compile Include="oferta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Offer_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Offer_Window.Designer.cs">
+      <DependentUpon>Offer_Window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order_window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order_window.Designer.cs">
+      <DependentUpon>Order_window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product_Window.Designer.cs">
+      <DependentUpon>Product_Window.cs</DependentUpon>
     </Compile>
     <Compile Include="produkt.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -202,11 +232,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>zlecenieDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Client_Window.resx">
+      <DependentUpon>Client_Window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoice_Window.resx">
+      <DependentUpon>Invoice_Window.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main_Window.resx">
       <DependentUpon>main_Window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Offer_Window.resx">
+      <DependentUpon>Offer_Window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order_window.resx">
+      <DependentUpon>Order_window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product_Window.resx">
+      <DependentUpon>Product_Window.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -273,6 +318,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\tit21.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\tit2.png" />
     <None Include="Resources\kłó.jpg" />
