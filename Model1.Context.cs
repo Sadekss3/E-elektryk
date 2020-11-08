@@ -31,5 +31,6 @@ namespace E_elektryk
         public virtual DbSet<adres> adres { get; set; }
         public virtual DbSet<produkty_w_wycenie> produkty_w_wycenie { get; set; }
         public virtual DbSet<oferta> oferta { get; set; }
+        public virtual DbSet<Dane_Logowania> Dane_Logowania { get; set; }
     }
 }
