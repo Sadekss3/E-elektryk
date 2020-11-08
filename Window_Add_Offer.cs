@@ -128,6 +128,7 @@ namespace E_elektryk
                 item_grid.Cells[9].Value = item.SubItems[8].Text;   // Add category name to cells Kategoria
                 dataGridView1.Rows.Add(item_grid);
             }
+            calculate();
         }   // Clone listView object and add to dataGrid row
 
         string TRIM_price(string net)
@@ -138,39 +139,7 @@ namespace E_elektryk
 
         private void dataGridView1_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                DataGridViewRow row = dataGridView1.CurrentRow;
-                if (row.Cells[4].Value.ToString().Contains('.'))
-                {
-                    MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    decimal lot = System.Convert.ToDecimal(row.Cells[4].Value);
-                    string piece_price = TRIM_price(row.Cells[5].Value.ToString());
-                    row.Cells[6].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
-                    string gross_offer = TRIM_price(row.Cells[7].Value.ToString());
-                    string vat = (row.Cells[7].Value.ToString()).Trim(' ', '%');
-                    decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
-                    row.Cells[8].Value = Gross * lot;
-                    decimal sum_e_taxes = 0;
-                    decimal sum_w_taxes = 0;
-                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                    {
-                        sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
-                        sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value);
-                        sum_e_taxes = Math.Round(sum_e_taxes, 2);
-                        sum_w_taxes = Math.Round(sum_w_taxes, 2);
-                        sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString();
-                        sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString();
-                    }
-                }
-            }
-            catch
-            {
-                MessageBox.Show("W pole ilość można wprowadzać tylko wartości numeryczne!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            calculate();
         }   // Update dataGrid net and gross price value after enter new quantity value
 
         private void Button_chose_Client_Click(object sender, EventArgs e)
@@ -197,20 +166,6 @@ namespace E_elektryk
             }
         } // Add information about Client to Offer Form
 
-        private void Button_Font_Color_Click(object sender, EventArgs e)
-        {
-            colorDialog1.ShowDialog();
-            Button_Font_Color.ForeColor = colorDialog1.Color;
-            Offer_Information_Box.SelectionColor = colorDialog1.Color;
-        } // Font color choice for offer information window
-
-        private void button_Font_Style_Click(object sender, EventArgs e)
-        {
-            fontDialog1.ShowDialog();
-            Offer_Information_Box.SelectionFont = fontDialog1.Font;
-
-        } // Font style choice for offer inforamtion window
-
         private void button2_Click(object sender, EventArgs e)
         {
             report1.SetParameterValue("nazwa_firmy_bior", textBox_Offer_CompanyName.Text);
@@ -231,18 +186,6 @@ namespace E_elektryk
             report1.SetParameterValue("opis", Offer_Information_Box.Text);
             report1.Show();
         } // Generate offer pdf using FastReport
-
-        private void Button_Save_Offer_Click(object sender, EventArgs e)
-        {
-            if (_type == "Add")
-            {
-                Save_Offer();
-            }
-            else
-            {
-                Modify_Offer();
-            }
-        } // Save or update information about Offer
 
         private void Button_Delete_From_Grid_Click(object sender, EventArgs e)
         {
@@ -271,6 +214,7 @@ namespace E_elektryk
                     }
                 }
             }
+            calculate();
         } // Delete product from Datagrid
 
         void Save_Offer()
@@ -352,16 +296,55 @@ namespace E_elektryk
             }
         } // Modify actual offer
 
-        /*void delete_from_DG()
+        void calculate()
         {
-            using (zlecenieEntities db = new zlecenieEntities())
+            try
             {
-                produkty_w_wycenie produkt_ = new produkty_w_wycenie();
-                produkt_ = db.produkty_w_wycenie.Find(_o.ID, ID_produktu);
-                db.produkty_w_wycenie.Remove(produkt_);
-                db.SaveChanges();
+                DataGridViewRow row = dataGridView1.CurrentRow;
+                if (row.Cells[4].Value.ToString().Contains('.'))
+                {
+                    MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    decimal lot = System.Convert.ToDecimal(row.Cells[4].Value);
+                    string piece_price = TRIM_price(row.Cells[5].Value.ToString());
+                    row.Cells[6].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
+                    string gross_offer = TRIM_price(row.Cells[7].Value.ToString());
+                    string vat = (row.Cells[7].Value.ToString()).Trim(' ', '%');
+                    decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                    row.Cells[8].Value = Gross * lot;
+                    decimal sum_e_taxes = 0;
+                    decimal sum_w_taxes = 0;
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
+                        sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value);
+                        sum_e_taxes = Math.Round(sum_e_taxes, 2);
+                        sum_w_taxes = Math.Round(sum_w_taxes, 2);
+                        sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString();
+                        sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString();
+                    }
+                }
             }
-        }*/
+            catch
+            {
+                sum_e_taxes_label.Text = "Suma Netto: ";
+                sum_w_taxes_label.Text = "Suma Brutto: ";
+            }
+        }
+
+        private void Button_Add_Offer_Click(object sender, EventArgs e)
+        {
+            if (_type == "Add")
+            {
+                Save_Offer();
+            }
+            else
+            {
+                Modify_Offer();
+            }
+        } // Save or update information about Offer
     }
 }
 
