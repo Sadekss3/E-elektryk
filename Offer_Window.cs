@@ -122,5 +122,15 @@ namespace E_elektryk
                 sum_w_taxes_label_2.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
             }
         } // Calculate gross price for offer
+
+        public int getSelectedProduct()
+        {
+            int Selected_Product_ID = 0;
+            if (Offer_list.SelectedItems.Count > 0)
+            {
+                Selected_Product_ID = System.Convert.ToInt32(Offer_list.SelectedItems[0].Text);
+            }
+            return (Selected_Product_ID);
+        }
     }
 }

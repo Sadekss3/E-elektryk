@@ -108,5 +108,15 @@ namespace E_elektryk
             }
             Cursor.Current = Cursors.Default;
         } // Search and fill list by input
+
+        public int getSelectedProduct()
+        {
+            int Selected_Product_ID = 0;
+            if (Client_list.SelectedItems.Count > 0)
+            {
+                Selected_Product_ID = System.Convert.ToInt32(Client_list.SelectedItems[0].Text);
+            }
+            return (Selected_Product_ID);
+        }
     }
 }

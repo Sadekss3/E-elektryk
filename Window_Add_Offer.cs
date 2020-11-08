@@ -1,4 +1,5 @@
-﻿using PdfSharp.Drawing;
+﻿using FastReport;
+using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
@@ -36,47 +37,47 @@ namespace E_elektryk
             InitializeComponent();
             _type = "Modify";
             _o = o;
-            Button_Save_Offer.Text = "Aktualizuj";
+            Button_Add_Offer.Text = "Aktualizuj";
             Add_Offer_Information();
         }
 
         private void Add_Offer_Information()
         {
-            using (zlecenieEntities db = new zlecenieEntities())
-            {
-                textBox_O_Name.Text = _o.Nazwa;
-                textBox_Offer_Name.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Imie;
-                textBox_Offer_LastName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwisko;
-                textBox_Offer_CompanyName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwa_Firmy;
-                textBox_Town_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Miasto;
-                textBox_Post_Code_1.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(2, 3);
-                textBox_Post_Code_2.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(0, 2);
-                textBox_Street_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Nazwa_ulicy;
-                textBox_Building_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_budynku;
-                textBox_Home_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_mieszkania;
-                textBox_Country_ID.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Państwo;
-                Offer_Information_Box.Text = _o.Opis;
-                dateTimePicker1.Value = _o.Data_Od.Date;
-                dateTimePicker2.Value = _o.Data_Do.Date;
-                List<produkty_w_wycenie> list = db.produkty_w_wycenie.ToList();
-                foreach (produkty_w_wycenie produkty_W_Wycenie in list.Where(id => id.ID_zlecenie == _o.ID))
+                using (zlecenieEntities db = new zlecenieEntities())
                 {
-                    DataGridViewRow item_grid = new DataGridViewRow();
-                    item_grid.CreateCells(dataGridView1);
-                    item_grid.Cells[0].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).ID;
-                    item_grid.Cells[1].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Nazwa;
-                    item_grid.Cells[2].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Producent;
-                    item_grid.Cells[3].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Jm;
-                    item_grid.Cells[4].Value = produkty_W_Wycenie.ilość;
-                    item_grid.Cells[5].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
-                    item_grid.Cells[6].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
-                    item_grid.Cells[7].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat + "%";
-                    item_grid.Cells[8].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto;
-                    item_grid.Cells[9].Value = db.kategoria_produktu.Find(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Kategoria).Nazwa_kategorii;
-                    dataGridView1.Rows.Add(item_grid);
+                    textBox_O_Name.Text = _o.Nazwa;
+                    textBox_Offer_Name.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Imie;
+                    textBox_Offer_LastName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwisko;
+                    textBox_Offer_CompanyName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwa_Firmy;
+                    textBox_Town_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Miasto;
+                    textBox_Post_Code_1.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(2, 3);
+                    textBox_Post_Code_2.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(0, 2);
+                    textBox_Street_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Nazwa_ulicy;
+                    textBox_Building_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_budynku;
+                    textBox_Home_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_mieszkania;
+                    textBox_Country_ID.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Państwo;
+                    Offer_Information_Box.Text = _o.Opis;
+                    dateTimePicker1.Value = _o.Data_Od.Date;
+                    dateTimePicker2.Value = _o.Data_Do.Date;
+                    List<produkty_w_wycenie> list = db.produkty_w_wycenie.ToList();
+                    foreach (produkty_w_wycenie produkty_W_Wycenie in list.Where(id => id.ID_zlecenie == _o.ID))
+                    {
+                        DataGridViewRow item_grid = new DataGridViewRow();
+                        item_grid.CreateCells(dataGridView1);
+                        item_grid.Cells[0].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).ID;
+                        item_grid.Cells[1].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Nazwa;
+                        item_grid.Cells[2].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Producent;
+                        item_grid.Cells[3].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Jm;
+                        item_grid.Cells[4].Value = produkty_W_Wycenie.ilość;
+                        item_grid.Cells[5].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
+                        item_grid.Cells[6].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
+                        item_grid.Cells[7].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat + "%";
+                        item_grid.Cells[8].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto;
+                        item_grid.Cells[9].Value = db.kategoria_produktu.Find(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Kategoria).Nazwa_kategorii;
+                        dataGridView1.Rows.Add(item_grid);
+                    }
                 }
-            }
-        } // Fill offer window with information about actual offer
+            } // Fill offer window with information about actual offer
 
         private void Window_Add_Offer_Load(object sender, EventArgs e)
         {
@@ -332,7 +333,7 @@ namespace E_elektryk
                 sum_e_taxes_label.Text = "Suma Netto: ";
                 sum_w_taxes_label.Text = "Suma Brutto: ";
             }
-        }
+        } // Calculate for sum
 
         private void Button_Add_Offer_Click(object sender, EventArgs e)
         {

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Window_Add_Offer));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Button_Cancel_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
             this.label_Offer_Adress = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.Button_chose_Client = new System.Windows.Forms.Button();
             this.textBox_Offer_CompanyName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Button_Add_Offer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox_Country_ID = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.report1 = new FastReport.Report();
             this.zlecenieDataSet1 = new E_elektryk.zlecenieDataSet();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Button_Add_Offer = new System.Windows.Forms.Button();
             this.Button_Delete_From_Grid = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.sum_e_taxes_label = new System.Windows.Forms.Label();
@@ -384,6 +384,22 @@
             this.panel1.Size = new System.Drawing.Size(1747, 156);
             this.panel1.TabIndex = 41;
             // 
+            // Button_Add_Offer
+            // 
+            this.Button_Add_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(35)))), ((int)(((byte)(140)))));
+            this.Button_Add_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button_Add_Offer.FlatAppearance.BorderSize = 0;
+            this.Button_Add_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Add_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button_Add_Offer.ForeColor = System.Drawing.Color.White;
+            this.Button_Add_Offer.Location = new System.Drawing.Point(1430, 40);
+            this.Button_Add_Offer.Name = "Button_Add_Offer";
+            this.Button_Add_Offer.Size = new System.Drawing.Size(165, 61);
+            this.Button_Add_Offer.TabIndex = 50;
+            this.Button_Add_Offer.Text = "Utwórz Ofertę";
+            this.Button_Add_Offer.UseVisualStyleBackColor = false;
+            this.Button_Add_Offer.Click += new System.EventHandler(this.Button_Add_Offer_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -509,22 +525,6 @@
             this.panel4.Size = new System.Drawing.Size(1747, 388);
             this.panel4.TabIndex = 60;
             // 
-            // Button_Add_Offer
-            // 
-            this.Button_Add_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(35)))), ((int)(((byte)(140)))));
-            this.Button_Add_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button_Add_Offer.FlatAppearance.BorderSize = 0;
-            this.Button_Add_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Add_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Add_Offer.ForeColor = System.Drawing.Color.White;
-            this.Button_Add_Offer.Location = new System.Drawing.Point(1430, 40);
-            this.Button_Add_Offer.Name = "Button_Add_Offer";
-            this.Button_Add_Offer.Size = new System.Drawing.Size(165, 61);
-            this.Button_Add_Offer.TabIndex = 50;
-            this.Button_Add_Offer.Text = "Utwórz Ofertę";
-            this.Button_Add_Offer.UseVisualStyleBackColor = false;
-            this.Button_Add_Offer.Click += new System.EventHandler(this.Button_Add_Offer_Click);
-            // 
             // Button_Delete_From_Grid
             // 
             this.Button_Delete_From_Grid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(35)))), ((int)(((byte)(140)))));
@@ -613,8 +613,8 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column1.FillWeight = 250F;
             this.Column1.HeaderText = "Nazwa";
             this.Column1.MinimumWidth = 10;
@@ -643,9 +643,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.FillWeight = 50F;
             this.Column4.HeaderText = "Ilość";
             this.Column4.MinimumWidth = 10;
@@ -654,9 +654,9 @@
             // 
             // Cena_Jednostkowa
             // 
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle3;
             this.Cena_Jednostkowa.HeaderText = "C.J";
             this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
             this.Cena_Jednostkowa.ReadOnly = true;
@@ -664,9 +664,9 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column5.HeaderText = "Cena netto";
             this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
@@ -683,9 +683,9 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column7.HeaderText = "Cena Brutto";
             this.Column7.MinimumWidth = 10;
             this.Column7.Name = "Column7";

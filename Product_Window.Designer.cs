@@ -91,7 +91,6 @@
             this.Products_list.TabIndex = 22;
             this.Products_list.UseCompatibleStateImageBehavior = false;
             this.Products_list.View = System.Windows.Forms.View.Details;
-            this.Products_list.SelectedIndexChanged += new System.EventHandler(this.Products_list_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

@@ -12,19 +12,12 @@ namespace E_elektryk
 {
     public partial class Product_Window : Form
     {
-        public int _Selected_Product_ID;
-
         public Product_Window()
         {
             InitializeComponent();
             Product_List_Update();
         }
-        public Product_Window(int Selected_Product_ID)
-        {
-            InitializeComponent();
-            Product_List_Update();
-            _Selected_Product_ID = Selected_Product_ID;
-        }
+
         private void Product_List_Update()
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -91,15 +84,14 @@ namespace E_elektryk
             Cursor.Current = Cursors.Default;
         }
 
-        private void Products_list_SelectedIndexChanged(object sender, EventArgs e)
+        public int getSelectedProduct()
         {
-            using (zlecenieEntities db = new zlecenieEntities())
+            int Selected_Product_ID = 0;
+            if (Products_list.SelectedItems.Count > 0)
             {
-                if (Products_list.SelectedItems.Count > 0)
-                {
-                    _Selected_Product_ID = System.Convert.ToInt32(Products_list.SelectedItems[0].Text);
-                }
-            }   
+                Selected_Product_ID = System.Convert.ToInt32(Products_list.SelectedItems[0].Text);
+            }
+            return (Selected_Product_ID);
         }
     }
 }

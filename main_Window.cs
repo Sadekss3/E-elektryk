@@ -13,7 +13,11 @@ namespace E_elektryk
 {
     public partial class main_Window : Form
     {
-        int Selected_Product_ID;
+        Product_Window pW;
+        Offer_Window ofW;
+        Client_Window cW;
+        Invoice_Window iW;
+        Order_window oW;
 
         public main_Window()
         {
@@ -74,7 +78,7 @@ namespace E_elektryk
             window_add.ShowDialog();
         } // Add new Product*/
 
-        private void Button_Modify_Click(object sender, EventArgs e)
+        /*private void Button_Modify_Click(object sender, EventArgs e)
         {
             if (Products_list.SelectedItems.Count > 0)
             {
@@ -87,9 +91,9 @@ namespace E_elektryk
                     mod.ShowDialog();
                 }
             }
-        } // Modify Product
+        } // Modify Product*/
 
-        private void Button_Delete_Click(object sender, EventArgs e)
+        /*private void Button_Delete_Click(object sender, EventArgs e)
         {
             if (Products_list.SelectedItems.Count > 0)
             {
@@ -110,7 +114,7 @@ namespace E_elektryk
                     }
                 }
             }
-        } // Delete product 
+        } // Delete product */
 
         /*private void Client_List_Update()
         {
@@ -164,7 +168,7 @@ namespace E_elektryk
             Add_Client.ShowDialog();
         }*/
 
-        private void Button_DataMod_Client_Click(object sender, EventArgs e) // Modify Client information
+        /*private void Button_DataMod_Client_Click(object sender, EventArgs e) // Modify Client information
         {
             if (Client_list.SelectedItems.Count > 0)
             {
@@ -177,9 +181,9 @@ namespace E_elektryk
                     Modyficate_Client.ShowDialog();
                 }
             }
-        }
+        }*/
 
-        private void Button_Delete_Client_Click(object sender, EventArgs e) // Delete Client
+        /*private void Button_Delete_Client_Click(object sender, EventArgs e) // Delete Client
         {
             if (Client_list.SelectedItems.Count > 0)
             {
@@ -201,7 +205,7 @@ namespace E_elektryk
                     }
                 }
             }
-        }
+        }*/
 
         /*private void Offer_List_Update()
         {
@@ -239,7 +243,7 @@ namespace E_elektryk
                 offer.ShowDialog();
         } // Add new offer*/
 
-        private void Button_Modify_Offer_Click(object sender, EventArgs e)
+        /*private void Button_Modify_Offer_Click(object sender, EventArgs e)
         {
             if (Offer_list.SelectedItems.Count > 0)
             {
@@ -252,7 +256,7 @@ namespace E_elektryk
                     Modify_Offer.ShowDialog();
                 }
             }
-        } // Modify offer information
+        } // Modify offer information*/
 
         /*        private void Offer_list_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -355,20 +359,23 @@ namespace E_elektryk
 
         private void button_Offer_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Offer_Window());
             Show_Sub_Menu(panel_Offer);
+            ofW = new Offer_Window();
+            OpenChildForm(ofW);      
         } // Open Offer Window
 
         private void button_Client_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Client_Window());
             Show_Sub_Menu(panel_Client);
+            cW = new Client_Window();
+            OpenChildForm(cW);    
         } // Open Client Window
 
         private void button_Product_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Product_Window(Selected_Product_ID));
             Show_Sub_Menu(panel_Product);
+            pW = new Product_Window();
+            OpenChildForm(pW);         
         } // Open Product Window
 
         private void button_Invoice_Click(object sender, EventArgs e)
@@ -415,8 +422,41 @@ namespace E_elektryk
 
         private void button_Modify_Product_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Selected_Product_ID.ToString());
-            //OpenChildForm(new Window_Add_Product(Selected_Product_ID));   
-        }
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                int ID = pW.getSelectedProduct();
+                if (ID != 0)
+                {
+                    produkt pm = db.produkt.Find(ID);
+                    OpenChildForm(new Window_Add_Product(pm));
+                }    
+            }    
+        } // Modify Product information
+
+        private void button_Modify_Order_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                int ID = ofW.getSelectedProduct();
+                if (ID != 0)
+                {
+                    oferta mof = db.oferta.Find(ID);
+                    OpenChildForm(new Window_Add_Offer(mof));
+                }   
+            }
+        } // Modify Offer information
+
+        private void Button_Modify_Client_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                int ID = cW.getSelectedProduct();
+                if (ID != 0)
+                {
+                    kontrahent mc = db.kontrahent.Find(ID);
+                    OpenChildForm(new Window_Add_Client(mc));
+                } 
+            }
+        } // Modify Client information
     }
 }
