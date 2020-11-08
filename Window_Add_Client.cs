@@ -96,7 +96,7 @@ namespace E_elektryk
                     kontrahent.Adres = Adress.ID;
                     flag = true;
                 }
-                catch (Exception f)
+                catch (Exception)
                 {
                     MessageBox.Show("Podano nieprawidłowy numer NIP lub PESEL", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     flag = false;
@@ -140,7 +140,7 @@ namespace E_elektryk
                     kontrahent.Adres = Adress.ID;
                     flag = true;
                 }
-                catch (Exception f)
+                catch (Exception)
                 {
                     MessageBox.Show("Podano nieprawidłowy numer NIP lub PESEL", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     flag = false;
