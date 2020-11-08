@@ -60,7 +60,7 @@ namespace E_elektryk
                         Client_list.Items.Add(item);
                     }
                 }
-                catch (Exception f)
+                catch (Exception)
                 {
                     Environment.Exit(1);
                 }
