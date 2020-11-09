@@ -347,6 +347,16 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\przycisk 1-13.png" />
+    <None Include="Resources\przycisk 1-12.png" />
+    <None Include="Resources\przycisk 1-11.png" />
+    <None Include="Resources\przycisk nowy 5.png" />
+    <None Include="Resources\przycisk nowy 4.png" />
+    <None Include="Resources\przycisk nowy 3.png" />
+    <None Include="Resources\przycisk nowy 2.png" />
+    <None Include="Resources\przycisk nowy 1-1.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\main window label up.png" />
     <None Include="Resources\tit21.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\tit2.png" />

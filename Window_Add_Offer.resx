@@ -128,7 +128,7 @@
   </metadata>
   <data name="report1.ReportResourceString" xml:space="preserve">
     <value>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="11/01/2020 13:38:55" ReportInfo.Modified="11/08/2020 21:39:09" ReportInfo.CreatorVersion="2020.4.7.0"&gt;
+&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="11/01/2020 13:38:55" ReportInfo.Modified="11/09/2020 22:45:48" ReportInfo.CreatorVersion="2020.4.7.0"&gt;
   &lt;Dictionary&gt;
     &lt;TableDataSource Name="produkty_w_wycenie" ReferenceName="zlecenieDataSet1.produkty_w_wycenie" DataType="System.Int32" Enabled="true"&gt;
       &lt;Column Name="ID_zlecenie" DataType="System.Int32"/&gt;
