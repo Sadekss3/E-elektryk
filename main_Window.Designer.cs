@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main_Window));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -165,6 +166,7 @@
             this.panel_Invoice.Controls.Add(this.button_Print_Invoice);
             this.panel_Invoice.Controls.Add(this.button_Show_Invoice);
             this.panel_Invoice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Invoice.ForeColor = System.Drawing.Color.White;
             this.panel_Invoice.Location = new System.Drawing.Point(0, 866);
             this.panel_Invoice.Name = "panel_Invoice";
             this.panel_Invoice.Size = new System.Drawing.Size(250, 64);
@@ -172,7 +174,8 @@
             // 
             // button_Print_Invoice
             // 
-            this.button_Print_Invoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button_Print_Invoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button_Print_Invoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Print_Invoice.BackgroundImage")));
             this.button_Print_Invoice.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Print_Invoice.FlatAppearance.BorderSize = 0;
             this.button_Print_Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -188,7 +191,8 @@
             // 
             // button_Show_Invoice
             // 
-            this.button_Show_Invoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button_Show_Invoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button_Show_Invoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Show_Invoice.BackgroundImage")));
             this.button_Show_Invoice.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Show_Invoice.FlatAppearance.BorderSize = 0;
             this.button_Show_Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -204,13 +208,13 @@
             // 
             // button_Invoice
             // 
-            this.button_Invoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(29)))), ((int)(((byte)(115)))));
+            this.button_Invoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(111)))), ((int)(((byte)(161)))));
             this.button_Invoice.BackgroundImage = global::E_elektryk.Properties.Resources.przycisk_nowy_5;
             this.button_Invoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_Invoice.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Invoice.FlatAppearance.BorderSize = 0;
             this.button_Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Invoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Invoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Invoice.ForeColor = System.Drawing.Color.White;
             this.button_Invoice.Location = new System.Drawing.Point(0, 821);
             this.button_Invoice.Name = "button_Invoice";
@@ -228,6 +232,7 @@
             this.panel_Product.Controls.Add(this.button_Modify_Product);
             this.panel_Product.Controls.Add(this.Button_New_Product);
             this.panel_Product.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Product.ForeColor = System.Drawing.Color.White;
             this.panel_Product.Location = new System.Drawing.Point(0, 725);
             this.panel_Product.Name = "panel_Product";
             this.panel_Product.Size = new System.Drawing.Size(250, 96);
@@ -235,7 +240,8 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -251,7 +257,8 @@
             // 
             // button_Modify_Product
             // 
-            this.button_Modify_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button_Modify_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button_Modify_Product.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Modify_Product.BackgroundImage")));
             this.button_Modify_Product.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Modify_Product.FlatAppearance.BorderSize = 0;
             this.button_Modify_Product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -268,7 +275,8 @@
             // 
             // Button_New_Product
             // 
-            this.Button_New_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.Button_New_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.Button_New_Product.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button_New_Product.BackgroundImage")));
             this.Button_New_Product.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_New_Product.FlatAppearance.BorderSize = 0;
             this.Button_New_Product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -285,13 +293,13 @@
             // 
             // button_Product
             // 
-            this.button_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(29)))), ((int)(((byte)(115)))));
+            this.button_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(111)))), ((int)(((byte)(161)))));
             this.button_Product.BackgroundImage = global::E_elektryk.Properties.Resources.przycisk_nowy_4;
             this.button_Product.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_Product.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Product.FlatAppearance.BorderSize = 0;
             this.button_Product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Product.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Product.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Product.ForeColor = System.Drawing.Color.White;
             this.button_Product.Location = new System.Drawing.Point(0, 655);
             this.button_Product.Name = "button_Product";
@@ -309,6 +317,7 @@
             this.panel_Client.Controls.Add(this.Button_Modify_Client);
             this.panel_Client.Controls.Add(this.Buton_New_client);
             this.panel_Client.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Client.ForeColor = System.Drawing.Color.White;
             this.panel_Client.Location = new System.Drawing.Point(0, 535);
             this.panel_Client.Name = "panel_Client";
             this.panel_Client.Size = new System.Drawing.Size(250, 120);
@@ -316,7 +325,8 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -332,7 +342,8 @@
             // 
             // Button_Modify_Client
             // 
-            this.Button_Modify_Client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.Button_Modify_Client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.Button_Modify_Client.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button_Modify_Client.BackgroundImage")));
             this.Button_Modify_Client.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_Modify_Client.FlatAppearance.BorderSize = 0;
             this.Button_Modify_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -349,7 +360,8 @@
             // 
             // Buton_New_client
             // 
-            this.Buton_New_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.Buton_New_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.Buton_New_client.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Buton_New_client.BackgroundImage")));
             this.Buton_New_client.Dock = System.Windows.Forms.DockStyle.Top;
             this.Buton_New_client.FlatAppearance.BorderSize = 0;
             this.Buton_New_client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -366,13 +378,13 @@
             // 
             // button_Client
             // 
-            this.button_Client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(29)))), ((int)(((byte)(115)))));
+            this.button_Client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(111)))), ((int)(((byte)(161)))));
             this.button_Client.BackgroundImage = global::E_elektryk.Properties.Resources.przycisk_nowy_3;
             this.button_Client.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_Client.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Client.FlatAppearance.BorderSize = 0;
             this.button_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Client.ForeColor = System.Drawing.Color.White;
             this.button_Client.Location = new System.Drawing.Point(0, 490);
             this.button_Client.Name = "button_Client";
@@ -390,6 +402,7 @@
             this.panel_Offer.Controls.Add(this.button_Modify_Offer);
             this.panel_Offer.Controls.Add(this.button_New_Offer);
             this.panel_Offer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Offer.ForeColor = System.Drawing.Color.White;
             this.panel_Offer.Location = new System.Drawing.Point(0, 394);
             this.panel_Offer.Name = "panel_Offer";
             this.panel_Offer.Size = new System.Drawing.Size(250, 96);
@@ -397,7 +410,8 @@
             // 
             // button_Change_Offer_Status
             // 
-            this.button_Change_Offer_Status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button_Change_Offer_Status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button_Change_Offer_Status.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Change_Offer_Status.BackgroundImage")));
             this.button_Change_Offer_Status.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Change_Offer_Status.FlatAppearance.BorderSize = 0;
             this.button_Change_Offer_Status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -413,7 +427,8 @@
             // 
             // button_Modify_Offer
             // 
-            this.button_Modify_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button_Modify_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button_Modify_Offer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Modify_Offer.BackgroundImage")));
             this.button_Modify_Offer.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Modify_Offer.FlatAppearance.BorderSize = 0;
             this.button_Modify_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -430,7 +445,8 @@
             // 
             // button_New_Offer
             // 
-            this.button_New_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button_New_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button_New_Offer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_New_Offer.BackgroundImage")));
             this.button_New_Offer.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_New_Offer.FlatAppearance.BorderSize = 0;
             this.button_New_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -447,13 +463,13 @@
             // 
             // button_Offer
             // 
-            this.button_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(29)))), ((int)(((byte)(115)))));
+            this.button_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(111)))), ((int)(((byte)(161)))));
             this.button_Offer.BackgroundImage = global::E_elektryk.Properties.Resources.przycisk_nowy_2;
             this.button_Offer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_Offer.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Offer.FlatAppearance.BorderSize = 0;
             this.button_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Offer.ForeColor = System.Drawing.Color.White;
             this.button_Offer.Location = new System.Drawing.Point(0, 349);
             this.button_Offer.Name = "button_Offer";
@@ -471,6 +487,7 @@
             this.panel_Order.Controls.Add(this.button_Modify_Order_Info);
             this.panel_Order.Controls.Add(this.button_New_Order);
             this.panel_Order.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Order.ForeColor = System.Drawing.Color.White;
             this.panel_Order.Location = new System.Drawing.Point(0, 253);
             this.panel_Order.Name = "panel_Order";
             this.panel_Order.Size = new System.Drawing.Size(250, 96);
@@ -478,7 +495,8 @@
             // 
             // button_Change_Order_Status
             // 
-            this.button_Change_Order_Status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button_Change_Order_Status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button_Change_Order_Status.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Change_Order_Status.BackgroundImage")));
             this.button_Change_Order_Status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_Change_Order_Status.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Change_Order_Status.FlatAppearance.BorderSize = 0;
@@ -495,7 +513,8 @@
             // 
             // button_Modify_Order_Info
             // 
-            this.button_Modify_Order_Info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button_Modify_Order_Info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button_Modify_Order_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Modify_Order_Info.BackgroundImage")));
             this.button_Modify_Order_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_Modify_Order_Info.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Modify_Order_Info.FlatAppearance.BorderSize = 0;
@@ -512,7 +531,8 @@
             // 
             // button_New_Order
             // 
-            this.button_New_Order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.button_New_Order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
+            this.button_New_Order.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_New_Order.BackgroundImage")));
             this.button_New_Order.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_New_Order.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_New_Order.FlatAppearance.BorderSize = 0;
@@ -529,13 +549,13 @@
             // 
             // button_Order
             // 
-            this.button_Order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(29)))), ((int)(((byte)(115)))));
+            this.button_Order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(111)))), ((int)(((byte)(161)))));
             this.button_Order.BackgroundImage = global::E_elektryk.Properties.Resources.przycisk_nowy_1_1;
             this.button_Order.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_Order.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_Order.FlatAppearance.BorderSize = 0;
             this.button_Order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Order.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Order.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Order.ForeColor = System.Drawing.Color.White;
             this.button_Order.Location = new System.Drawing.Point(0, 208);
             this.button_Order.Name = "button_Order";
@@ -548,7 +568,7 @@
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(35)))), ((int)(((byte)(140)))));
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))));
             this.panel11.BackgroundImage = global::E_elektryk.Properties.Resources.logo;
             this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
@@ -559,39 +579,40 @@
             // 
             // panel_Main_Window
             // 
-            this.panel_Main_Window.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(131)))), ((int)(((byte)(166)))));
+            this.panel_Main_Window.BackColor = System.Drawing.Color.White;
             this.panel_Main_Window.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Main_Window.Location = new System.Drawing.Point(250, 38);
             this.panel_Main_Window.Name = "panel_Main_Window";
-            this.panel_Main_Window.Size = new System.Drawing.Size(1355, 1062);
+            this.panel_Main_Window.Size = new System.Drawing.Size(1690, 1062);
             this.panel_Main_Window.TabIndex = 4;
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(35)))), ((int)(((byte)(140)))));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))));
             this.panel7.BackgroundImage = global::E_elektryk.Properties.Resources.main_window_label_up;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel7.Controls.Add(this.panel_control_button);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(250, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1355, 38);
+            this.panel7.Size = new System.Drawing.Size(1690, 38);
             this.panel7.TabIndex = 2;
             // 
             // panel_control_button
             // 
             this.panel_control_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_control_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(73)))), ((int)(((byte)(247)))));
+            this.panel_control_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(74)))), ((int)(((byte)(253)))));
             this.panel_control_button.Controls.Add(this.button_Exit_Window);
             this.panel_control_button.Controls.Add(this.button_minimalize_window);
             this.panel_control_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel_control_button.Location = new System.Drawing.Point(1276, 1);
+            this.panel_control_button.Location = new System.Drawing.Point(1611, 1);
             this.panel_control_button.Name = "panel_control_button";
             this.panel_control_button.Size = new System.Drawing.Size(76, 37);
             this.panel_control_button.TabIndex = 0;
             // 
             // button_Exit_Window
             // 
+            this.button_Exit_Window.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(74)))), ((int)(((byte)(253)))));
             this.button_Exit_Window.FlatAppearance.BorderSize = 0;
             this.button_Exit_Window.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Exit_Window.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -601,7 +622,7 @@
             this.button_Exit_Window.Size = new System.Drawing.Size(28, 31);
             this.button_Exit_Window.TabIndex = 2;
             this.button_Exit_Window.Text = "X";
-            this.button_Exit_Window.UseVisualStyleBackColor = true;
+            this.button_Exit_Window.UseVisualStyleBackColor = false;
             this.button_Exit_Window.Click += new System.EventHandler(this.button_Exit_Window_Click);
             // 
             // button_minimalize_window
@@ -623,7 +644,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(56)))), ((int)(((byte)(122)))));
-            this.ClientSize = new System.Drawing.Size(1605, 1100);
+            this.ClientSize = new System.Drawing.Size(1940, 1100);
             this.Controls.Add(this.panel_Main_Window);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel_Menu);

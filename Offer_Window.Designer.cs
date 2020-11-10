@@ -331,6 +331,7 @@
             // 
             this.sum_w_taxes_label_2.AutoSize = true;
             this.sum_w_taxes_label_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_w_taxes_label_2.ForeColor = System.Drawing.Color.White;
             this.sum_w_taxes_label_2.Location = new System.Drawing.Point(1256, 4);
             this.sum_w_taxes_label_2.Name = "sum_w_taxes_label_2";
             this.sum_w_taxes_label_2.Size = new System.Drawing.Size(99, 16);
@@ -342,6 +343,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))));
             this.panel2.Controls.Add(this.sum_w_taxes_label_2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(0, 1002);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1779, 26);
