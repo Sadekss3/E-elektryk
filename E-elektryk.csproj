@@ -347,6 +347,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\logo1.png" />
     <None Include="Resources\przycisk 1-13.png" />
     <None Include="Resources\przycisk 1-12.png" />
     <None Include="Resources\przycisk 1-11.png" />

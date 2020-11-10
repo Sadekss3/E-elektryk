@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Window_Add_Offer));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Button_Cancel_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
             this.label_Offer_Adress = new System.Windows.Forms.Label();
@@ -327,11 +327,11 @@
             // 
             // Button_chose_Client
             // 
-            this.Button_chose_Client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(179)))));
+            this.Button_chose_Client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
             this.Button_chose_Client.FlatAppearance.BorderSize = 0;
             this.Button_chose_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_chose_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_chose_Client.ForeColor = System.Drawing.Color.Black;
+            this.Button_chose_Client.ForeColor = System.Drawing.SystemColors.Window;
             this.Button_chose_Client.Location = new System.Drawing.Point(251, 114);
             this.Button_chose_Client.Name = "Button_chose_Client";
             this.Button_chose_Client.Size = new System.Drawing.Size(117, 34);
@@ -350,7 +350,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.panel1.Controls.Add(this.Button_Add_Offer);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dateTimePicker2);
@@ -386,12 +386,12 @@
             // 
             // Button_Add_Offer
             // 
-            this.Button_Add_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(123)))), ((int)(((byte)(179)))));
+            this.Button_Add_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
             this.Button_Add_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Button_Add_Offer.FlatAppearance.BorderSize = 0;
             this.Button_Add_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Add_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Add_Offer.ForeColor = System.Drawing.Color.Black;
+            this.Button_Add_Offer.ForeColor = System.Drawing.SystemColors.Window;
             this.Button_Add_Offer.Location = new System.Drawing.Point(1430, 40);
             this.Button_Add_Offer.Name = "Button_Add_Offer";
             this.Button_Add_Offer.Size = new System.Drawing.Size(165, 61);
@@ -513,7 +513,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(145)))), ((int)(((byte)(209)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.panel4.Controls.Add(this.Button_Delete_From_Grid);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.sum_e_taxes_label);
@@ -527,11 +527,11 @@
             // 
             // Button_Delete_From_Grid
             // 
-            this.Button_Delete_From_Grid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(79)))), ((int)(((byte)(115)))));
+            this.Button_Delete_From_Grid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
             this.Button_Delete_From_Grid.FlatAppearance.BorderSize = 0;
             this.Button_Delete_From_Grid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Delete_From_Grid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Delete_From_Grid.ForeColor = System.Drawing.Color.White;
+            this.Button_Delete_From_Grid.ForeColor = System.Drawing.SystemColors.Window;
             this.Button_Delete_From_Grid.Location = new System.Drawing.Point(9, 352);
             this.Button_Delete_From_Grid.Name = "Button_Delete_From_Grid";
             this.Button_Delete_From_Grid.Size = new System.Drawing.Size(110, 32);
@@ -544,7 +544,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(6, 6);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(160, 16);
@@ -554,9 +554,9 @@
             // sum_e_taxes_label
             // 
             this.sum_e_taxes_label.AutoSize = true;
-            this.sum_e_taxes_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(145)))), ((int)(((byte)(209)))));
+            this.sum_e_taxes_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.sum_e_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_e_taxes_label.ForeColor = System.Drawing.Color.Black;
+            this.sum_e_taxes_label.ForeColor = System.Drawing.Color.White;
             this.sum_e_taxes_label.Location = new System.Drawing.Point(190, 319);
             this.sum_e_taxes_label.Name = "sum_e_taxes_label";
             this.sum_e_taxes_label.Size = new System.Drawing.Size(82, 16);
@@ -566,9 +566,9 @@
             // sum_w_taxes_label
             // 
             this.sum_w_taxes_label.AutoSize = true;
-            this.sum_w_taxes_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(145)))), ((int)(((byte)(209)))));
+            this.sum_w_taxes_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label.ForeColor = System.Drawing.Color.Black;
+            this.sum_w_taxes_label.ForeColor = System.Drawing.Color.White;
             this.sum_w_taxes_label.Location = new System.Drawing.Point(405, 319);
             this.sum_w_taxes_label.Name = "sum_w_taxes_label";
             this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
@@ -615,8 +615,8 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column1.FillWeight = 250F;
             this.Column1.HeaderText = "Nazwa";
             this.Column1.MinimumWidth = 10;
@@ -645,9 +645,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column4.FillWeight = 50F;
             this.Column4.HeaderText = "Ilość";
             this.Column4.MinimumWidth = 10;
@@ -656,9 +656,9 @@
             // 
             // Cena_Jednostkowa
             // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle8;
             this.Cena_Jednostkowa.HeaderText = "C.J";
             this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
             this.Cena_Jednostkowa.ReadOnly = true;
@@ -666,9 +666,9 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column5.HeaderText = "Cena netto";
             this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
@@ -685,9 +685,9 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column7.HeaderText = "Cena Brutto";
             this.Column7.MinimumWidth = 10;
             this.Column7.Name = "Column7";
@@ -704,14 +704,15 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(145)))), ((int)(((byte)(209)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.listView1);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.label14);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 156);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1258, 406);
+            this.panel3.Size = new System.Drawing.Size(1747, 406);
             this.panel3.TabIndex = 61;
             // 
             // listView1
@@ -742,7 +743,7 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
-            this.listView1.Size = new System.Drawing.Size(1258, 353);
+            this.listView1.Size = new System.Drawing.Size(1747, 353);
             this.listView1.TabIndex = 50;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -791,11 +792,11 @@
             // columnHeader19
             // 
             this.columnHeader19.Text = "kategoria";
-            this.columnHeader19.Width = 120;
+            this.columnHeader19.Width = 542;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(145)))), ((int)(((byte)(209)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.textBox_Producent_search);
@@ -806,13 +807,13 @@
             this.panel2.Location = new System.Drawing.Point(0, 16);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1258, 37);
+            this.panel2.Size = new System.Drawing.Size(1747, 37);
             this.panel2.TabIndex = 49;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.Color.Black;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.checkBox1.Location = new System.Drawing.Point(586, 7);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(113, 17);
@@ -823,9 +824,9 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(145)))), ((int)(((byte)(209)))));
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.ForeColor = System.Drawing.SystemColors.Window;
             this.label10.Location = new System.Drawing.Point(349, 10);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
@@ -854,9 +855,9 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(145)))), ((int)(((byte)(209)))));
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.ForeColor = System.Drawing.SystemColors.Window;
             this.label11.Location = new System.Drawing.Point(140, 10);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
@@ -867,9 +868,9 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(145)))), ((int)(((byte)(209)))));
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.ForeColor = System.Drawing.SystemColors.Window;
             this.label12.Location = new System.Drawing.Point(5, 11);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
@@ -882,7 +883,7 @@
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Top;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(0, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(164, 16);
@@ -894,9 +895,9 @@
             this.panel5.Controls.Add(this.Offer_Information_Box);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(1257, 156);
+            this.panel5.Location = new System.Drawing.Point(1257, 53);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(490, 406);
+            this.panel5.Size = new System.Drawing.Size(490, 353);
             this.panel5.TabIndex = 62;
             // 
             // Offer_Information_Box
@@ -904,30 +905,30 @@
             this.Offer_Information_Box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Offer_Information_Box.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Offer_Information_Box.EnableAutoDragDrop = true;
-            this.Offer_Information_Box.Location = new System.Drawing.Point(0, 50);
+            this.Offer_Information_Box.Location = new System.Drawing.Point(0, 26);
             this.Offer_Information_Box.Name = "Offer_Information_Box";
-            this.Offer_Information_Box.Size = new System.Drawing.Size(490, 356);
+            this.Offer_Information_Box.Size = new System.Drawing.Size(490, 327);
             this.Offer_Information_Box.TabIndex = 54;
             this.Offer_Information_Box.Text = "";
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(145)))), ((int)(((byte)(209)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.panel6.Controls.Add(this.label8);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(490, 50);
+            this.panel6.Size = new System.Drawing.Size(490, 26);
             this.panel6.TabIndex = 53;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(8, 7);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 20);
+            this.label8.Size = new System.Drawing.Size(44, 15);
             this.label8.TabIndex = 0;
             this.label8.Text = "Opis: ";
             // 
@@ -938,7 +939,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.CancelButton = this.Button_Cancel_Offer;
             this.ClientSize = new System.Drawing.Size(1747, 950);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
