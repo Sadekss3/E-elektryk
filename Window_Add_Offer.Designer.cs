@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Button_Cancel_Offer = new System.Windows.Forms.Button();
             this.label_Offer_Name = new System.Windows.Forms.Label();
             this.label_Offer_Adress = new System.Windows.Forms.Label();
             this.label_Offer_Client = new System.Windows.Forms.Label();
@@ -63,10 +62,8 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox_Country_ID = new System.Windows.Forms.TextBox();
             this.Label_Country_Name = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Button_Save_Offer = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.Button_Offer_Cancel = new System.Windows.Forms.Button();
+            this.button_Show_PDF = new System.Windows.Forms.Button();
+            this.button_Print_PDF = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.report1 = new FastReport.Report();
@@ -120,22 +117,6 @@
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Button_Cancel_Offer
-            // 
-            this.Button_Cancel_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button_Cancel_Offer.BackColor = System.Drawing.Color.Gainsboro;
-            this.Button_Cancel_Offer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Button_Cancel_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button_Cancel_Offer.FlatAppearance.BorderSize = 2;
-            this.Button_Cancel_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Cancel_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Cancel_Offer.Location = new System.Drawing.Point(2407, 1175);
-            this.Button_Cancel_Offer.Name = "Button_Cancel_Offer";
-            this.Button_Cancel_Offer.Size = new System.Drawing.Size(130, 38);
-            this.Button_Cancel_Offer.TabIndex = 12;
-            this.Button_Cancel_Offer.Text = "Anuluj";
-            this.Button_Cancel_Offer.UseVisualStyleBackColor = false;
             // 
             // label_Offer_Name
             // 
@@ -437,67 +418,38 @@
             this.Label_Country_Name.TabIndex = 37;
             this.Label_Country_Name.Text = "Państwo";
             // 
-            // button2
+            // button_Show_PDF
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.BackColor = System.Drawing.Color.Gainsboro;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(147, 900);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 38);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "Podgląd PDF";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_Show_PDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_Show_PDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.button_Show_PDF.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button_Show_PDF.FlatAppearance.BorderSize = 0;
+            this.button_Show_PDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Show_PDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Show_PDF.ForeColor = System.Drawing.Color.White;
+            this.button_Show_PDF.Location = new System.Drawing.Point(125, 352);
+            this.button_Show_PDF.Name = "button_Show_PDF";
+            this.button_Show_PDF.Size = new System.Drawing.Size(110, 32);
+            this.button_Show_PDF.TabIndex = 48;
+            this.button_Show_PDF.Text = "Podgląd PDF";
+            this.button_Show_PDF.UseVisualStyleBackColor = false;
+            this.button_Show_PDF.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Button_Save_Offer
+            // button_Print_PDF
             // 
-            this.Button_Save_Offer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Button_Save_Offer.BackColor = System.Drawing.Color.Gainsboro;
-            this.Button_Save_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button_Save_Offer.FlatAppearance.BorderSize = 2;
-            this.Button_Save_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Save_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Save_Offer.Location = new System.Drawing.Point(11, 900);
-            this.Button_Save_Offer.Name = "Button_Save_Offer";
-            this.Button_Save_Offer.Size = new System.Drawing.Size(130, 38);
-            this.Button_Save_Offer.TabIndex = 47;
-            this.Button_Save_Offer.Text = "Zapisz Oferte";
-            this.Button_Save_Offer.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.BackColor = System.Drawing.Color.Gainsboro;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(282, 900);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 38);
-            this.button3.TabIndex = 49;
-            this.button3.Text = "Drukuj";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // Button_Offer_Cancel
-            // 
-            this.Button_Offer_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Button_Offer_Cancel.BackColor = System.Drawing.Color.Gainsboro;
-            this.Button_Offer_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Button_Offer_Cancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button_Offer_Cancel.FlatAppearance.BorderSize = 2;
-            this.Button_Offer_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Offer_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Offer_Cancel.Location = new System.Drawing.Point(1781, 900);
-            this.Button_Offer_Cancel.Name = "Button_Offer_Cancel";
-            this.Button_Offer_Cancel.Size = new System.Drawing.Size(130, 38);
-            this.Button_Offer_Cancel.TabIndex = 50;
-            this.Button_Offer_Cancel.Text = "Anuluj";
-            this.Button_Offer_Cancel.UseVisualStyleBackColor = false;
+            this.button_Print_PDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_Print_PDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.button_Print_PDF.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button_Print_PDF.FlatAppearance.BorderSize = 0;
+            this.button_Print_PDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Print_PDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Print_PDF.ForeColor = System.Drawing.Color.White;
+            this.button_Print_PDF.Location = new System.Drawing.Point(240, 352);
+            this.button_Print_PDF.Name = "button_Print_PDF";
+            this.button_Print_PDF.Size = new System.Drawing.Size(110, 32);
+            this.button_Print_PDF.TabIndex = 49;
+            this.button_Print_PDF.Text = "Drukuj";
+            this.button_Print_PDF.UseVisualStyleBackColor = false;
             // 
             // report1
             // 
@@ -514,6 +466,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.panel4.Controls.Add(this.button_Print_PDF);
+            this.panel4.Controls.Add(this.button_Show_PDF);
             this.panel4.Controls.Add(this.Button_Delete_From_Grid);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.sum_e_taxes_label);
@@ -937,16 +891,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.CancelButton = this.Button_Cancel_Offer;
             this.ClientSize = new System.Drawing.Size(1747, 950);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Button_Offer_Cancel);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.Button_Save_Offer);
-            this.Controls.Add(this.Button_Cancel_Offer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Window_Add_Offer";
             this.Text = "Widnow_Add_Offer";
@@ -971,8 +919,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Button_Cancel_Offer;
         private System.Windows.Forms.Label label_Offer_Name;
         private System.Windows.Forms.Label label_Offer_Adress;
         private System.Windows.Forms.Label label_Offer_Client;
@@ -1000,10 +946,8 @@
         private System.Windows.Forms.Label Label_Country_Name;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button Button_Save_Offer;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button Button_Offer_Cancel;
+        private System.Windows.Forms.Button button_Show_PDF;
+        private System.Windows.Forms.Button button_Print_PDF;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.FontDialog fontDialog1;
         private FastReport.Report report1;

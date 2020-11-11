@@ -1,11 +1,13 @@
 ﻿using FastReport;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
+using FastReport.Data;
+using FastReport.RichTextParser;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Migrations;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Globalization;
@@ -24,7 +26,6 @@ namespace E_elektryk
         int client_id;
         oferta _o;
         string _type;
-        //int ID_produktu;
 
         public Window_Add_Offer()
         {
@@ -101,7 +102,7 @@ namespace E_elektryk
                         product_cat = db.kategoria_produktu.Find(p.Kategoria);
                         item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                     }
-                    item.Font = new Font(item.Font, FontStyle.Regular);
+                    item.Font = new System.Drawing.Font(item.Font, FontStyle.Regular);
                     listView1.Items.Add(item);
                 }
             }
