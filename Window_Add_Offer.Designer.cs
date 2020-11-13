@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Window_Add_Offer));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -66,7 +65,6 @@
             this.button_Print_PDF = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.report1 = new FastReport.Report();
             this.zlecenieDataSet1 = new E_elektryk.zlecenieDataSet();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Button_Delete_From_Grid = new System.Windows.Forms.Button();
@@ -108,7 +106,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.report1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -450,13 +447,6 @@
             this.button_Print_PDF.TabIndex = 49;
             this.button_Print_PDF.Text = "Drukuj";
             this.button_Print_PDF.UseVisualStyleBackColor = false;
-            // 
-            // report1
-            // 
-            this.report1.NeedRefresh = false;
-            this.report1.ReportResourceString = resources.GetString("report1.ReportResourceString");
-            this.report1.Tag = null;
-            this.report1.RegisterData(this.zlecenieDataSet1, "zlecenieDataSet1");
             // 
             // zlecenieDataSet1
             // 
@@ -904,7 +894,6 @@
             this.Load += new System.EventHandler(this.Window_Add_Offer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.report1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -952,7 +941,6 @@
         private System.Windows.Forms.Button button_Print_PDF;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.FontDialog fontDialog1;
-        private FastReport.Report report1;
         private zlecenieDataSet zlecenieDataSet1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button Button_Delete_From_Grid;

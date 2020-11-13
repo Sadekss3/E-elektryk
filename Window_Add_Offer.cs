@@ -1,7 +1,4 @@
-﻿using FastReport;
-using FastReport.Data;
-using FastReport.RichTextParser;
-using Microsoft.SqlServer.Server;
+﻿using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -170,7 +167,8 @@ namespace E_elektryk
 
         private void button2_Click(object sender, EventArgs e)
         {
-            report1.SetParameterValue("nazwa_firmy_bior", textBox_Offer_CompanyName.Text);
+
+            /*report1.SetParameterValue("nazwa_firmy_bior", textBox_Offer_CompanyName.Text);
             report1.SetParameterValue("imie_zleceniobiorca", textBox_Offer_Name.Text + " " + textBox_Offer_LastName.Text);
             report1.SetParameterValue("miasto", textBox_Town_Name.Text + " " + textBox_Post_Code_1.Text + "-" + textBox_Post_Code_2.Text);
             if (textBox_Home_Number.Text != "")
@@ -186,7 +184,7 @@ namespace E_elektryk
             report1.SetParameterValue("data do", dateTimePicker2.Text);
             report1.SetParameterValue("nazwa_zlecenia", textBox_O_Name.Text);
             report1.SetParameterValue("opis", Offer_Information_Box.Text);
-            report1.Show();
+            report1.Show();*/
         } // Generate offer pdf using FastReport
 
         private void Button_Delete_From_Grid_Click(object sender, EventArgs e)
