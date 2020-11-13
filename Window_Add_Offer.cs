@@ -73,7 +73,7 @@ namespace E_elektryk
                         item_grid.Cells[5].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
                         item_grid.Cells[6].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
                         item_grid.Cells[7].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat + "%";
-                        item_grid.Cells[8].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto;
+                        item_grid.Cells[8].Value = Math.Round(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto, 2);
                         item_grid.Cells[9].Value = db.kategoria_produktu.Find(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Kategoria).Nazwa_kategorii;
                         dataGridView1.Rows.Add(item_grid);
                     }
@@ -118,17 +118,17 @@ namespace E_elektryk
                 {
                     decimal lot = System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
                     string piece_price = TRIM_price(dataGridView1.Rows[i].Cells[5].Value.ToString());
-                    dataGridView1.Rows[i].Cells[6].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
                     string gross_offer = TRIM_price(dataGridView1.Rows[i].Cells[7].Value.ToString());
                     string vat = (dataGridView1.Rows[i].Cells[7].Value.ToString()).Trim(' ', '%');
                     decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
-                    dataGridView1.Rows[i].Cells[8].Value = Gross * lot;
                     sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
                     sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value);
                     sum_e_taxes = Math.Round(sum_e_taxes, 2);
                     sum_w_taxes = Math.Round(sum_w_taxes, 2);
                     sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString() + " zł";
                     sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
+                    dataGridView1.Rows[i].Cells[6].Value = (Math.Round(System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot), 2));
+                    dataGridView1.Rows[i].Cells[8].Value = Math.Round(Gross * lot, 2);
                 }
             }
         }   // Fill listView from products DB
