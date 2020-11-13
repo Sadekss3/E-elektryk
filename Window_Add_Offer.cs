@@ -15,6 +15,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace E_elektryk
 {
@@ -167,25 +170,40 @@ namespace E_elektryk
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Document document = new Document();
+            PdfWriter.GetInstance(document, new FileStream("E:/Create.pdf", FileMode.Create));
+            document.Open();
 
-            /*report1.SetParameterValue("nazwa_firmy_bior", textBox_Offer_CompanyName.Text);
-            report1.SetParameterValue("imie_zleceniobiorca", textBox_Offer_Name.Text + " " + textBox_Offer_LastName.Text);
-            report1.SetParameterValue("miasto", textBox_Town_Name.Text + " " + textBox_Post_Code_1.Text + "-" + textBox_Post_Code_2.Text);
-            if (textBox_Home_Number.Text != "")
+            Paragraph p1 = new Paragraph("Hellolloo");
+            document.Add(p1);
+
+            int columns = dataGridView1.Columns.Count;
+            PdfPTable table = new PdfPTable(columns);
+
+            table.AddCell("ID");
+            table.AddCell("Nazwa");
+            table.AddCell("Producent");
+            table.AddCell("Jm");
+            table.AddCell("Ilość");
+            table.AddCell("C.j");
+            table.AddCell("Netto");
+            table.AddCell("Vat");
+            table.AddCell("Brutto");
+            table.AddCell("Kategoria");
+
+            for (int j = 0; j < dataGridView1.Rows.Count; j++)
             {
-                report1.SetParameterValue("ulica_zleceniobiorca", textBox_Street_Name.Text + " " + textBox_Building_Number.Text + "/" + textBox_Home_Number.Text);
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                    table.AddCell(dataGridView1.Rows[j].Cells[i].Value.ToString());
             }
-            else
-            {
-                report1.SetParameterValue("ulica_zleceniobiorca", textBox_Street_Name.Text + " " + textBox_Building_Number.Text);
-            }
-            report1.SetParameterValue("id_oferty", 1);
-            report1.SetParameterValue("data od", dateTimePicker1.Text);
-            report1.SetParameterValue("data do", dateTimePicker2.Text);
-            report1.SetParameterValue("nazwa_zlecenia", textBox_O_Name.Text);
-            report1.SetParameterValue("opis", Offer_Information_Box.Text);
-            report1.Show();*/
-        } // Generate offer pdf using FastReport
+
+            document.Add(table);
+
+
+            document.Close();
+            MessageBox.Show("Utworzono");
+
+        } // Generate offer pdf using itextsharp
 
         private void Button_Delete_From_Grid_Click(object sender, EventArgs e)
         {
