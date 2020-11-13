@@ -78,7 +78,7 @@ namespace E_elektryk
                         dataGridView1.Rows.Add(item_grid);
                     }
                 }
-            } // Fill offer window with information about actual offer
+        } // Fill offer window with information about actual offer
 
         private void Window_Add_Offer_Load(object sender, EventArgs e)
         {
@@ -106,6 +106,31 @@ namespace E_elektryk
                     listView1.Items.Add(item);
                 }
             }
+            decimal sum_e_taxes = 0;
+            decimal sum_w_taxes = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[4].Value.ToString().Contains('.'))
+                {
+                    MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    decimal lot = System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
+                    string piece_price = TRIM_price(dataGridView1.Rows[i].Cells[5].Value.ToString());
+                    dataGridView1.Rows[i].Cells[6].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
+                    string gross_offer = TRIM_price(dataGridView1.Rows[i].Cells[7].Value.ToString());
+                    string vat = (dataGridView1.Rows[i].Cells[7].Value.ToString()).Trim(' ', '%');
+                    decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                    dataGridView1.Rows[i].Cells[8].Value = Gross * lot;
+                    sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
+                    sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value);
+                    sum_e_taxes = Math.Round(sum_e_taxes, 2);
+                    sum_w_taxes = Math.Round(sum_w_taxes, 2);
+                    sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString() + " zł";
+                    sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
+                }
+            }
         }   // Fill listView from products DB
 
         void Add_to_offer(object sender, EventArgs e)
@@ -123,10 +148,10 @@ namespace E_elektryk
                 item_grid.Cells[4].Value = lot.ToString();  // One piece for every new Product in DataGrid
                 string net_offer = TRIM_price(item.SubItems[5].Text);
                 item_grid.Cells[5].Value = System.Convert.ToDecimal(net_offer); // Add decimal one piece net price to cells C.J
-                item_grid.Cells[6].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot); // Add calculated net price for all pieces
-                item_grid.Cells[7].Value = (item.SubItems[6].Text + "%");   // Add taxe to cells VAT
+                item_grid.Cells[6].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot) + " zł"; // Add calculated net price for all pieces
+                item_grid.Cells[7].Value = item.SubItems[6].Text + "%";   // Add taxe to cells VAT
                 string gross_offer = TRIM_price(item.SubItems[7].Text);
-                item_grid.Cells[8].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot);   // Add calculated gross price for all pieces
+                item_grid.Cells[8].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot) + " zł";   // Add calculated gross price for all pieces
                 item_grid.Cells[9].Value = item.SubItems[8].Text;   // Add category name to cells Kategoria
                 dataGridView1.Rows.Add(item_grid);
             }
@@ -171,37 +196,41 @@ namespace E_elektryk
         private void button2_Click(object sender, EventArgs e)
         {
             Document document = new Document();
-            PdfWriter.GetInstance(document, new FileStream("E:/Create.pdf", FileMode.Create));
+            PdfWriter.GetInstance(document, new FileStream("E:\\" + _o.ID + "." + DateTime.Now.Month + "." + DateTime.Now.Year + ".pdf", FileMode.Create));
             document.Open();
 
-            Paragraph p1 = new Paragraph("Hellolloo");
-            document.Add(p1);
+            string myFont = @"C:\Windows\Fonts\micross.ttf";
+            BaseFont bf = BaseFont.CreateFont(myFont, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 8, iTextSharp.text.Font.BOLD);
+            iTextSharp.text.Font font2 = new iTextSharp.text.Font(bf, 6, iTextSharp.text.Font.NORMAL);
 
             int columns = dataGridView1.Columns.Count;
             PdfPTable table = new PdfPTable(columns);
 
-            table.AddCell("ID");
-            table.AddCell("Nazwa");
-            table.AddCell("Producent");
-            table.AddCell("Jm");
-            table.AddCell("Ilość");
-            table.AddCell("C.j");
-            table.AddCell("Netto");
-            table.AddCell("Vat");
-            table.AddCell("Brutto");
-            table.AddCell("Kategoria");
+            float[] widths = new float[] { 10, 45, 25, 10, 15, 15, 15, 10, 15, 30};
+            table.SetWidths(widths);
+            table.AddCell(new PdfPCell(new Phrase("ID", font)));
+            table.AddCell(new PdfPCell(new Phrase("Nazwa", font)));
+            table.AddCell(new PdfPCell(new Phrase("Producent", font)));
+            table.AddCell(new PdfPCell(new Phrase("JM", font)));
+            table.AddCell(new PdfPCell(new Phrase("Ilość", font)));
+            table.AddCell(new PdfPCell(new Phrase("C.j", font)));
+            table.AddCell(new PdfPCell(new Phrase("Netto", font)));
+            table.AddCell(new PdfPCell(new Phrase("Vat", font)));
+            table.AddCell(new PdfPCell(new Phrase("Brutto", font)));
+            table.AddCell(new PdfPCell(new Phrase("Kategoria", font)));
 
             for (int j = 0; j < dataGridView1.Rows.Count; j++)
             {
                 for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                    table.AddCell(dataGridView1.Rows[j].Cells[i].Value.ToString());
+                    table.AddCell(new PdfPCell(new Phrase(dataGridView1.Rows[j].Cells[i].Value.ToString(), font2)));
             }
 
             document.Add(table);
 
 
             document.Close();
-            MessageBox.Show("Utworzono");
+            MessageBox.Show("Utworzono ofertę " + _o.ID + "." + DateTime.Now.Month + "." + DateTime.Now.Year + ".pdf");
 
         } // Generate offer pdf using itextsharp
 
@@ -340,15 +369,14 @@ namespace E_elektryk
                         sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value);
                         sum_e_taxes = Math.Round(sum_e_taxes, 2);
                         sum_w_taxes = Math.Round(sum_w_taxes, 2);
-                        sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString();
-                        sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString();
+                        sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString() + " zł";
+                        sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
                     }
                 }
             }
-            catch
+            catch(Exception f)
             {
-                sum_e_taxes_label.Text = "Suma Netto: ";
-                sum_w_taxes_label.Text = "Suma Brutto: ";
+                MessageBox.Show(f.Message, "Problem z przeliczeniem");
             }
         } // Calculate for sum
 
