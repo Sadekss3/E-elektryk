@@ -308,11 +308,11 @@
             // 
             // Button_chose_Client
             // 
-            this.Button_chose_Client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.Button_chose_Client.BackColor = System.Drawing.Color.Gainsboro;
             this.Button_chose_Client.FlatAppearance.BorderSize = 0;
             this.Button_chose_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_chose_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_chose_Client.ForeColor = System.Drawing.SystemColors.Window;
+            this.Button_chose_Client.ForeColor = System.Drawing.Color.Black;
             this.Button_chose_Client.Location = new System.Drawing.Point(251, 114);
             this.Button_chose_Client.Name = "Button_chose_Client";
             this.Button_chose_Client.Size = new System.Drawing.Size(117, 34);
@@ -367,12 +367,12 @@
             // 
             // Button_Add_Offer
             // 
-            this.Button_Add_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.Button_Add_Offer.BackColor = System.Drawing.Color.Gainsboro;
             this.Button_Add_Offer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Button_Add_Offer.FlatAppearance.BorderSize = 0;
             this.Button_Add_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Add_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Add_Offer.ForeColor = System.Drawing.SystemColors.Window;
+            this.Button_Add_Offer.ForeColor = System.Drawing.Color.Black;
             this.Button_Add_Offer.Location = new System.Drawing.Point(1430, 40);
             this.Button_Add_Offer.Name = "Button_Add_Offer";
             this.Button_Add_Offer.Size = new System.Drawing.Size(165, 61);
@@ -421,12 +421,12 @@
             // button_Show_PDF
             // 
             this.button_Show_PDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_Show_PDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.button_Show_PDF.BackColor = System.Drawing.Color.Gainsboro;
             this.button_Show_PDF.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button_Show_PDF.FlatAppearance.BorderSize = 0;
             this.button_Show_PDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Show_PDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_Show_PDF.ForeColor = System.Drawing.Color.White;
+            this.button_Show_PDF.ForeColor = System.Drawing.Color.Black;
             this.button_Show_PDF.Location = new System.Drawing.Point(125, 352);
             this.button_Show_PDF.Name = "button_Show_PDF";
             this.button_Show_PDF.Size = new System.Drawing.Size(110, 32);
@@ -438,12 +438,12 @@
             // button_Print_PDF
             // 
             this.button_Print_PDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_Print_PDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.button_Print_PDF.BackColor = System.Drawing.Color.Gainsboro;
             this.button_Print_PDF.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button_Print_PDF.FlatAppearance.BorderSize = 0;
             this.button_Print_PDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Print_PDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_Print_PDF.ForeColor = System.Drawing.Color.White;
+            this.button_Print_PDF.ForeColor = System.Drawing.Color.Black;
             this.button_Print_PDF.Location = new System.Drawing.Point(240, 352);
             this.button_Print_PDF.Name = "button_Print_PDF";
             this.button_Print_PDF.Size = new System.Drawing.Size(110, 32);
@@ -481,11 +481,11 @@
             // 
             // Button_Delete_From_Grid
             // 
-            this.Button_Delete_From_Grid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.Button_Delete_From_Grid.BackColor = System.Drawing.Color.Gainsboro;
             this.Button_Delete_From_Grid.FlatAppearance.BorderSize = 0;
             this.Button_Delete_From_Grid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Delete_From_Grid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Delete_From_Grid.ForeColor = System.Drawing.SystemColors.Window;
+            this.Button_Delete_From_Grid.ForeColor = System.Drawing.Color.Black;
             this.Button_Delete_From_Grid.Location = new System.Drawing.Point(9, 352);
             this.Button_Delete_From_Grid.Name = "Button_Delete_From_Grid";
             this.Button_Delete_From_Grid.Size = new System.Drawing.Size(110, 32);
@@ -792,7 +792,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.textBox_Producent_search);
@@ -800,6 +800,7 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(0, 16);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
@@ -809,20 +810,21 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.checkBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.checkBox1.ForeColor = System.Drawing.Color.Black;
             this.checkBox1.Location = new System.Drawing.Point(586, 7);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(113, 17);
             this.checkBox1.TabIndex = 33;
             this.checkBox1.Text = "Pokaż nieaktywne";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.label10.BackColor = System.Drawing.Color.Gainsboro;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Window;
+            this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(349, 10);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
@@ -851,9 +853,9 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.label11.BackColor = System.Drawing.Color.Gainsboro;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.ForeColor = System.Drawing.SystemColors.Window;
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(140, 10);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
@@ -864,9 +866,9 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(9)))), ((int)(((byte)(4)))));
+            this.label12.BackColor = System.Drawing.Color.Gainsboro;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Window;
+            this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(5, 11);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
