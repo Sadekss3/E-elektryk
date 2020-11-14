@@ -64,19 +64,23 @@
             this.button_New_Order = new System.Windows.Forms.Button();
             this.button_Order = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.button_main_menu = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel_control_button = new System.Windows.Forms.Panel();
             this.button_Exit_Window = new System.Windows.Forms.Button();
             this.button_minimalize_window = new System.Windows.Forms.Button();
             this.panel_Main_Window = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel_Menu.SuspendLayout();
             this.panel_Invoice.SuspendLayout();
             this.panel_Product.SuspendLayout();
             this.panel_Client.SuspendLayout();
             this.panel_Offer.SuspendLayout();
             this.panel_Order.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel_control_button.SuspendLayout();
+            this.panel_Main_Window.SuspendLayout();
             this.SuspendLayout();
             // 
             // columnHeader20
@@ -566,11 +570,27 @@
             this.panel11.BackColor = System.Drawing.Color.White;
             this.panel11.BackgroundImage = global::E_elektryk.Properties.Resources.logo1;
             this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel11.Controls.Add(this.button_main_menu);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(220, 190);
             this.panel11.TabIndex = 0;
+            // 
+            // button_main_menu
+            // 
+            this.button_main_menu.BackColor = System.Drawing.Color.Transparent;
+            this.button_main_menu.BackgroundImage = global::E_elektryk.Properties.Resources.logo1;
+            this.button_main_menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_main_menu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_main_menu.FlatAppearance.BorderSize = 0;
+            this.button_main_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_main_menu.Location = new System.Drawing.Point(0, 0);
+            this.button_main_menu.Name = "button_main_menu";
+            this.button_main_menu.Size = new System.Drawing.Size(220, 190);
+            this.button_main_menu.TabIndex = 0;
+            this.button_main_menu.UseVisualStyleBackColor = false;
+            this.button_main_menu.Click += new System.EventHandler(this.button_main_menu_Click);
             // 
             // panel7
             // 
@@ -627,11 +647,26 @@
             // panel_Main_Window
             // 
             this.panel_Main_Window.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.panel_Main_Window.BackgroundImage = global::E_elektryk.Properties.Resources.tit21;
+            this.panel_Main_Window.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel_Main_Window.Controls.Add(this.label1);
             this.panel_Main_Window.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Main_Window.Location = new System.Drawing.Point(220, 38);
             this.panel_Main_Window.Name = "panel_Main_Window";
             this.panel_Main_Window.Size = new System.Drawing.Size(1720, 1062);
             this.panel_Main_Window.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(601, 683);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(498, 50);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "                         E - Elektryk\r\nZarządzanie zleceniami dla firm elektryczn" +
+    "ych\r\n";
             // 
             // main_Window
             // 
@@ -656,8 +691,11 @@
             this.panel_Client.ResumeLayout(false);
             this.panel_Offer.ResumeLayout(false);
             this.panel_Order.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel_control_button.ResumeLayout(false);
+            this.panel_Main_Window.ResumeLayout(false);
+            this.panel_Main_Window.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -704,6 +742,8 @@
         private System.Windows.Forms.Button button_New_Order;
         private System.Windows.Forms.Button button_Order;
         private System.Windows.Forms.Panel panel_Main_Window;
+        private System.Windows.Forms.Button button_main_menu;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -79,8 +79,15 @@ namespace E_elektryk
                 {
                     kontrahent.Imie = textBox_Name.Text.ToString();
                     kontrahent.Nazwisko = textBox_Lastname.Text.ToString();
-                    kontrahent.Pesel = System.Convert.ToInt64(textBox_PESEL.Text);
-                    kontrahent.NIP = System.Convert.ToInt64(textBox_NIP.Text);
+                    if (textBox_PESEL.Text == "")
+                        kontrahent.Pesel = null;
+                    else
+                        kontrahent.Pesel = System.Convert.ToInt64(textBox_PESEL.Text);
+                    if (textBox_NIP.Text == "")
+                        kontrahent.NIP = null;
+                    else
+                        kontrahent.NIP = System.Convert.ToInt64(textBox_NIP.Text);
+
                     kontrahent.Nazwa_Firmy = textBox_Company_Name.Text.ToString();
                     Adress.Miasto = textBox_Adress_Town_Name.Text;
                     Adress.Nazwa_ulicy = textBox_Street_Name.Text;

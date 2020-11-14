@@ -203,8 +203,8 @@ namespace E_elektryk
                 iTextSharp.text.Font bb = new iTextSharp.text.Font(aa, 8, iTextSharp.text.Font.NORMAL);
                 PdfPCell cell = new PdfPCell(new Phrase(text , bb));
                 cell.Padding = (0);
-                cell.HorizontalAlignment = (alignment);
-                cell.Border = (PdfPCell.NO_BORDER);
+                cell.HorizontalAlignment = alignment;
+                cell.Border = PdfPCell.NO_BORDER;
                 return cell;
             }
 
@@ -253,17 +253,16 @@ namespace E_elektryk
 
             #region Client_info
 
-            PdfPTable headers = new PdfPTable(5);
-            headers.AddCell(getCell(My_Info, PdfPCell.ALIGN_LEFT));
-            headers.AddCell(getCell(" ", PdfPCell.ALIGN_JUSTIFIED_ALL));
-            headers.AddCell(getCell(" ", PdfPCell.ALIGN_JUSTIFIED_ALL));
-            headers.AddCell(getCell(" ", PdfPCell.ALIGN_JUSTIFIED_ALL));
-            headers.AddCell(getCell( Client_info, PdfPCell.ALIGN_JUSTIFIED));
+            PdfPTable headers = new PdfPTable(2);
+            headers.HorizontalAlignment = Element.ALIGN_LEFT;
+            headers.AddCell(getCell(My_Info, Element.ALIGN_LEFT));
+            headers.AddCell(getCell(Client_info, Element.ALIGN_RIGHT));
             document.Add(headers);
 
             #endregion
 
             #region Title
+
             Paragraph title = new Paragraph();
             Chunk c1 = new Chunk("Oferta nr: " +_o.ID + "/"+ DateTime.Now.Month + "/" + DateTime.Now.Year, Title_Font);
             title.Add(c1);
@@ -273,6 +272,19 @@ namespace E_elektryk
             Chunk c2 = new Chunk(" ", Title_Font);
             pause.Add(c2);
             pause.Alignment = Element.ALIGN_CENTER;
+            document.Add(pause);
+
+            #endregion
+
+            #region date
+
+            Paragraph date = new Paragraph();
+            Chunk c3 = new Chunk("Oferta ważna od: " + dateTimePicker1.Value.ToString().Remove(10, 9) +"\r" , Font_Table_Cells);
+            Chunk c4 = new Chunk("Oferta ważna do: " + dateTimePicker2.Value.ToString().Remove(10, 9), Font_Table_Cells);
+            date.Add(c3);
+            date.Add(c4);
+            date.Alignment = Element.ALIGN_LEFT;
+            document.Add(date);
             document.Add(pause);
 
             #endregion
@@ -307,6 +319,10 @@ namespace E_elektryk
 
             document.Close();
             MessageBox.Show("Utworzono ofertę " + _o.ID + "." + DateTime.Now.Month + "." + DateTime.Now.Year + ".pdf");
+            Process myProcess = new Process();
+            myProcess.StartInfo.FileName = "acroRd32.exe"; //not the full application path
+            myProcess.StartInfo.Arguments = "\""+ @"E:\E-elektryk oferty\" + _o.ID + "_" + DateTime.Now.Month + "_" + DateTime.Now.Year + ".pdf" + "\"";
+            myProcess.Start();
 
         } // Generate offer pdf using itextsharp
 

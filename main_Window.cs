@@ -351,6 +351,12 @@ namespace E_elektryk
             }
         }
 
+        private void button_main_menu_Click(object sender, EventArgs e)
+        {
+            this.activeForm.Close();
+            Hide_Sub_Menu();
+        }
+
         private void button_Order_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Order_window());
@@ -458,5 +464,6 @@ namespace E_elektryk
                 } 
             }
         } // Modify Client information
+
     }
 }
