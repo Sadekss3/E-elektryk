@@ -193,41 +193,117 @@ namespace E_elektryk
             }
         } // Add information about Client to Offer Form
 
+
         private void button2_Click(object sender, EventArgs e)
         {
+            PdfPCell getCell(String text, int alignment)
+            {
+                string ss = @"C:\Windows\Fonts\micross.ttf";
+                BaseFont aa = BaseFont.CreateFont(ss, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                iTextSharp.text.Font bb = new iTextSharp.text.Font(aa, 8, iTextSharp.text.Font.NORMAL);
+                PdfPCell cell = new PdfPCell(new Phrase(text , bb));
+                cell.Padding = (0);
+                cell.HorizontalAlignment = (alignment);
+                cell.Border = (PdfPCell.NO_BORDER);
+                return cell;
+            }
+
+            string My_Info = "";
+            string Client_info = "";
+
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                int My_ID = 20;
+                int Client_ID = _o.ID;
+                if (_o.ID != null)
+                {
+                    Client_ID = _o.Id_zleceniodawca;
+                }
+                else
+                {
+                    Client_ID = client_id;
+                }
+
+                My_Info = db.kontrahent.Find(My_ID).Imie + " " + db.kontrahent.Find(My_ID).Nazwisko + "\n" + db.kontrahent.Find(My_ID).Nazwa_Firmy + "\nul. " + db.adres.Find(db.kontrahent.Find(My_ID).Adres).Nazwa_ulicy +
+                   " " + db.adres.Find(db.kontrahent.Find(My_ID).Adres).Numer_budynku + "/" + db.adres.Find(db.kontrahent.Find(My_ID).Adres).Numer_mieszkania + "\n" +
+                   db.adres.Find(db.kontrahent.Find(My_ID).Adres).Kod_pocztowy.Remove(2, 3) + "-" + db.adres.Find(db.kontrahent.Find(My_ID).Adres).Kod_pocztowy.Remove(0, 2) + " " + db.adres.Find(db.kontrahent.Find(My_ID).Adres).Miasto + "\nNIP: " +
+                db.kontrahent.Find(My_ID).NIP + "\nPESEL: " + db.kontrahent.Find(My_ID).Pesel + "\nEmail: " + db.kontrahent.Find(My_ID).E_mail + "\nTel: " + db.kontrahent.Find(My_ID).Telefon_1 +
+                   "\nTel: " + db.kontrahent.Find(My_ID).Telefon_2 + "\nPaństwo: " + db.adres.Find(db.kontrahent.Find(My_ID).Adres).Państwo;
+
+                Client_info = db.kontrahent.Find(Client_ID).Imie + " " + db.kontrahent.Find(Client_ID).Nazwisko + "\n" + db.kontrahent.Find(Client_ID).Nazwa_Firmy + "\nul. " + db.adres.Find(db.kontrahent.Find(Client_ID).Adres).Nazwa_ulicy +
+                   " " + db.adres.Find(db.kontrahent.Find(Client_ID).Adres).Numer_budynku + "/" + db.adres.Find(db.kontrahent.Find(Client_ID).Adres).Numer_mieszkania + "\n" +
+                   db.adres.Find(db.kontrahent.Find(Client_ID).Adres).Kod_pocztowy.Remove(2, 3) + "-" + db.adres.Find(db.kontrahent.Find(Client_ID).Adres).Kod_pocztowy.Remove(0, 2) + " " + db.adres.Find(db.kontrahent.Find(Client_ID).Adres).Miasto + "\nNIP: " +
+                db.kontrahent.Find(Client_ID).NIP + "\nPESEL: " + db.kontrahent.Find(Client_ID).Pesel + "\nEmail: " + db.kontrahent.Find(Client_ID).E_mail + "\nTel: " + db.kontrahent.Find(Client_ID).Telefon_1 +
+                   "\nTel: " + db.kontrahent.Find(Client_ID).Telefon_2 + "\nPaństwo: " + db.adres.Find(db.kontrahent.Find(Client_ID).Adres).Państwo;
+            }
+
             Document document = new Document();
-            PdfWriter.GetInstance(document, new FileStream("E:\\" + _o.ID + "." + DateTime.Now.Month + "." + DateTime.Now.Year + ".pdf", FileMode.Create));
+            PdfWriter.GetInstance(document, new FileStream(@"E:\E-elektryk oferty\" + _o.ID + "_" + DateTime.Now.Month + "_" + DateTime.Now.Year + ".pdf", FileMode.Create));
             document.Open();
+
+            #region font
 
             string myFont = @"C:\Windows\Fonts\micross.ttf";
             BaseFont bf = BaseFont.CreateFont(myFont, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 8, iTextSharp.text.Font.BOLD);
-            iTextSharp.text.Font font2 = new iTextSharp.text.Font(bf, 6, iTextSharp.text.Font.NORMAL);
+            iTextSharp.text.Font Font_Table_Headers = new iTextSharp.text.Font(bf, 8, iTextSharp.text.Font.BOLD);
+            iTextSharp.text.Font Font_Table_Cells = new iTextSharp.text.Font(bf, 6, iTextSharp.text.Font.NORMAL);
+            iTextSharp.text.Font Title_Font = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.BOLD);
+
+            #endregion
+
+            #region Client_info
+
+            PdfPTable headers = new PdfPTable(5);
+            headers.AddCell(getCell(My_Info, PdfPCell.ALIGN_LEFT));
+            headers.AddCell(getCell(" ", PdfPCell.ALIGN_JUSTIFIED_ALL));
+            headers.AddCell(getCell(" ", PdfPCell.ALIGN_JUSTIFIED_ALL));
+            headers.AddCell(getCell(" ", PdfPCell.ALIGN_JUSTIFIED_ALL));
+            headers.AddCell(getCell( Client_info, PdfPCell.ALIGN_JUSTIFIED));
+            document.Add(headers);
+
+            #endregion
+
+            #region Title
+            Paragraph title = new Paragraph();
+            Chunk c1 = new Chunk("Oferta nr: " +_o.ID + "/"+ DateTime.Now.Month + "/" + DateTime.Now.Year, Title_Font);
+            title.Add(c1);
+            title.Alignment = Element.ALIGN_CENTER;
+            document.Add(title);
+            Paragraph pause = new Paragraph();
+            Chunk c2 = new Chunk(" ", Title_Font);
+            pause.Add(c2);
+            pause.Alignment = Element.ALIGN_CENTER;
+            document.Add(pause);
+
+            #endregion
+
+            #region tabela
 
             int columns = dataGridView1.Columns.Count;
             PdfPTable table = new PdfPTable(columns);
 
             float[] widths = new float[] { 10, 45, 25, 10, 15, 15, 15, 10, 15, 30};
             table.SetWidths(widths);
-            table.AddCell(new PdfPCell(new Phrase("ID", font)));
-            table.AddCell(new PdfPCell(new Phrase("Nazwa", font)));
-            table.AddCell(new PdfPCell(new Phrase("Producent", font)));
-            table.AddCell(new PdfPCell(new Phrase("JM", font)));
-            table.AddCell(new PdfPCell(new Phrase("Ilość", font)));
-            table.AddCell(new PdfPCell(new Phrase("C.j", font)));
-            table.AddCell(new PdfPCell(new Phrase("Netto", font)));
-            table.AddCell(new PdfPCell(new Phrase("Vat", font)));
-            table.AddCell(new PdfPCell(new Phrase("Brutto", font)));
-            table.AddCell(new PdfPCell(new Phrase("Kategoria", font)));
+            table.AddCell(new PdfPCell(new Phrase("ID", Font_Table_Headers)));
+            table.AddCell(new PdfPCell(new Phrase("Nazwa", Font_Table_Headers)));
+            table.AddCell(new PdfPCell(new Phrase("Producent", Font_Table_Headers)));
+            table.AddCell(new PdfPCell(new Phrase("JM", Font_Table_Headers)));
+            table.AddCell(new PdfPCell(new Phrase("Ilość", Font_Table_Headers)));
+            table.AddCell(new PdfPCell(new Phrase("C.j", Font_Table_Headers)));
+            table.AddCell(new PdfPCell(new Phrase("Netto", Font_Table_Headers)));
+            table.AddCell(new PdfPCell(new Phrase("Vat", Font_Table_Headers)));
+            table.AddCell(new PdfPCell(new Phrase("Brutto", Font_Table_Headers)));
+            table.AddCell(new PdfPCell(new Phrase("Kategoria", Font_Table_Headers)));
 
             for (int j = 0; j < dataGridView1.Rows.Count; j++)
             {
                 for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                    table.AddCell(new PdfPCell(new Phrase(dataGridView1.Rows[j].Cells[i].Value.ToString(), font2)));
+                    table.AddCell(new PdfPCell(new Phrase(dataGridView1.Rows[j].Cells[i].Value.ToString(), Font_Table_Cells)));
             }
 
             document.Add(table);
 
+            #endregion
 
             document.Close();
             MessageBox.Show("Utworzono ofertę " + _o.ID + "." + DateTime.Now.Month + "." + DateTime.Now.Year + ".pdf");
