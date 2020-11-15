@@ -25,7 +25,7 @@ namespace E_elektryk
             {
                 Products_list.Items.Clear();
                 List<produkt> list = db.produkt.ToList();
-                foreach (produkt p in list.Where(lvi => lvi.Nazwa.ToLower().Contains(textBox_product_name_search.Text.ToLower()) && lvi.Producent.ToLower().Contains(textBox_product_producent_search.Text.ToLower()) && lvi.Numer_katalogowy.ToLower().Contains(textBox_product_symbol_search.Text.ToLower())))
+                foreach (produkt p in list.Where(lvi => lvi.Status.ToString().Contains("1")))
                 {
                     decimal value = Math.Round(p.Cena_netto * System.Convert.ToDecimal(p.Ilość), 2);
                     ListViewItem item = new ListViewItem(p.ID.ToString());
@@ -44,6 +44,7 @@ namespace E_elektryk
                         item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                     }
                     item.SubItems.Add(value.ToString() + " zł");
+                    item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status.ToString());
                     item.Font = new Font(item.Font, FontStyle.Regular);
                     Products_list.Items.Add(item);
                 }
@@ -58,7 +59,8 @@ namespace E_elektryk
             {
                 Products_list.Items.Clear();
                 List<produkt> list = db.produkt.ToList();
-                foreach (produkt p in list.Where(lvi => lvi.Nazwa.ToLower().Contains(textBox_product_name_search.Text.ToLower()) && lvi.Producent.ToLower().Contains(textBox_product_producent_search.Text.ToLower()) && lvi.Numer_katalogowy.ToLower().Contains(textBox_product_symbol_search.Text.ToLower())))
+                foreach (produkt p in list.Where(lvi => lvi.Nazwa.ToLower().Contains(textBox_product_name_search.Text.ToLower()) && lvi.Producent.ToLower().Contains(textBox_product_producent_search.Text.ToLower()) &&
+                    lvi.Numer_katalogowy.ToLower().Contains(textBox_product_symbol_search.Text.ToLower()) && lvi.Status.ToString().Contains("1")))
                 {
                     decimal value = Math.Round(p.Cena_netto * System.Convert.ToDecimal(p.Ilość), 2);
                     ListViewItem item = new ListViewItem(p.ID.ToString());
@@ -77,6 +79,7 @@ namespace E_elektryk
                         item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                     }
                     item.SubItems.Add(value.ToString() + " zł");
+                    item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status.ToString());
                     item.Font = new Font(item.Font, FontStyle.Regular);
                     Products_list.Items.Add(item);
                 }
@@ -92,6 +95,79 @@ namespace E_elektryk
                 Selected_Product_ID = System.Convert.ToInt32(Products_list.SelectedItems[0].Text);
             }
             return (Selected_Product_ID);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (checkBox1.Checked)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                using (zlecenieEntities db = new zlecenieEntities())
+                {
+                    Products_list.Items.Clear();
+                    List<produkt> list = db.produkt.ToList();
+                    foreach (produkt p in list.Where(lvi => lvi.Nazwa.ToLower().Contains(textBox_product_name_search.Text.ToLower()) && lvi.Producent.ToLower().Contains(textBox_product_producent_search.Text.ToLower()) &&
+                        lvi.Numer_katalogowy.ToLower().Contains(textBox_product_symbol_search.Text.ToLower())))
+                    {
+                        decimal value = Math.Round(p.Cena_netto * System.Convert.ToDecimal(p.Ilość), 2);
+                        ListViewItem item = new ListViewItem(p.ID.ToString());
+                        item.SubItems.Add(p.Nazwa);
+                        item.SubItems.Add(p.Producent);
+                        item.SubItems.Add(p.Numer_katalogowy);
+                        item.SubItems.Add(p.Jm);
+                        item.SubItems.Add(p.Ilość.ToString());
+                        item.SubItems.Add(p.Cena_netto.ToString() + " zł");
+                        item.SubItems.Add(p.Vat.ToString() + " %");
+                        item.SubItems.Add(p.Cena_brutto.ToString() + " zł");
+                        if (p.Kategoria != 0)
+                        {
+                            kategoria_produktu product_cat = new kategoria_produktu();
+                            product_cat = db.kategoria_produktu.Find(p.Kategoria);
+                            item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
+                        }
+                        item.SubItems.Add(value.ToString() + " zł");
+                        item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status.ToString());
+                        item.Font = new Font(item.Font, FontStyle.Regular);
+                        Products_list.Items.Add(item);
+                    }
+                }
+                Cursor.Current = Cursors.Default;
+            }
+            else
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                using (zlecenieEntities db = new zlecenieEntities())
+                {
+                    Products_list.Items.Clear();
+                    List<produkt> list = db.produkt.ToList();
+                    foreach (produkt p in list.Where(lvi => lvi.Nazwa.ToLower().Contains(textBox_product_name_search.Text.ToLower()) && lvi.Producent.ToLower().Contains(textBox_product_producent_search.Text.ToLower()) &&
+                        lvi.Numer_katalogowy.ToLower().Contains(textBox_product_symbol_search.Text.ToLower()) && lvi.Status.ToString().Contains("1")))
+                    {
+                        decimal value = Math.Round(p.Cena_netto * System.Convert.ToDecimal(p.Ilość), 2);
+                        ListViewItem item = new ListViewItem(p.ID.ToString());
+                        item.SubItems.Add(p.Nazwa);
+                        item.SubItems.Add(p.Producent);
+                        item.SubItems.Add(p.Numer_katalogowy);
+                        item.SubItems.Add(p.Jm);
+                        item.SubItems.Add(p.Ilość.ToString());
+                        item.SubItems.Add(p.Cena_netto.ToString() + " zł");
+                        item.SubItems.Add(p.Vat.ToString() + " %");
+                        item.SubItems.Add(p.Cena_brutto.ToString() + " zł");
+                        if (p.Kategoria != 0)
+                        {
+                            kategoria_produktu product_cat = new kategoria_produktu();
+                            product_cat = db.kategoria_produktu.Find(p.Kategoria);
+                            item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
+                        }
+                        item.SubItems.Add(value.ToString() + " zł");
+                        item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status.ToString());
+                        item.Font = new Font(item.Font, FontStyle.Regular);
+                        Products_list.Items.Add(item);
+                    }
+                }
+                Cursor.Current = Cursors.Default;
+            }
         }
     }
 }

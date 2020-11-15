@@ -34,15 +34,17 @@ namespace E_elektryk
 
         void Add_Product_Information()
         {
-            textBox_Product_Name.Text = _p.Nazwa.ToString();
-            textBox_Manufacturer.Text = _p.Producent.ToString();
-            textBox_Catalog.Text = _p.Numer_katalogowy.ToString();
-            textBox_Quantity.Text = _p.Ilość.ToString();
-            textBox_Price_Net.Text = _p.Cena_netto.ToString();
-            textBox_Price_Gross.Text = _p.Cena_brutto.ToString();
-            comboBox_Unit.Text = _p.Jm.ToString();
-            ComboBox_Taxes.Text = _p.Vat.ToString();
-            comboBox_Product_Category.Text = _p.Kategoria.ToString();
+            using (zlecenieEntities db = new zlecenieEntities()) 
+            {
+                textBox_Product_Name.Text = _p.Nazwa.ToString();
+                textBox_Manufacturer.Text = _p.Producent.ToString();
+                textBox_Catalog.Text = _p.Numer_katalogowy.ToString();
+                textBox_Quantity.Text = _p.Ilość.ToString();
+                textBox_Price_Net.Text = _p.Cena_netto.ToString();
+                textBox_Price_Gross.Text = _p.Cena_brutto.ToString();
+                comboBox_Unit.Text = _p.Jm.ToString();
+                ComboBox_Taxes.Text = _p.Vat.ToString();
+            }  
         }
 
         private void Button_Add_Product_Click(object sender, EventArgs e)
@@ -72,6 +74,7 @@ namespace E_elektryk
                 produkt.Vat = System.Convert.ToDouble(ComboBox_Taxes.Text);
                 produkt.Cena_brutto = System.Convert.ToDecimal(textBox_Price_Gross.Text);
                 produkt.Kategoria = (int)comboBox_Product_Category.SelectedValue;
+                produkt.Status = (int)comboBox_Product_Status.SelectedValue;
                 flag = true;
             }
             catch (Exception)
@@ -113,7 +116,8 @@ namespace E_elektryk
                 produkt.Cena_netto = System.Convert.ToDecimal(textBox_Price_Net.Text);
                 produkt.Vat = System.Convert.ToDouble(ComboBox_Taxes.Text);
                 produkt.Cena_brutto = System.Convert.ToDecimal(textBox_Price_Gross.Text);
-                produkt.Kategoria = (int)comboBox_Product_Category.SelectedValue;              
+                produkt.Kategoria = (int)comboBox_Product_Category.SelectedValue;
+                produkt.Status = (int)comboBox_Product_Status.SelectedValue;
                 flag = true;
             }
             catch (Exception)
@@ -166,6 +170,8 @@ namespace E_elektryk
 
         private void Window_Add_Product_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet1.statusy_zlecenia' . Możesz go przenieść lub usunąć.
+            this.statusy_zleceniaTableAdapter.Fill(this.zlecenieDataSet1.statusy_zlecenia);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.kategoria_produktu' . Możesz go przenieść lub usunąć.
             this.kategoria_produktuTableAdapter.Fill(this.zlecenieDataSet.kategoria_produktu);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.produkt' . Możesz go przenieść lub usunąć.

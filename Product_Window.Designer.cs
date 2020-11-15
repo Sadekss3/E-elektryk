@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation2 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -43,6 +45,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel_Products_in_Offer = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Invoice_Number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -79,7 +82,8 @@
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader,
-            this.columnHeader9});
+            this.columnHeader9,
+            this.columnHeader10});
             this.Products_list.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Products_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Products_list.FullRowSelect = true;
@@ -147,8 +151,12 @@
             // columnHeader9
             // 
             this.columnHeader9.Text = "Wartość magazynu";
-            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader9.Width = 160;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Status";
+            this.columnHeader10.Width = 100;
             // 
             // panel_Products_in_Offer
             // 
@@ -194,6 +202,11 @@
             // 
             // chart1
             // 
+            lineAnnotation1.Name = "Cena";
+            lineAnnotation2.ClipToChartArea = "ChartArea1";
+            lineAnnotation2.Name = "data";
+            this.chart1.Annotations.Add(lineAnnotation1);
+            this.chart1.Annotations.Add(lineAnnotation2);
             this.chart1.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
@@ -237,6 +250,7 @@
             this.checkBox1.TabIndex = 41;
             this.checkBox1.Text = "Pokaż nieaktywne";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // textBox_product_symbol_search
             // 
@@ -374,5 +388,6 @@
         private System.Windows.Forms.ColumnHeader Supplier_Info;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         public System.Windows.Forms.ListView Products_list;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }

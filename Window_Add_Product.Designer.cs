@@ -53,9 +53,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.kategoria_produktuTableAdapter = new E_elektryk.zlecenieDataSetTableAdapters.kategoria_produktuTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Status = new System.Windows.Forms.Label();
+            this.comboBox_Product_Status = new System.Windows.Forms.ComboBox();
+            this.statusyzleceniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zlecenieDataSet1 = new E_elektryk.zlecenieDataSet();
+            this.statusy_zleceniaTableAdapter = new E_elektryk.zlecenieDataSetTableAdapters.statusy_zleceniaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.kategoriaproduktuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusyzleceniaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox_Product_Category
@@ -305,6 +312,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.Status);
+            this.panel1.Controls.Add(this.comboBox_Product_Status);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox_Catalog);
             this.panel1.Controls.Add(this.label2);
@@ -330,6 +339,43 @@
             this.panel1.Size = new System.Drawing.Size(755, 458);
             this.panel1.TabIndex = 39;
             // 
+            // Status
+            // 
+            this.Status.AutoSize = true;
+            this.Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Status.ForeColor = System.Drawing.Color.Black;
+            this.Status.Location = new System.Drawing.Point(398, 252);
+            this.Status.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(62, 20);
+            this.Status.TabIndex = 40;
+            this.Status.Text = "Status";
+            // 
+            // comboBox_Product_Status
+            // 
+            this.comboBox_Product_Status.DataSource = this.statusyzleceniaBindingSource;
+            this.comboBox_Product_Status.DisplayMember = "Status";
+            this.comboBox_Product_Status.FormattingEnabled = true;
+            this.comboBox_Product_Status.Location = new System.Drawing.Point(540, 254);
+            this.comboBox_Product_Status.Name = "comboBox_Product_Status";
+            this.comboBox_Product_Status.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_Product_Status.TabIndex = 39;
+            this.comboBox_Product_Status.ValueMember = "ID_statusu";
+            // 
+            // statusyzleceniaBindingSource
+            // 
+            this.statusyzleceniaBindingSource.DataMember = "statusy_zlecenia";
+            this.statusyzleceniaBindingSource.DataSource = this.zlecenieDataSet1;
+            // 
+            // zlecenieDataSet1
+            // 
+            this.zlecenieDataSet1.DataSetName = "zlecenieDataSet";
+            this.zlecenieDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // statusy_zleceniaTableAdapter
+            // 
+            this.statusy_zleceniaTableAdapter.ClearBeforeFill = true;
+            // 
             // Window_Add_Product
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -347,6 +393,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusyzleceniaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,5 +425,10 @@
         private System.Windows.Forms.BindingSource kategoriaproduktuBindingSource;
         private zlecenieDataSetTableAdapters.kategoria_produktuTableAdapter kategoria_produktuTableAdapter;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label Status;
+        private System.Windows.Forms.ComboBox comboBox_Product_Status;
+        private zlecenieDataSet zlecenieDataSet1;
+        private System.Windows.Forms.BindingSource statusyzleceniaBindingSource;
+        private zlecenieDataSetTableAdapters.statusy_zleceniaTableAdapter statusy_zleceniaTableAdapter;
     }
 }
