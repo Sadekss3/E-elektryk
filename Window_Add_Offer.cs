@@ -216,7 +216,7 @@ namespace E_elektryk
             {
                 int My_ID = 20;
                 int Client_ID = _o.ID;
-                if (_o.ID != null)
+                if (_o != null)
                 {
                     Client_ID = _o.Id_zleceniodawca;
                 }
@@ -343,8 +343,9 @@ namespace E_elektryk
                     using (zlecenieEntities db = new zlecenieEntities())
                     {
                         produkty_w_wycenie produkt_ = new produkty_w_wycenie();
-                        int ID_produktu = (int)dataGridView1.CurrentRow.Cells[0].Value;
+                        int ID_produktu = System.Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                         produkt_ = db.produkty_w_wycenie.Find(_o.ID, ID_produktu);
+                        
                         db.produkty_w_wycenie.Remove(produkt_);
                         db.SaveChanges();
                     }
@@ -458,8 +459,10 @@ namespace E_elektryk
                     decimal sum_w_taxes = 0;
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
-                        sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
-                        sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value);
+                        decimal net = System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString().Trim(' ', 'z','ł'));
+                        decimal gross = System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString().Trim(' ', 'z', 'ł'));
+                        sum_e_taxes += System.Convert.ToDecimal(net);
+                        sum_w_taxes += System.Convert.ToDecimal(gross);
                         sum_e_taxes = Math.Round(sum_e_taxes, 2);
                         sum_w_taxes = Math.Round(sum_w_taxes, 2);
                         sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString() + " zł";

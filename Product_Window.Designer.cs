@@ -91,7 +91,7 @@
             this.Products_list.HideSelection = false;
             this.Products_list.Location = new System.Drawing.Point(0, 0);
             this.Products_list.Name = "Products_list";
-            this.Products_list.Size = new System.Drawing.Size(1763, 693);
+            this.Products_list.Size = new System.Drawing.Size(1620, 624);
             this.Products_list.TabIndex = 22;
             this.Products_list.UseCompatibleStateImageBehavior = false;
             this.Products_list.View = System.Windows.Forms.View.Details;
@@ -163,9 +163,9 @@
             this.panel_Products_in_Offer.Controls.Add(this.listView1);
             this.panel_Products_in_Offer.Controls.Add(this.chart1);
             this.panel_Products_in_Offer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_Products_in_Offer.Location = new System.Drawing.Point(0, 745);
+            this.panel_Products_in_Offer.Location = new System.Drawing.Point(0, 676);
             this.panel_Products_in_Offer.Name = "panel_Products_in_Offer";
-            this.panel_Products_in_Offer.Size = new System.Drawing.Size(1763, 244);
+            this.panel_Products_in_Offer.Size = new System.Drawing.Size(1620, 244);
             this.panel_Products_in_Offer.TabIndex = 24;
             // 
             // listView1
@@ -213,7 +213,7 @@
             this.chart1.Dock = System.Windows.Forms.DockStyle.Right;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(881, 0);
+            this.chart1.Location = new System.Drawing.Point(738, 0);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -237,7 +237,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1763, 52);
+            this.panel1.Size = new System.Drawing.Size(1620, 52);
             this.panel1.TabIndex = 25;
             // 
             // checkBox1
@@ -336,14 +336,14 @@
             this.panel_Product.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Product.Location = new System.Drawing.Point(0, 52);
             this.panel_Product.Name = "panel_Product";
-            this.panel_Product.Size = new System.Drawing.Size(1763, 693);
+            this.panel_Product.Size = new System.Drawing.Size(1620, 624);
             this.panel_Product.TabIndex = 26;
             // 
             // Product_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1763, 989);
+            this.ClientSize = new System.Drawing.Size(1620, 920);
             this.Controls.Add(this.panel_Product);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_Products_in_Offer);

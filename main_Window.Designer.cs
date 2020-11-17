@@ -160,7 +160,7 @@
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Menu.Location = new System.Drawing.Point(0, 0);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(220, 1100);
+            this.panel_Menu.Size = new System.Drawing.Size(220, 920);
             this.panel_Menu.TabIndex = 3;
             // 
             // panel_Invoice
@@ -600,7 +600,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(220, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1720, 38);
+            this.panel7.Size = new System.Drawing.Size(1400, 38);
             this.panel7.TabIndex = 2;
             // 
             // panel_control_button
@@ -610,7 +610,7 @@
             this.panel_control_button.Controls.Add(this.button_Exit_Window);
             this.panel_control_button.Controls.Add(this.button_minimalize_window);
             this.panel_control_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel_control_button.Location = new System.Drawing.Point(1641, 1);
+            this.panel_control_button.Location = new System.Drawing.Point(1321, 1);
             this.panel_control_button.Name = "panel_control_button";
             this.panel_control_button.Size = new System.Drawing.Size(76, 37);
             this.panel_control_button.TabIndex = 0;
@@ -653,7 +653,7 @@
             this.panel_Main_Window.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Main_Window.Location = new System.Drawing.Point(220, 38);
             this.panel_Main_Window.Name = "panel_Main_Window";
-            this.panel_Main_Window.Size = new System.Drawing.Size(1720, 1062);
+            this.panel_Main_Window.Size = new System.Drawing.Size(1400, 882);
             this.panel_Main_Window.TabIndex = 5;
             // 
             // label1
@@ -673,7 +673,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(56)))), ((int)(((byte)(122)))));
-            this.ClientSize = new System.Drawing.Size(1940, 1100);
+            this.ClientSize = new System.Drawing.Size(1620, 920);
             this.Controls.Add(this.panel_Main_Window);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel_Menu);

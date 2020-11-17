@@ -359,7 +359,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1747, 156);
+            this.panel1.Size = new System.Drawing.Size(1620, 156);
             this.panel1.TabIndex = 41;
             // 
             // label3
@@ -465,9 +465,9 @@
             this.panel4.Controls.Add(this.sum_w_taxes_label);
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 562);
+            this.panel4.Location = new System.Drawing.Point(0, 532);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1747, 388);
+            this.panel4.Size = new System.Drawing.Size(1620, 388);
             this.panel4.TabIndex = 60;
             // 
             // Button_Delete_From_Grid
@@ -546,7 +546,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1745, 283);
+            this.dataGridView1.Size = new System.Drawing.Size(1618, 283);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValidated);
             // 
@@ -657,7 +657,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 156);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1747, 406);
+            this.panel3.Size = new System.Drawing.Size(1620, 376);
             this.panel3.TabIndex = 61;
             // 
             // panel5
@@ -665,9 +665,9 @@
             this.panel5.Controls.Add(this.Offer_Information_Box);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(1257, 53);
+            this.panel5.Location = new System.Drawing.Point(1130, 53);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(490, 353);
+            this.panel5.Size = new System.Drawing.Size(490, 323);
             this.panel5.TabIndex = 62;
             // 
             // Offer_Information_Box
@@ -677,7 +677,7 @@
             this.Offer_Information_Box.EnableAutoDragDrop = true;
             this.Offer_Information_Box.Location = new System.Drawing.Point(0, 26);
             this.Offer_Information_Box.Name = "Offer_Information_Box";
-            this.Offer_Information_Box.Size = new System.Drawing.Size(490, 327);
+            this.Offer_Information_Box.Size = new System.Drawing.Size(490, 297);
             this.Offer_Information_Box.TabIndex = 54;
             this.Offer_Information_Box.Text = "";
             // 
@@ -731,7 +731,7 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
-            this.listView1.Size = new System.Drawing.Size(1747, 353);
+            this.listView1.Size = new System.Drawing.Size(1620, 323);
             this.listView1.TabIndex = 50;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -801,7 +801,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 16);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1747, 37);
+            this.panel2.Size = new System.Drawing.Size(1620, 37);
             this.panel2.TabIndex = 49;
             // 
             // checkBox1
@@ -891,7 +891,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1747, 950);
+            this.ClientSize = new System.Drawing.Size(1620, 920);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
