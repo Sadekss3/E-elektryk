@@ -259,7 +259,7 @@
             this.textBox_product_symbol_search.Name = "textBox_product_symbol_search";
             this.textBox_product_symbol_search.Size = new System.Drawing.Size(133, 20);
             this.textBox_product_symbol_search.TabIndex = 40;
-            this.textBox_product_symbol_search.TextChanged += new System.EventHandler(this.textBox_product_name_search_TextChanged);
+            this.textBox_product_symbol_search.TextChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label9
             // 
@@ -294,7 +294,7 @@
             this.textBox_product_producent_search.Name = "textBox_product_producent_search";
             this.textBox_product_producent_search.Size = new System.Drawing.Size(133, 20);
             this.textBox_product_producent_search.TabIndex = 37;
-            this.textBox_product_producent_search.TextChanged += new System.EventHandler(this.textBox_product_name_search_TextChanged);
+            this.textBox_product_producent_search.TextChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // textBox_product_name_search
             // 
@@ -303,7 +303,7 @@
             this.textBox_product_name_search.Name = "textBox_product_name_search";
             this.textBox_product_name_search.Size = new System.Drawing.Size(133, 20);
             this.textBox_product_name_search.TabIndex = 36;
-            this.textBox_product_name_search.TextChanged += new System.EventHandler(this.textBox_product_name_search_TextChanged);
+            this.textBox_product_name_search.TextChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label11
             // 
