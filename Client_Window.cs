@@ -111,12 +111,12 @@ namespace E_elektryk
 
         public int getSelectedProduct()
         {
-            int Selected_Product_ID = 0;
+            int Selected_Client_ID = 0;
             if (Client_list.SelectedItems.Count > 0)
             {
-                Selected_Product_ID = System.Convert.ToInt32(Client_list.SelectedItems[0].Text);
+                Selected_Client_ID = System.Convert.ToInt32(Client_list.SelectedItems[0].Text);
             }
-            return (Selected_Product_ID);
+            return Selected_Client_ID;
         }
     }
 }
