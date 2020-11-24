@@ -54,9 +54,6 @@
             // 
             this.Client_list.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.Client_list.AllowColumnReorder = true;
-            this.Client_list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Client_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Imie,
@@ -69,14 +66,15 @@
             this.Telefon_1,
             this.Telefon_2});
             this.Client_list.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Client_list.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Client_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Client_list.FullRowSelect = true;
             this.Client_list.GridLines = true;
             this.Client_list.HideSelection = false;
-            this.Client_list.Location = new System.Drawing.Point(-1, 37);
+            this.Client_list.Location = new System.Drawing.Point(0, 46);
             this.Client_list.MultiSelect = false;
             this.Client_list.Name = "Client_list";
-            this.Client_list.Size = new System.Drawing.Size(1666, 713);
+            this.Client_list.Size = new System.Drawing.Size(1534, 704);
             this.Client_list.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.Client_list.TabIndex = 22;
             this.Client_list.UseCompatibleStateImageBehavior = false;
@@ -86,6 +84,7 @@
             // ID
             // 
             this.ID.Text = "ID";
+            this.ID.Width = 40;
             // 
             // Imie
             // 
@@ -115,7 +114,7 @@
             // Adres
             // 
             this.Adres.Text = "Adres";
-            this.Adres.Width = 400;
+            this.Adres.Width = 330;
             // 
             // Email
             // 
@@ -134,8 +133,6 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.panel3.Controls.Add(this.textBox6);
             this.panel3.Controls.Add(this.label8);
@@ -144,10 +141,11 @@
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(-1, 0);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1680, 46);
+            this.panel3.Size = new System.Drawing.Size(1534, 46);
             this.panel3.TabIndex = 26;
             // 
             // textBox6

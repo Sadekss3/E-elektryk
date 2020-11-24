@@ -44,40 +44,40 @@ namespace E_elektryk
 
         private void Add_Offer_Information()
         {
-                using (zlecenieEntities db = new zlecenieEntities())
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                textBox_O_Name.Text = _o.Nazwa;
+                textBox_Offer_Name.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Imie;
+                textBox_Offer_LastName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwisko;
+                textBox_Offer_CompanyName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwa_Firmy;
+                textBox_Town_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Miasto;
+                textBox_Post_Code_1.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(2, 3);
+                textBox_Post_Code_2.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(0, 2);
+                textBox_Street_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Nazwa_ulicy;
+                textBox_Building_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_budynku;
+                textBox_Home_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_mieszkania;
+                textBox_Country_ID.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Państwo;
+                Offer_Information_Box.Text = _o.Opis;
+                dateTimePicker1.Value = _o.Data_Od.Date;
+                dateTimePicker2.Value = _o.Data_Do.Date;
+                List<produkty_w_wycenie> list = db.produkty_w_wycenie.ToList();
+                foreach (produkty_w_wycenie produkty_W_Wycenie in list.Where(id => id.ID_zlecenie == _o.ID))
                 {
-                    textBox_O_Name.Text = _o.Nazwa;
-                    textBox_Offer_Name.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Imie;
-                    textBox_Offer_LastName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwisko;
-                    textBox_Offer_CompanyName.Text = db.kontrahent.Find(_o.Id_zleceniodawca).Nazwa_Firmy;
-                    textBox_Town_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Miasto;
-                    textBox_Post_Code_1.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(2, 3);
-                    textBox_Post_Code_2.Text = (db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Kod_pocztowy).Remove(0, 2);
-                    textBox_Street_Name.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Nazwa_ulicy;
-                    textBox_Building_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_budynku;
-                    textBox_Home_Number.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Numer_mieszkania;
-                    textBox_Country_ID.Text = db.adres.Find(db.kontrahent.Find(_o.Id_zleceniodawca).Adres).Państwo;
-                    Offer_Information_Box.Text = _o.Opis;
-                    dateTimePicker1.Value = _o.Data_Od.Date;
-                    dateTimePicker2.Value = _o.Data_Do.Date;
-                    List<produkty_w_wycenie> list = db.produkty_w_wycenie.ToList();
-                    foreach (produkty_w_wycenie produkty_W_Wycenie in list.Where(id => id.ID_zlecenie == _o.ID))
-                    {
-                        DataGridViewRow item_grid = new DataGridViewRow();
-                        item_grid.CreateCells(dataGridView1);
-                        item_grid.Cells[0].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).ID;
-                        item_grid.Cells[1].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Nazwa;
-                        item_grid.Cells[2].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Producent;
-                        item_grid.Cells[3].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Jm;
-                        item_grid.Cells[4].Value = produkty_W_Wycenie.ilość;
-                        item_grid.Cells[5].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
-                        item_grid.Cells[6].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
-                        item_grid.Cells[7].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat + "%";
-                        item_grid.Cells[8].Value = Math.Round(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto, 2);
-                        item_grid.Cells[9].Value = db.kategoria_produktu.Find(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Kategoria).Nazwa_kategorii;
-                        dataGridView1.Rows.Add(item_grid);
-                    }
+                    DataGridViewRow item_grid = new DataGridViewRow();
+                    item_grid.CreateCells(dataGridView1);
+                    item_grid.Cells[0].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).ID;
+                    item_grid.Cells[1].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Nazwa;
+                    item_grid.Cells[2].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Producent;
+                    item_grid.Cells[3].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Jm;
+                    item_grid.Cells[4].Value = produkty_W_Wycenie.ilość;
+                    item_grid.Cells[5].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
+                    item_grid.Cells[6].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
+                    item_grid.Cells[7].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat + " %";
+                    item_grid.Cells[8].Value = Math.Round(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto, 2);
+                    item_grid.Cells[9].Value = db.kategoria_produktu.Find(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Kategoria).Nazwa_kategorii;
+                    dataGridView1.Rows.Add(item_grid);
                 }
+            }
         } // Fill offer window with information about actual offer
 
         private void Window_Add_Offer_Load(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace E_elektryk
                     item.SubItems.Add(p.Jm.ToString());
                     item.SubItems.Add(p.Ilość.ToString());
                     item.SubItems.Add(p.Cena_netto.ToString() + " zł");
-                    item.SubItems.Add(p.Vat.ToString() + " %");
+                    item.SubItems.Add(p.Vat.ToString());
                     item.SubItems.Add(p.Cena_brutto.ToString() + " zł");
                     if (p.Kategoria != 0)
                     {
@@ -146,11 +146,11 @@ namespace E_elektryk
                 item_grid.Cells[2].Value = item.SubItems[2].Text;   // Add to cells Producent
                 item_grid.Cells[3].Value = item.SubItems[3].Text;   // Add to cells J.m
                 decimal lot = 1;
-                item_grid.Cells[4].Value = lot.ToString();  // One piece for every new Product in DataGrid
+                item_grid.Cells[4].Value = lot;  // One piece for every new Product in DataGrid
                 string net_offer = TRIM_price(item.SubItems[5].Text);
                 item_grid.Cells[5].Value = System.Convert.ToDecimal(net_offer); // Add decimal one piece net price to cells C.J
                 item_grid.Cells[6].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot) + " zł"; // Add calculated net price for all pieces
-                item_grid.Cells[7].Value = item.SubItems[6].Text + "%";   // Add taxe to cells VAT
+                item_grid.Cells[7].Value = item.SubItems[6].Text + " %";   // Add taxe to cells VAT
                 string gross_offer = TRIM_price(item.SubItems[7].Text);
                 item_grid.Cells[8].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot) + " zł";   // Add calculated gross price for all pieces
                 item_grid.Cells[9].Value = item.SubItems[8].Text;   // Add category name to cells Kategoria
@@ -194,7 +194,6 @@ namespace E_elektryk
             }
         } // Add information about Client to Offer Form
 
-
         private void button2_Click(object sender, EventArgs e)
         {
             PdfPCell getCell(String text, int alignment)
@@ -202,7 +201,7 @@ namespace E_elektryk
                 string ss = @"C:\Windows\Fonts\micross.ttf";
                 BaseFont aa = BaseFont.CreateFont(ss, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 iTextSharp.text.Font bb = new iTextSharp.text.Font(aa, 8, iTextSharp.text.Font.NORMAL);
-                PdfPCell cell = new PdfPCell(new Phrase(text , bb));
+                PdfPCell cell = new PdfPCell(new Phrase(text, bb));
                 cell.Padding = (0);
                 cell.HorizontalAlignment = alignment;
                 cell.Border = PdfPCell.NO_BORDER;
@@ -265,7 +264,7 @@ namespace E_elektryk
             #region Title
 
             Paragraph title = new Paragraph();
-            Chunk c1 = new Chunk("Oferta nr: " +_o.ID + "/"+ DateTime.Now.Month + "/" + DateTime.Now.Year, Title_Font);
+            Chunk c1 = new Chunk("Oferta nr: " + _o.ID + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year, Title_Font);
             title.Add(c1);
             title.Alignment = Element.ALIGN_CENTER;
             document.Add(title);
@@ -280,7 +279,7 @@ namespace E_elektryk
             #region date
 
             Paragraph date = new Paragraph();
-            Chunk c3 = new Chunk("Oferta ważna od: " + dateTimePicker1.Value.ToString().Remove(10, 9) +"\r" , Font_Table_Cells);
+            Chunk c3 = new Chunk("Oferta ważna od: " + dateTimePicker1.Value.ToString().Remove(10, 9) + "\r", Font_Table_Cells);
             Chunk c4 = new Chunk("Oferta ważna do: " + dateTimePicker2.Value.ToString().Remove(10, 9), Font_Table_Cells);
             date.Add(c3);
             date.Add(c4);
@@ -295,7 +294,7 @@ namespace E_elektryk
             int columns = dataGridView1.Columns.Count;
             PdfPTable table = new PdfPTable(columns);
 
-            float[] widths = new float[] { 10, 45, 25, 10, 15, 15, 15, 10, 15, 30};
+            float[] widths = new float[] { 10, 45, 25, 10, 15, 15, 15, 10, 15, 30 };
             table.SetWidths(widths);
             table.AddCell(new PdfPCell(new Phrase("ID", Font_Table_Headers)));
             table.AddCell(new PdfPCell(new Phrase("Nazwa", Font_Table_Headers)));
@@ -322,7 +321,7 @@ namespace E_elektryk
             MessageBox.Show("Utworzono ofertę " + _o.ID + "." + DateTime.Now.Month + "." + DateTime.Now.Year + ".pdf");
             Process myProcess = new Process();
             myProcess.StartInfo.FileName = "acroRd32.exe"; //not the full application path
-            myProcess.StartInfo.Arguments = "\""+ @"E:\E-elektryk oferty\" + _o.ID + "_" + DateTime.Now.Month + "_" + DateTime.Now.Year + ".pdf" + "\"";
+            myProcess.StartInfo.Arguments = "\"" + @"E:\E-elektryk oferty\" + _o.ID + "_" + DateTime.Now.Month + "_" + DateTime.Now.Year + ".pdf" + "\"";
             myProcess.Start();
 
         } // Generate offer pdf using itextsharp
@@ -331,28 +330,9 @@ namespace E_elektryk
         {
             foreach (DataGridViewCell selectedcell in dataGridView1.SelectedCells)
             {
-                if (_o == null)
+                if (selectedcell.Selected)
                 {
-                    if (selectedcell.Selected)
-                    {
-                        dataGridView1.Rows.RemoveAt(selectedcell.RowIndex);
-                    }
-                }
-                else
-                {
-                    using (zlecenieEntities db = new zlecenieEntities())
-                    {
-                        produkty_w_wycenie produkt_ = new produkty_w_wycenie();
-                        int ID_produktu = System.Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                        produkt_ = db.produkty_w_wycenie.Find(_o.ID, ID_produktu);
-                        
-                        db.produkty_w_wycenie.Remove(produkt_);
-                        db.SaveChanges();
-                    }
-                    if (selectedcell.Selected)
-                    {
-                        dataGridView1.Rows.RemoveAt(selectedcell.RowIndex);
-                    }
+                    dataGridView1.Rows.RemoveAt(selectedcell.RowIndex);
                 }
             }
             calculate();
@@ -403,7 +383,7 @@ namespace E_elektryk
                 {
                     new_offer.ID = _o.ID;
                     new_offer.Nazwa = textBox_O_Name.Text;
-                    if(client_id == 0)
+                    if (client_id == 0)
                     {
                         new_offer.Id_zleceniodawca = _o.Id_zleceniodawca;
                     }
@@ -417,6 +397,13 @@ namespace E_elektryk
                     new_offer.Status = "Oferta";
                     db.oferta.AddOrUpdate(new_offer);
                     db.SaveChanges();
+                     
+                    foreach(produkty_w_wycenie _W_Wycenie in db.produkty_w_wycenie.Where(id => id.ID_zlecenie.ToString() == _o.ID.ToString()))
+                    {
+                        db.produkty_w_wycenie.Remove(db.produkty_w_wycenie.Find(_W_Wycenie.ID_zlecenie, _W_Wycenie.ID_produktu));
+                    }
+                    db.SaveChanges();
+                    
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         produkty_w_wycenie produkty_W_Wycenie = new produkty_w_wycenie();
@@ -426,13 +413,14 @@ namespace E_elektryk
                         db.produkty_w_wycenie.AddOrUpdate(produkty_W_Wycenie);
                         db.SaveChanges();
                     }
+                    
                     //delete_from_DG();
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("Oferta zaktualizowana", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception)
+                catch (Exception f)
                 {
-                    MessageBox.Show("Błąd zapisu", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(f.Message ,"Błąd zapisu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         } // Modify actual offer
@@ -442,35 +430,43 @@ namespace E_elektryk
             try
             {
                 DataGridViewRow row = dataGridView1.CurrentRow;
-                if (row.Cells[4].Value.ToString().Contains('.'))
+                if (dataGridView1.CurrentRow != null)
                 {
-                    MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (row.Cells[4].Value.ToString().Contains('.'))
+                    {
+                        MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        decimal lot = System.Convert.ToDecimal(row.Cells[4].Value);
+                        string piece_price = TRIM_price(row.Cells[5].Value.ToString());
+                        row.Cells[6].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
+                        string gross_offer = TRIM_price(row.Cells[7].Value.ToString());
+                        string vat = (row.Cells[7].Value.ToString()).Trim(' ', '%');
+                        decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                        row.Cells[8].Value = Gross * lot;
+                        decimal sum_e_taxes = 0;
+                        decimal sum_w_taxes = 0;
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            decimal net = System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString().Trim(' ', 'z', 'ł'));
+                            decimal gross = System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString().Trim(' ', 'z', 'ł'));
+                            sum_e_taxes += System.Convert.ToDecimal(net);
+                            sum_w_taxes += System.Convert.ToDecimal(gross);
+                            sum_e_taxes = Math.Round(sum_e_taxes, 2);
+                            sum_w_taxes = Math.Round(sum_w_taxes, 2);
+                            sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString() + " zł";
+                            sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
+                        }
+                    }
                 }
                 else
                 {
-                    decimal lot = System.Convert.ToDecimal(row.Cells[4].Value);
-                    string piece_price = TRIM_price(row.Cells[5].Value.ToString());
-                    row.Cells[6].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
-                    string gross_offer = TRIM_price(row.Cells[7].Value.ToString());
-                    string vat = (row.Cells[7].Value.ToString()).Trim(' ', '%');
-                    decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
-                    row.Cells[8].Value = Gross * lot;
-                    decimal sum_e_taxes = 0;
-                    decimal sum_w_taxes = 0;
-                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                    {
-                        decimal net = System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString().Trim(' ', 'z','ł'));
-                        decimal gross = System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value.ToString().Trim(' ', 'z', 'ł'));
-                        sum_e_taxes += System.Convert.ToDecimal(net);
-                        sum_w_taxes += System.Convert.ToDecimal(gross);
-                        sum_e_taxes = Math.Round(sum_e_taxes, 2);
-                        sum_w_taxes = Math.Round(sum_w_taxes, 2);
-                        sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString() + " zł";
-                        sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
-                    }
+                    sum_e_taxes_label.Text = "Suma Netto: " + 0 + " zł";
+                    sum_w_taxes_label.Text = "Suma Brutto: " + 0 + " zł";
                 }
             }
-            catch(Exception f)
+            catch (Exception f)
             {
                 MessageBox.Show(f.Message, "Problem z przeliczeniem");
             }
