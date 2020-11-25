@@ -39,6 +39,8 @@ namespace E_elektryk
             //Offer_List_Update();
         }
 
+        #region menu_window_method
+
         private void button_Exit_Window_Click(object sender, EventArgs e)
         {
             Environment.Exit(1);
@@ -71,7 +73,6 @@ namespace E_elektryk
             if (panel_Invoice.Visible == true)
                 panel_Invoice.Visible = false;
         }
-
         private void Show_Sub_Menu(Panel panel)
         {
             if (panel.Visible == false)
@@ -83,12 +84,34 @@ namespace E_elektryk
                 panel.Visible = false;
             }
         }
+        
+        private Form activeForm = null;
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_Main_Window.Controls.Add(childForm);
+            panel_Main_Window.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        } // Open new window in main window panel
 
         private void button_main_menu_Click(object sender, EventArgs e)
         {
             this.activeForm.Close();
             Hide_Sub_Menu();
         }
+
+        #endregion
+
+        #region menu_main_buttons
 
         private void button_Order_Click(object sender, EventArgs e)
         {
@@ -115,23 +138,9 @@ namespace E_elektryk
             Show_Sub_Menu(panel_Invoice);
         } // Open Invoice Widnow
 
-        private Form activeForm = null;
+        #endregion
 
-        private void OpenChildForm(Form childForm)
-        {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panel_Main_Window.Controls.Add(childForm);
-            panel_Main_Window.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        } // Open new window in main window panel
+        #region buttons_new
 
         private void button_New_Offer_Click(object sender, EventArgs e) // Open New Offer Window
         {
@@ -148,6 +157,10 @@ namespace E_elektryk
         {
             OpenChildForm(new Window_Add_Client());
         } // Open New Client Window
+
+        #endregion
+
+        #region buttons_modify
 
         private void button_Modify_Product_Click(object sender, EventArgs e)
         {
@@ -210,6 +223,10 @@ namespace E_elektryk
             }
         } // Modify Client information
 
+        #endregion
+
+        #region lists_buttons
+
         private void button_order_list_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Order_window());
@@ -237,5 +254,89 @@ namespace E_elektryk
         {
             OpenChildForm(new Invoice_Window());
         } // Show invoice list
+
+        #endregion
+
+        #region menu_status_buttons
+
+        private void button_Change_Offer_Status_Click(object sender, EventArgs e)
+        {
+            Show_Sub_Menu(panel_Offer_status);
+        }
+
+        private void button_Change_Order_Status_Click(object sender, EventArgs e)
+        {
+            Show_Sub_Menu(panel_Order_status);
+        }
+
+        private void button_Client_Status_Click(object sender, EventArgs e)
+        {
+            Show_Sub_Menu(panel_Client_status);
+        }
+
+        private void button_Product_status_Click(object sender, EventArgs e)
+        {
+            Show_Sub_Menu(panel_Product_status);
+        }
+
+        #endregion
+
+        #region client_status_panel
+
+        private void button_CStatus_active_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region product_status_panel
+
+        private void button_PStatus_Active_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    int ID = pW.getSelectedProduct();
+                    if (ID != 0)
+                    {
+                        produkt pm = db.produkt.Find(ID);
+                        pm.Status = 1;
+                        db.SaveChanges();
+                        pW = new Product_Window();
+                        OpenChildForm(pW);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        private void button_PStatus_withdrawn_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    int ID = pW.getSelectedProduct();
+                    if (ID != 0)
+                    {
+                        produkt pm = db.produkt.Find(ID);
+                        pm.Status = 2;
+                        db.SaveChanges();
+                        pW = new Product_Window();
+                        OpenChildForm(pW);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        #endregion
     }
 }
