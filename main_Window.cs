@@ -84,7 +84,7 @@ namespace E_elektryk
                 panel.Visible = false;
             }
         }
-        
+
         private Form activeForm = null;
 
         private void OpenChildForm(Form childForm)
@@ -120,17 +120,17 @@ namespace E_elektryk
 
         private void button_Offer_Click(object sender, EventArgs e)
         {
-            Show_Sub_Menu(panel_Offer);    
+            Show_Sub_Menu(panel_Offer);
         } // Open Offer Window
 
         private void button_Client_Click(object sender, EventArgs e)
         {
-            Show_Sub_Menu(panel_Client); 
+            Show_Sub_Menu(panel_Client);
         } // Open Client Window
 
         private void button_Product_Click(object sender, EventArgs e)
         {
-            Show_Sub_Menu(panel_Product);       
+            Show_Sub_Menu(panel_Product);
         } // Open Product Window
 
         private void button_Invoice_Click(object sender, EventArgs e)
@@ -141,6 +141,11 @@ namespace E_elektryk
         #endregion
 
         #region buttons_new
+
+        private void button_New_Order_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Window_Add_Order());
+        }
 
         private void button_New_Offer_Click(object sender, EventArgs e) // Open New Offer Window
         {
@@ -178,8 +183,8 @@ namespace E_elektryk
                 catch
                 {
 
-                }   
-            }    
+                }
+            }
         } // Modify Product information
 
         private void button_Modify_Order_Click(object sender, EventArgs e)
@@ -219,7 +224,7 @@ namespace E_elektryk
                 {
 
                 }
-                
+
             }
         } // Modify Client information
 
@@ -338,5 +343,6 @@ namespace E_elektryk
         }
 
         #endregion
+
     }
 }

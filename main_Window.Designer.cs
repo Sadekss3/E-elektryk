@@ -888,6 +888,7 @@
             this.button_New_Order.Text = "Nowe zlecenie";
             this.button_New_Order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_New_Order.UseVisualStyleBackColor = false;
+            this.button_New_Order.Click += new System.EventHandler(this.button_New_Order_Click);
             // 
             // button_Order
             // 
