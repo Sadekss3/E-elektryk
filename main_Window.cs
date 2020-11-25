@@ -92,34 +92,26 @@ namespace E_elektryk
 
         private void button_Order_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Order_window());
             Show_Sub_Menu(panel_Order);
         } // Open Order Window
 
         private void button_Offer_Click(object sender, EventArgs e)
         {
-            Show_Sub_Menu(panel_Offer);
-            ofW = new Offer_Window();
-            OpenChildForm(ofW);      
+            Show_Sub_Menu(panel_Offer);    
         } // Open Offer Window
 
         private void button_Client_Click(object sender, EventArgs e)
         {
-            Show_Sub_Menu(panel_Client);
-            cW = new Client_Window();
-            OpenChildForm(cW);    
+            Show_Sub_Menu(panel_Client); 
         } // Open Client Window
 
         private void button_Product_Click(object sender, EventArgs e)
         {
-            Show_Sub_Menu(panel_Product);
-            pW = new Product_Window();
-            OpenChildForm(pW);         
+            Show_Sub_Menu(panel_Product);       
         } // Open Product Window
 
         private void button_Invoice_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Invoice_Window());
             Show_Sub_Menu(panel_Invoice);
         } // Open Invoice Widnow
 
@@ -161,12 +153,19 @@ namespace E_elektryk
         {
             using (zlecenieEntities db = new zlecenieEntities())
             {
-                int ID = pW.getSelectedProduct();
-                if (ID != 0)
+                try
                 {
-                    produkt pm = db.produkt.Find(ID);
-                    OpenChildForm(new Window_Add_Product(pm));
-                }    
+                    int ID = pW.getSelectedProduct();
+                    if (ID != 0)
+                    {
+                        produkt pm = db.produkt.Find(ID);
+                        OpenChildForm(new Window_Add_Product(pm));
+                    }
+                }
+                catch
+                {
+
+                }   
             }    
         } // Modify Product information
 
@@ -174,12 +173,19 @@ namespace E_elektryk
         {
             using (zlecenieEntities db = new zlecenieEntities())
             {
-                int ID = ofW.getSelectedProduct();
-                if (ID != 0)
+                try
                 {
-                    oferta mof = db.oferta.Find(ID);
-                    OpenChildForm(new Window_Add_Offer(mof));
-                }   
+                    int ID = ofW.getSelectedProduct();
+                    if (ID != 0)
+                    {
+                        oferta mof = db.oferta.Find(ID);
+                        OpenChildForm(new Window_Add_Offer(mof));
+                    }
+                }
+                catch
+                {
+
+                }
             }
         } // Modify Offer information
 
@@ -187,14 +193,49 @@ namespace E_elektryk
         {
             using (zlecenieEntities db = new zlecenieEntities())
             {
-                int ID = cW.getSelectedProduct();
-                if (ID != 0)
+                try
                 {
-                    kontrahent mc = db.kontrahent.Find(ID);
-                    OpenChildForm(new Window_Add_Client(mc));
-                } 
+                    int ID = cW.getSelectedClient();
+                    if (ID != 0)
+                    {
+                        kontrahent mc = db.kontrahent.Find(ID);
+                        OpenChildForm(new Window_Add_Client(mc));
+                    }
+                }
+                catch
+                {
+
+                }
+                
             }
         } // Modify Client information
 
+        private void button_order_list_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Order_window());
+        } // Show order list
+
+        private void button_Offer_list_Click(object sender, EventArgs e)
+        {
+            ofW = new Offer_Window();
+            OpenChildForm(ofW);
+        } // Show offer list
+
+        private void button_Clients_list_Click(object sender, EventArgs e)
+        {
+            cW = new Client_Window();
+            OpenChildForm(cW);
+        } // Show clients list
+
+        private void button_Products_list_Click(object sender, EventArgs e)
+        {
+            pW = new Product_Window();
+            OpenChildForm(pW);
+        } // Show products list
+
+        private void button_Invoice_list_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Invoice_Window());
+        } // Show invoice list
     }
 }

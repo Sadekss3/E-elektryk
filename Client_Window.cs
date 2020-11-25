@@ -109,7 +109,7 @@ namespace E_elektryk
             Cursor.Current = Cursors.Default;
         } // Search and fill list by input
 
-        public int getSelectedProduct()
+        public int getSelectedClient()
         {
             int Selected_Client_ID = 0;
             if (Client_list.SelectedItems.Count > 0)

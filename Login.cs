@@ -19,24 +19,32 @@ namespace E_elektryk
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            Cursor.Current = Cursors.WaitCursor;
+            using (zlecenieEntities db = new zlecenieEntities())
             {
-                Cursor.Current = Cursors.WaitCursor;
-                using (zlecenieEntities db = new zlecenieEntities())
+                string login = textBox1.Text.ToLower();
+                string password = textBox2.Text;
+                Dane_Logowania dane_Logowania = new Dane_Logowania();
+                dane_Logowania = db.Dane_Logowania.Find(login.ToLower());
+                if (login == "" && password == "")
                 {
-                    string login = textBox1.Text.ToLower();
-                    string password = textBox2.Text;
-                    Dane_Logowania dane_Logowania = new Dane_Logowania();
-                    dane_Logowania = db.Dane_Logowania.Find(login.ToLower());
+                    MessageBox.Show("Wypełnij pola Hasło i Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (login == "")
+                {
+                    MessageBox.Show("Wypełnij pole Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (password == "")
+                {
+                    MessageBox.Show("Wypełnij pole Hasło", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
                     try
                     {
                         if (dane_Logowania.Login.ToLower() == login && dane_Logowania.Hasło == password)
                         {
                             Close();
-                        }
-                        else if (login == "" || password == "")
-                        {
-                            MessageBox.Show("Wypełnij pola Hasło i Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
@@ -45,15 +53,11 @@ namespace E_elektryk
                     }
                     catch
                     {
-                        MessageBox.Show("Wypełnij pola Hasło i Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Błędne dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    Cursor.Current = Cursors.Default;
-                }
+                } 
             }
-            catch
-            {
-                MessageBox.Show("Brak połączenia do bazy danych", "Błąd Bazy Danych", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            Cursor.Current = Cursors.Default;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,7 +67,7 @@ namespace E_elektryk
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text == "" && textBox2.Text == "")
+            if (textBox1.Text == "" && textBox2.Text == "")
             {
                 MessageBox.Show("Uzupełnij pole Login i Hasło", "Podaj dane", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -94,5 +98,6 @@ namespace E_elektryk
                 }
             }
         }
+
     }
 }

@@ -41,7 +41,6 @@
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.panel_Invoice = new System.Windows.Forms.Panel();
             this.button_Print_Invoice = new System.Windows.Forms.Button();
-            this.button_Show_Invoice = new System.Windows.Forms.Button();
             this.button_Invoice = new System.Windows.Forms.Button();
             this.panel_Product = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -71,6 +70,11 @@
             this.button_minimalize_window = new System.Windows.Forms.Button();
             this.panel_Main_Window = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_order_list = new System.Windows.Forms.Button();
+            this.button_Offer_list = new System.Windows.Forms.Button();
+            this.button_Clients_list = new System.Windows.Forms.Button();
+            this.button_Products_list = new System.Windows.Forms.Button();
+            this.button_Invoice_list = new System.Windows.Forms.Button();
             this.panel_Menu.SuspendLayout();
             this.panel_Invoice.SuspendLayout();
             this.panel_Product.SuspendLayout();
@@ -166,13 +170,13 @@
             // panel_Invoice
             // 
             this.panel_Invoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(41)))));
+            this.panel_Invoice.Controls.Add(this.button_Invoice_list);
             this.panel_Invoice.Controls.Add(this.button_Print_Invoice);
-            this.panel_Invoice.Controls.Add(this.button_Show_Invoice);
             this.panel_Invoice.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Invoice.ForeColor = System.Drawing.Color.White;
-            this.panel_Invoice.Location = new System.Drawing.Point(0, 848);
+            this.panel_Invoice.Location = new System.Drawing.Point(0, 979);
             this.panel_Invoice.Name = "panel_Invoice";
-            this.panel_Invoice.Size = new System.Drawing.Size(220, 64);
+            this.panel_Invoice.Size = new System.Drawing.Size(203, 120);
             this.panel_Invoice.TabIndex = 24;
             // 
             // button_Print_Invoice
@@ -183,29 +187,12 @@
             this.button_Print_Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Print_Invoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Print_Invoice.ForeColor = System.Drawing.Color.White;
-            this.button_Print_Invoice.Location = new System.Drawing.Point(0, 32);
+            this.button_Print_Invoice.Location = new System.Drawing.Point(0, 0);
             this.button_Print_Invoice.Name = "button_Print_Invoice";
-            this.button_Print_Invoice.Size = new System.Drawing.Size(220, 32);
+            this.button_Print_Invoice.Size = new System.Drawing.Size(203, 32);
             this.button_Print_Invoice.TabIndex = 2;
             this.button_Print_Invoice.Text = "Drukuj FV";
-            this.button_Print_Invoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Print_Invoice.UseVisualStyleBackColor = false;
-            // 
-            // button_Show_Invoice
-            // 
-            this.button_Show_Invoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
-            this.button_Show_Invoice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_Show_Invoice.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.button_Show_Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Show_Invoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_Show_Invoice.ForeColor = System.Drawing.Color.White;
-            this.button_Show_Invoice.Location = new System.Drawing.Point(0, 0);
-            this.button_Show_Invoice.Name = "button_Show_Invoice";
-            this.button_Show_Invoice.Size = new System.Drawing.Size(220, 32);
-            this.button_Show_Invoice.TabIndex = 1;
-            this.button_Show_Invoice.Text = "Pokaż FV";
-            this.button_Show_Invoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Show_Invoice.UseVisualStyleBackColor = false;
             // 
             // button_Invoice
             // 
@@ -219,9 +206,9 @@
             this.button_Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Invoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Invoice.ForeColor = System.Drawing.Color.White;
-            this.button_Invoice.Location = new System.Drawing.Point(0, 803);
+            this.button_Invoice.Location = new System.Drawing.Point(0, 934);
             this.button_Invoice.Name = "button_Invoice";
-            this.button_Invoice.Size = new System.Drawing.Size(220, 45);
+            this.button_Invoice.Size = new System.Drawing.Size(203, 45);
             this.button_Invoice.TabIndex = 23;
             this.button_Invoice.Text = "Faktury";
             this.button_Invoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,15 +217,16 @@
             // 
             // panel_Product
             // 
-            this.panel_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(168)))));
+            this.panel_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel_Product.Controls.Add(this.button_Products_list);
             this.panel_Product.Controls.Add(this.button3);
             this.panel_Product.Controls.Add(this.button_Modify_Product);
             this.panel_Product.Controls.Add(this.Button_New_Product);
             this.panel_Product.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Product.ForeColor = System.Drawing.Color.White;
-            this.panel_Product.Location = new System.Drawing.Point(0, 707);
+            this.panel_Product.Location = new System.Drawing.Point(0, 805);
             this.panel_Product.Name = "panel_Product";
-            this.panel_Product.Size = new System.Drawing.Size(220, 96);
+            this.panel_Product.Size = new System.Drawing.Size(203, 129);
             this.panel_Product.TabIndex = 22;
             // 
             // button3
@@ -251,10 +239,9 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(0, 64);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(220, 32);
+            this.button3.Size = new System.Drawing.Size(203, 32);
             this.button3.TabIndex = 2;
             this.button3.Text = "Zmień Status Produktu";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button_Modify_Product
@@ -267,10 +254,9 @@
             this.button_Modify_Product.ForeColor = System.Drawing.Color.White;
             this.button_Modify_Product.Location = new System.Drawing.Point(0, 32);
             this.button_Modify_Product.Name = "button_Modify_Product";
-            this.button_Modify_Product.Size = new System.Drawing.Size(220, 32);
+            this.button_Modify_Product.Size = new System.Drawing.Size(203, 32);
             this.button_Modify_Product.TabIndex = 1;
             this.button_Modify_Product.Text = "Modyfikuj Dane \r\nProduktu";
-            this.button_Modify_Product.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Modify_Product.UseVisualStyleBackColor = false;
             this.button_Modify_Product.Click += new System.EventHandler(this.button_Modify_Product_Click);
             // 
@@ -284,10 +270,9 @@
             this.Button_New_Product.ForeColor = System.Drawing.Color.White;
             this.Button_New_Product.Location = new System.Drawing.Point(0, 0);
             this.Button_New_Product.Name = "Button_New_Product";
-            this.Button_New_Product.Size = new System.Drawing.Size(220, 32);
+            this.Button_New_Product.Size = new System.Drawing.Size(203, 32);
             this.Button_New_Product.TabIndex = 0;
             this.Button_New_Product.Text = "Nowy Produkt";
-            this.Button_New_Product.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Button_New_Product.UseVisualStyleBackColor = false;
             this.Button_New_Product.Click += new System.EventHandler(this.Button_New_Product_Click);
             // 
@@ -303,9 +288,9 @@
             this.button_Product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Product.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Product.ForeColor = System.Drawing.Color.White;
-            this.button_Product.Location = new System.Drawing.Point(0, 637);
+            this.button_Product.Location = new System.Drawing.Point(0, 735);
             this.button_Product.Name = "button_Product";
-            this.button_Product.Size = new System.Drawing.Size(220, 70);
+            this.button_Product.Size = new System.Drawing.Size(203, 70);
             this.button_Product.TabIndex = 21;
             this.button_Product.Text = "Kartoteka\r\nMateriałowa";
             this.button_Product.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -315,14 +300,15 @@
             // panel_Client
             // 
             this.panel_Client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(41)))));
+            this.panel_Client.Controls.Add(this.button_Clients_list);
             this.panel_Client.Controls.Add(this.button4);
             this.panel_Client.Controls.Add(this.Button_Modify_Client);
             this.panel_Client.Controls.Add(this.Buton_New_client);
             this.panel_Client.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Client.ForeColor = System.Drawing.Color.White;
-            this.panel_Client.Location = new System.Drawing.Point(0, 517);
+            this.panel_Client.Location = new System.Drawing.Point(0, 581);
             this.panel_Client.Name = "panel_Client";
-            this.panel_Client.Size = new System.Drawing.Size(220, 120);
+            this.panel_Client.Size = new System.Drawing.Size(203, 154);
             this.panel_Client.TabIndex = 20;
             // 
             // button4
@@ -335,10 +321,9 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(0, 87);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(220, 32);
+            this.button4.Size = new System.Drawing.Size(203, 32);
             this.button4.TabIndex = 2;
             this.button4.Text = "Usuń Kontrahenta";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
             // 
             // Button_Modify_Client
@@ -351,10 +336,9 @@
             this.Button_Modify_Client.ForeColor = System.Drawing.Color.White;
             this.Button_Modify_Client.Location = new System.Drawing.Point(0, 32);
             this.Button_Modify_Client.Name = "Button_Modify_Client";
-            this.Button_Modify_Client.Size = new System.Drawing.Size(220, 55);
+            this.Button_Modify_Client.Size = new System.Drawing.Size(203, 55);
             this.Button_Modify_Client.TabIndex = 1;
             this.Button_Modify_Client.Text = "Modyfikuj Dane \r\nKontrahenta";
-            this.Button_Modify_Client.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Button_Modify_Client.UseVisualStyleBackColor = false;
             this.Button_Modify_Client.Click += new System.EventHandler(this.Button_Modify_Client_Click);
             // 
@@ -368,10 +352,9 @@
             this.Buton_New_client.ForeColor = System.Drawing.Color.White;
             this.Buton_New_client.Location = new System.Drawing.Point(0, 0);
             this.Buton_New_client.Name = "Buton_New_client";
-            this.Buton_New_client.Size = new System.Drawing.Size(220, 32);
+            this.Buton_New_client.Size = new System.Drawing.Size(203, 32);
             this.Buton_New_client.TabIndex = 0;
             this.Buton_New_client.Text = "Nowy Kontrahent";
-            this.Buton_New_client.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buton_New_client.UseVisualStyleBackColor = false;
             this.Buton_New_client.Click += new System.EventHandler(this.Buton_New_client_Click);
             // 
@@ -387,9 +370,9 @@
             this.button_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Client.ForeColor = System.Drawing.Color.White;
-            this.button_Client.Location = new System.Drawing.Point(0, 472);
+            this.button_Client.Location = new System.Drawing.Point(0, 536);
             this.button_Client.Name = "button_Client";
-            this.button_Client.Size = new System.Drawing.Size(220, 45);
+            this.button_Client.Size = new System.Drawing.Size(203, 45);
             this.button_Client.TabIndex = 19;
             this.button_Client.Text = "Kontrahenci";
             this.button_Client.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -399,14 +382,15 @@
             // panel_Offer
             // 
             this.panel_Offer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(41)))));
+            this.panel_Offer.Controls.Add(this.button_Offer_list);
             this.panel_Offer.Controls.Add(this.button_Change_Offer_Status);
             this.panel_Offer.Controls.Add(this.button_Modify_Offer);
             this.panel_Offer.Controls.Add(this.button_New_Offer);
             this.panel_Offer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Offer.ForeColor = System.Drawing.Color.White;
-            this.panel_Offer.Location = new System.Drawing.Point(0, 376);
+            this.panel_Offer.Location = new System.Drawing.Point(0, 408);
             this.panel_Offer.Name = "panel_Offer";
-            this.panel_Offer.Size = new System.Drawing.Size(220, 96);
+            this.panel_Offer.Size = new System.Drawing.Size(203, 128);
             this.panel_Offer.TabIndex = 18;
             // 
             // button_Change_Offer_Status
@@ -419,10 +403,9 @@
             this.button_Change_Offer_Status.ForeColor = System.Drawing.Color.White;
             this.button_Change_Offer_Status.Location = new System.Drawing.Point(0, 64);
             this.button_Change_Offer_Status.Name = "button_Change_Offer_Status";
-            this.button_Change_Offer_Status.Size = new System.Drawing.Size(220, 32);
+            this.button_Change_Offer_Status.Size = new System.Drawing.Size(203, 32);
             this.button_Change_Offer_Status.TabIndex = 2;
             this.button_Change_Offer_Status.Text = "Zmień Status Oferty";
-            this.button_Change_Offer_Status.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Change_Offer_Status.UseVisualStyleBackColor = false;
             // 
             // button_Modify_Offer
@@ -435,10 +418,9 @@
             this.button_Modify_Offer.ForeColor = System.Drawing.Color.White;
             this.button_Modify_Offer.Location = new System.Drawing.Point(0, 32);
             this.button_Modify_Offer.Name = "button_Modify_Offer";
-            this.button_Modify_Offer.Size = new System.Drawing.Size(220, 32);
+            this.button_Modify_Offer.Size = new System.Drawing.Size(203, 32);
             this.button_Modify_Offer.TabIndex = 1;
             this.button_Modify_Offer.Text = "Modyfikuj Oferte";
-            this.button_Modify_Offer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Modify_Offer.UseVisualStyleBackColor = false;
             this.button_Modify_Offer.Click += new System.EventHandler(this.button_Modify_Order_Click);
             // 
@@ -452,10 +434,9 @@
             this.button_New_Offer.ForeColor = System.Drawing.Color.White;
             this.button_New_Offer.Location = new System.Drawing.Point(0, 0);
             this.button_New_Offer.Name = "button_New_Offer";
-            this.button_New_Offer.Size = new System.Drawing.Size(220, 32);
+            this.button_New_Offer.Size = new System.Drawing.Size(203, 32);
             this.button_New_Offer.TabIndex = 0;
             this.button_New_Offer.Text = "Nowa Oferta";
-            this.button_New_Offer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_New_Offer.UseVisualStyleBackColor = false;
             this.button_New_Offer.Click += new System.EventHandler(this.button_New_Offer_Click);
             // 
@@ -471,9 +452,9 @@
             this.button_Offer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Offer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Offer.ForeColor = System.Drawing.Color.White;
-            this.button_Offer.Location = new System.Drawing.Point(0, 331);
+            this.button_Offer.Location = new System.Drawing.Point(0, 363);
             this.button_Offer.Name = "button_Offer";
-            this.button_Offer.Size = new System.Drawing.Size(220, 45);
+            this.button_Offer.Size = new System.Drawing.Size(203, 45);
             this.button_Offer.TabIndex = 17;
             this.button_Offer.Text = "Wyceny";
             this.button_Offer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -483,6 +464,7 @@
             // panel_Order
             // 
             this.panel_Order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(41)))));
+            this.panel_Order.Controls.Add(this.button_order_list);
             this.panel_Order.Controls.Add(this.button_Change_Order_Status);
             this.panel_Order.Controls.Add(this.button_Modify_Order_Info);
             this.panel_Order.Controls.Add(this.button_New_Order);
@@ -490,7 +472,7 @@
             this.panel_Order.ForeColor = System.Drawing.Color.White;
             this.panel_Order.Location = new System.Drawing.Point(0, 235);
             this.panel_Order.Name = "panel_Order";
-            this.panel_Order.Size = new System.Drawing.Size(220, 96);
+            this.panel_Order.Size = new System.Drawing.Size(203, 128);
             this.panel_Order.TabIndex = 16;
             // 
             // button_Change_Order_Status
@@ -504,10 +486,9 @@
             this.button_Change_Order_Status.ForeColor = System.Drawing.Color.White;
             this.button_Change_Order_Status.Location = new System.Drawing.Point(0, 64);
             this.button_Change_Order_Status.Name = "button_Change_Order_Status";
-            this.button_Change_Order_Status.Size = new System.Drawing.Size(220, 32);
+            this.button_Change_Order_Status.Size = new System.Drawing.Size(203, 32);
             this.button_Change_Order_Status.TabIndex = 2;
             this.button_Change_Order_Status.Text = "Zmień Status Zlecenia";
-            this.button_Change_Order_Status.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Change_Order_Status.UseVisualStyleBackColor = false;
             // 
             // button_Modify_Order_Info
@@ -521,10 +502,9 @@
             this.button_Modify_Order_Info.ForeColor = System.Drawing.Color.White;
             this.button_Modify_Order_Info.Location = new System.Drawing.Point(0, 32);
             this.button_Modify_Order_Info.Name = "button_Modify_Order_Info";
-            this.button_Modify_Order_Info.Size = new System.Drawing.Size(220, 32);
+            this.button_Modify_Order_Info.Size = new System.Drawing.Size(203, 32);
             this.button_Modify_Order_Info.TabIndex = 1;
             this.button_Modify_Order_Info.Text = "Modyfikuj zlecenie";
-            this.button_Modify_Order_Info.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Modify_Order_Info.UseVisualStyleBackColor = false;
             // 
             // button_New_Order
@@ -538,10 +518,9 @@
             this.button_New_Order.ForeColor = System.Drawing.Color.White;
             this.button_New_Order.Location = new System.Drawing.Point(0, 0);
             this.button_New_Order.Name = "button_New_Order";
-            this.button_New_Order.Size = new System.Drawing.Size(220, 32);
+            this.button_New_Order.Size = new System.Drawing.Size(203, 32);
             this.button_New_Order.TabIndex = 0;
             this.button_New_Order.Text = "Nowe zlecenie";
-            this.button_New_Order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_New_Order.UseVisualStyleBackColor = false;
             // 
             // button_Order
@@ -558,7 +537,7 @@
             this.button_Order.ForeColor = System.Drawing.Color.White;
             this.button_Order.Location = new System.Drawing.Point(0, 190);
             this.button_Order.Name = "button_Order";
-            this.button_Order.Size = new System.Drawing.Size(220, 45);
+            this.button_Order.Size = new System.Drawing.Size(203, 45);
             this.button_Order.TabIndex = 15;
             this.button_Order.Text = "Zlecenia";
             this.button_Order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -574,7 +553,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(220, 190);
+            this.panel11.Size = new System.Drawing.Size(203, 190);
             this.panel11.TabIndex = 0;
             // 
             // button_main_menu
@@ -587,7 +566,7 @@
             this.button_main_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_main_menu.Location = new System.Drawing.Point(0, 0);
             this.button_main_menu.Name = "button_main_menu";
-            this.button_main_menu.Size = new System.Drawing.Size(220, 190);
+            this.button_main_menu.Size = new System.Drawing.Size(203, 190);
             this.button_main_menu.TabIndex = 0;
             this.button_main_menu.UseVisualStyleBackColor = false;
             this.button_main_menu.Click += new System.EventHandler(this.button_main_menu_Click);
@@ -668,6 +647,87 @@
             this.label1.Text = "                         E - Elektryk\r\nZarządzanie zleceniami dla firm elektryczn" +
     "ych\r\n";
             // 
+            // button_order_list
+            // 
+            this.button_order_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.button_order_list.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_order_list.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_order_list.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.button_order_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_order_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_order_list.ForeColor = System.Drawing.Color.White;
+            this.button_order_list.Location = new System.Drawing.Point(0, 96);
+            this.button_order_list.Name = "button_order_list";
+            this.button_order_list.Size = new System.Drawing.Size(203, 32);
+            this.button_order_list.TabIndex = 3;
+            this.button_order_list.Text = "Lista zleceń";
+            this.button_order_list.UseVisualStyleBackColor = false;
+            this.button_order_list.Click += new System.EventHandler(this.button_order_list_Click);
+            // 
+            // button_Offer_list
+            // 
+            this.button_Offer_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.button_Offer_list.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_Offer_list.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.button_Offer_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Offer_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Offer_list.ForeColor = System.Drawing.Color.White;
+            this.button_Offer_list.Location = new System.Drawing.Point(0, 96);
+            this.button_Offer_list.Name = "button_Offer_list";
+            this.button_Offer_list.Size = new System.Drawing.Size(203, 31);
+            this.button_Offer_list.TabIndex = 3;
+            this.button_Offer_list.Text = "Lista Ofert";
+            this.button_Offer_list.UseVisualStyleBackColor = false;
+            this.button_Offer_list.Click += new System.EventHandler(this.button_Offer_list_Click);
+            // 
+            // button_Clients_list
+            // 
+            this.button_Clients_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.button_Clients_list.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_Clients_list.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.button_Clients_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Clients_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Clients_list.ForeColor = System.Drawing.Color.White;
+            this.button_Clients_list.Location = new System.Drawing.Point(0, 119);
+            this.button_Clients_list.Name = "button_Clients_list";
+            this.button_Clients_list.Size = new System.Drawing.Size(203, 32);
+            this.button_Clients_list.TabIndex = 3;
+            this.button_Clients_list.Text = "Lista Kontrahentów";
+            this.button_Clients_list.UseVisualStyleBackColor = false;
+            this.button_Clients_list.Click += new System.EventHandler(this.button_Clients_list_Click);
+            // 
+            // button_Products_list
+            // 
+            this.button_Products_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.button_Products_list.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_Products_list.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.button_Products_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Products_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Products_list.ForeColor = System.Drawing.Color.White;
+            this.button_Products_list.Location = new System.Drawing.Point(0, 96);
+            this.button_Products_list.Name = "button_Products_list";
+            this.button_Products_list.Size = new System.Drawing.Size(203, 32);
+            this.button_Products_list.TabIndex = 3;
+            this.button_Products_list.Text = "Kartoteka Materiałowa";
+            this.button_Products_list.UseVisualStyleBackColor = false;
+            this.button_Products_list.Click += new System.EventHandler(this.button_Products_list_Click);
+            // 
+            // button_Invoice_list
+            // 
+            this.button_Invoice_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.button_Invoice_list.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_Invoice_list.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.button_Invoice_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Invoice_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Invoice_list.ForeColor = System.Drawing.Color.White;
+            this.button_Invoice_list.Location = new System.Drawing.Point(0, 32);
+            this.button_Invoice_list.Name = "button_Invoice_list";
+            this.button_Invoice_list.Size = new System.Drawing.Size(203, 32);
+            this.button_Invoice_list.TabIndex = 3;
+            this.button_Invoice_list.Text = "Lista Sprzedaży ";
+            this.button_Invoice_list.UseVisualStyleBackColor = false;
+            this.button_Invoice_list.Click += new System.EventHandler(this.button_Invoice_list_Click);
+            // 
             // main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,7 +779,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel_Invoice;
         private System.Windows.Forms.Button button_Print_Invoice;
-        private System.Windows.Forms.Button button_Show_Invoice;
         private System.Windows.Forms.Button button_Invoice;
         private System.Windows.Forms.Panel panel_Product;
         private System.Windows.Forms.Button button3;
@@ -744,6 +803,11 @@
         private System.Windows.Forms.Panel panel_Main_Window;
         private System.Windows.Forms.Button button_main_menu;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_Invoice_list;
+        private System.Windows.Forms.Button button_Products_list;
+        private System.Windows.Forms.Button button_Clients_list;
+        private System.Windows.Forms.Button button_Offer_list;
+        private System.Windows.Forms.Button button_order_list;
     }
 }
 
