@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -80,23 +80,14 @@
             this.sum_e_taxes_label = new System.Windows.Forms.Label();
             this.label_Order_Date_end = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox_Country_ID = new System.Windows.Forms.TextBox();
-            this.Label_Country_Name = new System.Windows.Forms.Label();
-            this.textBox_Post_Code_2 = new System.Windows.Forms.TextBox();
             this.textBox_Offer_CompanyName = new System.Windows.Forms.TextBox();
-            this.textBox_Post_Code_1 = new System.Windows.Forms.TextBox();
             this.label_Offer_Name = new System.Windows.Forms.Label();
-            this.textBox_Town_Name = new System.Windows.Forms.TextBox();
             this.textBox_Offer_LastName = new System.Windows.Forms.TextBox();
             this.label_Offer_Client = new System.Windows.Forms.Label();
             this.textBox_Offer_Name = new System.Windows.Forms.TextBox();
             this.Button_chose_Client = new System.Windows.Forms.Button();
-            this.label_Offer_Adress = new System.Windows.Forms.Label();
-            this.textBox_Home_Number = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
             this.sum_w_taxes_label = new System.Windows.Forms.Label();
-            this.textBox_Building_Number = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -116,14 +107,8 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.zlecenieDataSet1 = new E_elektryk.zlecenieDataSet();
-            this.label1 = new System.Windows.Forms.Label();
             this.label_Order_Date_start = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox_Street_Name = new System.Windows.Forms.TextBox();
             this.textBox_O_Name = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
@@ -146,6 +131,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -402,9 +388,9 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle11.Format = "C2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle21.Format = "C2";
+            dataGridViewCellStyle21.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle21;
             this.Column7.HeaderText = "Cena Brutto";
             this.Column7.MinimumWidth = 10;
             this.Column7.Name = "Column7";
@@ -421,9 +407,9 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle12.Format = "C2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle22.Format = "C2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle22;
             this.Column5.HeaderText = "Cena netto";
             this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
@@ -480,9 +466,9 @@
             // 
             // Cena_Jednostkowa
             // 
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle23.Format = "C2";
+            dataGridViewCellStyle23.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle23;
             this.Cena_Jednostkowa.HeaderText = "C.J";
             this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
             this.Cena_Jednostkowa.ReadOnly = true;
@@ -490,9 +476,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle14.Format = "N0";
-            dataGridViewCellStyle14.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle24.Format = "N0";
+            dataGridViewCellStyle24.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle24;
             this.Column4.FillWeight = 50F;
             this.Column4.HeaderText = "Ilość";
             this.Column4.MinimumWidth = 10;
@@ -553,8 +539,8 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle15.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle25.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle25;
             this.Column1.FillWeight = 250F;
             this.Column1.HeaderText = "Nazwa";
             this.Column1.MinimumWidth = 10;
@@ -595,72 +581,29 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(104, 20);
             this.dateTimePicker2.TabIndex = 48;
             // 
-            // textBox_Country_ID
-            // 
-            this.textBox_Country_ID.Enabled = false;
-            this.textBox_Country_ID.Location = new System.Drawing.Point(691, 130);
-            this.textBox_Country_ID.Name = "textBox_Country_ID";
-            this.textBox_Country_ID.Size = new System.Drawing.Size(68, 20);
-            this.textBox_Country_ID.TabIndex = 36;
-            // 
-            // Label_Country_Name
-            // 
-            this.Label_Country_Name.AutoSize = true;
-            this.Label_Country_Name.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label_Country_Name.ForeColor = System.Drawing.Color.White;
-            this.Label_Country_Name.Location = new System.Drawing.Point(558, 132);
-            this.Label_Country_Name.Name = "Label_Country_Name";
-            this.Label_Country_Name.Size = new System.Drawing.Size(61, 15);
-            this.Label_Country_Name.TabIndex = 37;
-            this.Label_Country_Name.Text = "Państwo";
-            // 
-            // textBox_Post_Code_2
-            // 
-            this.textBox_Post_Code_2.Enabled = false;
-            this.textBox_Post_Code_2.Location = new System.Drawing.Point(756, 41);
-            this.textBox_Post_Code_2.Name = "textBox_Post_Code_2";
-            this.textBox_Post_Code_2.Size = new System.Drawing.Size(93, 20);
-            this.textBox_Post_Code_2.TabIndex = 25;
-            // 
             // textBox_Offer_CompanyName
             // 
             this.textBox_Offer_CompanyName.Enabled = false;
-            this.textBox_Offer_CompanyName.Location = new System.Drawing.Point(382, 89);
+            this.textBox_Offer_CompanyName.Location = new System.Drawing.Point(664, 88);
             this.textBox_Offer_CompanyName.Name = "textBox_Offer_CompanyName";
             this.textBox_Offer_CompanyName.Size = new System.Drawing.Size(149, 20);
             this.textBox_Offer_CompanyName.TabIndex = 36;
-            // 
-            // textBox_Post_Code_1
-            // 
-            this.textBox_Post_Code_1.Enabled = false;
-            this.textBox_Post_Code_1.Location = new System.Drawing.Point(691, 42);
-            this.textBox_Post_Code_1.Name = "textBox_Post_Code_1";
-            this.textBox_Post_Code_1.Size = new System.Drawing.Size(42, 20);
-            this.textBox_Post_Code_1.TabIndex = 24;
             // 
             // label_Offer_Name
             // 
             this.label_Offer_Name.AutoSize = true;
             this.label_Offer_Name.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Offer_Name.ForeColor = System.Drawing.Color.White;
-            this.label_Offer_Name.Location = new System.Drawing.Point(3, 44);
+            this.label_Offer_Name.Location = new System.Drawing.Point(302, 3);
             this.label_Offer_Name.Name = "label_Offer_Name";
             this.label_Offer_Name.Size = new System.Drawing.Size(116, 16);
             this.label_Offer_Name.TabIndex = 14;
             this.label_Offer_Name.Text = "Nazwa zlecenia";
             // 
-            // textBox_Town_Name
-            // 
-            this.textBox_Town_Name.Enabled = false;
-            this.textBox_Town_Name.Location = new System.Drawing.Point(691, 20);
-            this.textBox_Town_Name.Name = "textBox_Town_Name";
-            this.textBox_Town_Name.Size = new System.Drawing.Size(158, 20);
-            this.textBox_Town_Name.TabIndex = 20;
-            // 
             // textBox_Offer_LastName
             // 
             this.textBox_Offer_LastName.Enabled = false;
-            this.textBox_Offer_LastName.Location = new System.Drawing.Point(382, 63);
+            this.textBox_Offer_LastName.Location = new System.Drawing.Point(664, 62);
             this.textBox_Offer_LastName.Name = "textBox_Offer_LastName";
             this.textBox_Offer_LastName.Size = new System.Drawing.Size(149, 20);
             this.textBox_Offer_LastName.TabIndex = 34;
@@ -670,7 +613,7 @@
             this.label_Offer_Client.AutoSize = true;
             this.label_Offer_Client.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Offer_Client.ForeColor = System.Drawing.Color.White;
-            this.label_Offer_Client.Location = new System.Drawing.Point(379, 4);
+            this.label_Offer_Client.Location = new System.Drawing.Point(661, 3);
             this.label_Offer_Client.Name = "label_Offer_Client";
             this.label_Offer_Client.Size = new System.Drawing.Size(115, 16);
             this.label_Offer_Client.TabIndex = 16;
@@ -679,7 +622,7 @@
             // textBox_Offer_Name
             // 
             this.textBox_Offer_Name.Enabled = false;
-            this.textBox_Offer_Name.Location = new System.Drawing.Point(382, 37);
+            this.textBox_Offer_Name.Location = new System.Drawing.Point(664, 36);
             this.textBox_Offer_Name.Name = "textBox_Offer_Name";
             this.textBox_Offer_Name.Size = new System.Drawing.Size(149, 20);
             this.textBox_Offer_Name.TabIndex = 33;
@@ -691,31 +634,12 @@
             this.Button_chose_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_chose_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button_chose_Client.ForeColor = System.Drawing.Color.Black;
-            this.Button_chose_Client.Location = new System.Drawing.Point(382, 115);
+            this.Button_chose_Client.Location = new System.Drawing.Point(664, 114);
             this.Button_chose_Client.Name = "Button_chose_Client";
             this.Button_chose_Client.Size = new System.Drawing.Size(117, 34);
             this.Button_chose_Client.TabIndex = 35;
             this.Button_chose_Client.Text = "Wybierz z listy";
             this.Button_chose_Client.UseVisualStyleBackColor = false;
-            // 
-            // label_Offer_Adress
-            // 
-            this.label_Offer_Adress.AutoSize = true;
-            this.label_Offer_Adress.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Offer_Adress.ForeColor = System.Drawing.Color.White;
-            this.label_Offer_Adress.Location = new System.Drawing.Point(557, 4);
-            this.label_Offer_Adress.Name = "label_Offer_Adress";
-            this.label_Offer_Adress.Size = new System.Drawing.Size(159, 16);
-            this.label_Offer_Adress.TabIndex = 15;
-            this.label_Offer_Adress.Text = "Adres zleceniodawcy";
-            // 
-            // textBox_Home_Number
-            // 
-            this.textBox_Home_Number.Enabled = false;
-            this.textBox_Home_Number.Location = new System.Drawing.Point(691, 108);
-            this.textBox_Home_Number.Name = "textBox_Home_Number";
-            this.textBox_Home_Number.Size = new System.Drawing.Size(68, 20);
-            this.textBox_Home_Number.TabIndex = 30;
             // 
             // dataGridView1
             // 
@@ -746,17 +670,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1602, 210);
             this.dataGridView1.TabIndex = 44;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(558, 110);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 15);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Numer Mieszkania";
-            // 
             // sum_w_taxes_label
             // 
             this.sum_w_taxes_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -769,14 +682,6 @@
             this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
             this.sum_w_taxes_label.TabIndex = 45;
             this.sum_w_taxes_label.Text = "Suma Brutto:";
-            // 
-            // textBox_Building_Number
-            // 
-            this.textBox_Building_Number.Enabled = false;
-            this.textBox_Building_Number.Location = new System.Drawing.Point(691, 86);
-            this.textBox_Building_Number.Name = "textBox_Building_Number";
-            this.textBox_Building_Number.Size = new System.Drawing.Size(68, 20);
-            this.textBox_Building_Number.TabIndex = 29;
             // 
             // panel4
             // 
@@ -906,8 +811,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle16.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle26.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridViewTextBoxColumn2.FillWeight = 250F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Nazwa";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
@@ -936,9 +841,9 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle17.Format = "N0";
-            dataGridViewCellStyle17.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle27.Format = "N0";
+            dataGridViewCellStyle27.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridViewTextBoxColumn5.FillWeight = 50F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Ilość";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
@@ -947,9 +852,9 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
-            dataGridViewCellStyle18.Format = "C2";
-            dataGridViewCellStyle18.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle28.Format = "C2";
+            dataGridViewCellStyle28.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle28;
             this.dataGridViewTextBoxColumn6.HeaderText = "C.J";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -957,9 +862,9 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle19.Format = "C2";
-            dataGridViewCellStyle19.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle29.Format = "C2";
+            dataGridViewCellStyle29.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle29;
             this.dataGridViewTextBoxColumn7.HeaderText = "Cena netto";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
@@ -976,9 +881,9 @@
             // 
             // dataGridViewTextBoxColumn9
             // 
-            dataGridViewCellStyle20.Format = "C2";
-            dataGridViewCellStyle20.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle30.Format = "C2";
+            dataGridViewCellStyle30.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridViewTextBoxColumn9.HeaderText = "Cena Brutto";
             this.dataGridViewTextBoxColumn9.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
@@ -1009,17 +914,6 @@
             this.zlecenieDataSet1.DataSetName = "zlecenieDataSet";
             this.zlecenieDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(557, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Miasto";
-            // 
             // label_Order_Date_start
             // 
             this.label_Order_Date_start.AutoSize = true;
@@ -1039,68 +933,18 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(104, 20);
             this.dateTimePicker1.TabIndex = 18;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(557, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 15);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Kod Pocztowy";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(739, 43);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(11, 14);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "-";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(558, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 15);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Numer Budynku";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(557, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 15);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Ulica";
-            // 
-            // textBox_Street_Name
-            // 
-            this.textBox_Street_Name.Enabled = false;
-            this.textBox_Street_Name.Location = new System.Drawing.Point(691, 64);
-            this.textBox_Street_Name.Name = "textBox_Street_Name";
-            this.textBox_Street_Name.Size = new System.Drawing.Size(158, 20);
-            this.textBox_Street_Name.TabIndex = 27;
-            // 
             // textBox_O_Name
             // 
-            this.textBox_O_Name.Location = new System.Drawing.Point(3, 63);
+            this.textBox_O_Name.Location = new System.Drawing.Point(302, 22);
             this.textBox_O_Name.Multiline = true;
             this.textBox_O_Name.Name = "textBox_O_Name";
-            this.textBox_O_Name.Size = new System.Drawing.Size(203, 83);
+            this.textBox_O_Name.Size = new System.Drawing.Size(253, 124);
             this.textBox_O_Name.TabIndex = 19;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label31);
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.label26);
@@ -1123,29 +967,14 @@
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.label_Order_Date_end);
             this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.textBox_Country_ID);
-            this.panel1.Controls.Add(this.Label_Country_Name);
-            this.panel1.Controls.Add(this.textBox_Post_Code_2);
             this.panel1.Controls.Add(this.textBox_Offer_CompanyName);
-            this.panel1.Controls.Add(this.textBox_Post_Code_1);
             this.panel1.Controls.Add(this.label_Offer_Name);
-            this.panel1.Controls.Add(this.textBox_Town_Name);
             this.panel1.Controls.Add(this.textBox_Offer_LastName);
             this.panel1.Controls.Add(this.label_Offer_Client);
             this.panel1.Controls.Add(this.textBox_Offer_Name);
             this.panel1.Controls.Add(this.Button_chose_Client);
-            this.panel1.Controls.Add(this.label_Offer_Adress);
-            this.panel1.Controls.Add(this.textBox_Home_Number);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox_Building_Number);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label_Order_Date_start);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox_Street_Name);
             this.panel1.Controls.Add(this.textBox_O_Name);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -1158,7 +987,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(1175, 26);
+            this.label31.Location = new System.Drawing.Point(1195, 25);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(52, 16);
             this.label31.TabIndex = 68;
@@ -1169,7 +998,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(1175, 4);
+            this.label30.Location = new System.Drawing.Point(1195, 3);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(122, 16);
             this.label30.TabIndex = 67;
@@ -1200,18 +1029,18 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label24.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(3, 4);
+            this.label24.Location = new System.Drawing.Point(12, 9);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(175, 32);
+            this.label24.Size = new System.Drawing.Size(202, 54);
             this.label24.TabIndex = 64;
-            this.label24.Text = "Zlecenie nr:               \r\nNa podstawie oferty nr:";
+            this.label24.Text = "Zlecenie nr:    \r\n           \r\nNa podstawie oferty nr:";
             // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(989, 130);
+            this.textBox1.Location = new System.Drawing.Point(961, 129);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(68, 20);
             this.textBox1.TabIndex = 62;
@@ -1221,7 +1050,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(856, 132);
+            this.label16.Location = new System.Drawing.Point(828, 131);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(61, 15);
             this.label16.TabIndex = 63;
@@ -1230,25 +1059,25 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(1054, 41);
+            this.textBox2.Location = new System.Drawing.Point(1038, 40);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(93, 20);
+            this.textBox2.Size = new System.Drawing.Size(131, 20);
             this.textBox2.TabIndex = 54;
             // 
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(989, 42);
+            this.textBox3.Location = new System.Drawing.Point(961, 41);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(42, 20);
+            this.textBox3.Size = new System.Drawing.Size(54, 20);
             this.textBox3.TabIndex = 53;
             // 
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(989, 20);
+            this.textBox4.Location = new System.Drawing.Point(961, 19);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(158, 20);
+            this.textBox4.Size = new System.Drawing.Size(208, 20);
             this.textBox4.TabIndex = 50;
             // 
             // label17
@@ -1256,7 +1085,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(855, 4);
+            this.label17.Location = new System.Drawing.Point(827, 3);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(112, 16);
             this.label17.TabIndex = 49;
@@ -1265,7 +1094,7 @@
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(989, 108);
+            this.textBox5.Location = new System.Drawing.Point(961, 107);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(68, 20);
             this.textBox5.TabIndex = 59;
@@ -1275,7 +1104,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(856, 110);
+            this.label18.Location = new System.Drawing.Point(828, 109);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(131, 15);
             this.label18.TabIndex = 60;
@@ -1284,7 +1113,7 @@
             // textBox6
             // 
             this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(989, 86);
+            this.textBox6.Location = new System.Drawing.Point(961, 85);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(68, 20);
             this.textBox6.TabIndex = 58;
@@ -1294,7 +1123,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(855, 22);
+            this.label19.Location = new System.Drawing.Point(827, 21);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(51, 15);
             this.label19.TabIndex = 51;
@@ -1305,7 +1134,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(855, 43);
+            this.label20.Location = new System.Drawing.Point(827, 42);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(94, 15);
             this.label20.TabIndex = 52;
@@ -1315,7 +1144,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label21.Location = new System.Drawing.Point(1037, 43);
+            this.label21.Location = new System.Drawing.Point(1021, 43);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(11, 14);
             this.label21.TabIndex = 61;
@@ -1326,7 +1155,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(856, 88);
+            this.label22.Location = new System.Drawing.Point(828, 87);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(116, 15);
             this.label22.TabIndex = 57;
@@ -1337,7 +1166,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(855, 66);
+            this.label23.Location = new System.Drawing.Point(827, 65);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(41, 15);
             this.label23.TabIndex = 55;
@@ -1346,10 +1175,24 @@
             // textBox7
             // 
             this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(989, 64);
+            this.textBox7.Location = new System.Drawing.Point(961, 63);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(158, 20);
+            this.textBox7.Size = new System.Drawing.Size(208, 20);
             this.textBox7.TabIndex = 56;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(1035, 89);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 59);
+            this.button1.TabIndex = 69;
+            this.button1.Text = "Adres Zleceniodawcy";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Window_Add_Order
             // 
@@ -1424,33 +1267,18 @@
         private System.Windows.Forms.Label sum_e_taxes_label;
         private System.Windows.Forms.Label label_Order_Date_end;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox_Country_ID;
-        private System.Windows.Forms.Label Label_Country_Name;
-        private System.Windows.Forms.TextBox textBox_Post_Code_2;
         private System.Windows.Forms.TextBox textBox_Offer_CompanyName;
-        private System.Windows.Forms.TextBox textBox_Post_Code_1;
         private System.Windows.Forms.Label label_Offer_Name;
-        private System.Windows.Forms.TextBox textBox_Town_Name;
         private System.Windows.Forms.TextBox textBox_Offer_LastName;
         private System.Windows.Forms.Label label_Offer_Client;
         private System.Windows.Forms.TextBox textBox_Offer_Name;
         private System.Windows.Forms.Button Button_chose_Client;
-        private System.Windows.Forms.Label label_Offer_Adress;
-        private System.Windows.Forms.TextBox textBox_Home_Number;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label sum_w_taxes_label;
-        private System.Windows.Forms.TextBox textBox_Building_Number;
         private System.Windows.Forms.Panel panel4;
         private zlecenieDataSet zlecenieDataSet1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_Order_Date_start;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox_Street_Name;
         private System.Windows.Forms.TextBox textBox_O_Name;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label29;
@@ -1490,5 +1318,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button button1;
     }
 }
