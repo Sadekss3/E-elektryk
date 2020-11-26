@@ -20,6 +20,6 @@ namespace E_elektryk
         public System.DateTime Data_Od { get; set; }
         public System.DateTime Data_Do { get; set; }
         public string Opis { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
     }
 }

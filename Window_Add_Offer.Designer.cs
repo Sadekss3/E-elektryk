@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_Offer_Name = new System.Windows.Forms.Label();
             this.label_Offer_Adress = new System.Windows.Forms.Label();
             this.label_Offer_Client = new System.Windows.Forms.Label();
@@ -67,6 +68,8 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.zlecenieDataSet1 = new E_elektryk.zlecenieDataSet();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.sum_gross_profit = new System.Windows.Forms.Label();
+            this.sum_net_profit = new System.Windows.Forms.Label();
             this.Button_Delete_From_Grid = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.sum_e_taxes_label = new System.Windows.Forms.Label();
@@ -77,11 +80,13 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marża = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cena_Jednostkowa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Zysk = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Offer_Information_Box = new System.Windows.Forms.RichTextBox();
@@ -456,6 +461,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.panel4.Controls.Add(this.sum_gross_profit);
+            this.panel4.Controls.Add(this.sum_net_profit);
             this.panel4.Controls.Add(this.Button_Add_Offer);
             this.panel4.Controls.Add(this.button_Print_PDF);
             this.panel4.Controls.Add(this.button_Show_PDF);
@@ -469,6 +476,30 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1620, 388);
             this.panel4.TabIndex = 60;
+            // 
+            // sum_gross_profit
+            // 
+            this.sum_gross_profit.AutoSize = true;
+            this.sum_gross_profit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.sum_gross_profit.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_gross_profit.ForeColor = System.Drawing.Color.White;
+            this.sum_gross_profit.Location = new System.Drawing.Point(711, 359);
+            this.sum_gross_profit.Name = "sum_gross_profit";
+            this.sum_gross_profit.Size = new System.Drawing.Size(84, 16);
+            this.sum_gross_profit.TabIndex = 52;
+            this.sum_gross_profit.Text = "Zysk brutto:";
+            // 
+            // sum_net_profit
+            // 
+            this.sum_net_profit.AutoSize = true;
+            this.sum_net_profit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.sum_net_profit.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_net_profit.ForeColor = System.Drawing.Color.White;
+            this.sum_net_profit.Location = new System.Drawing.Point(711, 343);
+            this.sum_net_profit.Name = "sum_net_profit";
+            this.sum_net_profit.Size = new System.Drawing.Size(77, 16);
+            this.sum_net_profit.TabIndex = 51;
+            this.sum_net_profit.Text = "Zysk netto:";
             // 
             // Button_Delete_From_Grid
             // 
@@ -502,7 +533,7 @@
             this.sum_e_taxes_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.sum_e_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sum_e_taxes_label.ForeColor = System.Drawing.Color.White;
-            this.sum_e_taxes_label.Location = new System.Drawing.Point(711, 319);
+            this.sum_e_taxes_label.Location = new System.Drawing.Point(711, 311);
             this.sum_e_taxes_label.Name = "sum_e_taxes_label";
             this.sum_e_taxes_label.Size = new System.Drawing.Size(82, 16);
             this.sum_e_taxes_label.TabIndex = 43;
@@ -514,7 +545,7 @@
             this.sum_w_taxes_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sum_w_taxes_label.ForeColor = System.Drawing.Color.White;
-            this.sum_w_taxes_label.Location = new System.Drawing.Point(1065, 319);
+            this.sum_w_taxes_label.Location = new System.Drawing.Point(711, 327);
             this.sum_w_taxes_label.Name = "sum_w_taxes_label";
             this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
             this.sum_w_taxes_label.TabIndex = 45;
@@ -535,11 +566,13 @@
             this.Column2,
             this.Column3,
             this.Column4,
+            this.Marża,
             this.Cena_Jednostkowa,
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8});
+            this.Column8,
+            this.Zysk});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Location = new System.Drawing.Point(0, 25);
             this.dataGridView1.MultiSelect = false;
@@ -599,6 +632,12 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 54;
             // 
+            // Marża
+            // 
+            this.Marża.HeaderText = "Marża";
+            this.Marża.Name = "Marża";
+            this.Marża.Width = 61;
+            // 
             // Cena_Jednostkowa
             // 
             dataGridViewCellStyle3.Format = "C2";
@@ -646,6 +685,15 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Width = 76;
+            // 
+            // Zysk
+            // 
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.Zysk.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Zysk.HeaderText = "Zysk";
+            this.Zysk.Name = "Zysk";
+            this.Zysk.Width = 55;
             // 
             // panel3
             // 
@@ -981,16 +1029,20 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Button_Add_Offer;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Label sum_net_profit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marża;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cena_Jednostkowa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Zysk;
+        private System.Windows.Forms.Label sum_gross_profit;
     }
 }

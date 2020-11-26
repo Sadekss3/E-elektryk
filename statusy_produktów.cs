@@ -12,12 +12,9 @@ namespace E_elektryk
     using System;
     using System.Collections.Generic;
     
-    public partial class produkty_w_wycenie
+    public partial class statusy_produktów
     {
-        public int ID_zlecenie { get; set; }
-        public int ID_produktu { get; set; }
-        public decimal ilość { get; set; }
-        public int Marża { get; set; }
-        public decimal Zysk_netto { get; set; }
+        public int ID { get; set; }
+        public string Status { get; set; }
     }
 }

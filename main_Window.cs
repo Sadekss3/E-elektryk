@@ -344,5 +344,97 @@ namespace E_elektryk
 
         #endregion
 
+        #region offer_status_panel
+
+        private void button_Ostatus_new_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    int ID = ofW.getSelectedProduct();
+                    if (ID != 0)
+                    {
+                        oferta of = db.oferta.Find(ID);
+                        of.Status = 1;
+                        db.SaveChanges();
+                        ofW = new Offer_Window();
+                        OpenChildForm(ofW);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        private void button_OStatus_send_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    int ID = ofW.getSelectedProduct();
+                    if (ID != 0)
+                    {
+                        oferta of = db.oferta.Find(ID);
+                        of.Status = 2;
+                        db.SaveChanges();
+                        ofW = new Offer_Window();
+                        OpenChildForm(ofW);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        private void button_OStatus_Accept_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    int ID = ofW.getSelectedProduct();
+                    if (ID != 0)
+                    {
+                        oferta of = db.oferta.Find(ID);
+                        of.Status = 3;
+                        db.SaveChanges();
+                        ofW = new Offer_Window();
+                        OpenChildForm(ofW);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        private void button_Ostatus_Refused_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    int ID = ofW.getSelectedProduct();
+                    if (ID != 0)
+                    {
+                        oferta of = db.oferta.Find(ID);
+                        of.Status = 4;
+                        db.SaveChanges();
+                        ofW = new Offer_Window();
+                        OpenChildForm(ofW);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        #endregion
     }
 }

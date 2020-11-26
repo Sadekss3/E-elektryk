@@ -56,7 +56,7 @@
           <Property Name="Data_Od" Type="date" Nullable="false" />
           <Property Name="Data_Do" Type="date" Nullable="false" />
           <Property Name="Opis" Type="text" />
-          <Property Name="Status" Type="text" />
+          <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="produkt">
           <Key>
@@ -83,6 +83,14 @@
           <Property Name="ID_produktu" Type="int" Nullable="false" />
           <Property Name="ilość" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Marża" Type="int" Nullable="false" />
+          <Property Name="Zysk_netto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="statusy_produktów">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="statusy_zlecenia">
           <Key>
@@ -99,6 +107,7 @@
           <EntitySet Name="oferta" EntityType="Self.oferta" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="produkt" EntityType="Self.produkt" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="produkty_w_wycenie" EntityType="Self.produkty_w_wycenie" Schema="zlecenie" store:Type="Tables" />
+          <EntitySet Name="statusy_produktów" EntityType="Self.statusy_produktów" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="statusy_zlecenia" EntityType="Self.statusy_zlecenia" Schema="zlecenie" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -151,6 +160,7 @@
           <EntitySet Name="produkty_w_wycenie" EntityType="zlecenieModel.produkty_w_wycenie" />
           <EntitySet Name="oferta" EntityType="zlecenieModel.oferta" />
           <EntitySet Name="Dane_Logowania" EntityType="zlecenieModel.Dane_Logowania" />
+          <EntitySet Name="statusy_produktów" EntityType="zlecenieModel.statusy_produktów" />
           <EntitySet Name="statusy_zlecenia" EntityType="zlecenieModel.statusy_zlecenia" />
         </EntityContainer>
         <EntityType Name="adres">
@@ -174,6 +184,7 @@
           <Property Name="ID_produktu" Type="Int32" Nullable="false" />
           <Property Name="ilość" Type="Decimal" Nullable="false" />
           <Property Name="Marża" Type="Int32" Nullable="false" />
+          <Property Name="Zysk_netto" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="oferta">
           <Key>
@@ -185,7 +196,7 @@
           <Property Name="Data_Od" Type="DateTime" Nullable="false" />
           <Property Name="Data_Do" Type="DateTime" Nullable="false" />
           <Property Name="Opis" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
-          <Property Name="Status" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Dane_Logowania">
           <Key>
@@ -193,6 +204,13 @@
           </Key>
           <Property Name="Login" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Hasło" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="statusy_produktów">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="statusy_zlecenia">
           <Key>
@@ -264,6 +282,7 @@
           <EntitySetMapping Name="produkty_w_wycenie">
             <EntityTypeMapping TypeName="zlecenieModel.produkty_w_wycenie">
               <MappingFragment StoreEntitySet="produkty_w_wycenie">
+                <ScalarProperty Name="Zysk_netto" ColumnName="Zysk_netto" />
                 <ScalarProperty Name="Marża" ColumnName="Marża" />
                 <ScalarProperty Name="ilość" ColumnName="ilość" />
                 <ScalarProperty Name="ID_produktu" ColumnName="ID_produktu" />
@@ -289,6 +308,14 @@
               <MappingFragment StoreEntitySet="Dane_Logowania">
                 <ScalarProperty Name="Hasło" ColumnName="Hasło" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="statusy_produktów">
+            <EntityTypeMapping TypeName="zlecenieModel.statusy_produktów">
+              <MappingFragment StoreEntitySet="statusy_produktów">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

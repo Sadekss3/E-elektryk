@@ -28,13 +28,14 @@ namespace E_elektryk
                     List<oferta> list = db.oferta.ToList();
                     foreach (oferta o in list.Where(lvi => lvi.Nazwa.ToLower().Contains(Offer_Search_Offer_Name.Text.ToLower()) && db.kontrahent.Find(lvi.Id_zleceniodawca).Nazwa_Firmy.ToLower().Contains(Offer_Search_Client_Name.Text.ToLower()) && db.kontrahent.Find(lvi.Id_zleceniodawca).ID.ToString().Contains(Offer_Search_Client_ID.Text)))
                     {
+                        string Client_Info = db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Nazwa_ulicy + " " + db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Numer_budynku + " " + db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Numer_mieszkania + " "+ db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Kod_pocztowy.Remove(2, 3) + "-" + db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Kod_pocztowy.Remove(0, 2) + " " + db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Miasto;
                         ListViewItem item = new ListViewItem(o.ID.ToString());
                         item.SubItems.Add(o.Nazwa);
                         item.SubItems.Add(db.kontrahent.Find(o.Id_zleceniodawca).Nazwa_Firmy);
-                        item.SubItems.Add(db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Miasto);
+                        item.SubItems.Add(Client_Info);
                         item.SubItems.Add(o.Data_Od.ToString().Remove(10, 9));
                         item.SubItems.Add(o.Data_Do.ToString().Remove(10, 9));
-                        item.SubItems.Add(o.Status);
+                        item.SubItems.Add(db.statusy_zlecenia.Find(o.Status).Status);
                         item.SubItems.Add(o.Opis.ToString());
                         item.Font = new Font(item.Font, FontStyle.Regular);
                         Offer_list.Items.Add(item);
@@ -64,7 +65,7 @@ namespace E_elektryk
                         item.SubItems.Add(db.adres.Find(db.kontrahent.Find(o.Id_zleceniodawca).Adres).Miasto);
                         item.SubItems.Add(o.Data_Od.ToString().Remove(10, 9));
                         item.SubItems.Add(o.Data_Do.ToString().Remove(10, 9));
-                        item.SubItems.Add(o.Status);
+                        item.SubItems.Add(o.Status.ToString());
                         item.SubItems.Add(o.Opis.ToString());
                         item.Font = new Font(item.Font, FontStyle.Regular);
                         Offer_list.Items.Add(item);

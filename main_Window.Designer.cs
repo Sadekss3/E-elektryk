@@ -627,6 +627,7 @@
             this.button_Ostatus_Refused.TabIndex = 6;
             this.button_Ostatus_Refused.Text = "Odrzucona";
             this.button_Ostatus_Refused.UseVisualStyleBackColor = false;
+            this.button_Ostatus_Refused.Click += new System.EventHandler(this.button_Ostatus_Refused_Click);
             // 
             // button_OStatus_Accept
             // 
@@ -642,6 +643,7 @@
             this.button_OStatus_Accept.TabIndex = 5;
             this.button_OStatus_Accept.Text = "Zaakceptowana";
             this.button_OStatus_Accept.UseVisualStyleBackColor = false;
+            this.button_OStatus_Accept.Click += new System.EventHandler(this.button_OStatus_Accept_Click);
             // 
             // button_OStatus_send
             // 
@@ -657,6 +659,7 @@
             this.button_OStatus_send.TabIndex = 4;
             this.button_OStatus_send.Text = "Złożona";
             this.button_OStatus_send.UseVisualStyleBackColor = false;
+            this.button_OStatus_send.Click += new System.EventHandler(this.button_OStatus_send_Click);
             // 
             // button_Ostatus_new
             // 
@@ -672,6 +675,7 @@
             this.button_Ostatus_new.TabIndex = 3;
             this.button_Ostatus_new.Text = "Utworzona";
             this.button_Ostatus_new.UseVisualStyleBackColor = false;
+            this.button_Ostatus_new.Click += new System.EventHandler(this.button_Ostatus_new_Click);
             // 
             // button_Change_Offer_Status
             // 
