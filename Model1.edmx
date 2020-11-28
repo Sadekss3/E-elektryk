@@ -82,6 +82,7 @@
           <Property Name="ID_zlecenie" Type="int" Nullable="false" />
           <Property Name="ID_produktu" Type="int" Nullable="false" />
           <Property Name="ilość" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Aktualna_cena_netto" Type="decimal" Precision="10" Scale="0" Nullable="false" />
           <Property Name="Marża" Type="int" Nullable="false" />
           <Property Name="Zysk_netto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
@@ -185,6 +186,7 @@
           <Property Name="ilość" Type="Decimal" Nullable="false" />
           <Property Name="Marża" Type="Int32" Nullable="false" />
           <Property Name="Zysk_netto" Type="Decimal" Nullable="false" />
+          <Property Name="Aktualna_cena_netto" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="oferta">
           <Key>
@@ -282,6 +284,7 @@
           <EntitySetMapping Name="produkty_w_wycenie">
             <EntityTypeMapping TypeName="zlecenieModel.produkty_w_wycenie">
               <MappingFragment StoreEntitySet="produkty_w_wycenie">
+                <ScalarProperty Name="Aktualna_cena_netto" ColumnName="Aktualna_cena_netto" />
                 <ScalarProperty Name="Zysk_netto" ColumnName="Zysk_netto" />
                 <ScalarProperty Name="Marża" ColumnName="Marża" />
                 <ScalarProperty Name="ilość" ColumnName="ilość" />

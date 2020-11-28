@@ -19,5 +19,6 @@ namespace E_elektryk
         public decimal ilość { get; set; }
         public int Marża { get; set; }
         public decimal Zysk_netto { get; set; }
+        public decimal Aktualna_cena_netto { get; set; }
     }
 }

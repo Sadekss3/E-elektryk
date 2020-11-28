@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="deb6e81bd0e94a6a930f6e06545c7e04" Name="Diagram1">
-        <EntityTypeShape EntityType="zlecenieModel.kategoria_produktu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zlecenieModel.kategoria_produktu" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="zlecenieModel.kontrahent" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="zlecenieModel.produkt" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="zlecenieModel.adres" Width="1.5" PointX="3.375" PointY="4.75" />

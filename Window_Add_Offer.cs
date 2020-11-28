@@ -71,8 +71,8 @@ namespace E_elektryk
                     item_grid.Cells[3].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Jm;
                     item_grid.Cells[4].Value = produkty_W_Wycenie.ilość;
                     item_grid.Cells[5].Value = produkty_W_Wycenie.Marża;
-                    item_grid.Cells[6].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
-                    item_grid.Cells[7].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_netto;
+                    item_grid.Cells[6].Value = produkty_W_Wycenie.Aktualna_cena_netto;
+                    item_grid.Cells[7].Value = produkty_W_Wycenie.Aktualna_cena_netto;
                     item_grid.Cells[8].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat + " %";
                     item_grid.Cells[9].Value = Math.Round(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto, 2);
                     item_grid.Cells[10].Value = db.kategoria_produktu.Find(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Kategoria).Nazwa_kategorii;
@@ -343,6 +343,7 @@ namespace E_elektryk
                         produkty_W_Wycenie.ilość = System.Convert.ToDecimal(row.Cells[4].Value);
                         produkty_W_Wycenie.Marża = System.Convert.ToInt32(row.Cells[5].Value);
                         produkty_W_Wycenie.Zysk_netto = System.Convert.ToDecimal(row.Cells[11].Value);
+                        produkty_W_Wycenie.Aktualna_cena_netto = System.Convert.ToDecimal(row.Cells[6].Value);
                         db.produkty_w_wycenie.Add(produkty_W_Wycenie);
                         db.SaveChanges();
                     }
@@ -395,6 +396,7 @@ namespace E_elektryk
                         produkty_W_Wycenie.ilość = System.Convert.ToDecimal(row.Cells[4].Value);
                         produkty_W_Wycenie.Marża = System.Convert.ToInt32(row.Cells[5].Value);
                         produkty_W_Wycenie.Zysk_netto = System.Convert.ToDecimal(row.Cells[11].Value);
+                        produkty_W_Wycenie.Aktualna_cena_netto = System.Convert.ToDecimal(row.Cells[6].Value);
                         db.produkty_w_wycenie.AddOrUpdate(produkty_W_Wycenie);
                         db.SaveChanges();
                     }
