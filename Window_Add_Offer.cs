@@ -332,7 +332,7 @@ namespace E_elektryk
                     new_offer.Data_Od = dateTimePicker1.Value;
                     new_offer.Data_Do = dateTimePicker2.Value;
                     new_offer.Opis = Offer_Information_Box.Text;
-                    new_offer.Status = _o.Status;
+                    new_offer.Status = 1;
                     db.oferta.AddOrUpdate(new_offer);
                     db.SaveChanges();
                     foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -350,9 +350,10 @@ namespace E_elektryk
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("Oferta utworzona", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception)
+                catch (Exception f)
                 {
-                    MessageBox.Show("Błąd zapisu", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(f.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Błąd zapisu", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         } // Save new offer
@@ -432,11 +433,12 @@ namespace E_elektryk
                             decimal lot = System.Convert.ToDecimal(dataGridView1.Rows[y].Cells[4].Value);
                             decimal margin = System.Convert.ToDecimal(dataGridView1.Rows[y].Cells[5].Value);
                             string piece_price = TRIM_price(dataGridView1.Rows[y].Cells[6].Value.ToString());
-                            dataGridView1.Rows[y].Cells[7].Value = System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot);
+                            decimal price_w_margin = (System.Convert.ToDecimal(piece_price) * lot) + (System.Convert.ToDecimal(piece_price) * lot * margin / 100) ;
+                            dataGridView1.Rows[y].Cells[7].Value = price_w_margin;
                             string gross_offer = TRIM_price(dataGridView1.Rows[y].Cells[9].Value.ToString());
                             string vat = (dataGridView1.Rows[y].Cells[8].Value.ToString()).Trim(' ', '%');
                             decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
-                            dataGridView1.Rows[y].Cells[9].Value = Gross * lot;
+                            dataGridView1.Rows[y].Cells[9].Value = (Gross * lot) + (Gross * lot * margin /100);
                             decimal profit = (System.Convert.ToDecimal(dataGridView1.Rows[y].Cells[7].Value) * (margin / 100));
                             dataGridView1.Rows[y].Cells[11].Value = profit;
                             decimal sum_e_taxes = 0;
@@ -507,7 +509,7 @@ namespace E_elektryk
                         item.SubItems.Add(p.Jm.ToString());
                         item.SubItems.Add(p.Ilość.ToString());
                         item.SubItems.Add(p.Cena_netto.ToString() + " zł");
-                        item.SubItems.Add(p.Vat.ToString() + " %");
+                        item.SubItems.Add(p.Vat.ToString());
                         item.SubItems.Add(p.Cena_brutto.ToString() + " zł");
                         if (p.Kategoria != 0)
                         {

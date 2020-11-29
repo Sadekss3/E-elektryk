@@ -59,8 +59,10 @@
             this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sum_w_taxes_label_2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.sum_e_taxes_label_2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel_Offer.SuspendLayout();
             this.panel_Products_in_Offer.SuspendLayout();
@@ -257,7 +259,8 @@
             this.columnHeader47,
             this.columnHeader48,
             this.columnHeader49,
-            this.columnHeader50});
+            this.columnHeader50,
+            this.columnHeader1});
             this.Position_In_Offer_ListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Position_In_Offer_ListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Position_In_Offer_ListView.FullRowSelect = true;
@@ -324,15 +327,20 @@
             // 
             // columnHeader50
             // 
-            this.columnHeader50.Text = "Suma";
+            this.columnHeader50.Text = "Suma Netto";
             this.columnHeader50.Width = 140;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Suma Brutto";
+            this.columnHeader1.Width = 140;
             // 
             // sum_w_taxes_label_2
             // 
             this.sum_w_taxes_label_2.AutoSize = true;
             this.sum_w_taxes_label_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sum_w_taxes_label_2.ForeColor = System.Drawing.Color.White;
-            this.sum_w_taxes_label_2.Location = new System.Drawing.Point(1256, 4);
+            this.sum_w_taxes_label_2.Location = new System.Drawing.Point(1418, 3);
             this.sum_w_taxes_label_2.Name = "sum_w_taxes_label_2";
             this.sum_w_taxes_label_2.Size = new System.Drawing.Size(99, 16);
             this.sum_w_taxes_label_2.TabIndex = 2;
@@ -341,6 +349,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.panel2.Controls.Add(this.sum_e_taxes_label_2);
             this.panel2.Controls.Add(this.sum_w_taxes_label_2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.ForeColor = System.Drawing.Color.Black;
@@ -348,6 +357,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1779, 26);
             this.panel2.TabIndex = 2;
+            // 
+            // sum_e_taxes_label_2
+            // 
+            this.sum_e_taxes_label_2.AutoSize = true;
+            this.sum_e_taxes_label_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_e_taxes_label_2.ForeColor = System.Drawing.Color.White;
+            this.sum_e_taxes_label_2.Location = new System.Drawing.Point(1131, 3);
+            this.sum_e_taxes_label_2.Name = "sum_e_taxes_label_2";
+            this.sum_e_taxes_label_2.Size = new System.Drawing.Size(96, 16);
+            this.sum_e_taxes_label_2.TabIndex = 3;
+            this.sum_e_taxes_label_2.Text = "Suma Netto: ";
             // 
             // Offer_Window
             // 
@@ -406,5 +426,7 @@
         private System.Windows.Forms.ColumnHeader Offer_Date2;
         private System.Windows.Forms.ColumnHeader Offer_Status;
         private System.Windows.Forms.ColumnHeader Opis;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Label sum_e_taxes_label_2;
     }
 }

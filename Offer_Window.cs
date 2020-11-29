@@ -98,11 +98,14 @@ namespace E_elektryk
                         item.SubItems.Add(db.produkt.Find(p.ID_produktu).Jm);
                         decimal ilość = p.ilość;
                         item.SubItems.Add(ilość.ToString());
-                        item.SubItems.Add(db.produkt.Find(p.ID_produktu).Cena_netto.ToString() + " zł");
+                        decimal netto = p.Aktualna_cena_netto;
+                        item.SubItems.Add(netto.ToString() + " zł");
+                        decimal vat = System.Convert.ToDecimal(db.produkt.Find(p.ID_produktu).Vat);
                         item.SubItems.Add(db.produkt.Find(p.ID_produktu).Vat.ToString() + "%");
-                        decimal brutto = db.produkt.Find(p.ID_produktu).Cena_brutto;
+                        decimal brutto = netto + (netto * (vat / 100));
                         item.SubItems.Add(brutto.ToString() + " zł");
                         item.SubItems.Add(db.kategoria_produktu.Find(db.produkt.Find(p.ID_produktu).Kategoria).Nazwa_kategorii);
+                        item.SubItems.Add(Math.Round(ilość * netto, 2).ToString() + " zł");
                         item.SubItems.Add(Math.Round(ilość * brutto, 2).ToString() + " zł");
                         item.Font = new Font(item.Font, FontStyle.Regular);
                         Position_In_Offer_ListView.Items.Add(item);
@@ -118,13 +121,15 @@ namespace E_elektryk
         void Calculate_tax_price()
         {
             decimal sum_w_taxes = 0;
+            decimal sum_e_taxes = 0;
             for (int i = 0; i <= Position_In_Offer_ListView.Items.Count; i++)
             {
-                
-                sum_w_taxes += System.Convert.ToDecimal((Position_In_Offer_ListView.Items[i].SubItems[10].Text).Trim(' ', 'z', 'ł'));
+                sum_e_taxes += System.Convert.ToDecimal((Position_In_Offer_ListView.Items[i].SubItems[10].Text).Trim(' ', 'z', 'ł'));
+                sum_w_taxes += System.Convert.ToDecimal((Position_In_Offer_ListView.Items[i].SubItems[11].Text).Trim(' ', 'z', 'ł'));
+                sum_e_taxes = Math.Round(sum_e_taxes, 2);
                 sum_w_taxes = Math.Round(sum_w_taxes, 2);
-                MessageBox.Show(sum_w_taxes.ToString());
                 sum_w_taxes_label_2.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
+                sum_e_taxes_label_2.Text = "Suma Neto: " + sum_e_taxes.ToString() + " zł";
             }
         } // Calculate gross price for offer
 
@@ -137,6 +142,5 @@ namespace E_elektryk
             }
             return (Selected_Product_ID);
         }
-
     }
 }

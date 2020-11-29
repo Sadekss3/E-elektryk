@@ -82,7 +82,7 @@
           <Property Name="ID_zlecenie" Type="int" Nullable="false" />
           <Property Name="ID_produktu" Type="int" Nullable="false" />
           <Property Name="ilość" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="Aktualna_cena_netto" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Aktualna_cena_netto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Marża" Type="int" Nullable="false" />
           <Property Name="Zysk_netto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
