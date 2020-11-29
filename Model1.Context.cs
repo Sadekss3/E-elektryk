@@ -34,5 +34,6 @@ namespace E_elektryk
         public virtual DbSet<Dane_Logowania> Dane_Logowania { get; set; }
         public virtual DbSet<statusy_produktów> statusy_produktów { get; set; }
         public virtual DbSet<statusy_zlecenia> statusy_zlecenia { get; set; }
+        public virtual DbSet<Wycena_prac> Wycena_prac { get; set; }
     }
 }

@@ -42,5 +42,15 @@ namespace E_elektryk.Properties {
                 return ((string)(this["zlecenieConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.66.157;user id=Sadek;database=zlecenie;persistsecurityinfo=True")]
+        public string zlecenieConnectionString2 {
+            get {
+                return ((string)(this["zlecenieConnectionString2"]));
+            }
+        }
     }
 }

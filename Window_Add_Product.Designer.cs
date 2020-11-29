@@ -55,14 +55,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Status = new System.Windows.Forms.Label();
             this.comboBox_Product_Status = new System.Windows.Forms.ComboBox();
-            this.statusyzleceniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.zlecenieDataSet1 = new E_elektryk.zlecenieDataSet();
-            this.statusy_zleceniaTableAdapter = new E_elektryk.zlecenieDataSetTableAdapters.statusy_zleceniaTableAdapter();
+            this.statusyproduktówBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statusy_produktówTableAdapter = new E_elektryk.zlecenieDataSetTableAdapters.statusy_produktówTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.kategoriaproduktuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statusyzleceniaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusyproduktówBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox_Product_Category
@@ -160,6 +158,7 @@
             this.textBox_Price_Net.Name = "textBox_Price_Net";
             this.textBox_Price_Net.Size = new System.Drawing.Size(148, 20);
             this.textBox_Price_Net.TabIndex = 33;
+            this.textBox_Price_Net.TextChanged += new System.EventHandler(this.textBox_Price_Net_TextChanged);
             // 
             // textBox_Quantity
             // 
@@ -353,28 +352,23 @@
             // 
             // comboBox_Product_Status
             // 
-            this.comboBox_Product_Status.DataSource = this.statusyzleceniaBindingSource;
+            this.comboBox_Product_Status.DataSource = this.statusyproduktówBindingSource;
             this.comboBox_Product_Status.DisplayMember = "Status";
             this.comboBox_Product_Status.FormattingEnabled = true;
             this.comboBox_Product_Status.Location = new System.Drawing.Point(540, 254);
             this.comboBox_Product_Status.Name = "comboBox_Product_Status";
             this.comboBox_Product_Status.Size = new System.Drawing.Size(121, 21);
             this.comboBox_Product_Status.TabIndex = 39;
-            this.comboBox_Product_Status.ValueMember = "ID_statusu";
+            this.comboBox_Product_Status.ValueMember = "ID";
             // 
-            // statusyzleceniaBindingSource
+            // statusyproduktówBindingSource
             // 
-            this.statusyzleceniaBindingSource.DataMember = "statusy_zlecenia";
-            this.statusyzleceniaBindingSource.DataSource = this.zlecenieDataSet1;
+            this.statusyproduktówBindingSource.DataMember = "statusy_produktów";
+            this.statusyproduktówBindingSource.DataSource = this.zlecenieDataSet;
             // 
-            // zlecenieDataSet1
+            // statusy_produktówTableAdapter
             // 
-            this.zlecenieDataSet1.DataSetName = "zlecenieDataSet";
-            this.zlecenieDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // statusy_zleceniaTableAdapter
-            // 
-            this.statusy_zleceniaTableAdapter.ClearBeforeFill = true;
+            this.statusy_produktówTableAdapter.ClearBeforeFill = true;
             // 
             // Window_Add_Product
             // 
@@ -393,8 +387,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statusyzleceniaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zlecenieDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusyproduktówBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,8 +420,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.ComboBox comboBox_Product_Status;
-        private zlecenieDataSet zlecenieDataSet1;
-        private System.Windows.Forms.BindingSource statusyzleceniaBindingSource;
-        private zlecenieDataSetTableAdapters.statusy_zleceniaTableAdapter statusy_zleceniaTableAdapter;
+        private System.Windows.Forms.BindingSource statusyproduktówBindingSource;
+        private zlecenieDataSetTableAdapters.statusy_produktówTableAdapter statusy_produktówTableAdapter;
     }
 }

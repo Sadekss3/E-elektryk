@@ -104,9 +104,21 @@ namespace E_elektryk
                         product_cat = db.kategoria_produktu.Find(p.Kategoria);
                         item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                     }
-                    item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status);
+                    item.SubItems.Add(db.statusy_produktów.Find(p.Status).Status);
                     item.Font = new System.Drawing.Font(item.Font, FontStyle.Regular);
                     listView1.Items.Add(item);
+                }
+                dataGridView2.Rows.Clear();
+                List<Wycena_prac> wycena_Prac_list = db.Wycena_prac.ToList();
+                foreach (Wycena_prac prace in wycena_Prac_list)
+                {
+                    DataGridViewRow item_grid = new DataGridViewRow();
+                    item_grid.CreateCells(dataGridView2);
+                    item_grid.Cells[0].Value = prace.Nazwa;
+                    item_grid.Cells[1].Value = prace.Cena_netto;
+                    item_grid.Cells[2].Value = prace.Vat;
+                    item_grid.Cells[3].Value = prace.Cena_brutto;
+                    dataGridView2.Rows.Add(item_grid);
                 }
             }
             calculate();
@@ -517,7 +529,7 @@ namespace E_elektryk
                             product_cat = db.kategoria_produktu.Find(p.Kategoria);
                             item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                         }
-                        item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status);
+                        item.SubItems.Add(db.statusy_produktów.Find(p.Status).Status);
                         item.Font = new System.Drawing.Font(item.Font, FontStyle.Regular);
                         listView1.Items.Add(item);
                     }
@@ -546,37 +558,12 @@ namespace E_elektryk
                             product_cat = db.kategoria_produktu.Find(p.Kategoria);
                             item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                         }
-                        item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status);
+                        item.SubItems.Add(db.statusy_produktów.Find(p.Status).Status);
                         item.Font = new System.Drawing.Font(item.Font, FontStyle.Regular);
                         listView1.Items.Add(item);
                     }
                 }
                 calculate();
-                /*decimal sum_e_taxes = 0;
-                decimal sum_w_taxes = 0;
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    if (dataGridView1.Rows[i].Cells[4].Value.ToString().Contains('.'))
-                    {
-                        MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        decimal lot = System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[4].Value);
-                        string piece_price = TRIM_price(dataGridView1.Rows[i].Cells[5].Value.ToString());
-                        string gross_offer = TRIM_price(dataGridView1.Rows[i].Cells[7].Value.ToString());
-                        string vat = (dataGridView1.Rows[i].Cells[7].Value.ToString()).Trim(' ', '%');
-                        decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
-                        sum_e_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[6].Value);
-                        sum_w_taxes += System.Convert.ToDecimal(dataGridView1.Rows[i].Cells[8].Value);
-                        sum_e_taxes = Math.Round(sum_e_taxes, 2);
-                        sum_w_taxes = Math.Round(sum_w_taxes, 2);
-                        sum_e_taxes_label.Text = "Suma Netto: " + sum_e_taxes.ToString() + " zł";
-                        sum_w_taxes_label.Text = "Suma Brutto: " + sum_w_taxes.ToString() + " zł";
-                        dataGridView1.Rows[i].Cells[6].Value = (Math.Round(System.Convert.ToDecimal(piece_price) * System.Convert.ToDecimal(lot), 2));
-                        dataGridView1.Rows[i].Cells[8].Value = Math.Round(Gross * lot, 2);
-                    }
-                }*/
             }
         }
     }

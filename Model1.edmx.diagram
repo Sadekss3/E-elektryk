@@ -14,6 +14,7 @@
         <EntityTypeShape EntityType="zlecenieModel.Dane_Logowania" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="zlecenieModel.statusy_produktów" Width="1.5" PointX="7.375" PointY="3.75" />
         <EntityTypeShape EntityType="zlecenieModel.statusy_zlecenia" Width="1.5" PointX="9.125" PointY="4" />
+        <EntityTypeShape EntityType="zlecenieModel.Wycena_prac" Width="1.5" PointX="5.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

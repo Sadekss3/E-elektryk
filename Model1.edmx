@@ -100,6 +100,16 @@
           <Property Name="ID_statusu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Status" Type="text" Nullable="false" />
         </EntityType>
+        <EntityType Name="Wycena_prac">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="text" Nullable="false" />
+          <Property Name="Cena_netto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Vat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Cena_brutto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="zlecenieModelStoreContainer">
           <EntitySet Name="adres" EntityType="Self.adres" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="Dane_Logowania" EntityType="Self.Dane_Logowania" Schema="zlecenie" store:Type="Tables" />
@@ -110,6 +120,7 @@
           <EntitySet Name="produkty_w_wycenie" EntityType="Self.produkty_w_wycenie" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="statusy_produktów" EntityType="Self.statusy_produktów" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="statusy_zlecenia" EntityType="Self.statusy_zlecenia" Schema="zlecenie" store:Type="Tables" />
+          <EntitySet Name="Wycena_prac" EntityType="Self.Wycena_prac" Schema="zlecenie" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -163,6 +174,7 @@
           <EntitySet Name="Dane_Logowania" EntityType="zlecenieModel.Dane_Logowania" />
           <EntitySet Name="statusy_produktów" EntityType="zlecenieModel.statusy_produktów" />
           <EntitySet Name="statusy_zlecenia" EntityType="zlecenieModel.statusy_zlecenia" />
+          <EntitySet Name="Wycena_prac" EntityType="zlecenieModel.Wycena_prac" />
         </EntityContainer>
         <EntityType Name="adres">
           <Key>
@@ -220,6 +232,16 @@
           </Key>
           <Property Name="ID_statusu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Status" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Wycena_prac">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Cena_netto" Type="Decimal" Nullable="false" />
+          <Property Name="Vat" Type="Decimal" Nullable="false" />
+          <Property Name="Cena_brutto" Type="Decimal" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -327,6 +349,17 @@
               <MappingFragment StoreEntitySet="statusy_zlecenia">
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ID_statusu" ColumnName="ID_statusu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wycena_prac">
+            <EntityTypeMapping TypeName="zlecenieModel.Wycena_prac">
+              <MappingFragment StoreEntitySet="Wycena_prac">
+                <ScalarProperty Name="Cena_brutto" ColumnName="Cena_brutto" />
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
+                <ScalarProperty Name="Cena_netto" ColumnName="Cena_netto" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

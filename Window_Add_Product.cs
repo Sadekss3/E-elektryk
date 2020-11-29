@@ -62,24 +62,39 @@ namespace E_elektryk
         private void Adding()
         {
             produkt produkt = new produkt();
-            Boolean flag;
+            Boolean flag = false;
             try
             {
                 produkt.Nazwa = textBox_Product_Name.Text.ToString();
                 produkt.Producent = textBox_Manufacturer.Text.ToString();
                 produkt.Numer_katalogowy = textBox_Catalog.Text.ToString();
-                produkt.Ilość = System.Convert.ToDouble(textBox_Quantity.Text);
-                produkt.Jm = comboBox_Unit.Text.ToString();
-                produkt.Cena_netto = System.Convert.ToDecimal(textBox_Price_Net.Text);
                 produkt.Vat = System.Convert.ToDouble(ComboBox_Taxes.Text);
                 produkt.Cena_brutto = System.Convert.ToDecimal(textBox_Price_Gross.Text);
                 produkt.Kategoria = (int)comboBox_Product_Category.SelectedValue;
                 produkt.Status = (int)comboBox_Product_Status.SelectedValue;
-                flag = true;
+                try
+                {
+                    produkt.Ilość = System.Convert.ToDouble(textBox_Quantity.Text);
+                    produkt.Jm = comboBox_Unit.Text.ToString();
+                    try
+                    {
+                        produkt.Cena_netto = System.Convert.ToDecimal(textBox_Price_Net.Text);
+                        flag = true;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Cena musi być liczbą", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Ilość musi być liczbą", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);    
+                }
+                
             }
             catch (Exception)
             {
-                MessageBox.Show("Ilość musi być liczbą","Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Wypełnij wszystkie dane","Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 flag = false;
             }
             if (flag == true)
@@ -104,25 +119,39 @@ namespace E_elektryk
         void Modify()
         {
             produkt produkt = new produkt();
-            Boolean flag;
+            Boolean flag = false;
             try
             {
                 produkt.ID = _p.ID;
                 produkt.Nazwa = textBox_Product_Name.Text.ToString();
                 produkt.Producent = textBox_Manufacturer.Text.ToString();
                 produkt.Numer_katalogowy = textBox_Catalog.Text.ToString();
-                produkt.Ilość = System.Convert.ToDouble(textBox_Quantity.Text);
-                produkt.Jm = comboBox_Unit.Text.ToString();
-                produkt.Cena_netto = System.Convert.ToDecimal(textBox_Price_Net.Text);
                 produkt.Vat = System.Convert.ToDouble(ComboBox_Taxes.Text);
                 produkt.Cena_brutto = System.Convert.ToDecimal(textBox_Price_Gross.Text);
                 produkt.Kategoria = (int)comboBox_Product_Category.SelectedValue;
                 produkt.Status = (int)comboBox_Product_Status.SelectedValue;
-                flag = true;
+                try
+                {
+                    produkt.Ilość = System.Convert.ToDouble(textBox_Quantity.Text);
+                    produkt.Jm = comboBox_Unit.Text.ToString();
+                    try
+                    {
+                        produkt.Cena_netto = System.Convert.ToDecimal(textBox_Price_Net.Text);
+                        flag = true;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Cena musi być liczbą", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Ilość musi być liczbą", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception)
             {
-                MessageBox.Show("Ilość musi być liczbą", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Wypełnij wszystkie dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 flag = false;
             }
             if (flag == true)
@@ -139,7 +168,7 @@ namespace E_elektryk
         decimal Calc_gross(decimal net, decimal tax)
         {
             decimal gross;
-            gross = net + (net * (tax / 100));
+            gross = Math.Round(net + (net * (tax / 100)), 2);
             return gross;
         }
 
@@ -170,11 +199,16 @@ namespace E_elektryk
 
         private void Window_Add_Product_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet1.statusy_zlecenia' . Możesz go przenieść lub usunąć.
-            this.statusy_zleceniaTableAdapter.Fill(this.zlecenieDataSet1.statusy_zlecenia);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.statusy_produktów' . Możesz go przenieść lub usunąć.
+            this.statusy_produktówTableAdapter.Fill(this.zlecenieDataSet.statusy_produktów);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.kategoria_produktu' . Możesz go przenieść lub usunąć.
             this.kategoria_produktuTableAdapter.Fill(this.zlecenieDataSet.kategoria_produktu);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zlecenieDataSet.produkt' . Możesz go przenieść lub usunąć.
+        }
+
+        private void textBox_Price_Net_TextChanged(object sender, EventArgs e)
+        {
+            Add_gross_price();
         }
     }
 }

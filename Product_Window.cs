@@ -47,7 +47,7 @@ namespace E_elektryk
                         item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                     }
                     item.SubItems.Add(value.ToString() + " zł");
-                    item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status.ToString());
+                    item.SubItems.Add(db.statusy_produktów.Find(p.Status).Status.ToString());
                     item.Font = new Font(item.Font, FontStyle.Regular);
                     Products_list.Items.Add(item);
                 }
@@ -108,7 +108,7 @@ namespace E_elektryk
                             item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                         }
                         item.SubItems.Add(value.ToString() + " zł");
-                        item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status.ToString());
+                        item.SubItems.Add(db.statusy_produktów.Find(p.Status).Status.ToString());
                         item.Font = new Font(item.Font, FontStyle.Regular);
                         Products_list.Items.Add(item);
                     }
@@ -143,7 +143,7 @@ namespace E_elektryk
                             item.SubItems.Add(product_cat.Nazwa_kategorii.ToString());
                         }
                         item.SubItems.Add(value.ToString() + " zł");
-                        item.SubItems.Add(db.statusy_zlecenia.Find(p.Status).Status.ToString());
+                        item.SubItems.Add(db.statusy_produktów.Find(p.Status).Status.ToString());
                         item.Font = new Font(item.Font, FontStyle.Regular);
                         Products_list.Items.Add(item);
                     }
