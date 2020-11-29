@@ -439,7 +439,7 @@ namespace E_elektryk
                             string vat = (dataGridView1.Rows[y].Cells[8].Value.ToString()).Trim(' ', '%');
                             decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
                             dataGridView1.Rows[y].Cells[9].Value = (Gross * lot) + (Gross * lot * margin /100);
-                            decimal profit = (System.Convert.ToDecimal(dataGridView1.Rows[y].Cells[7].Value) * (margin / 100));
+                            decimal profit = price_w_margin - (System.Convert.ToDecimal(piece_price) * lot);
                             dataGridView1.Rows[y].Cells[11].Value = profit;
                             decimal sum_e_taxes = 0;
                             decimal sum_w_taxes = 0;
