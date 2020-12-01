@@ -108,18 +108,6 @@ namespace E_elektryk
                     item.Font = new System.Drawing.Font(item.Font, FontStyle.Regular);
                     listView1.Items.Add(item);
                 }
-                dataGridView2.Rows.Clear();
-                List<Wycena_prac> wycena_Prac_list = db.Wycena_prac.ToList();
-                foreach (Wycena_prac prace in wycena_Prac_list)
-                {
-                    DataGridViewRow item_grid = new DataGridViewRow();
-                    item_grid.CreateCells(dataGridView2);
-                    item_grid.Cells[0].Value = prace.Nazwa;
-                    item_grid.Cells[1].Value = prace.Cena_netto;
-                    item_grid.Cells[2].Value = prace.Vat;
-                    item_grid.Cells[3].Value = prace.Cena_brutto;
-                    dataGridView2.Rows.Add(item_grid);
-                }
             }
             calculate();
         }   // Fill listView from products DB
@@ -355,7 +343,8 @@ namespace E_elektryk
                         produkty_W_Wycenie.ilość = System.Convert.ToDecimal(row.Cells[4].Value);
                         produkty_W_Wycenie.Marża = System.Convert.ToInt32(row.Cells[5].Value);
                         produkty_W_Wycenie.Zysk_netto = System.Convert.ToDecimal(row.Cells[11].Value);
-                        produkty_W_Wycenie.Aktualna_cena_netto = System.Convert.ToDecimal(row.Cells[6].Value);
+                        decimal actual_price = Convert.ToDecimal(row.Cells[6].Value.ToString().Trim(' ', 'z', 'ł'));
+                        produkty_W_Wycenie.Aktualna_cena_netto = actual_price;
                         db.produkty_w_wycenie.Add(produkty_W_Wycenie);
                         db.SaveChanges();
                     }
@@ -409,7 +398,8 @@ namespace E_elektryk
                         produkty_W_Wycenie.ilość = System.Convert.ToDecimal(row.Cells[4].Value);
                         produkty_W_Wycenie.Marża = System.Convert.ToInt32(row.Cells[5].Value);
                         produkty_W_Wycenie.Zysk_netto = System.Convert.ToDecimal(row.Cells[11].Value);
-                        produkty_W_Wycenie.Aktualna_cena_netto = System.Convert.ToDecimal(row.Cells[6].Value);
+                        decimal actual_price = Convert.ToDecimal(row.Cells[6].Value.ToString().Trim(' ', 'z', 'ł'));
+                        produkty_W_Wycenie.Aktualna_cena_netto = actual_price;
                         db.produkty_w_wycenie.AddOrUpdate(produkty_W_Wycenie);
                         db.SaveChanges();
                     }
@@ -428,8 +418,7 @@ namespace E_elektryk
         void calculate()
         {
             try
-            {
-                
+            {                
                 for (int y = 0; y < dataGridView1.Rows.Count; y++)
                 {
                     DataGridViewRow row = dataGridView1.CurrentRow;
@@ -442,17 +431,33 @@ namespace E_elektryk
                         }
                         else
                         {
-                            decimal lot = System.Convert.ToDecimal(dataGridView1.Rows[y].Cells[4].Value);
-                            decimal margin = System.Convert.ToDecimal(dataGridView1.Rows[y].Cells[5].Value);
-                            string piece_price = TRIM_price(dataGridView1.Rows[y].Cells[6].Value.ToString());
-                            decimal price_w_margin = (System.Convert.ToDecimal(piece_price) * lot) + (System.Convert.ToDecimal(piece_price) * lot * margin / 100) ;
-                            dataGridView1.Rows[y].Cells[7].Value = price_w_margin;
-                            string gross_offer = TRIM_price(dataGridView1.Rows[y].Cells[9].Value.ToString());
-                            string vat = (dataGridView1.Rows[y].Cells[8].Value.ToString()).Trim(' ', '%');
-                            decimal Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
-                            dataGridView1.Rows[y].Cells[9].Value = (Gross * lot) + (Gross * lot * margin /100);
-                            decimal profit = price_w_margin - (System.Convert.ToDecimal(piece_price) * lot);
-                            dataGridView1.Rows[y].Cells[11].Value = profit;
+                            
+                            decimal lot = System.Convert.ToDecimal(dataGridView1.Rows[y].Cells[4].Value); // ilość
+                            decimal margin = System.Convert.ToDecimal(dataGridView1.Rows[y].Cells[5].Value); // marża
+                            string piece_price = TRIM_price(dataGridView1.Rows[y].Cells[6].Value.ToString()); // cena jednostkowa
+                            decimal price_w_margin; // cena z marżą
+                            decimal Gross;
+                            string vat = (dataGridView1.Rows[y].Cells[8].Value.ToString()).Trim(' ', '%'); // vat
+
+                            if (dataGridView1.Rows[y].Cells[10].Value.ToString() == "Usługa")
+                            {
+                                price_w_margin = (System.Convert.ToDecimal(piece_price) * lot);
+                                Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                                dataGridView1.Rows[y].Cells[9].Value = Gross * lot;
+                                dataGridView1.Rows[y].Cells[5].Value = 100;
+                            }
+                            else
+                            {
+                                price_w_margin = (System.Convert.ToDecimal(piece_price) * lot) + (System.Convert.ToDecimal(piece_price) * lot * margin / 100);
+                                Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                                dataGridView1.Rows[y].Cells[9].Value = (Gross * lot) + (Gross * lot * margin / 100);
+                            }
+
+                                 
+                            
+                            dataGridView1.Rows[y].Cells[7].Value = price_w_margin; // cena jednostkowa + marża
+                            decimal profit = (System.Convert.ToDecimal(piece_price) * lot) + (System.Convert.ToDecimal(piece_price) * lot * margin / 100) - (System.Convert.ToDecimal(piece_price) * lot);
+                            dataGridView1.Rows[y].Cells[11].Value = profit; // zysk
                             decimal sum_e_taxes = 0;
                             decimal sum_w_taxes = 0;
                             decimal profit_net = 0;
@@ -476,6 +481,7 @@ namespace E_elektryk
                                 sum_net_profit.Text = "Zysk Netto: " + profit_net.ToString() + " zł";
                                 sum_gross_profit.Text = "Zysk Brutto: " + profit_gross.ToString() + " zł";
                             }
+                            dataGridView1.Rows[y].Cells[6].Value = Math.Round(Convert.ToDecimal(piece_price), 2).ToString() + " zł";
                         }
                     }
                     else
@@ -566,6 +572,7 @@ namespace E_elektryk
                 calculate();
             }
         }
+
     }
 }
 

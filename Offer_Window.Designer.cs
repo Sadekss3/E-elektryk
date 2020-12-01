@@ -328,11 +328,13 @@
             // columnHeader50
             // 
             this.columnHeader50.Text = "Suma Netto";
+            this.columnHeader50.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader50.Width = 140;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Suma Brutto";
+            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader1.Width = 140;
             // 
             // sum_w_taxes_label_2

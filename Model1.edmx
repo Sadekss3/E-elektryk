@@ -100,15 +100,21 @@
           <Property Name="ID_statusu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Status" Type="text" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.zlecenie.Wycena_prac' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Wycena_prac">
           <Key>
             <PropertyRef Name="ID" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Cena_netto" />
+            <PropertyRef Name="Vat" />
+            <PropertyRef Name="Cena_brutto" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="text" Nullable="false" />
           <Property Name="Nazwa" Type="text" Nullable="false" />
-          <Property Name="Cena_netto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="Vat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="Cena_brutto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Cena_netto" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Vat" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Cena_brutto" Type="decimal" Precision="10" Scale="0" Nullable="false" />
         </EntityType>
         <EntityContainer Name="zlecenieModelStoreContainer">
           <EntitySet Name="adres" EntityType="Self.adres" Schema="zlecenie" store:Type="Tables" />
@@ -120,7 +126,15 @@
           <EntitySet Name="produkty_w_wycenie" EntityType="Self.produkty_w_wycenie" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="statusy_produktów" EntityType="Self.statusy_produktów" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="statusy_zlecenia" EntityType="Self.statusy_zlecenia" Schema="zlecenie" store:Type="Tables" />
-          <EntitySet Name="Wycena_prac" EntityType="Self.Wycena_prac" Schema="zlecenie" store:Type="Tables" />
+          <EntitySet Name="Wycena_prac" EntityType="Self.Wycena_prac" store:Type="Tables" store:Schema="zlecenie">
+            <DefiningQuery>SELECT
+`Wycena_prac`.`ID`, 
+`Wycena_prac`.`Nazwa`, 
+`Wycena_prac`.`Cena_netto`, 
+`Wycena_prac`.`Vat`, 
+`Wycena_prac`.`Cena_brutto`
+FROM `Wycena_prac` AS `Wycena_prac`</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -236,8 +250,12 @@
         <EntityType Name="Wycena_prac">
           <Key>
             <PropertyRef Name="ID" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Cena_netto" />
+            <PropertyRef Name="Vat" />
+            <PropertyRef Name="Cena_brutto" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Cena_netto" Type="Decimal" Nullable="false" />
           <Property Name="Vat" Type="Decimal" Nullable="false" />

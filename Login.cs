@@ -19,45 +19,52 @@ namespace E_elektryk
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            using (zlecenieEntities db = new zlecenieEntities())
+            try
             {
-                string login = textBox1.Text.ToLower();
-                string password = textBox2.Text;
-                Dane_Logowania dane_Logowania = new Dane_Logowania();
-                dane_Logowania = db.Dane_Logowania.Find(login.ToLower());
-                if (login == "" && password == "")
+                Cursor.Current = Cursors.WaitCursor;
+                using (zlecenieEntities db = new zlecenieEntities())
                 {
-                    MessageBox.Show("Wypełnij pola Hasło i Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (login == "")
-                {
-                    MessageBox.Show("Wypełnij pole Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (password == "")
-                {
-                    MessageBox.Show("Wypełnij pole Hasło", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    try
+                    string login = textBox1.Text.ToLower();
+                    string password = textBox2.Text;
+                    Dane_Logowania dane_Logowania = new Dane_Logowania();
+                    dane_Logowania = db.Dane_Logowania.Find(login.ToLower());
+                    if (login == "" && password == "")
                     {
-                        if (dane_Logowania.Login.ToLower() == login && dane_Logowania.Hasło == password)
+                        MessageBox.Show("Wypełnij pola Hasło i Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (login == "")
+                    {
+                        MessageBox.Show("Wypełnij pole Login", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (password == "")
+                    {
+                        MessageBox.Show("Wypełnij pole Hasło", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        try
                         {
-                            Close();
+                            if (dane_Logowania.Login.ToLower() == login && dane_Logowania.Hasło == password)
+                            {
+                                Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Błędne dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
-                        else
+                        catch
                         {
                             MessageBox.Show("Błędne dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    catch
-                    {
-                        MessageBox.Show("Błędne dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                } 
+                }
+                Cursor.Current = Cursors.Default;
             }
-            Cursor.Current = Cursors.Default;
+            catch
+            {
+                MessageBox.Show("Brak połączenia z serwerem", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

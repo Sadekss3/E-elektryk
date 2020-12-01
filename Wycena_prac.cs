@@ -14,7 +14,7 @@ namespace E_elektryk
     
     public partial class Wycena_prac
     {
-        public int ID { get; set; }
+        public string ID { get; set; }
         public string Nazwa { get; set; }
         public decimal Cena_netto { get; set; }
         public decimal Vat { get; set; }
