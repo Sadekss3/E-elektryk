@@ -242,5 +242,74 @@ namespace E_elektryk
         {
             Save_Offer();
         }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string button_checked = checkedListBox1.Text;
+            switch (button_checked)
+            {
+                case "Adres Zleceniodawcy":
+                    {
+                        TextBox[] textBox = { textBox_Town, textBox_Kod_1, textBox_Kod_2, textBox_Street, textBox_Building_Number, textBox_Home_Number, textBox_Country };
+                        checkedListBox1.SetItemCheckState(0, CheckState.Checked);
+                        checkedListBox1.SetItemCheckState(1, CheckState.Unchecked);
+                        checkedListBox1.SetItemCheckState(2, CheckState.Unchecked);
+                        try
+                        {
+                            using (zlecenieEntities db = new zlecenieEntities())
+                            {
+                                textBox_Town.Text = db.adres.Find(db.kontrahent.Find(client_id).Adres).Miasto;
+                                textBox_Kod_1.Text = (db.adres.Find(db.kontrahent.Find(client_id).Adres).Kod_pocztowy).Remove(2, 3);
+                                textBox_Kod_2.Text = (db.adres.Find(db.kontrahent.Find(client_id).Adres).Kod_pocztowy).Remove(0, 2);
+                                textBox_Street.Text = db.adres.Find(db.kontrahent.Find(client_id).Adres).Nazwa_ulicy;
+                                textBox_Building_Number.Text = db.adres.Find(db.kontrahent.Find(client_id).Adres).Numer_budynku;
+                                textBox_Home_Number.Text = db.adres.Find(db.kontrahent.Find(client_id).Adres).Numer_mieszkania;
+                                textBox_Country.Text = db.adres.Find(db.kontrahent.Find(client_id).Adres).Państwo;
+                                
+                                for(int i = 0; i < textBox.Length; i++)
+                                {
+                                    textBox[i].Enabled = false;
+                                }   
+                            }      
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Wybierz Kontrahenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            checkedListBox1.SetItemCheckState(0, CheckState.Unchecked);
+                        }
+                        break;
+                    }
+                case "Wybierz adres z listy":
+                    {
+                        checkedListBox1.SetItemCheckState(0, CheckState.Unchecked);
+                        checkedListBox1.SetItemCheckState(1, CheckState.Checked);
+                        checkedListBox1.SetItemCheckState(2, CheckState.Unchecked);
+                        try
+                        {
+
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Wybierz Kontrahenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    }
+                case "Dodaj adres do Bazy Danych":
+                    {
+                        checkedListBox1.SetItemCheckState(0, CheckState.Unchecked);
+                        checkedListBox1.SetItemCheckState(1, CheckState.Unchecked);
+                        checkedListBox1.SetItemCheckState(2, CheckState.Checked);
+                        try
+                        {
+
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Wybierz Kontrahenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    }
+            }
+        }
     }
 }

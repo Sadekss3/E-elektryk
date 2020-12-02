@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -117,27 +117,27 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox_O_Name = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_Country = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_Kod_2 = new System.Windows.Forms.TextBox();
+            this.textBox_Kod_1 = new System.Windows.Forms.TextBox();
+            this.textBox_Town = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox_Home_Number = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox_Building_Number = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox_Street = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -175,7 +175,7 @@
             this.panel5.Controls.Add(this.Order_Information_Box);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(1114, 53);
+            this.panel5.Location = new System.Drawing.Point(1450, 53);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(490, 113);
             this.panel5.TabIndex = 62;
@@ -201,7 +201,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 156);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1604, 166);
+            this.panel3.Size = new System.Drawing.Size(1940, 166);
             this.panel3.TabIndex = 64;
             // 
             // listView1
@@ -233,7 +233,7 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowGroups = false;
-            this.listView1.Size = new System.Drawing.Size(1604, 113);
+            this.listView1.Size = new System.Drawing.Size(1940, 113);
             this.listView1.TabIndex = 50;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -303,7 +303,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 16);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1604, 37);
+            this.panel2.Size = new System.Drawing.Size(1940, 37);
             this.panel2.TabIndex = 49;
             // 
             // checkBox1
@@ -482,7 +482,7 @@
             this.label_Order_Date_end.AutoSize = true;
             this.label_Order_Date_end.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Order_Date_end.ForeColor = System.Drawing.Color.White;
-            this.label_Order_Date_end.Location = new System.Drawing.Point(1365, 45);
+            this.label_Order_Date_end.Location = new System.Drawing.Point(1426, 45);
             this.label_Order_Date_end.Name = "label_Order_Date_end";
             this.label_Order_Date_end.Size = new System.Drawing.Size(193, 16);
             this.label_Order_Date_end.TabIndex = 47;
@@ -491,7 +491,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(1368, 63);
+            this.dateTimePicker2.Location = new System.Drawing.Point(1429, 63);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(104, 20);
             this.dateTimePicker2.TabIndex = 48;
@@ -591,7 +591,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 322);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1604, 559);
+            this.panel4.Size = new System.Drawing.Size(1940, 559);
             this.panel4.TabIndex = 63;
             // 
             // dataGridView1
@@ -622,7 +622,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1618, 210);
+            this.dataGridView1.Size = new System.Drawing.Size(1954, 210);
             this.dataGridView1.TabIndex = 71;
             this.dataGridView1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValidated);
             // 
@@ -636,8 +636,8 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle13.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column1.FillWeight = 250F;
             this.Column1.HeaderText = "Nazwa";
             this.Column1.MinimumWidth = 10;
@@ -666,9 +666,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle14.Format = "N0";
-            dataGridViewCellStyle14.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.FillWeight = 50F;
             this.Column4.HeaderText = "Ilość";
             this.Column4.MinimumWidth = 10;
@@ -683,17 +683,17 @@
             // 
             // Cena_Jednostkowa
             // 
-            dataGridViewCellStyle15.NullValue = null;
-            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.NullValue = null;
+            this.Cena_Jednostkowa.DefaultCellStyle = dataGridViewCellStyle3;
             this.Cena_Jednostkowa.HeaderText = "C.J";
             this.Cena_Jednostkowa.Name = "Cena_Jednostkowa";
             this.Cena_Jednostkowa.Width = 47;
             // 
             // Column5
             // 
-            dataGridViewCellStyle16.Format = "C2";
-            dataGridViewCellStyle16.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column5.HeaderText = "Cena netto";
             this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
@@ -710,9 +710,9 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle17.Format = "C2";
-            dataGridViewCellStyle17.NullValue = null;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column7.HeaderText = "Cena Brutto";
             this.Column7.MinimumWidth = 10;
             this.Column7.Name = "Column7";
@@ -729,9 +729,9 @@
             // 
             // dataGridViewTextBoxColumn12
             // 
-            dataGridViewCellStyle18.Format = "C2";
-            dataGridViewCellStyle18.NullValue = null;
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn12.HeaderText = "Zysk";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
@@ -763,7 +763,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 82;
-            this.dataGridView2.Size = new System.Drawing.Size(1618, 212);
+            this.dataGridView2.Size = new System.Drawing.Size(1940, 212);
             this.dataGridView2.TabIndex = 70;
             this.dataGridView2.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValidated);
             // 
@@ -777,8 +777,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle19.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn2.FillWeight = 250F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Nazwa";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
@@ -807,9 +807,9 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle20.Format = "N0";
-            dataGridViewCellStyle20.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn5.FillWeight = 50F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Ilość";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
@@ -824,17 +824,17 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
-            dataGridViewCellStyle21.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn6.HeaderText = "C.J";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 47;
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle22.Format = "C2";
-            dataGridViewCellStyle22.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn7.HeaderText = "Cena netto";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
@@ -851,9 +851,9 @@
             // 
             // dataGridViewTextBoxColumn9
             // 
-            dataGridViewCellStyle23.Format = "C2";
-            dataGridViewCellStyle23.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn9.HeaderText = "Cena Brutto";
             this.dataGridViewTextBoxColumn9.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
@@ -870,9 +870,9 @@
             // 
             // Zysk
             // 
-            dataGridViewCellStyle24.Format = "C2";
-            dataGridViewCellStyle24.NullValue = null;
-            this.Zysk.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.Zysk.DefaultCellStyle = dataGridViewCellStyle12;
             this.Zysk.HeaderText = "Zysk";
             this.Zysk.Name = "Zysk";
             this.Zysk.ReadOnly = true;
@@ -964,7 +964,7 @@
             this.label_Order_Date_start.AutoSize = true;
             this.label_Order_Date_start.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Order_Date_start.ForeColor = System.Drawing.Color.White;
-            this.label_Order_Date_start.Location = new System.Drawing.Point(1365, 3);
+            this.label_Order_Date_start.Location = new System.Drawing.Point(1426, 3);
             this.label_Order_Date_start.Name = "label_Order_Date_start";
             this.label_Order_Date_start.Size = new System.Drawing.Size(107, 16);
             this.label_Order_Date_start.TabIndex = 17;
@@ -973,7 +973,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1368, 22);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1429, 22);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(104, 20);
             this.dateTimePicker1.TabIndex = 18;
@@ -989,27 +989,27 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.checkedListBox1);
             this.panel1.Controls.Add(this.label31);
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.label24);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBox_Country);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox_Kod_2);
+            this.panel1.Controls.Add(this.textBox_Kod_1);
+            this.panel1.Controls.Add(this.textBox_Town);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.textBox_Home_Number);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.textBox_Building_Number);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.textBox_Street);
             this.panel1.Controls.Add(this.label_Order_Date_end);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.textBox_Offer_CompanyName);
@@ -1024,29 +1024,33 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1604, 156);
+            this.panel1.Size = new System.Drawing.Size(1940, 156);
             this.panel1.TabIndex = 62;
             // 
-            // button1
+            // checkedListBox1
             // 
-            this.button1.BackColor = System.Drawing.Color.Gainsboro;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(1013, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 59);
-            this.button1.TabIndex = 69;
-            this.button1.Text = "Adres Zleceniodawcy";
-            this.button1.UseVisualStyleBackColor = false;
+            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkedListBox1.ForeColor = System.Drawing.Color.White;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Adres Zleceniodawcy",
+            "Wybierz adres z listy",
+            "Dodaj adres do Bazy Danych"});
+            this.checkedListBox1.Location = new System.Drawing.Point(808, 102);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(451, 51);
+            this.checkedListBox1.TabIndex = 72;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(1182, 25);
+            this.label31.Location = new System.Drawing.Point(1289, 25);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(52, 16);
             this.label31.TabIndex = 68;
@@ -1057,7 +1061,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(1182, 3);
+            this.label30.Location = new System.Drawing.Point(1289, 3);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(122, 16);
             this.label30.TabIndex = 67;
@@ -1068,7 +1072,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(1365, 110);
+            this.label26.Location = new System.Drawing.Point(1426, 110);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(45, 16);
             this.label26.TabIndex = 66;
@@ -1079,7 +1083,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(1365, 90);
+            this.label25.Location = new System.Drawing.Point(1426, 90);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(160, 16);
             this.label25.TabIndex = 65;
@@ -1096,48 +1100,44 @@
             this.label24.TabIndex = 64;
             this.label24.Text = "Zlecenie nr:    \r\n           \r\nNa podstawie oferty nr:";
             // 
-            // textBox1
+            // textBox_Country
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(939, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(68, 20);
-            this.textBox1.TabIndex = 62;
+            this.textBox_Country.Location = new System.Drawing.Point(1191, 73);
+            this.textBox_Country.Name = "textBox_Country";
+            this.textBox_Country.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Country.TabIndex = 62;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(806, 131);
+            this.label16.Location = new System.Drawing.Point(1054, 78);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(61, 15);
             this.label16.TabIndex = 63;
             this.label16.Text = "Państwo";
             // 
-            // textBox2
+            // textBox_Kod_2
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(1016, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 20);
-            this.textBox2.TabIndex = 54;
+            this.textBox_Kod_2.Location = new System.Drawing.Point(989, 50);
+            this.textBox_Kod_2.Name = "textBox_Kod_2";
+            this.textBox_Kod_2.Size = new System.Drawing.Size(59, 20);
+            this.textBox_Kod_2.TabIndex = 54;
             // 
-            // textBox3
+            // textBox_Kod_1
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(939, 41);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(54, 20);
-            this.textBox3.TabIndex = 53;
+            this.textBox_Kod_1.Location = new System.Drawing.Point(939, 51);
+            this.textBox_Kod_1.Name = "textBox_Kod_1";
+            this.textBox_Kod_1.Size = new System.Drawing.Size(27, 20);
+            this.textBox_Kod_1.TabIndex = 53;
             // 
-            // textBox4
+            // textBox_Town
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(939, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(208, 20);
-            this.textBox4.TabIndex = 50;
+            this.textBox_Town.Location = new System.Drawing.Point(939, 25);
+            this.textBox_Town.Name = "textBox_Town";
+            this.textBox_Town.Size = new System.Drawing.Size(109, 20);
+            this.textBox_Town.TabIndex = 50;
             // 
             // label17
             // 
@@ -1150,39 +1150,37 @@
             this.label17.TabIndex = 49;
             this.label17.Text = "Adres zlecenia";
             // 
-            // textBox5
+            // textBox_Home_Number
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(939, 107);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(68, 20);
-            this.textBox5.TabIndex = 59;
+            this.textBox_Home_Number.Location = new System.Drawing.Point(1191, 49);
+            this.textBox_Home_Number.Name = "textBox_Home_Number";
+            this.textBox_Home_Number.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Home_Number.TabIndex = 59;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(806, 109);
+            this.label18.Location = new System.Drawing.Point(1054, 54);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(131, 15);
             this.label18.TabIndex = 60;
             this.label18.Text = "Numer Mieszkania";
             // 
-            // textBox6
+            // textBox_Building_Number
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(939, 85);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(68, 20);
-            this.textBox6.TabIndex = 58;
+            this.textBox_Building_Number.Location = new System.Drawing.Point(1191, 23);
+            this.textBox_Building_Number.Name = "textBox_Building_Number";
+            this.textBox_Building_Number.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Building_Number.TabIndex = 58;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(805, 21);
+            this.label19.Location = new System.Drawing.Point(805, 27);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(51, 15);
             this.label19.TabIndex = 51;
@@ -1193,7 +1191,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(805, 42);
+            this.label20.Location = new System.Drawing.Point(805, 52);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(94, 15);
             this.label20.TabIndex = 52;
@@ -1203,7 +1201,8 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label21.Location = new System.Drawing.Point(999, 43);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(972, 53);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(11, 14);
             this.label21.TabIndex = 61;
@@ -1214,7 +1213,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(806, 87);
+            this.label22.Location = new System.Drawing.Point(1054, 27);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(116, 15);
             this.label22.TabIndex = 57;
@@ -1225,25 +1224,24 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(805, 65);
+            this.label23.Location = new System.Drawing.Point(805, 78);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(41, 15);
             this.label23.TabIndex = 55;
             this.label23.Text = "Ulica";
             // 
-            // textBox7
+            // textBox_Street
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(939, 63);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(208, 20);
-            this.textBox7.TabIndex = 56;
+            this.textBox_Street.Location = new System.Drawing.Point(939, 76);
+            this.textBox_Street.Name = "textBox_Street";
+            this.textBox_Street.Size = new System.Drawing.Size(109, 20);
+            this.textBox_Street.TabIndex = 56;
             // 
             // Window_Add_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1604, 881);
+            this.ClientSize = new System.Drawing.Size(1940, 881);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -1327,22 +1325,21 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Country;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_Kod_2;
+        private System.Windows.Forms.TextBox textBox_Kod_1;
+        private System.Windows.Forms.TextBox textBox_Town;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox_Home_Number;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox_Building_Number;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox_Street;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -1369,5 +1366,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Zysk;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

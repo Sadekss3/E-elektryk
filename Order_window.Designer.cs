@@ -86,6 +86,7 @@
             this.Order_Search_Order_Name.Name = "Order_Search_Order_Name";
             this.Order_Search_Order_Name.Size = new System.Drawing.Size(133, 20);
             this.Order_Search_Order_Name.TabIndex = 20;
+            this.Order_Search_Order_Name.TextChanged += new System.EventHandler(this.Offer_Search_Offer_Name_TextChanged);
             // 
             // Order_Search_Client_ID
             // 
@@ -94,6 +95,7 @@
             this.Order_Search_Client_ID.Name = "Order_Search_Client_ID";
             this.Order_Search_Client_ID.Size = new System.Drawing.Size(133, 20);
             this.Order_Search_Client_ID.TabIndex = 22;
+            this.Order_Search_Client_ID.TextChanged += new System.EventHandler(this.Offer_Search_Offer_Name_TextChanged);
             // 
             // label1
             // 
@@ -140,6 +142,7 @@
             this.Order_Search_Client_Name.Name = "Order_Search_Client_Name";
             this.Order_Search_Client_Name.Size = new System.Drawing.Size(133, 20);
             this.Order_Search_Client_Name.TabIndex = 21;
+            this.Order_Search_Client_Name.TextChanged += new System.EventHandler(this.Offer_Search_Offer_Name_TextChanged);
             // 
             // panel_Offer
             // 
