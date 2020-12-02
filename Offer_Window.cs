@@ -37,7 +37,7 @@ namespace E_elektryk
                         item.SubItems.Add(Client_Info);
                         item.SubItems.Add(o.Data_Od.ToString().Remove(10, 9));
                         item.SubItems.Add(o.Data_Do.ToString().Remove(10, 9));
-                        item.SubItems.Add(db.statusy_zlecenia.Find(o.Status).Status);
+                        item.SubItems.Add(db.statusy_wycen.Find(o.Status).Status);
                         item.SubItems.Add(o.Opis.ToString());
                         item.Font = new Font(item.Font, FontStyle.Regular);
                         Offer_list.Items.Add(item);

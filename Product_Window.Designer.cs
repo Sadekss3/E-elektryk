@@ -90,6 +90,7 @@
             this.Products_list.GridLines = true;
             this.Products_list.HideSelection = false;
             this.Products_list.Location = new System.Drawing.Point(0, 0);
+            this.Products_list.MultiSelect = false;
             this.Products_list.Name = "Products_list";
             this.Products_list.Size = new System.Drawing.Size(1620, 624);
             this.Products_list.TabIndex = 22;

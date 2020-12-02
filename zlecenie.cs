@@ -12,9 +12,15 @@ namespace E_elektryk
     using System;
     using System.Collections.Generic;
     
-    public partial class statusy_zlecenia
+    public partial class zlecenie
     {
         public int ID { get; set; }
-        public string Status { get; set; }
+        public string Nazwa { get; set; }
+        public int Kontrahent { get; set; }
+        public int Adres_zlecenia { get; set; }
+        public int Status_zlecenia { get; set; }
+        public System.DateTime Data_od { get; set; }
+        public System.DateTime Data_do { get; set; }
+        public string Opis { get; set; }
     }
 }

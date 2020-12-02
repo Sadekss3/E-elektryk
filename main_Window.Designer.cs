@@ -87,8 +87,9 @@
             this.button_main_menu = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel_control_button = new System.Windows.Forms.Panel();
+            this.button_minimalize_Window = new System.Windows.Forms.Button();
             this.button_Exit_Window = new System.Windows.Forms.Button();
-            this.button_minimalize_window = new System.Windows.Forms.Button();
+            this.button_hide_window = new System.Windows.Forms.Button();
             this.panel_Main_Window = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Menu.SuspendLayout();
@@ -952,18 +953,35 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1400, 38);
             this.panel7.TabIndex = 2;
+            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // panel_control_button
             // 
             this.panel_control_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_control_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel_control_button.Controls.Add(this.button_minimalize_Window);
             this.panel_control_button.Controls.Add(this.button_Exit_Window);
-            this.panel_control_button.Controls.Add(this.button_minimalize_window);
+            this.panel_control_button.Controls.Add(this.button_hide_window);
             this.panel_control_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel_control_button.Location = new System.Drawing.Point(1321, 1);
+            this.panel_control_button.Location = new System.Drawing.Point(1280, 1);
             this.panel_control_button.Name = "panel_control_button";
-            this.panel_control_button.Size = new System.Drawing.Size(76, 37);
+            this.panel_control_button.Size = new System.Drawing.Size(117, 37);
             this.panel_control_button.TabIndex = 0;
+            // 
+            // button_minimalize_Window
+            // 
+            this.button_minimalize_Window.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.button_minimalize_Window.FlatAppearance.BorderSize = 0;
+            this.button_minimalize_Window.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_minimalize_Window.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_minimalize_Window.ForeColor = System.Drawing.Color.White;
+            this.button_minimalize_Window.Location = new System.Drawing.Point(49, 4);
+            this.button_minimalize_Window.Name = "button_minimalize_Window";
+            this.button_minimalize_Window.Size = new System.Drawing.Size(28, 31);
+            this.button_minimalize_Window.TabIndex = 3;
+            this.button_minimalize_Window.Text = "O";
+            this.button_minimalize_Window.UseVisualStyleBackColor = false;
+            this.button_minimalize_Window.Click += new System.EventHandler(this.button_minimalize_Window_Click);
             // 
             // button_Exit_Window
             // 
@@ -972,7 +990,7 @@
             this.button_Exit_Window.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Exit_Window.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Exit_Window.ForeColor = System.Drawing.Color.White;
-            this.button_Exit_Window.Location = new System.Drawing.Point(44, 4);
+            this.button_Exit_Window.Location = new System.Drawing.Point(83, 4);
             this.button_Exit_Window.Name = "button_Exit_Window";
             this.button_Exit_Window.Size = new System.Drawing.Size(28, 31);
             this.button_Exit_Window.TabIndex = 2;
@@ -980,19 +998,19 @@
             this.button_Exit_Window.UseVisualStyleBackColor = false;
             this.button_Exit_Window.Click += new System.EventHandler(this.button_Exit_Window_Click);
             // 
-            // button_minimalize_window
+            // button_hide_window
             // 
-            this.button_minimalize_window.FlatAppearance.BorderSize = 0;
-            this.button_minimalize_window.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_minimalize_window.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_minimalize_window.ForeColor = System.Drawing.Color.White;
-            this.button_minimalize_window.Location = new System.Drawing.Point(7, 1);
-            this.button_minimalize_window.Name = "button_minimalize_window";
-            this.button_minimalize_window.Size = new System.Drawing.Size(31, 34);
-            this.button_minimalize_window.TabIndex = 0;
-            this.button_minimalize_window.Text = "-";
-            this.button_minimalize_window.UseVisualStyleBackColor = true;
-            this.button_minimalize_window.Click += new System.EventHandler(this.button_minimalize_window_Click);
+            this.button_hide_window.FlatAppearance.BorderSize = 0;
+            this.button_hide_window.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_hide_window.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_hide_window.ForeColor = System.Drawing.Color.White;
+            this.button_hide_window.Location = new System.Drawing.Point(12, -3);
+            this.button_hide_window.Name = "button_hide_window";
+            this.button_hide_window.Size = new System.Drawing.Size(31, 34);
+            this.button_hide_window.TabIndex = 0;
+            this.button_hide_window.Text = "-";
+            this.button_hide_window.UseVisualStyleBackColor = true;
+            this.button_hide_window.Click += new System.EventHandler(this.button_hide_window_Click);
             // 
             // panel_Main_Window
             // 
@@ -1028,13 +1046,14 @@
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(500, 500);
+            this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "main_Window";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "E-Elektryk";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.Form1_Load);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.panel_Menu.ResumeLayout(false);
             this.panel_Menu.PerformLayout();
             this.panel_Invoice.ResumeLayout(false);
@@ -1074,7 +1093,7 @@
         private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.Panel panel_control_button;
         private System.Windows.Forms.Button button_Exit_Window;
-        private System.Windows.Forms.Button button_minimalize_window;
+        private System.Windows.Forms.Button button_hide_window;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel_Invoice;
         private System.Windows.Forms.Button button_Print_Invoice;
@@ -1123,6 +1142,7 @@
         private System.Windows.Forms.Button button_CStatus_hide;
         private System.Windows.Forms.Button button_CStatus_Block;
         private System.Windows.Forms.Button button_CStatus_active;
+        private System.Windows.Forms.Button button_minimalize_Window;
     }
 }
 

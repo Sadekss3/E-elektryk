@@ -130,7 +130,7 @@ namespace E_elektryk
                 string net_offer = TRIM_price(item.SubItems[5].Text);
                 item_grid.Cells[6].Value = System.Convert.ToDecimal(net_offer); // Add decimal one piece net price to cells C.J
                 item_grid.Cells[7].Value = System.Convert.ToDecimal(net_offer) * System.Convert.ToDecimal(lot) + " zł"; // Add calculated net price for all pieces
-                item_grid.Cells[8].Value = item.SubItems[6].Text + " %";   // Add taxe to cells VAT
+                item_grid.Cells[8].Value = item.SubItems[6].Text;   // Add taxe to cells VAT
                 string gross_offer = TRIM_price(item.SubItems[7].Text);
                 item_grid.Cells[9].Value = System.Convert.ToDecimal(gross_offer) * System.Convert.ToDecimal(lot) + " zł";   // Add calculated gross price for all pieces
                 item_grid.Cells[10].Value = item.SubItems[8].Text;   // Add category name to cells Kategoria
@@ -527,7 +527,7 @@ namespace E_elektryk
                         item.SubItems.Add(p.Jm.ToString());
                         item.SubItems.Add(p.Ilość.ToString());
                         item.SubItems.Add(p.Cena_netto.ToString() + " zł");
-                        item.SubItems.Add(p.Vat.ToString());
+                        item.SubItems.Add(p.Vat.ToString() + " %");
                         item.SubItems.Add(p.Cena_brutto.ToString() + " zł");
                         if (p.Kategoria != 0)
                         {
@@ -572,7 +572,6 @@ namespace E_elektryk
                 calculate();
             }
         }
-
     }
 }
 

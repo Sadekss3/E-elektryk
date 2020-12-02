@@ -86,6 +86,18 @@
           <Property Name="Marża" Type="int" Nullable="false" />
           <Property Name="Zysk_netto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
+        <EntityType Name="produkty_w_zleceniu">
+          <Key>
+            <PropertyRef Name="Id_zlecenia" />
+            <PropertyRef Name="ID_produktu" />
+          </Key>
+          <Property Name="Id_zlecenia" Type="int" Nullable="false" />
+          <Property Name="ID_produktu" Type="int" Nullable="false" />
+          <Property Name="ilość" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="aktualna_cena_netto" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="marża" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="zysk_netto" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+        </EntityType>
         <EntityType Name="statusy_produktów">
           <Key>
             <PropertyRef Name="ID" />
@@ -93,28 +105,32 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Status" Type="text" Nullable="false" />
         </EntityType>
-        <EntityType Name="statusy_zlecenia">
+        <EntityType Name="statusy_wycen">
           <Key>
             <PropertyRef Name="ID_statusu" />
           </Key>
           <Property Name="ID_statusu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Status" Type="text" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'def.zlecenie.Wycena_prac' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="Wycena_prac">
+        <EntityType Name="statusy_zlecenia">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="Nazwa" />
-            <PropertyRef Name="Cena_netto" />
-            <PropertyRef Name="Vat" />
-            <PropertyRef Name="Cena_brutto" />
           </Key>
-          <Property Name="ID" Type="text" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="zlecenie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa" Type="text" Nullable="false" />
-          <Property Name="Cena_netto" Type="decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="Vat" Type="decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="Cena_brutto" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Kontrahent" Type="int" Nullable="false" />
+          <Property Name="Adres_zlecenia" Type="int" Nullable="false" />
+          <Property Name="Status_zlecenia" Type="int" Nullable="false" />
+          <Property Name="Data_od" Type="date" Nullable="false" />
+          <Property Name="Data_do" Type="date" Nullable="false" />
+          <Property Name="Opis" Type="text" Nullable="false" />
         </EntityType>
         <EntityContainer Name="zlecenieModelStoreContainer">
           <EntitySet Name="adres" EntityType="Self.adres" Schema="zlecenie" store:Type="Tables" />
@@ -124,17 +140,11 @@ warning 6002: The table/view 'def.zlecenie.Wycena_prac' does not have a primary 
           <EntitySet Name="oferta" EntityType="Self.oferta" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="produkt" EntityType="Self.produkt" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="produkty_w_wycenie" EntityType="Self.produkty_w_wycenie" Schema="zlecenie" store:Type="Tables" />
+          <EntitySet Name="produkty_w_zleceniu" EntityType="Self.produkty_w_zleceniu" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="statusy_produktów" EntityType="Self.statusy_produktów" Schema="zlecenie" store:Type="Tables" />
+          <EntitySet Name="statusy_wycen" EntityType="Self.statusy_wycen" Schema="zlecenie" store:Type="Tables" />
           <EntitySet Name="statusy_zlecenia" EntityType="Self.statusy_zlecenia" Schema="zlecenie" store:Type="Tables" />
-          <EntitySet Name="Wycena_prac" EntityType="Self.Wycena_prac" store:Type="Tables" store:Schema="zlecenie">
-            <DefiningQuery>SELECT
-`Wycena_prac`.`ID`, 
-`Wycena_prac`.`Nazwa`, 
-`Wycena_prac`.`Cena_netto`, 
-`Wycena_prac`.`Vat`, 
-`Wycena_prac`.`Cena_brutto`
-FROM `Wycena_prac` AS `Wycena_prac`</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="zlecenie" EntityType="Self.zlecenie" Schema="zlecenie" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -187,8 +197,10 @@ FROM `Wycena_prac` AS `Wycena_prac`</DefiningQuery>
           <EntitySet Name="oferta" EntityType="zlecenieModel.oferta" />
           <EntitySet Name="Dane_Logowania" EntityType="zlecenieModel.Dane_Logowania" />
           <EntitySet Name="statusy_produktów" EntityType="zlecenieModel.statusy_produktów" />
+          <EntitySet Name="statusy_wycen" EntityType="zlecenieModel.statusy_wycen" />
+          <EntitySet Name="produkty_w_zleceniu" EntityType="zlecenieModel.produkty_w_zleceniu" />
           <EntitySet Name="statusy_zlecenia" EntityType="zlecenieModel.statusy_zlecenia" />
-          <EntitySet Name="Wycena_prac" EntityType="zlecenieModel.Wycena_prac" />
+          <EntitySet Name="zlecenie" EntityType="zlecenieModel.zlecenie" />
         </EntityContainer>
         <EntityType Name="adres">
           <Key>
@@ -240,26 +252,44 @@ FROM `Wycena_prac` AS `Wycena_prac`</DefiningQuery>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Status" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="statusy_zlecenia">
+        <EntityType Name="statusy_wycen">
           <Key>
             <PropertyRef Name="ID_statusu" />
           </Key>
           <Property Name="ID_statusu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Status" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Wycena_prac">
+        <EntityType Name="produkty_w_zleceniu">
+          <Key>
+            <PropertyRef Name="Id_zlecenia" />
+            <PropertyRef Name="ID_produktu" />
+          </Key>
+          <Property Name="Id_zlecenia" Type="Int32" Nullable="false" />
+          <Property Name="ID_produktu" Type="Int32" Nullable="false" />
+          <Property Name="ilość" Type="Decimal" Nullable="false" />
+          <Property Name="aktualna_cena_netto" Type="Decimal" Nullable="false" />
+          <Property Name="marża" Type="Decimal" Nullable="false" />
+          <Property Name="zysk_netto" Type="Decimal" Nullable="false" />
+        </EntityType>
+        <EntityType Name="statusy_zlecenia">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="Nazwa" />
-            <PropertyRef Name="Cena_netto" />
-            <PropertyRef Name="Vat" />
-            <PropertyRef Name="Cena_brutto" />
           </Key>
-          <Property Name="ID" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="zlecenie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
-          <Property Name="Cena_netto" Type="Decimal" Nullable="false" />
-          <Property Name="Vat" Type="Decimal" Nullable="false" />
-          <Property Name="Cena_brutto" Type="Decimal" Nullable="false" />
+          <Property Name="Kontrahent" Type="Int32" Nullable="false" />
+          <Property Name="Adres_zlecenia" Type="Int32" Nullable="false" />
+          <Property Name="Status_zlecenia" Type="Int32" Nullable="false" />
+          <Property Name="Data_od" Type="DateTime" Nullable="false" />
+          <Property Name="Data_do" Type="DateTime" Nullable="false" />
+          <Property Name="Opis" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -362,26 +392,49 @@ FROM `Wycena_prac` AS `Wycena_prac`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="statusy_zlecenia">
-            <EntityTypeMapping TypeName="zlecenieModel.statusy_zlecenia">
-              <MappingFragment StoreEntitySet="statusy_zlecenia">
+          <EntitySetMapping Name="statusy_wycen">
+            <EntityTypeMapping TypeName="zlecenieModel.statusy_wycen">
+              <MappingFragment StoreEntitySet="statusy_wycen">
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ID_statusu" ColumnName="ID_statusu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Wycena_prac">
-            <EntityTypeMapping TypeName="zlecenieModel.Wycena_prac">
-              <MappingFragment StoreEntitySet="Wycena_prac">
-                <ScalarProperty Name="Cena_brutto" ColumnName="Cena_brutto" />
-                <ScalarProperty Name="Vat" ColumnName="Vat" />
-                <ScalarProperty Name="Cena_netto" ColumnName="Cena_netto" />
+          <EntitySetMapping Name="produkty_w_zleceniu">
+            <EntityTypeMapping TypeName="zlecenieModel.produkty_w_zleceniu">
+              <MappingFragment StoreEntitySet="produkty_w_zleceniu">
+                <ScalarProperty Name="zysk_netto" ColumnName="zysk_netto" />
+                <ScalarProperty Name="marża" ColumnName="marża" />
+                <ScalarProperty Name="aktualna_cena_netto" ColumnName="aktualna_cena_netto" />
+                <ScalarProperty Name="ilość" ColumnName="ilość" />
+                <ScalarProperty Name="ID_produktu" ColumnName="ID_produktu" />
+                <ScalarProperty Name="Id_zlecenia" ColumnName="Id_zlecenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="statusy_zlecenia">
+            <EntityTypeMapping TypeName="zlecenieModel.statusy_zlecenia">
+              <MappingFragment StoreEntitySet="statusy_zlecenia">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zlecenie">
+            <EntityTypeMapping TypeName="zlecenieModel.zlecenie">
+              <MappingFragment StoreEntitySet="zlecenie">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Data_do" ColumnName="Data_do" />
+                <ScalarProperty Name="Data_od" ColumnName="Data_od" />
+                <ScalarProperty Name="Status_zlecenia" ColumnName="Status_zlecenia" />
+                <ScalarProperty Name="Adres_zlecenia" ColumnName="Adres_zlecenia" />
+                <ScalarProperty Name="Kontrahent" ColumnName="Kontrahent" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

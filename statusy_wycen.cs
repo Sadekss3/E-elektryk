@@ -12,12 +12,9 @@ namespace E_elektryk
     using System;
     using System.Collections.Generic;
     
-    public partial class Wycena_prac
+    public partial class statusy_wycen
     {
-        public string ID { get; set; }
-        public string Nazwa { get; set; }
-        public decimal Cena_netto { get; set; }
-        public decimal Vat { get; set; }
-        public decimal Cena_brutto { get; set; }
+        public int ID_statusu { get; set; }
+        public string Status { get; set; }
     }
 }
