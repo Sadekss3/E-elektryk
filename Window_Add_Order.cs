@@ -85,18 +85,25 @@ namespace E_elektryk
 
         private void Button_chose_Client_Click(object sender, EventArgs e)
         {
-            using (zlecenieEntities db = new zlecenieEntities())
+            try
             {
-                kontrahent k = new kontrahent();
-                Window_Choice_Client_For_Offer window_Choice_Client = new Window_Choice_Client_For_Offer(k);
-                window_Choice_Client.ShowDialog();
-                client_id = k.ID;
-                k = db.kontrahent.Find(k.ID);
-                adres a = new adres();
-                a = db.adres.Find(k.Adres);
-                textBox_Offer_Name.Text = k.Imie.ToString();
-                textBox_Offer_LastName.Text = k.Nazwisko.ToString();
-                textBox_Offer_CompanyName.Text = k.Nazwa_Firmy.ToString();
+                using (zlecenieEntities db = new zlecenieEntities())
+                {
+                    kontrahent k = new kontrahent();
+                    Window_Choice_Client_For_Offer window_Choice_Client = new Window_Choice_Client_For_Offer(k);
+                    window_Choice_Client.ShowDialog();
+                    client_id = k.ID;
+                    k = db.kontrahent.Find(k.ID);
+                    adres a = new adres();
+                    a = db.adres.Find(k.Adres);
+                    textBox_Offer_Name.Text = k.Imie.ToString();
+                    textBox_Offer_LastName.Text = k.Nazwisko.ToString();
+                    textBox_Offer_CompanyName.Text = k.Nazwa_Firmy.ToString();
+                }
+            }
+            catch
+            {
+
             }
         } // Add information about Client to Offer Form
 
@@ -112,7 +119,7 @@ namespace E_elektryk
             //calculate();
         } // Delete product from Datagrid
 
-        void Save_Offer()
+        void Save_Order()
         {
             using (zlecenieEntities db = new zlecenieEntities())
             {
@@ -240,17 +247,18 @@ namespace E_elektryk
 
         private void Button_Add_Order_Click(object sender, EventArgs e)
         {
-            Save_Offer();
+            Save_Order();
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string button_checked = checkedListBox1.Text;
+            TextBox[] textBox = { textBox_Town, textBox_Kod_1, textBox_Kod_2, textBox_Street, textBox_Building_Number, textBox_Home_Number, textBox_Country };
             switch (button_checked)
-            {
+            {                
                 case "Adres Zleceniodawcy":
                     {
-                        TextBox[] textBox = { textBox_Town, textBox_Kod_1, textBox_Kod_2, textBox_Street, textBox_Building_Number, textBox_Home_Number, textBox_Country };
+                        
                         checkedListBox1.SetItemCheckState(0, CheckState.Checked);
                         checkedListBox1.SetItemCheckState(1, CheckState.Unchecked);
                         checkedListBox1.SetItemCheckState(2, CheckState.Unchecked);
@@ -286,7 +294,25 @@ namespace E_elektryk
                         checkedListBox1.SetItemCheckState(2, CheckState.Unchecked);
                         try
                         {
+                            using (zlecenieEntities db = new zlecenieEntities())
+                            {
+                               adres a = new adres();
+                                Window_Choice_Adres_For_Order window_Choice_Adres = new Window_Choice_Adres_For_Order(a);
+                                window_Choice_Adres.ShowDialog();
+                                a = db.adres.Find(a.ID);
+                                textBox_Town.Text = a.Miasto;
+                                textBox_Kod_1.Text = a.Kod_pocztowy.Remove(2, 3);
+                                textBox_Kod_2.Text = a.Kod_pocztowy.Remove(0, 2);
+                                textBox_Street.Text = a.Nazwa_ulicy;
+                                textBox_Building_Number.Text = a.Numer_budynku;
+                                textBox_Home_Number.Text = a.Numer_mieszkania;
+                                textBox_Country.Text = a.Państwo;
 
+                                for (int i = 0; i < textBox.Length; i++)
+                                {
+                                    textBox[i].Enabled = false;
+                                }
+                            }
                         }
                         catch
                         {

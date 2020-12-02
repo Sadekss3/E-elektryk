@@ -60,9 +60,9 @@ namespace E_elektryk
                         Client_list.Items.Add(item);
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    Environment.Exit(1);
+                    MessageBox.Show(e.Message);
                 }
             }
             Cursor.Current = Cursors.Default;

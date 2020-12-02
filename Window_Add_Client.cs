@@ -95,7 +95,7 @@ namespace E_elektryk
                     Adress.Numer_budynku = textBox_Building_Number.Text;
                     Adress.Numer_mieszkania = textBox_Home_Number.Text;
                     Adress.Państwo = comboBox_Country_ID.Text;
-                    db.adres.Add(Adress);
+                    db.adres.AddOrUpdate(Adress);
                     db.SaveChanges();
                     kontrahent.E_mail = textBox_Email_Adress.Text.ToString();
                     kontrahent.Telefon_1 = textBox_Phone_Number_1.Text.ToString();
@@ -110,7 +110,6 @@ namespace E_elektryk
                 }
                 if (flag == true)
                 {
-                    db.adres.Add(Adress);
                     db.kontrahent.Add(kontrahent);
                     db.SaveChanges();
                     MessageBox.Show("Kontrahent dodany", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
