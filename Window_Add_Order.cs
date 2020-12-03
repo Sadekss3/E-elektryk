@@ -18,6 +18,8 @@ namespace E_elektryk
         public Window_Add_Order()
         {
             InitializeComponent();
+            order_number();
+            calculate_delay();
         }
 
         private void Window_Add_Order_Load(object sender, EventArgs e)
@@ -250,18 +252,27 @@ namespace E_elektryk
             Save_Order();
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        int button_number;
+
+        private void Button_Adres_Zleceniodawcy_Click(object sender, EventArgs e)
         {
-            string button_checked = checkedListBox1.Text;
+            button_number = 1;
+            Choice_Address_For_Client(button_number);
+        }
+
+        private void button_Adres_from_list_Click(object sender, EventArgs e)
+        {
+            button_number = 2;
+            Choice_Address_For_Client(button_number);
+        }
+
+        void Choice_Address_For_Client(int button_number) 
+        { 
             TextBox[] textBox = { textBox_Town, textBox_Kod_1, textBox_Kod_2, textBox_Street, textBox_Building_Number, textBox_Home_Number, textBox_Country };
-            switch (button_checked)
+            switch (button_number)
             {                
-                case "Adres Zleceniodawcy":
+                case 1:
                     {
-                        
-                        checkedListBox1.SetItemCheckState(0, CheckState.Checked);
-                        checkedListBox1.SetItemCheckState(1, CheckState.Unchecked);
-                        checkedListBox1.SetItemCheckState(2, CheckState.Unchecked);
                         try
                         {
                             using (zlecenieEntities db = new zlecenieEntities())
@@ -283,15 +294,11 @@ namespace E_elektryk
                         catch
                         {
                             MessageBox.Show("Wybierz Kontrahenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            checkedListBox1.SetItemCheckState(0, CheckState.Unchecked);
                         }
                         break;
                     }
-                case "Wybierz adres z listy":
+                case 2:
                     {
-                        checkedListBox1.SetItemCheckState(0, CheckState.Unchecked);
-                        checkedListBox1.SetItemCheckState(1, CheckState.Checked);
-                        checkedListBox1.SetItemCheckState(2, CheckState.Unchecked);
                         try
                         {
                             using (zlecenieEntities db = new zlecenieEntities())
@@ -316,26 +323,49 @@ namespace E_elektryk
                         }
                         catch
                         {
-                            MessageBox.Show("Wybierz Kontrahenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        break;
-                    }
-                case "Dodaj adres do Bazy Danych":
-                    {
-                        checkedListBox1.SetItemCheckState(0, CheckState.Unchecked);
-                        checkedListBox1.SetItemCheckState(1, CheckState.Unchecked);
-                        checkedListBox1.SetItemCheckState(2, CheckState.Checked);
-                        try
-                        {
-
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Wybierz Kontrahenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           
                         }
                         break;
                     }
             }
+        }
+
+        void order_number()
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                int order_number = db.zlecenie.Count();
+                label_order_number.Text = "Zlecenie nr: \n" + (order_number + 1).ToString() + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year;
+
+                DateTime dateTime = new DateTime();
+                dateTime = DateTime.Now;
+                int delay = dateTimePicker2.Value.Day - dateTime.Day;
+                MessageBox.Show(delay.ToString());
+            }
+        }
+
+        void calculate_delay()
+        {
+            DateTime dateTime = new DateTime();
+            dateTime = DateTime.Now;
+            int delay = (dateTimePicker2.Value - dateTime).Days;
+            if (delay > 0)
+            {
+                label_delay.Text = delay + " dni do zakończenia prac";
+            }
+            else if (delay == 0)
+            {
+                label_delay.Text = delay + " dni.\n Termin zdania Prac";
+            }
+            else
+            {
+                label_delay.Text = delay.ToString().Trim('-') + " dni spóźnienia";
+            }           
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            calculate_delay();
         }
     }
 }

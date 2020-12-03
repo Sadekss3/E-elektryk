@@ -30,7 +30,7 @@ namespace E_elektryk
                 {
                     Client_list.Items.Clear();
                     List<kontrahent> list = db.kontrahent.ToList();
-                    foreach (kontrahent C in list)
+                    foreach (kontrahent C in list.Where(lvi => lvi.Nazwa_Firmy.ToLower().Contains(textBox4.Text.ToLower()) && lvi.Nazwisko.ToLower().Contains(textBox5.Text.ToLower()) && lvi.ID.ToString().ToLower().Contains(textBox6.Text.ToLower())))
                     {
                         ListViewItem item = new ListViewItem(C.ID.ToString());
                         item.SubItems.Add(C.Imie);
@@ -74,6 +74,65 @@ namespace E_elektryk
             int ID = System.Convert.ToInt32(item.Text);   
             _k.ID = ID;
             this.Close();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            Client_List_Update();
+        }
+
+        private void Button_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button_Add_New_Address_Click(object sender, EventArgs e)
+        {
+            var Adress = new adres();
+            var kontrahent = new kontrahent();
+            Boolean flag = false;
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    kontrahent.Imie = textBox_imie.Text.ToString();
+                    kontrahent.Nazwisko = textBox_nazwisko.Text.ToString();
+                    if (textBox_pesel.Text == "")
+                        kontrahent.Pesel = null;
+                    else
+                        kontrahent.Pesel = System.Convert.ToInt64(textBox_pesel.Text);
+                    if (textBox_nip.Text == "")
+                        kontrahent.NIP = null;
+                    else
+                        kontrahent.NIP = System.Convert.ToInt64(textBox_nip.Text);
+
+                    kontrahent.Nazwa_Firmy = textBox_firma.Text.ToString();
+                    Adress.Miasto = textBox_town.Text;
+                    Adress.Nazwa_ulicy = textBox_street.Text;
+                    Adress.Kod_pocztowy = textBox_kod_1.Text + textBox_kod_2.Text;
+                    Adress.Numer_budynku = textBox_building.Text;
+                    Adress.Numer_mieszkania = textBox_home.Text;
+                    Adress.Państwo = comboBox1.Text;
+                    db.adres.Add(Adress);
+                    db.SaveChanges();
+                    kontrahent.E_mail = textBox_email.Text.ToString();
+                    kontrahent.Telefon_1 = textBox_tel.Text.ToString();
+                    kontrahent.Telefon_2 = textBox_tel2.Text.ToString();
+                    kontrahent.Adres = Adress.ID;
+                    flag = true;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Podano nieprawidłowy numer NIP lub PESEL", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    flag = false;
+                }
+                if (flag == true)
+                {
+                    db.kontrahent.Add(kontrahent);
+                    db.SaveChanges();
+                    MessageBox.Show("Kontrahent dodany", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

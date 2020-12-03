@@ -72,7 +72,7 @@ namespace E_elektryk
         { 
             var Adress = new adres();
             var kontrahent = new kontrahent();
-            Boolean flag = true;
+            Boolean flag = false;
             using (zlecenieEntities db = new zlecenieEntities())
             {
                 try

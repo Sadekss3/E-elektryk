@@ -135,8 +135,15 @@ namespace E_elektryk
 
         private void button_main_menu_Click(object sender, EventArgs e)
         {
-            this.activeForm.Close();
-            Hide_Sub_Menu();
+            try
+            {
+                this.activeForm.Close();
+                Hide_Sub_Menu();
+            }
+            catch
+            {
+
+            }
         }
 
         #endregion
