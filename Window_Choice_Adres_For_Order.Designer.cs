@@ -221,7 +221,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.textBox_home);
             this.panel2.Controls.Add(this.textBox_building);
@@ -237,6 +237,7 @@
             this.panel2.Controls.Add(this.textBox_kod_1);
             this.panel2.Controls.Add(this.textBox_town);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(12, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(464, 93);
