@@ -49,7 +49,7 @@ namespace E_elektryk
                     listView1.Items.Add(item);
                 }
             }
-            //calculate();
+            calculate();
         }
 
         void Add_to_offer(object sender, EventArgs e)
@@ -77,12 +77,12 @@ namespace E_elektryk
                 item_grid.Cells[11].Value = margin;
                 dataGridView2.Rows.Add(item_grid);
             }
-            //calculate();
+            calculate();
         }   // Clone listView object and add to dataGrid row
 
         private void dataGridView2_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            //calculate();
+            calculate();
         }   // Update dataGrid net and gross price value after enter new quantity value
 
         private void Button_chose_Client_Click(object sender, EventArgs e)
@@ -111,14 +111,14 @@ namespace E_elektryk
 
         private void Button_Delete_From_Grid_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewCell selectedcell in dataGridView1.SelectedCells)
+            foreach (DataGridViewCell selectedcell in dataGridView2.SelectedCells)
             {
                 if (selectedcell.Selected)
                 {
                     dataGridView2.Rows.RemoveAt(selectedcell.RowIndex);
                 }
             }
-            //calculate();
+            calculate();
         } // Delete product from Datagrid
 
         void Save_Order()
@@ -340,7 +340,6 @@ namespace E_elektryk
                 DateTime dateTime = new DateTime();
                 dateTime = DateTime.Now;
                 int delay = dateTimePicker2.Value.Day - dateTime.Day;
-                MessageBox.Show(delay.ToString());
             }
         }
 
@@ -367,5 +366,144 @@ namespace E_elektryk
         {
             calculate_delay();
         }
+
+        void calculate()
+        {
+            try
+            {
+                decimal roznica_netto = 0;
+                decimal roznica_brutto = 0;
+                decimal sum_uzycie_netto = 0;
+                decimal sum_uzycie_brutto = 0;
+                decimal sum_oferta_netto = 0;
+                decimal sum_oferta_brutto = 0;
+
+                for (int z = 0; z < dataGridView1.Rows.Count; z++)
+                {
+                    DataGridViewRow row = dataGridView1.CurrentRow;
+                    if (dataGridView1.CurrentRow != null)
+                    {
+                        if (dataGridView1.Rows[z].Cells[4].Value.ToString().Contains('.'))
+                        {
+                            row.Cells[4].Value.ToString().Replace('.', ',');
+                            MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+
+                            decimal lot = System.Convert.ToDecimal(dataGridView1.Rows[z].Cells[4].Value); // ilość
+                            decimal margin = System.Convert.ToDecimal(dataGridView1.Rows[z].Cells[5].Value); // marża
+                            string piece_price = TRIM_price(dataGridView1.Rows[z].Cells[6].Value.ToString()); // cena jednostkowa
+                            decimal price_w_margin; // cena z marżą
+                            decimal Gross;
+                            string vat = (dataGridView1.Rows[z].Cells[8].Value.ToString()).Trim(' ', '%'); // vat
+
+                            if (dataGridView1.Rows[z].Cells[10].Value.ToString() == "Usługa")
+                            {
+                                price_w_margin = (System.Convert.ToDecimal(piece_price) * lot);
+                                Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                                dataGridView1.Rows[z].Cells[9].Value = Gross * lot;
+                                dataGridView1.Rows[z].Cells[5].Value = 100;
+                            }
+                            else
+                            {
+                                price_w_margin = (System.Convert.ToDecimal(piece_price) * lot) + (System.Convert.ToDecimal(piece_price) * lot * margin / 100);
+                                Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                                dataGridView1.Rows[z].Cells[9].Value = (Gross * lot) + (Gross * lot * margin / 100);
+                            }
+
+                            dataGridView1.Rows[z].Cells[7].Value = price_w_margin; // cena jednostkowa + marża
+                            decimal profit = (System.Convert.ToDecimal(piece_price) * lot) + (System.Convert.ToDecimal(piece_price) * lot * margin / 100) - (System.Convert.ToDecimal(piece_price) * lot);
+                            dataGridView1.Rows[z].Cells[11].Value = profit; // zysk
+
+
+                            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                            {
+                                decimal uzycie_netto = System.Convert.ToDecimal(dataGridView2.Rows[i].Cells[7].Value.ToString().Trim(' ', 'z', 'ł'));
+                                decimal uzycie_brutto = System.Convert.ToDecimal(dataGridView2.Rows[i].Cells[9].Value.ToString().Trim(' ', 'z', 'ł'));
+                                sum_oferta_netto += uzycie_netto;
+                                sum_oferta_brutto += uzycie_brutto;
+                                sum_oferta_netto = Math.Round(sum_oferta_netto, 2);
+                                sum_oferta_brutto = Math.Round(sum_oferta_brutto, 2);
+                                sum_oferta_label_netto.Text = "Suma Netto: " + sum_oferta_netto.ToString() + " zł";
+                                sum_oferta_label_brutto.Text = "Suma Brutto: " + sum_oferta_brutto.ToString() + " zł";
+                            }
+                            dataGridView1.Rows[z].Cells[6].Value = Math.Round(Convert.ToDecimal(piece_price), 2).ToString() + " zł";
+                        }
+                    }
+                    else
+                    {
+                        sum_oferta_label_netto.Text = "Suma Netto: " + 0 + " zł";
+                        sum_oferta_label_brutto.Text = "Suma Brutto: " + 0 + " zł";
+                    }
+                }
+                for (int y = 0; y < dataGridView2.Rows.Count; y++)
+                {
+                    DataGridViewRow row = dataGridView2.CurrentRow;
+                    if (dataGridView2.CurrentRow != null)
+                    {
+                        if (dataGridView2.Rows[y].Cells[4].Value.ToString().Contains('.'))
+                        {
+                            row.Cells[4].Value.ToString().Replace('.', ',');
+                            MessageBox.Show("W wartościach numerycznych użyj znaku ',' zamiast '.'", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+
+                            decimal lot = System.Convert.ToDecimal(dataGridView2.Rows[y].Cells[4].Value); // ilość
+                            decimal margin = System.Convert.ToDecimal(dataGridView2.Rows[y].Cells[5].Value); // marża
+                            string piece_price = TRIM_price(dataGridView2.Rows[y].Cells[6].Value.ToString()); // cena jednostkowa
+                            decimal price_w_margin; // cena z marżą
+                            decimal Gross;
+                            string vat = (dataGridView2.Rows[y].Cells[8].Value.ToString()).Trim(' ', '%'); // vat
+
+                            if (dataGridView2.Rows[y].Cells[10].Value.ToString() == "Usługa")
+                            {
+                                price_w_margin = (System.Convert.ToDecimal(piece_price) * lot);
+                                Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                                dataGridView2.Rows[y].Cells[9].Value = Gross * lot;
+                                dataGridView2.Rows[y].Cells[5].Value = 100;
+                            }
+                            else
+                            {
+                                price_w_margin = (System.Convert.ToDecimal(piece_price) * lot) + (System.Convert.ToDecimal(piece_price) * lot * margin / 100);
+                                Gross = System.Convert.ToDecimal(piece_price) + (System.Convert.ToDecimal(piece_price) * (System.Convert.ToDecimal(vat) / 100));
+                                dataGridView2.Rows[y].Cells[9].Value = (Gross * lot) + (Gross * lot * margin / 100);
+                            }
+
+                            dataGridView2.Rows[y].Cells[7].Value = price_w_margin; // cena jednostkowa + marża
+                            decimal profit = (System.Convert.ToDecimal(piece_price) * lot) + (System.Convert.ToDecimal(piece_price) * lot * margin / 100) - (System.Convert.ToDecimal(piece_price) * lot);
+                            dataGridView2.Rows[y].Cells[11].Value = profit; // zysk                            
+
+                            
+                                decimal uzycie_netto = System.Convert.ToDecimal(dataGridView2.Rows[y].Cells[7].Value.ToString().Trim(' ', 'z', 'ł'));
+                                decimal uzycie_brutto = System.Convert.ToDecimal(dataGridView2.Rows[y].Cells[9].Value.ToString().Trim(' ', 'z', 'ł'));                                
+                                sum_uzycie_netto += uzycie_netto;
+                                sum_uzycie_brutto += uzycie_brutto;
+                                sum_uzycie_netto = Math.Round(sum_uzycie_netto, 2);
+                                sum_uzycie_brutto = Math.Round(sum_uzycie_brutto, 2);
+                                sum_użyte_netto.Text = "Suma Netto: " + sum_uzycie_netto.ToString() + " zł";
+                                sum_użyte_brutto.Text = "Suma Brutto: " + sum_uzycie_brutto.ToString() + " zł";
+                            
+                            dataGridView2.Rows[y].Cells[6].Value = Math.Round(Convert.ToDecimal(piece_price), 2).ToString() + " zł";
+                        }
+                    }
+                    else
+                    {
+                        sum_użyte_netto.Text = "Suma Netto: " + 0 + " zł";
+                        sum_użyte_brutto.Text = "Suma Brutto: " + 0 + " zł";
+                    }
+                }
+
+                roznica_netto = sum_oferta_netto - sum_uzycie_netto;
+                roznica_brutto = sum_oferta_brutto - sum_uzycie_brutto;
+                sum_roznica_netto.Text = "Zysk Netto: " + roznica_netto + " zł";
+                sum_roznica_brutto.Text = "Zysk Brutto: " + roznica_brutto + " zł";
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message, "Problem z przeliczeniem");
+            }
+        } // Calculate for sum
     }
 }

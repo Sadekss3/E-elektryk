@@ -69,7 +69,7 @@
             this.button_Show_PDF = new System.Windows.Forms.Button();
             this.Button_Delete_From_Grid = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.sum_e_taxes_label = new System.Windows.Forms.Label();
+            this.sum_oferta_label_netto = new System.Windows.Forms.Label();
             this.label_Order_Date_end = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox_Offer_CompanyName = new System.Windows.Forms.TextBox();
@@ -78,7 +78,7 @@
             this.label_Offer_Client = new System.Windows.Forms.Label();
             this.textBox_Offer_Name = new System.Windows.Forms.TextBox();
             this.Button_chose_Client = new System.Windows.Forms.Button();
-            this.sum_w_taxes_label = new System.Windows.Forms.Label();
+            this.sum_oferta_label_brutto = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,11 +106,11 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Zysk = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.sum_roznica_brutto = new System.Windows.Forms.Label();
+            this.sum_roznica_netto = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.sum_użyte_netto = new System.Windows.Forms.Label();
+            this.sum_użyte_brutto = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.zlecenieDataSet1 = new E_elektryk.zlecenieDataSet();
             this.label_Order_Date_start = new System.Windows.Forms.Label();
@@ -464,18 +464,18 @@
             this.label15.TabIndex = 48;
             this.label15.Text = "Materiały z Oferty: ";
             // 
-            // sum_e_taxes_label
+            // sum_oferta_label_netto
             // 
-            this.sum_e_taxes_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sum_e_taxes_label.AutoSize = true;
-            this.sum_e_taxes_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
-            this.sum_e_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_e_taxes_label.ForeColor = System.Drawing.Color.White;
-            this.sum_e_taxes_label.Location = new System.Drawing.Point(445, 238);
-            this.sum_e_taxes_label.Name = "sum_e_taxes_label";
-            this.sum_e_taxes_label.Size = new System.Drawing.Size(82, 16);
-            this.sum_e_taxes_label.TabIndex = 43;
-            this.sum_e_taxes_label.Text = "Suma netto:";
+            this.sum_oferta_label_netto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.sum_oferta_label_netto.AutoSize = true;
+            this.sum_oferta_label_netto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.sum_oferta_label_netto.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_oferta_label_netto.ForeColor = System.Drawing.Color.White;
+            this.sum_oferta_label_netto.Location = new System.Drawing.Point(445, 238);
+            this.sum_oferta_label_netto.Name = "sum_oferta_label_netto";
+            this.sum_oferta_label_netto.Size = new System.Drawing.Size(82, 16);
+            this.sum_oferta_label_netto.TabIndex = 43;
+            this.sum_oferta_label_netto.Text = "Suma netto:";
             // 
             // label_Order_Date_end
             // 
@@ -558,37 +558,37 @@
             this.Button_chose_Client.UseVisualStyleBackColor = false;
             this.Button_chose_Client.Click += new System.EventHandler(this.Button_chose_Client_Click);
             // 
-            // sum_w_taxes_label
+            // sum_oferta_label_brutto
             // 
-            this.sum_w_taxes_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sum_w_taxes_label.AutoSize = true;
-            this.sum_w_taxes_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
-            this.sum_w_taxes_label.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sum_w_taxes_label.ForeColor = System.Drawing.Color.White;
-            this.sum_w_taxes_label.Location = new System.Drawing.Point(739, 238);
-            this.sum_w_taxes_label.Name = "sum_w_taxes_label";
-            this.sum_w_taxes_label.Size = new System.Drawing.Size(89, 16);
-            this.sum_w_taxes_label.TabIndex = 45;
-            this.sum_w_taxes_label.Text = "Suma Brutto:";
+            this.sum_oferta_label_brutto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.sum_oferta_label_brutto.AutoSize = true;
+            this.sum_oferta_label_brutto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.sum_oferta_label_brutto.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_oferta_label_brutto.ForeColor = System.Drawing.Color.White;
+            this.sum_oferta_label_brutto.Location = new System.Drawing.Point(739, 238);
+            this.sum_oferta_label_brutto.Name = "sum_oferta_label_brutto";
+            this.sum_oferta_label_brutto.Size = new System.Drawing.Size(89, 16);
+            this.sum_oferta_label_brutto.TabIndex = 45;
+            this.sum_oferta_label_brutto.Text = "Suma Brutto:";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Controls.Add(this.dataGridView2);
-            this.panel4.Controls.Add(this.label29);
-            this.panel4.Controls.Add(this.label28);
+            this.panel4.Controls.Add(this.sum_roznica_brutto);
+            this.panel4.Controls.Add(this.sum_roznica_netto);
             this.panel4.Controls.Add(this.label27);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.sum_użyte_netto);
+            this.panel4.Controls.Add(this.sum_użyte_brutto);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.Button_Add_Order);
             this.panel4.Controls.Add(this.button_Print_PDF);
             this.panel4.Controls.Add(this.button_Show_PDF);
             this.panel4.Controls.Add(this.Button_Delete_From_Grid);
             this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.sum_e_taxes_label);
-            this.panel4.Controls.Add(this.sum_w_taxes_label);
+            this.panel4.Controls.Add(this.sum_oferta_label_netto);
+            this.panel4.Controls.Add(this.sum_oferta_label_brutto);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 322);
             this.panel4.Name = "panel4";
@@ -879,31 +879,31 @@
             this.Zysk.ReadOnly = true;
             this.Zysk.Width = 55;
             // 
-            // label29
+            // sum_roznica_brutto
             // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
-            this.label29.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(1037, 535);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(89, 16);
-            this.label29.TabIndex = 69;
-            this.label29.Text = "Suma Brutto:";
+            this.sum_roznica_brutto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.sum_roznica_brutto.AutoSize = true;
+            this.sum_roznica_brutto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.sum_roznica_brutto.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_roznica_brutto.ForeColor = System.Drawing.Color.White;
+            this.sum_roznica_brutto.Location = new System.Drawing.Point(1037, 535);
+            this.sum_roznica_brutto.Name = "sum_roznica_brutto";
+            this.sum_roznica_brutto.Size = new System.Drawing.Size(89, 16);
+            this.sum_roznica_brutto.TabIndex = 69;
+            this.sum_roznica_brutto.Text = "Suma Brutto:";
             // 
-            // label28
+            // sum_roznica_netto
             // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
-            this.label28.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(739, 534);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(82, 16);
-            this.label28.TabIndex = 68;
-            this.label28.Text = "Suma netto:";
+            this.sum_roznica_netto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.sum_roznica_netto.AutoSize = true;
+            this.sum_roznica_netto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.sum_roznica_netto.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_roznica_netto.ForeColor = System.Drawing.Color.White;
+            this.sum_roznica_netto.Location = new System.Drawing.Point(739, 534);
+            this.sum_roznica_netto.Name = "sum_roznica_netto";
+            this.sum_roznica_netto.Size = new System.Drawing.Size(82, 16);
+            this.sum_roznica_netto.TabIndex = 68;
+            this.sum_roznica_netto.Text = "Suma netto:";
             // 
             // label27
             // 
@@ -918,31 +918,31 @@
             this.label27.TabIndex = 67;
             this.label27.Text = "Różnica strat i zysków:";
             // 
-            // label13
+            // sum_użyte_netto
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
-            this.label13.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(445, 472);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 16);
-            this.label13.TabIndex = 66;
-            this.label13.Text = "Suma netto:";
+            this.sum_użyte_netto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.sum_użyte_netto.AutoSize = true;
+            this.sum_użyte_netto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.sum_użyte_netto.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_użyte_netto.ForeColor = System.Drawing.Color.White;
+            this.sum_użyte_netto.Location = new System.Drawing.Point(445, 472);
+            this.sum_użyte_netto.Name = "sum_użyte_netto";
+            this.sum_użyte_netto.Size = new System.Drawing.Size(82, 16);
+            this.sum_użyte_netto.TabIndex = 66;
+            this.sum_użyte_netto.Text = "Suma netto:";
             // 
-            // label9
+            // sum_użyte_brutto
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
-            this.label9.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(739, 472);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 16);
-            this.label9.TabIndex = 65;
-            this.label9.Text = "Suma Brutto:";
+            this.sum_użyte_brutto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.sum_użyte_brutto.AutoSize = true;
+            this.sum_użyte_brutto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.sum_użyte_brutto.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sum_użyte_brutto.ForeColor = System.Drawing.Color.White;
+            this.sum_użyte_brutto.Location = new System.Drawing.Point(739, 472);
+            this.sum_użyte_brutto.Name = "sum_użyte_brutto";
+            this.sum_użyte_brutto.Size = new System.Drawing.Size(89, 16);
+            this.sum_użyte_brutto.TabIndex = 65;
+            this.sum_użyte_brutto.Text = "Suma Brutto:";
             // 
             // label3
             // 
@@ -1300,7 +1300,7 @@
         private System.Windows.Forms.Button button_Show_PDF;
         private System.Windows.Forms.Button Button_Delete_From_Grid;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label sum_e_taxes_label;
+        private System.Windows.Forms.Label sum_oferta_label_netto;
         private System.Windows.Forms.Label label_Order_Date_end;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox textBox_Offer_CompanyName;
@@ -1309,18 +1309,18 @@
         private System.Windows.Forms.Label label_Offer_Client;
         private System.Windows.Forms.TextBox textBox_Offer_Name;
         private System.Windows.Forms.Button Button_chose_Client;
-        private System.Windows.Forms.Label sum_w_taxes_label;
+        private System.Windows.Forms.Label sum_oferta_label_brutto;
         private System.Windows.Forms.Panel panel4;
         private zlecenieDataSet zlecenieDataSet1;
         private System.Windows.Forms.Label label_Order_Date_start;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox_O_Name;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label sum_roznica_brutto;
+        private System.Windows.Forms.Label sum_roznica_netto;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label sum_użyte_netto;
+        private System.Windows.Forms.Label sum_użyte_brutto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
