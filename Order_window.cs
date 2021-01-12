@@ -144,5 +144,14 @@ namespace E_elektryk
             }
             return (Selected_Product_ID);
         }*/
+        public int getSelectedProduct()
+        {
+            int Selected_Product_ID = 0;
+            if (Order_list.SelectedItems.Count > 0)
+            {
+                Selected_Product_ID = System.Convert.ToInt32(Order_list.SelectedItems[0].Text);
+            }
+            return (Selected_Product_ID);
+        }
     }
 }

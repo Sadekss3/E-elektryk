@@ -224,13 +224,13 @@ namespace E_elektryk
             }
         } // Modify Product information
 
-        private void button_Modify_Order_Click(object sender, EventArgs e)
+        private void button_Modify_Offer_Click(object sender, EventArgs e)
         {
             using (zlecenieEntities db = new zlecenieEntities())
             {
                 try
                 {
-                    int ID = ofW.getSelectedProduct();
+                    int ID = ofW.getSelectedOffer();
                     if (ID != 0)
                     {
                         oferta mof = db.oferta.Find(ID);
@@ -265,13 +265,34 @@ namespace E_elektryk
             }
         } // Modify Client information
 
+        private void button_Modify_Order_Info_Click(object sender, EventArgs e)
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                try
+                {
+                    int ID = oW.getSelectedProduct();
+                    if (ID != 0)
+                    {
+                        zlecenie mo = db.zlecenie.Find(ID);
+                        OpenChildForm(new Window_Add_Order(mo));
+                    }
+                }
+                catch (Exception f)
+                {
+
+                }
+            }
+        } // Modify Order information
+
         #endregion
 
         #region lists_buttons
 
         private void button_order_list_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Order_window());
+            oW = new Order_window();
+            OpenChildForm(oW);
         } // Show order list
 
         private void button_Offer_list_Click(object sender, EventArgs e)
@@ -389,7 +410,7 @@ namespace E_elektryk
             {
                 try
                 {
-                    int ID = ofW.getSelectedProduct();
+                    int ID = ofW.getSelectedOffer();
                     if (ID != 0)
                     {
                         oferta of = db.oferta.Find(ID);
@@ -411,7 +432,7 @@ namespace E_elektryk
             {
                 try
                 {
-                    int ID = ofW.getSelectedProduct();
+                    int ID = ofW.getSelectedOffer();
                     if (ID != 0)
                     {
                         oferta of = db.oferta.Find(ID);
@@ -433,7 +454,7 @@ namespace E_elektryk
             {
                 try
                 {
-                    int ID = ofW.getSelectedProduct();
+                    int ID = ofW.getSelectedOffer();
                     if (ID != 0)
                     {
                         oferta of = db.oferta.Find(ID);
@@ -455,7 +476,7 @@ namespace E_elektryk
             {
                 try
                 {
-                    int ID = ofW.getSelectedProduct();
+                    int ID = ofW.getSelectedOffer();
                     if (ID != 0)
                     {
                         oferta of = db.oferta.Find(ID);
@@ -473,5 +494,7 @@ namespace E_elektryk
         }
 
         #endregion
+
+        
     }
 }

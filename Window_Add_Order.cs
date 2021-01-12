@@ -14,13 +14,66 @@ namespace E_elektryk
     {
         Boolean show_active_product = false;
         int client_id;
+        zlecenie _z;
+        string _type;
+        adres a;
 
         public Window_Add_Order()
         {
             InitializeComponent();
             order_number();
             calculate_delay();
+            _type = "Add";
         }
+
+        public Window_Add_Order(zlecenie z)
+        {
+            InitializeComponent();
+            _type = "Modify";
+            _z = z;
+            Button_Add_Order.Text = "Aktualizuj";
+            Add_Order_Information();
+        }
+
+        private void Add_Order_Information()
+        {
+            using (zlecenieEntities db = new zlecenieEntities())
+            {
+                textBox_O_Name.Text = _z.Nazwa;
+                textBox_Offer_Name.Text = db.kontrahent.Find(_z.Kontrahent).Imie;
+                textBox_Offer_LastName.Text = db.kontrahent.Find(_z.Kontrahent).Nazwisko;
+                textBox_Offer_CompanyName.Text = db.kontrahent.Find(_z.Kontrahent).Nazwa_Firmy;
+                textBox_Town.Text = db.adres.Find(db.kontrahent.Find(_z.Kontrahent).Adres).Miasto;
+                textBox_Kod_1.Text = (db.adres.Find(db.kontrahent.Find(_z.Kontrahent).Adres).Kod_pocztowy).Remove(2, 3);
+                textBox_Kod_2.Text = (db.adres.Find(db.kontrahent.Find(_z.Kontrahent).Adres).Kod_pocztowy).Remove(0, 2);
+                textBox_Street.Text = db.adres.Find(db.kontrahent.Find(_z.Kontrahent).Adres).Nazwa_ulicy;
+                textBox_Building_Number.Text = db.adres.Find(db.kontrahent.Find(_z.Kontrahent).Adres).Numer_budynku;
+                textBox_Home_Number.Text = db.adres.Find(db.kontrahent.Find(_z.Kontrahent).Adres).Numer_mieszkania;
+                textBox_Country.Text = db.adres.Find(db.kontrahent.Find(_z.Kontrahent).Adres).Państwo;
+                Order_Information_Box.Text = _z.Opis;
+                dateTimePicker1.Value = _z.Data_od.Date;
+                dateTimePicker2.Value = _z.Data_do.Date;
+                List<produkty_w_wycenie> list = db.produkty_w_wycenie.ToList();
+                foreach (produkty_w_wycenie produkty_W_Wycenie in list.Where(id => id.ID_zlecenie == _z.ID))
+                {
+                    DataGridViewRow item_grid = new DataGridViewRow();
+                    item_grid.CreateCells(dataGridView1);
+                    item_grid.Cells[0].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).ID;
+                    item_grid.Cells[1].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Nazwa;
+                    item_grid.Cells[2].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Producent;
+                    item_grid.Cells[3].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Jm;
+                    item_grid.Cells[4].Value = produkty_W_Wycenie.ilość;
+                    item_grid.Cells[5].Value = produkty_W_Wycenie.Marża;
+                    item_grid.Cells[6].Value = produkty_W_Wycenie.Aktualna_cena_netto;
+                    item_grid.Cells[7].Value = produkty_W_Wycenie.Aktualna_cena_netto;
+                    item_grid.Cells[8].Value = db.produkt.Find(produkty_W_Wycenie.ID_produktu).Vat + " %";
+                    item_grid.Cells[9].Value = Math.Round(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Cena_brutto, 2);
+                    item_grid.Cells[10].Value = db.kategoria_produktu.Find(db.produkt.Find(produkty_W_Wycenie.ID_produktu).Kategoria).Nazwa_kategorii;
+                    item_grid.Cells[11].Value = produkty_W_Wycenie.Zysk_netto;
+                    dataGridView1.Rows.Add(item_grid);
+                }
+            }
+        } // Fill offer window with information about actual offer
 
         private void Window_Add_Order_Load(object sender, EventArgs e)
         {
@@ -133,7 +186,7 @@ namespace E_elektryk
                     new_order.Kontrahent = client_id;
                     new_order.Data_od = dateTimePicker1.Value;
                     new_order.Data_do = dateTimePicker2.Value;
-                    new_order.Adres_zlecenia = db.adres.Find(client_id).ID;
+                    new_order.Adres_zlecenia = db.adres.Find(a.ID).ID;
                     new_order.Opis = Order_Information_Box.Text;
                     new_order.Status_zlecenia = 1;
                     db.zlecenie.Add(new_order);
@@ -303,7 +356,7 @@ namespace E_elektryk
                         {
                             using (zlecenieEntities db = new zlecenieEntities())
                             {
-                               adres a = new adres();
+                                a = new adres();
                                 Window_Choice_Adres_For_Order window_Choice_Adres = new Window_Choice_Adres_For_Order(a);
                                 window_Choice_Adres.ShowDialog();
                                 a = db.adres.Find(a.ID);

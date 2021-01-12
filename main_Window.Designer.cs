@@ -710,7 +710,7 @@
             this.button_Modify_Offer.Text = "Pokaż Oferte";
             this.button_Modify_Offer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Modify_Offer.UseVisualStyleBackColor = false;
-            this.button_Modify_Offer.Click += new System.EventHandler(this.button_Modify_Order_Click);
+            this.button_Modify_Offer.Click += new System.EventHandler(this.button_Modify_Offer_Click);
             // 
             // button_New_Offer
             // 
@@ -876,6 +876,7 @@
             this.button_Modify_Order_Info.Text = "Pokaż zlecenie";
             this.button_Modify_Order_Info.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Modify_Order_Info.UseVisualStyleBackColor = false;
+            this.button_Modify_Order_Info.Click += new System.EventHandler(this.button_Modify_Order_Info_Click);
             // 
             // button_New_Order
             // 

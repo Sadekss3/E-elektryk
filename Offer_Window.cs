@@ -135,7 +135,7 @@ namespace E_elektryk
             }
         } // Calculate gross price for offer
 
-        public int getSelectedProduct()
+        public int getSelectedOffer()
         {
             int Selected_Product_ID = 0;
             if (Offer_list.SelectedItems.Count > 0)
