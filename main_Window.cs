@@ -493,8 +493,6 @@ namespace E_elektryk
             }
         }
 
-        #endregion
-
-        
+        #endregion        
     }
 }

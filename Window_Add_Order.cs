@@ -430,6 +430,7 @@ namespace E_elektryk
                 decimal sum_uzycie_brutto = 0;
                 decimal sum_oferta_netto = 0;
                 decimal sum_oferta_brutto = 0;
+                decimal sum_bez_oferty = 0;
 
                 for (int z = 0; z < dataGridView1.Rows.Count; z++)
                 {
@@ -547,11 +548,21 @@ namespace E_elektryk
                         sum_użyte_brutto.Text = "Suma Brutto: " + 0 + " zł";
                     }
                 }
-
-                roznica_netto = sum_oferta_netto - sum_uzycie_netto;
-                roznica_brutto = sum_oferta_brutto - sum_uzycie_brutto;
-                sum_roznica_netto.Text = "Zysk Netto: " + roznica_netto + " zł";
-                sum_roznica_brutto.Text = "Zysk Brutto: " + roznica_brutto + " zł";
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                {
+                    sum_bez_oferty = sum_bez_oferty + System.Convert.ToDecimal(dataGridView2.Rows[i].Cells[11].Value.ToString().Trim(' ', 'z', 'ł'));                   
+                }
+                if (sum_oferta_netto != 0)
+                {
+                    roznica_netto = sum_oferta_netto - sum_uzycie_netto;
+                    roznica_brutto = sum_oferta_brutto - sum_uzycie_brutto;
+                    sum_roznica_netto.Text = "Zysk Netto: " + roznica_netto + " zł";
+                    sum_roznica_brutto.Text = "Zysk Brutto: " + roznica_brutto + " zł";
+                }
+                else
+                {
+                    roznica_netto = sum_bez_oferty - sum_uzycie_netto; 
+                }            
             }
             catch (Exception f)
             {
